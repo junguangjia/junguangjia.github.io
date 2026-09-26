@@ -1,0 +1,153 @@
+# Site configuration for junguangjia.github.io
+#
+# Built on the Academic Pages template (https://github.com/academicpages/academicpages.github.io).
+# This file is NOT reloaded by `jekyll serve`; restart the server after editing it.
+
+# Basic Site Settings
+locale                   : "en-US"
+site_theme               : "default" # "default", "air", "sunrise", "mint", "dirt" or "contrast"
+title                    : "Junguang Jia"
+title_separator          : "-"
+name                     : &name "Junguang Jia"
+description              : &description "Academic website of Junguang Jia, M.A. student in Statistics (Theory and Methods Track) at Columbia University."
+url                      : https://junguangjia.github.io
+baseurl                  : "" # root-level user site, so this stays empty
+repository               : "junguangjia/junguangjia.github.io"
+
+# Site Author - controls the left-hand sidebar (see _includes/author-profile.html).
+# Blank fields are not shown. Leave `avatar` empty for a text-only sidebar; to add a
+# portrait, place the image in /images/ and set `avatar` to its filename.
+author:
+  avatar           :
+  name             : "Junguang Jia"
+  pronouns         :
+  bio              : "M.A. student in Statistics, Theory and Methods Track"
+  location         : "New York, NY"
+  employer         : "Columbia University"
+  uri              :
+  email            : "jj3445@columbia.edu"
+  github           : "junguangjia"
+
+# Site Settings
+breadcrumbs              : false
+words_per_minute         : 160
+future                   : true
+read_more                : "disabled"
+comments:
+  provider               : # disabled
+atom_feed:
+  hide                   : true # no blog posts, so no feed
+
+
+# SEO / Social
+og_description           : *description
+social:
+  type                   : Person
+  name                   : *name
+  links:
+    - "https://github.com/junguangjia"
+
+
+# Analytics
+analytics:
+  provider               : "false" # disabled
+
+
+# Reading Files
+include:
+  - _pages
+  - files
+exclude:
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - .asset-cache
+  - .bundle
+  - .github
+  - .jekyll-assets-cache
+  - .sass-cache
+  - assets/js/_main.js
+  - assets/js/plugins
+  - assets/js/vendor
+  - CHANGELOG
+  - Capfile
+  - CLAUDE.md
+  - config
+  - Dockerfile
+  - Gemfile
+  - Gemfile.lock
+  - Gruntfile.js
+  - gulpfile.js
+  - LICENSE
+  - local
+  - log
+  - node_modules
+  - package.json*
+  - Rakefile
+  - README.md
+  - tmp
+  - vendor
+keep_files:
+  - .git
+  - .svn
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+
+# Conversion
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+
+# Markdown Processing
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
+
+# Front-matter defaults. Every page gets the single layout with the author sidebar.
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+
+
+# Sass/SCSS
+sass:
+  sass_dir: _sass
+  style: compressed
+
+
+# Outputting
+permalink: /:categories/:title/
+timezone: America/New_York
+
+
+# Plugins (all supported by GitHub Pages)
+plugins:
+  - jekyll-sitemap
+  - jekyll-redirect-from
+
+# Mimic GitHub Pages with --safe
+whitelist:
+  - jekyll-sitemap
+  - jekyll-redirect-from
+
+
+# HTML Compression
+# - https://jch.penibelst.de/
+compress_html:
+  clippings: all
+  ignore:
+    envs: development

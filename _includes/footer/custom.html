@@ -1,0 +1,75 @@
+<!-- start custom footer snippets -->
+
+<!-- Keyboard and screen-reader support for the header controls (site-specific).
+     NOTE: the production build compresses HTML onto single lines, so this
+     script must only use block comments, never // line comments.
+     The theme toggle is a link with role="button": activate it with Space as well
+     as Enter and expose its pressed state; expose the open/closed state of the
+     navigation and "Follow" disclosure buttons and keep it in sync after the
+     template's own resize handling. -->
+<script>
+  (function () {
+    var root = document.documentElement;
+    var toggle = document.querySelector('#theme-toggle a');
+    var nav = document.getElementById('site-nav');
+    var navBtn = document.querySelector('#site-nav > button');
+    var hidden = document.querySelector('#site-nav .hidden-links');
+    var followBtn = document.querySelector('.author__urls-wrapper button');
+    var urls = document.querySelector('.author__urls');
+    function syncToggle() {
+      if (toggle) { toggle.setAttribute('aria-pressed', root.getAttribute('data-theme') === 'dark' ? 'true' : 'false'); }
+    }
+    function syncNav() {
+      if (navBtn && hidden) { navBtn.setAttribute('aria-expanded', hidden.classList.contains('hidden') ? 'false' : 'true'); }
+    }
+    function syncFollow() {
+      if (followBtn && urls) { followBtn.setAttribute('aria-expanded', getComputedStyle(urls).display === 'none' ? 'false' : 'true'); }
+    }
+    if (toggle) {
+      toggle.addEventListener('keydown', function (e) {
+        if (e.key === ' ' || e.key === 'Spacebar') { e.preventDefault(); toggle.click(); }
+      });
+      new MutationObserver(syncToggle).observe(root, { attributes: true, attributeFilter: ['data-theme'] });
+    }
+    function navOpen() { return hidden && !hidden.classList.contains('hidden'); }
+    function closeNav() { if (navOpen() && navBtn) { navBtn.click(); } }
+    if (nav && navBtn && hidden) {
+      new MutationObserver(syncNav).observe(hidden, { attributes: true, attributeFilter: ['class'] });
+      /* Keyboard activation (click detail 0): move focus into the opened menu. */
+      navBtn.addEventListener('click', function (e) {
+        if (e.detail === 0) {
+          setTimeout(function () { var first = navOpen() ? hidden.querySelector('a') : null; if (first) { first.focus(); } }, 0);
+        }
+      });
+      /* Dismiss the open menu with Escape, when focus leaves it, or on an outside tap. */
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && navOpen()) { closeNav(); navBtn.focus(); }
+      });
+      nav.addEventListener('focusout', function () {
+        /* Deferred so that window blur (relatedTarget null) does not close it. */
+        setTimeout(function () {
+          if (navOpen() && document.hasFocus() && !nav.contains(document.activeElement)) { closeNav(); }
+        }, 0);
+      });
+      document.addEventListener('pointerdown', function (e) {
+        if (navOpen() && !nav.contains(e.target)) { closeNav(); }
+      });
+    }
+    if (followBtn) { followBtn.addEventListener('click', function () { setTimeout(syncFollow, 250); }); }
+    var lastWidth = window.innerWidth;
+    window.addEventListener('resize', function () {
+      /* The template's resize handler forces the "Follow" list open at wide
+         widths and leaves that inline style behind; reset it only when the
+         viewport crosses the 925px breakpoint downwards. */
+      var crossedDown = lastWidth >= 925 && window.innerWidth < 925;
+      lastWidth = window.innerWidth;
+      setTimeout(function () {
+        if (urls && crossedDown) { urls.style.display = ''; }
+        syncNav(); syncFollow();
+      }, 50);
+    });
+    window.addEventListener('load', function () { syncToggle(); syncNav(); syncFollow(); });
+  })();
+</script>
+
+<!-- end custom footer snippets -->

@@ -1,0 +1,11 @@
+# Links shown in the site header, in order. The site title (linking to /) is
+# added automatically before these items.
+main:
+  - title: "About"
+    url: /
+
+  - title: "Research & Projects"
+    url: /research/
+
+  - title: "CV"
+    url: /cv/

@@ -1,0 +1,17 @@
+{% comment %}
+  Renders a list of projects as cards. Usage:
+    {% include project-cards.html projects=site.data.projects.academic %}
+  Links are rendered only when an entry provides real URLs.
+{% endcomment %}
+{% for project in include.projects %}
+<div class="entry-card">
+  <h3 class="entry-card__title">{{ project.title }}{% if project.subtitle %} <span class="entry-card__subtitle">{{ project.subtitle }}</span>{% endif %}</h3>
+  {% if project.meta %}<p class="entry-card__meta">{{ project.meta }}</p>{% endif %}
+  {{ project.description | markdownify }}
+  {% if project.links and project.links.size > 0 %}
+  <p class="entry-card__links">
+    {% for link in project.links %}<a href="{{ link.url }}">{{ link.label }}</a>{% unless forloop.last %} · {% endunless %}{% endfor %}
+  </p>
+  {% endif %}
+</div>
+{% endfor %}

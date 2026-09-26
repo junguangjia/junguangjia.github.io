@@ -1,0 +1,31 @@
+{% include base_path %}
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <button type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="site-nav-hidden-links"><span class="navicon"></span></button>
+        <ul class="visible-links">
+          <li class="masthead__menu-item masthead__menu-item--lg persist {% if page.url == '/' or page.url == '/index.html' %}selected{% endif %}">
+            <a href="{{ base_path }}/"{% if page.url == '/' or page.url == '/index.html' %} aria-current="page"{% endif %}>{{ site.title }}</a>
+          </li>
+          {% for link in site.data.navigation.main %}
+            {% if link.url contains 'http' %}
+              {% assign domain = '' %}
+            {% else %}
+              {% assign domain = base_path %}
+            {% endif %}
+            {% assign link_selected = false %}
+            {% if link.url == '/' %}{% if page.url == '/' %}{% assign link_selected = true %}{% endif %}{% elsif page.url contains link.url %}{% assign link_selected = true %}{% endif %}
+            <li class="masthead__menu-item {% if link_selected %}selected{% endif %}">
+              <a href="{{ domain }}{{ link.url }}"{% if link_selected %} aria-current="page"{% endif %}>{{ link.title }}</a>
+            </li>
+          {% endfor %}
+          <li id="theme-toggle" class="masthead__menu-item persist tail">
+            <a href="#" role="button" aria-label="Toggle dark mode" aria-pressed="false" onclick="return false"><i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true"></i></a>
+          </li>
+        </ul>
+        <ul class="hidden-links hidden" id="site-nav-hidden-links"></ul>
+      </nav>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+# Projects shown on /research/ and summarized on /cv/.
+#
+# Each entry supports:
+#   title       (required)
+#   subtitle    (optional, shown after the title)
+#   meta        (optional, one line of context: course, term, status)
+#   description (required, Markdown allowed)
+#   links       (optional list of {label, url}; only add real, public URLs)
+#
+# Keep entries factual. Course projects are labeled as such and are not publications.
+
+academic:
+  - title: "Stochastic Trace Estimation"
+    meta: "Course project, STAT GR6104 Computational Statistics, Columbia University, Spring 2026"
+    description: >-
+      Studied the Hutchinson and Hutch++ trace estimators, including their unbiasedness,
+      variance reduction, and computational complexity. Implemented reproducible
+      experiments in Julia, including an application to triangle counting in sparse graphs.
+    links: []
+
+independent:
+  - title: "ArtVenn"
+    subtitle: "Cultural Heritage Catalog and Community Platform"
+    meta: "Ongoing independent project (development / pilot)"
+    description: >-
+      An independently developed platform for organizing and presenting Chinese
+      inscriptions and calligraphy materials. Work includes structured catalog data,
+      search, data-import workflows, and editorial publishing, using TypeScript,
+      Next.js/React, Node.js, and PostgreSQL.
+    links: []

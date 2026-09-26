@@ -1,0 +1,15 @@
+# Education entries, newest first. Used on the About page (cards) and the CV page (list).
+# `degree` is shown in bold; `detail` follows it on the same line and may be omitted.
+- institution: "Columbia University"
+  dates: "September 2025 – Present"
+  degree: "Master of Arts in Statistics"
+  detail: "Theory and Methods Track"
+
+- institution: "University of California, San Diego"
+  dates: "September 2020 – July 2024"
+  degree: "Bachelor of Science in Mathematics"
+  detail: "Probability and Statistics"
+
+- institution: "Fudan University"
+  dates: "August 2022 – June 2023"
+  degree: "Exchange program in Probability and Statistics"

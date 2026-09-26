@@ -1,0 +1,9 @@
+{% comment %}
+  Renders site.data.education as a list of cards (used on the About page).
+{% endcomment %}
+{% for entry in site.data.education %}
+<div class="entry-card">
+  <h3 class="entry-card__title">{{ entry.institution }} <span class="entry-card__dates">({{ entry.dates }})</span></h3>
+  <p class="entry-card__line"><strong>{{ entry.degree }}</strong>{% if entry.detail %}, {{ entry.detail }}{% endif %}</p>
+</div>
+{% endfor %}

@@ -1,0 +1,120 @@
+/* ==========================================================================
+   SITE-SPECIFIC CUSTOMIZATIONS (junguangjia.github.io)
+   Everything else in _sass/ is unchanged Academic Pages template code.
+   ========================================================================== */
+
+/* Colors: link and secondary-text colors chosen so that text meets the WCAG AA
+   4.5:1 contrast ratio in both the light and the dark theme. The template's
+   defaults (#52adc8 links, #bdc1c4 footer/button text) fall well below it. */
+:root {
+  --global-link-color: #2f7f93;
+  --global-text-color-light: #666a6d; /* footer text, "Follow" button */
+  --site-muted-color: #666a6d;        /* card dates and project context */
+  /* The template writes these light-theme values as unevaluated Sass mix()
+     strings, which browsers ignore; these are the evaluated colors. */
+  --global-link-color-hover: #235f6e;
+  --global-masthead-link-color-hover: #5c6266;
+  --global-fig-caption-color: #777a7d;
+}
+
+:root[data-theme="dark"] {
+  --global-link-color: #7fd3ea;
+  --global-link-color-hover: #b3e6f5;
+  --global-masthead-link-color-hover: #7fd3ea;
+  --site-muted-color: #b8bcc0;
+}
+
+/* Dark theme: the collapsed-navigation hover bar is light grey in the template,
+   which makes the light-blue hover text illegible; use a darker bar instead. */
+:root[data-theme="dark"] .greedy-nav .hidden-links a:hover {
+  background: #3a3a3a;
+}
+
+/* Keep keyboard-focused elements clear of the fixed header and footer when
+   the browser scrolls them into view. */
+html {
+  scroll-padding-top: 80px;
+  scroll-padding-bottom: 130px;
+}
+
+/* Keyboard focus indicator with at least 3:1 contrast in both themes. The
+   template's default ring is a 2.3:1 orange, and its hamburger button sets
+   outline: none. */
+a:focus-visible,
+.btn:focus-visible,
+.greedy-nav button:focus-visible {
+  outline: 2px solid var(--global-text-color);
+  outline-offset: 2px;
+}
+
+/* Screen-reader-only text (used for the home page heading). Defined here so it
+   ships in main.css and does not depend on the async-loaded icon stylesheet. */
+/* The sidebar is a scroll container at wide widths, so draw the ring inside it */
+.sidebar .author__urls a:focus-visible {
+  outline-offset: -2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* The sidebar name is a <p> (not an <h3>) so the page heading stays the first
+   heading in document order; keep the template's heading look. */
+.sidebar .author__name {
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+/* Text-only sidebar: remove the indent reserved for the avatar on small screens */
+.author__content--no-avatar {
+  padding-left: 0;
+}
+
+/* Entry cards used for education (About page) and projects (Research page) */
+.entry-card {
+  margin: 1em 0 1.5em;
+  padding: 1.25em 1.5em;
+  border: 1px solid var(--global-border-color);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.page__content .entry-card__title {
+  margin: 0 0 0.4em;
+  font-size: $type-size-4;
+  line-height: 1.3;
+}
+
+.entry-card__dates,
+.entry-card__subtitle {
+  font-size: $type-size-6;
+  font-weight: normal;
+  color: var(--site-muted-color);
+}
+
+.entry-card__subtitle {
+  display: block;
+  margin-top: 0.15em;
+}
+
+.entry-card__meta {
+  margin: 0 0 0.6em;
+  font-size: $type-size-6;
+  color: var(--site-muted-color);
+}
+
+.entry-card__line {
+  margin: 0;
+}
