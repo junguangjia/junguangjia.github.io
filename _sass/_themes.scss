@@ -14,8 +14,12 @@ $paragraph-indent           : false; // true, false (default)
 $indent-var                 : 1.3em;
 
 /* System typefaces */
-$serif                      : Georgia, Times, serif;
-$sans-serif                 : -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+/* Site-specific: every text style uses Latin Modern, the LaTeX typeface (loaded in
+   _sass/_custom.scss). Template defaults were Georgia for $serif and the system
+   sans-serif stack for $sans-serif. */
+$latex-serif                : "Latin Modern Roman", "CMU Serif", "Computer Modern Serif", Georgia, "Times New Roman", serif;
+$serif                      : $latex-serif;
+$sans-serif                 : $latex-serif;
 $monospace                  : Monaco, Consolas, "Lucida Console", monospace;
 
 /* Sans serif typefaces */

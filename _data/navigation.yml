@@ -4,8 +4,11 @@ main:
   - title: "About"
     url: /
 
+  - title: "CV"
+    url: /cv/
+
   - title: "Research & Projects"
     url: /research/
 
-  - title: "CV"
-    url: /cv/
+  - title: "Miscellaneous"
+    url: /misc/

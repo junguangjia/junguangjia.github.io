@@ -1,0 +1,9 @@
+{% comment %}
+  Renders site.data.news as a list (used on the About page). Links in `text` may be
+  root-relative (for example /research/) because the site has no baseurl.
+{% endcomment %}
+<ul class="news-list">
+{% for item in site.data.news %}
+  <li><strong>{{ item.date }}</strong>: {{ item.text | markdownify | remove: '<p>' | remove: '</p>' | strip }}</li>
+{% endfor %}
+</ul>

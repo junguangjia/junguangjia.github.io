@@ -1,17 +1,20 @@
-# Projects shown on /research/ and summarized on /cv/.
+# Projects shown on /research/.
 #
 # Each entry supports:
 #   title       (required)
 #   subtitle    (optional, shown after the title)
-#   meta        (optional, one line of context: course, term, status)
+#   dates       (optional, shown right-aligned in italics, CV style)
+#   meta        (optional, one line of context: course, role, status)
 #   description (required, Markdown allowed)
+#   url         (optional; the project title links here)
 #   links       (optional list of {label, url}; only add real, public URLs)
 #
 # Keep entries factual. Course projects are labeled as such and are not publications.
 
 academic:
   - title: "Stochastic Trace Estimation"
-    meta: "Course project, STAT GR6104 Computational Statistics, Columbia University, Spring 2026"
+    dates: "Spring 2026"
+    meta: "Course project, STAT GR6104 Computational Statistics, Columbia University"
     description: >-
       Studied the Hutchinson and Hutch++ trace estimators, including their unbiasedness,
       variance reduction, and computational complexity. Implemented reproducible
@@ -21,10 +24,14 @@ academic:
 independent:
   - title: "ArtVenn"
     subtitle: "Cultural Heritage Catalog and Community Platform"
-    meta: "Founder and technical project lead; ongoing independent project, 2026 – present (development / pilot)"
+    url: "https://github.com/junguangjia/moya-inscriptions-web"
+    dates: "2026 – Present"
+    meta: "Founder and technical project lead; ongoing independent open-source project (development / pilot)"
     description: >-
       An independently developed platform for organizing and presenting Chinese
       inscriptions and calligraphy materials. Work includes structured catalog data,
       search, data-import workflows, and editorial publishing, using TypeScript,
       Next.js/React, Node.js, and PostgreSQL.
-    links: []
+    links:
+      - label: "Source code on GitHub (Apache-2.0)"
+        url: "https://github.com/junguangjia/moya-inscriptions-web"

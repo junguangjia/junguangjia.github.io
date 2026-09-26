@@ -5,7 +5,10 @@
 {% endcomment %}
 {% for project in include.projects %}
 <div class="entry-card">
-  <h3 class="entry-card__title">{{ project.title }}{% if project.subtitle %} <span class="entry-card__subtitle">{{ project.subtitle }}</span>{% endif %}</h3>
+  <div class="entry-card__head">
+    <h3 class="entry-card__title">{% if project.url %}<a href="{{ project.url }}">{{ project.title }}</a>{% else %}{{ project.title }}{% endif %}{% if project.subtitle %} <span class="entry-card__subtitle">{{ project.subtitle }}</span>{% endif %}</h3>
+    {% if project.dates %}<span class="entry-card__dates">{{ project.dates }}</span>{% endif %}
+  </div>
   {% if project.meta %}<p class="entry-card__meta">{{ project.meta }}</p>{% endif %}
   {{ project.description | markdownify }}
   {% if project.links and project.links.size > 0 %}

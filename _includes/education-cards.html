@@ -3,7 +3,11 @@
 {% endcomment %}
 {% for entry in site.data.education %}
 <div class="entry-card">
-  <h3 class="entry-card__title">{{ entry.institution }} <span class="entry-card__dates">({{ entry.dates }})</span></h3>
+  <div class="entry-card__head">
+    <h3 class="entry-card__title">{{ entry.institution }}</h3>
+    <span class="entry-card__dates">{{ entry.dates }}</span>
+  </div>
   <p class="entry-card__line"><strong>{{ entry.degree }}</strong>{% if entry.detail %}, {{ entry.detail }}{% endif %}</p>
+  {% if entry.note %}<p class="entry-card__line">{{ entry.note }}</p>{% endif %}
 </div>
 {% endfor %}

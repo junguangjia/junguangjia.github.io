@@ -1,0 +1,10 @@
+# News items, newest first. Shown at the bottom of the About page.
+# `text` may contain Markdown links.
+- date: "Spring 2026"
+  text: "Completed a [course project](/research/) on stochastic trace estimation for STAT GR6104 Computational Statistics at Columbia."
+
+- date: "Sep 2025"
+  text: "Started the M.A. in Statistics (Theory and Methods Track) at Columbia University."
+
+- date: "2025"
+  text: "Completed a 3,680 km [solo cycling expedition](/misc/) from Pingdingshan, Henan, to Lhasa, Tibet."

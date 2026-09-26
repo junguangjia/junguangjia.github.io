@@ -11,8 +11,9 @@ hosted for free on GitHub Pages.
 | Page                | Source                 | URL          |
 | ------------------- | ---------------------- | ------------ |
 | About (home)        | `_pages/about.md`      | `/`          |
-| Research & Projects | `_pages/research.md`   | `/research/` |
 | CV                  | `_pages/cv.md`         | `/cv/`       |
+| Research & Projects | `_pages/research.md`   | `/research/` |
+| Miscellaneous       | `_pages/misc.md`       | `/misc/`     |
 
 Header links are defined in `_data/navigation.yml`.
 
@@ -50,15 +51,16 @@ so inspect the files directly rather than serving `_site/` with another server.
 ## Editing content
 
 - **Biography:** edit the text in `_pages/about.md`.
+- **News:** edit `_data/news.yml` (newest first); it is listed at the bottom of
+  the About page.
+- **Miscellaneous:** edit `_pages/misc.md`.
 - **Sidebar (name, short bio, location, affiliation, email, GitHub):** edit the
   `author:` block in `_config.yml`.
-- **Education:** edit `_data/education.yml`. It feeds both the cards on the About
-  page and the list on the CV page.
+- **Education:** edit `_data/education.yml` (shown as cards on the About page;
+  dates use the CV style, e.g. `Sep 2025 – Present`).
 - **Projects:** edit `_data/projects.yml`. Entries under `academic:` and
-  `independent:` appear on the Research & Projects page and are summarized on
-  the CV page. Only add `links` for real, public URLs.
-- **Work experience:** edit `_data/experience.yml` (shown on the CV page).
-- **CV text (interests, coursework, skills, contact):** edit `_pages/cv.md`.
+  `independent:` appear on the Research & Projects page. Only add `links` for
+  real, public URLs.
 - **Math:** MathJax is not loaded. If a page needs LaTeX, add the MathJax
   script back to `_includes/footer/custom.html`.
 
@@ -75,12 +77,28 @@ the same path, and keep the original photo outside this repository. Setting
 
 ## CV PDF
 
-The CV page shows a "Download CV (PDF)" link automatically when the file
-`files/Junguang_Jia_CV.pdf` exists. To publish or replace the PDF, save the new
-version at exactly that path so the public URL
-`https://junguangjia.github.io/files/Junguang_Jia_CV.pdf` never changes.
-Before committing, check that the PDF contains no phone number, home address,
-or other private details. If the file is removed, the link disappears.
+The CV page shows a download link and an embedded viewer for
+`files/Junguang_Jia_CV.pdf` (the viewer is hidden on phones, which cannot show
+a PDF inside a page). The public URL
+`https://junguangjia.github.io/files/Junguang_Jia_CV.pdf` must not change.
+
+- To use your own PDF, save it at exactly that path. Before committing, check
+  that it contains no phone number, GPA, grades, test scores, or other private
+  details, and update `cv_updated` in `_pages/cv.md`.
+- The current PDF is generated from `_cv/Junguang_Jia_CV.html` (not published
+  by Jekyll): open it in Google Chrome, Print, Save as PDF, paper Letter,
+  margins Default, headers and footers off, background graphics on, and save
+  it over `files/Junguang_Jia_CV.pdf`.
+
+## Appearance
+
+- All text uses Latin Modern, the LaTeX typeface, loaded from the pinned
+  `latex.css@1.14.0` package on jsDelivr (see `_sass/_custom.scss` and
+  `$latex-serif` in `_sass/_themes.scss`).
+- Light and dark themes follow the visitor's operating-system setting; there is
+  no manual toggle. A small script in `_includes/head/custom.html` applies the
+  theme before the first paint, and a `prefers-color-scheme` rule in
+  `_sass/theme/_default_dark.scss` covers visitors without JavaScript.
 
 ## Publishing
 
@@ -112,8 +130,10 @@ Created from the Academic Pages template
 commit `3d28cd27d0551b3d9dd8132f207538355fbbc7cc` (2026-09-18).
 
 Site-specific changes are limited to: `_config.yml`, `_data/`, `_pages/`,
-`_includes/education-cards.html`, `_includes/project-cards.html`,
-`_sass/_custom.scss`, small edits in `_includes/author-profile.html`,
+`_cv/`, `files/`, `images/portrait.jpg`, `_includes/education-cards.html`,
+`_includes/project-cards.html`, `_includes/news-list.html`,
+`_sass/_custom.scss`, the font variables in `_sass/_themes.scss`, small edits
+in `_includes/author-profile.html`,
 `_includes/head.html`, `_includes/head/custom.html`, `_includes/seo.html`,
 `_includes/footer.html`, `_includes/footer/custom.html`,
 `_includes/masthead.html`, `assets/css/main.scss`,

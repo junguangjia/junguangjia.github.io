@@ -35,7 +35,9 @@ $sidebar-link-max-width     : 250px;
 $sidebar-screen-min-width   : 1024px;
 
 /* Dark theme for the site */
-html[data-theme="dark"] {
+/* Site-specific: the dark variables are a mixin so they can also be applied
+   without JavaScript (see the prefers-color-scheme fallback below). */
+@mixin dark-theme-variables {
     --global-base-color                 : #{$primary-color};
     --global-bg-color                   : #{$background};
     --global-footer-bg-color            : #{$background};
@@ -53,4 +55,16 @@ html[data-theme="dark"] {
     --global-text-color-light           : #f3f3f3;
     --global-thead-color                : #{$background-lighter};
 }
+
+html[data-theme="dark"] {
+    @include dark-theme-variables;
+}
+
+/* Site-specific: visitors without JavaScript still follow the OS setting. */
+@media (prefers-color-scheme: dark) {
+    html:not([data-theme]) {
+        @include dark-theme-variables;
+    }
+}
+
 

@@ -1,17 +1,18 @@
-# Education entries, newest first. Used on the About page (cards) and the CV page (list).
-# `degree` is shown in bold; `detail` follows it on the same line and may be omitted.
-# `note` (optional) is shown only on the CV page.
+# Education entries, newest first. Rendered as cards on the About page.
+# `degree` is shown in bold, followed by `detail`; `dates` is shown right-aligned in
+# italics (CV style); `note` (optional) is a second line.
 - institution: "Columbia University"
-  dates: "September 2025 – Present"
-  degree: "Master of Arts in Statistics"
+  dates: "Sep 2025 – Present"
+  degree: "M.A. in Statistics"
   detail: "Theory and Methods Track"
 
 - institution: "University of California, San Diego"
-  dates: "September 2020 – July 2024"
-  degree: "Bachelor of Science in Mathematics"
+  dates: "Sep 2020 – Jul 2024"
+  degree: "B.S. in Mathematics"
   detail: "Probability and Statistics"
   note: "Provost Honors (multiple quarters)"
 
 - institution: "Fudan University"
-  dates: "August 2022 – June 2023"
-  degree: "Exchange program in Probability and Statistics"
+  dates: "Aug 2022 – Jun 2023"
+  degree: "Exchange Program"
+  detail: "Probability and Statistics"

@@ -1,35 +1,24 @@
 <!-- start custom footer snippets -->
 
-<!-- Keyboard and screen-reader support for the header controls (site-specific).
+<!-- Site-specific behaviour.
      NOTE: the production build compresses HTML onto single lines, so this
      script must only use block comments, never // line comments.
-     The theme toggle is a link with role="button": activate it with Space as well
-     as Enter and expose its pressed state; expose the open/closed state of the
-     navigation and "Follow" disclosure buttons and keep it in sync after the
-     template's own resize handling. -->
+     The theme follows the operating system; see _includes/head/custom.html.
+     Expose the open/closed state of the navigation and "Follow" disclosure
+        buttons, keep it in sync after the template's resize handling, and make the
+        collapsed navigation menu keyboard friendly and dismissible. -->
 <script>
   (function () {
-    var root = document.documentElement;
-    var toggle = document.querySelector('#theme-toggle a');
     var nav = document.getElementById('site-nav');
     var navBtn = document.querySelector('#site-nav > button');
     var hidden = document.querySelector('#site-nav .hidden-links');
     var followBtn = document.querySelector('.author__urls-wrapper button');
     var urls = document.querySelector('.author__urls');
-    function syncToggle() {
-      if (toggle) { toggle.setAttribute('aria-pressed', root.getAttribute('data-theme') === 'dark' ? 'true' : 'false'); }
-    }
     function syncNav() {
       if (navBtn && hidden) { navBtn.setAttribute('aria-expanded', hidden.classList.contains('hidden') ? 'false' : 'true'); }
     }
     function syncFollow() {
       if (followBtn && urls) { followBtn.setAttribute('aria-expanded', getComputedStyle(urls).display === 'none' ? 'false' : 'true'); }
-    }
-    if (toggle) {
-      toggle.addEventListener('keydown', function (e) {
-        if (e.key === ' ' || e.key === 'Spacebar') { e.preventDefault(); toggle.click(); }
-      });
-      new MutationObserver(syncToggle).observe(root, { attributes: true, attributeFilter: ['data-theme'] });
     }
     function navOpen() { return hidden && !hidden.classList.contains('hidden'); }
     function closeNav() { if (navOpen() && navBtn) { navBtn.click(); } }
@@ -68,7 +57,7 @@
         syncNav(); syncFollow();
       }, 50);
     });
-    window.addEventListener('load', function () { syncToggle(); syncNav(); syncFollow(); });
+    window.addEventListener('load', function () { syncNav(); syncFollow(); });
   })();
 </script>
 

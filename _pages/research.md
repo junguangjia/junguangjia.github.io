@@ -5,7 +5,7 @@ description: "Academic and independent projects by Junguang Jia, including a cou
 author_profile: true
 ---
 
-My interests are in probability theory, computational statistics, and statistical machine learning. Academic coursework projects are listed separately from independent technical work.
+I am broadly interested in theoretical statistics, machine learning, diffusion models, optimization, and artificial intelligence. Academic coursework projects are listed separately from independent technical work.
 
 ## Academic Projects
 
