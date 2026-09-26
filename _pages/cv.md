@@ -17,7 +17,8 @@ redirect_from:
 
 {% for entry in site.data.education %}
 * **{{ entry.institution }}**, {{ entry.dates }}<br>
-  {{ entry.degree }}{% if entry.detail %}, {{ entry.detail }}{% endif %}
+  {{ entry.degree }}{% if entry.detail %}, {{ entry.detail }}{% endif %}{% if entry.note %}<br>
+  {{ entry.note }}{% endif %}
 {% endfor %}
 
 ## Research Interests
@@ -25,6 +26,28 @@ redirect_from:
 * Probability theory
 * Computational statistics
 * Statistical machine learning
+
+## Selected Coursework
+
+**Ph.D.-level coursework, Columbia University**
+
+* Computational Statistics (STAT GR6104)
+* Probabilistic Models and Machine Learning (STCS GR6701), in progress
+* Optimization I (IEOR E6613), in progress
+
+**Advanced statistics, Columbia University**
+
+* Honors Probability Theory
+* Honors Statistical Inference
+* Honors Linear Regression Models
+* Bayesian Statistics
+* Stochastic Processes – Applications I
+* Time Series Analysis
+* Unsupervised Learning, in progress
+
+**Mathematics, UC San Diego**
+
+* Introduction to Analysis II
 
 ## Projects
 
@@ -39,13 +62,24 @@ redirect_from:
 
 See [Research & Projects]({{ base_path }}/research/) for descriptions.
 
+## Work Experience
+
+{% for job in site.data.experience %}
+* **{{ job.organization }}**, {{ job.location }}, {{ job.dates }}<br>
+  {{ job.role }}
+{% for bullet in job.bullets %}
+  * {{ bullet }}
+{% endfor %}
+{% endfor %}
+
 ## Technical Skills
 
-* Julia (statistical computing and reproducible experiments)
-* TypeScript and JavaScript (Next.js/React, Node.js)
-* PostgreSQL
+* **Programming:** Python, R, SQL, Julia, TypeScript
+* **Web and data:** React, Next.js, Node.js, PostgreSQL, Apache Spark
+* **Cloud and DevOps:** AWS (database services), Docker, Linux, GitHub Actions
+* **Tools:** Git, Tableau, LaTeX
 
 ## Contact
 
-* Email: [jj3445@columbia.edu](mailto:jj3445@columbia.edu)
+* Email: [junguang.jia@columbia.edu](mailto:junguang.jia@columbia.edu)
 * GitHub: [github.com/junguangjia](https://github.com/junguangjia)

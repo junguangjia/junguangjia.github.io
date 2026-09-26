@@ -57,7 +57,8 @@ so inspect the files directly rather than serving `_site/` with another server.
 - **Projects:** edit `_data/projects.yml`. Entries under `academic:` and
   `independent:` appear on the Research & Projects page and are summarized on
   the CV page. Only add `links` for real, public URLs.
-- **CV text (interests, skills, contact):** edit `_pages/cv.md`.
+- **Work experience:** edit `_data/experience.yml` (shown on the CV page).
+- **CV text (interests, coursework, skills, contact):** edit `_pages/cv.md`.
 - **Math:** MathJax is not loaded. If a page needs LaTeX, add the MathJax
   script back to `_includes/footer/custom.html`.
 
@@ -66,12 +67,11 @@ nothing on the site should claim publications, awards, or results that do not ex
 
 ## Portrait
 
-The sidebar is text-only until a portrait is added. To add one:
-
-1. Create a web-sized copy (roughly 400×400 px, JPEG or PNG) with metadata
-   stripped, and keep the original outside this repository.
-2. Save the copy as, for example, `images/portrait.jpg`.
-3. Set `avatar: "portrait.jpg"` in the `author:` block of `_config.yml`.
+The sidebar shows `images/portrait.jpg` (400×400 px, metadata stripped), set by
+`avatar: "portrait.jpg"` in the `author:` block of `_config.yml`. To replace it,
+save a new web-sized square copy (roughly 400×400 px) with metadata stripped at
+the same path, and keep the original photo outside this repository. Setting
+`avatar` to empty gives a text-only sidebar.
 
 ## CV PDF
 

@@ -32,6 +32,8 @@ See `README.md` for editing instructions.
   drafts, identity documents, phone numbers, home addresses, credentials, or
   original (unreviewed) CV files. Only a reviewed, public-ready CV belongs at
   `files/Junguang_Jia_CV.pdf`; keep that path stable.
+- Do not publish GPA, GRE scores, course grades, or a phone number unless the
+  owner explicitly asks. The public email is junguang.jia@columbia.edu.
 - Only add a portrait that the site owner explicitly supplies.
 - Keep customizations small and documented. Prefer editing `_config.yml`,
   `_data/*.yml`, `_pages/*.md`, and `_sass/_custom.scss` over changing template

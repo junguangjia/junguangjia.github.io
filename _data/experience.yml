@@ -1,0 +1,33 @@
+# Work experience, newest first. Shown on the CV page.
+- organization: "Mobalytics"
+  role: "Data Analyst, Data Department"
+  location: "California, USA"
+  dates: "July 2023 – September 2023"
+  bullets:
+    - "Analyzed demographic and player-behavior data across three games to study engagement and personalization opportunities."
+    - "Cleaned and prepared data using SQL; applied correlation and regression analysis to price, score rank, and ownership metrics."
+    - "Created Tableau visualizations and player-segmentation analyses; translated findings into recommendations for the marketing team."
+
+- organization: "Shanghai Dingbang International Trading Co., Ltd."
+  role: "Financial Assistant, Production Statistics Department"
+  location: "Shanghai"
+  dates: "September 2022 – December 2022"
+  bullets:
+    - "Maintained production-statistics records and source documentation; distributed report preparation across regular intervals to reduce end-of-period workloads."
+    - "Compiled daily production reports to track changes and identify deviations; managed employee salary settlements."
+
+- organization: "Hua An Securities"
+  role: "Investment Research Analyst, Investment Research Department"
+  location: "Shanghai"
+  dates: "July 2022 – September 2022"
+  bullets:
+    - "Conducted company and industry analysis in the catalyst sector, synthesizing company information, market data, and industry trends."
+    - "Applied multiple linear regression and principal component analysis to interpret market dynamics and support investment recommendations."
+
+- organization: "Shanghai Yunyi Huan Yu Technology Co., Ltd."
+  role: "R&D Assistant, Data Analysis Department"
+  location: "Shanghai"
+  dates: "June 2021 – August 2021"
+  bullets:
+    - "Supported data integration, model analysis, and validation using Python and Spark for O2O and SaaS platforms."
+    - "Contributed data processing, verification, and technical coordination to a SaaS platform serving small and medium-sized enterprises and e-commerce businesses."

@@ -11,7 +11,7 @@ redirect_from:
 
 I am an M.A. student in Statistics at Columbia University, on the Theory and Methods track. My interests include probability theory, computational statistics, and statistical machine learning. Previously, I received a B.S. in Mathematics, with a specialization in Probability and Statistics, from the University of California, San Diego.
 
-You can reach me at [jj3445@columbia.edu](mailto:jj3445@columbia.edu).
+You can reach me at [junguang.jia@columbia.edu](mailto:junguang.jia@columbia.edu).
 
 ## Education
 

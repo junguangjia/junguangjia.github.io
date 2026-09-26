@@ -15,17 +15,17 @@ baseurl                  : "" # root-level user site, so this stays empty
 repository               : "junguangjia/junguangjia.github.io"
 
 # Site Author - controls the left-hand sidebar (see _includes/author-profile.html).
-# Blank fields are not shown. Leave `avatar` empty for a text-only sidebar; to add a
-# portrait, place the image in /images/ and set `avatar` to its filename.
+# Blank fields are not shown. `avatar` is a file in /images/; leave it empty for a
+# text-only sidebar.
 author:
-  avatar           :
+  avatar           : "portrait.jpg"
   name             : "Junguang Jia"
   pronouns         :
   bio              : "M.A. student in Statistics, Theory and Methods Track"
   location         : "New York, NY"
   employer         : "Columbia University"
   uri              :
-  email            : "jj3445@columbia.edu"
+  email            : "junguang.jia@columbia.edu"
   github           : "junguangjia"
 
 # Site Settings
