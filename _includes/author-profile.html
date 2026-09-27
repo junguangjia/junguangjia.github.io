@@ -22,7 +22,7 @@
     <p class="author__name">{{ author_name }}</p>
     {% if t.name_reading %}<p class="author__name-reading">{{ t.name_reading }}</p>{% endif %}
     {% assign author_pronouns = t.pronouns | default: author.pronouns %}{% if author_pronouns %}<p class="author__pronouns">{{ author_pronouns }}</p>{% endif %}
-    {% assign author_bio = t.memo | default: author.bio %}{% if author_bio %}<p class="author__bio">{{ author_bio }}</p>{% endif %}
+    {% assign author_bio = t.memo | default: author.bio %}{% if author_bio %}<p class="author__bio" data-nosnippet>{{ author_bio }}</p>{% endif %}
   </div>
 
   <div class="author__urls-wrapper">

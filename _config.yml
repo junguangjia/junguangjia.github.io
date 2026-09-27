@@ -43,6 +43,8 @@ atom_feed:
 
 # SEO / Social
 og_description           : *description
+og_image                 : "portrait.jpg" # link previews (og:image); see _includes/seo.html
+# google_site_verification : "" # Search Console token (URL-prefix property), added when the owner supplies it
 social:
   type                   : Person
   name                   : *name

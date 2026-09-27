@@ -13,6 +13,8 @@
 {% assign cv_pdf = site.static_files | where: "path", "/files/Junguang_Jia_CV.pdf" | first %}
 {% if cv_pdf %}
 {% assign cv_date = t.cv_date | default: t_en.cv_date %}{% capture cv_date_html %}<span class="cv-date">{{ cv_date }}</span>{% endcapture %}{% assign cv_label = t.cv_download | default: t_en.cv_download | replace: "{date}", cv_date_html %}
+<p>{{ t.cv_intro | default: t_en.cv_intro }}</p>
+
 <p class="cv-download"><a href="{{ base_path }}/files/Junguang_Jia_CV.pdf">{{ cv_label }}</a>{% if i18n_lang != "en" %} <span class="cv-note">{{ t.cv_english_note }}</span>{% endif %}</p>
 
 <div class="cv-embed">

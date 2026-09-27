@@ -88,14 +88,39 @@
   <link rel="next" href="{{ paginator.next_page_path | prepend: seo_url }}">
 {% endif %}
 
+{% comment %}
+  Structured data (https://developers.google.com/search/docs/appearance/site-names):
+  a WebSite entity on the English home page gives Google the site name, and a
+  Person entity describes the owner. Only facts from the site data are used.
+{% endcomment %}
 {% if site.social %}
+  {% assign home_url = site.url | append: site.baseurl | append: "/" %}
+  {% assign person_names = "" | split: "" %}{% assign main_name_dc = site.author.name | downcase %}{% for l in site.data.languages %}{% assign n = site.data.i18n[l.code].name %}{% if n %}{% assign n_dc = n | downcase %}{% if n_dc != main_name_dc %}{% unless person_names contains n %}{% assign person_names = person_names | push: n %}{% endunless %}{% endif %}{% endif %}{% endfor %}
   <script type="application/ld+json">
     {
-      "@context" : "http://schema.org",
-      "@type" : "{% if site.social.type %}{{ site.social.type }}{% else %}Person{% endif %}",
-      "name" : "{{ site.social.name | default: site.name }}",
-      "url" : {{ seo_url | jsonify }},
-      "sameAs" : {{ site.social.links | jsonify }}
+      "@context": "https://schema.org",
+      "@graph": [
+        {% if page.url == "/" %}{
+          "@type": "WebSite",
+          "@id": {{ home_url | append: "#website" | jsonify }},
+          "name": {{ site.title | jsonify }},
+          "url": {{ home_url | jsonify }},
+          "inLanguage": ["en", "fr", "ja", "zh-Hans"],
+          "publisher": { "@id": {{ home_url | append: "#person" | jsonify }} }
+        },{% endif %}
+        {
+          "@type": "Person",
+          "@id": {{ home_url | append: "#person" | jsonify }},
+          "name": {{ site.author.name | jsonify }},
+          "alternateName": {{ person_names | jsonify }},
+          "url": {{ home_url | jsonify }},
+          "image": {{ site.author.avatar | prepend: "/images/" | prepend: site.url | jsonify }},
+          "description": "M.A. student in Statistics at Columbia University.",
+          "affiliation": { "@type": "CollegeOrUniversity", "name": "Columbia University", "url": "https://www.columbia.edu/" },
+          "alumniOf": { "@type": "CollegeOrUniversity", "name": "University of California, San Diego", "url": "https://ucsd.edu/" },
+          "sameAs": {{ site.social.links | jsonify }}
+        }
+      ]
     }
   </script>
 {% endif %}
@@ -117,7 +142,7 @@
 <!-- Open Graph protocol data (https://ogp.me/), used by social media -->
 {% include i18n.html %}<meta property="og:locale" content="{{ lang_meta.og_locale | default: "en_US" }}">
 <meta property="og:site_name" content="{{ site_title_l }}"> 
-<meta property="og:title" content="{{ page.title | default: site_title_l | markdownify | strip_html | strip_newlines | escape_once }}">
+<meta property="og:title" content="{{ seo_title | default: site_title_l }}">
 {% if page.date %}
   <meta property="og:type" content="article">
 {% else %}
@@ -132,20 +157,13 @@
   <meta property="og:url" content="{{ page.url | prepend: seo_url | replace: "/index.html", "/" }}">
 {% endif %}
 
-{% if site.og_image %}
-  <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "Organization",
-      "url": {{ seo_url | jsonify }},
-      "logo": {{ site.og_image | prepend: "/images/" | prepend: base_path | jsonify }}
-    }
-  </script>
-{% endif %}
-
 {% if page.header.image %}
   <meta property="og:image" content="{% if page.header.image contains "://" %}{{ page.header.image }}{% else %}{{ page.header.image | prepend: "/images/" | prepend: base_path }}{% endif %}">
 {% elsif page.header.overlay_image %}
   <meta property="og:image" content="{% if page.header.overlay_image contains "://" %}{{ page.header.overlay_image }}{% else %}{{ page.header.overlay_image | prepend: "/images/" | prepend: base_path }}{% endif %}">
+{% elsif site.og_image %}
+  <meta property="og:image" content="{{ site.og_image | prepend: "/images/" | prepend: site.url }}">
+  <meta property="og:image:alt" content="{{ site_title_l }}">
 {% endif %}
+{% unless site.twitter.username %}<meta name="twitter:card" content="summary">{% endunless %}
 <!-- end Open Graph protocol -->
