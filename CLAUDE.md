@@ -52,8 +52,16 @@ See `README.md` for editing instructions.
   Chinese; see README "Languages"). Any content change made in English must be
   mirrored in the `fr:`/`ja:`/`zh:` blocks of the data files and in the page
   files under `_pages/fr|ja|zh/`, or left to fall back to English; never let a
-  translation state something the English does not. Keep the owner's name in
-  Latin letters unless he supplies the Chinese characters.
+  translation state something the English does not. The owner's name per
+  language (`name` in _data/i18n.yml): Chinese 贾俊廣 (exactly as the owner
+  wrote it), Japanese 賈俊廣 with the reading （ジャ・ジュングアン） under it
+  (賈 is the Japanese form of 贾, which the Japanese web font lacks), French
+  "Junguang JIA" (surname in capitals) in the sidebar, title and footer, and
+  "Junguang Jia" in running text.
+- Teaching recordings are native YouTube iframes that load with the page and
+  play only when the visitor presses YouTube's Play button (owner's request).
+  Do not replace them with a click-to-load poster, overlay anything on the
+  player, or turn on autoplay without the owner's approval.
 - Only add a portrait that the site owner explicitly supplies.
 - Keep customizations small and documented. Prefer editing `_config.yml`,
   `_data/*.yml`, `_pages/*.md`, and `_sass/_custom.scss` over changing template

@@ -7,7 +7,7 @@ author_profile: true
 ---
 
 {% include base_path %}
-<h1 class="sr-only">Junguang Jia</h1>
+<h1 class="sr-only">{{ site.data.i18n.fr.name }}</h1>
 
 Je suis Junguang Jia, étudiant en M.A. de statistique à la Graduate School of Arts and Sciences de l’Université Columbia, dans le parcours Théorie et méthodes. Je m’intéresse, au sens large, à la statistique théorique, à l’apprentissage automatique, aux modèles de diffusion, à l’optimisation et à l’intelligence artificielle.
 

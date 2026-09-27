@@ -64,6 +64,12 @@ English is the template; every other language mirrors it page for page.
   Source Serif 4 / Source Sans 3 for Latin letters and digits and add Noto
   Serif and Noto Sans JP / SC (the Source Han families), loaded only on those
   pages from pinned Fontsource packages; CJK text is never set in italics.
+- **Name:** `name` in each language block of `_data/i18n.yml` sets the name in
+  the sidebar, page titles and footer (English uses `author.name`): 贾俊廣 in
+  Chinese, 賈俊廣 in Japanese (賈 is the Japanese form of 贾) with the katakana
+  reading from `name_reading` under it, and "Junguang JIA" in French (the
+  French convention of writing the family name in capitals). Page prose uses
+  the same forms, except French running text, which keeps "Junguang Jia".
 - **CV:** the PDF is English only; the other languages say so under the link.
 
 ## Local preview
@@ -219,7 +225,7 @@ Site-specific changes are limited to: `_config.yml`, `_data/`, `_pages/`
 `_includes/project-cards.html`, `_includes/log-list.html`,
 `_includes/teaching-videos.html`, `_includes/teaching-sections.html`,
 `_includes/cv-body.html`, `_includes/i18n.html`,
-`_includes/lang-fallback.html`, `assets/js/teaching-videos.js`,
+`_includes/lang-fallback.html`,
 `_sass/_custom.scss`, the font variables in `_sass/_themes.scss`, small edits
 in `_layouts/default.html` (the page `lang`), `_includes/author-profile.html`,
 `_includes/head.html`, `_includes/head/custom.html`, `_includes/seo.html`,
@@ -263,18 +269,27 @@ or revise the research project as part of an ordinary website edit.
 
 `_data/teaching.yml` holds `videos`, `notes`, and optional verified `positions`.
 Each recording has a title, quarter, role, institution, descriptive course label,
-YouTube ID, poster, and short description. The owner confirmed UC San Diego TA
+YouTube ID, a reference thumbnail (not displayed), and short description. The owner confirmed UC San Diego TA
 recordings for Linear Algebra in Fall 2020 and Computer Science / Java in Fall 2023.
 Display quarters only; do not substitute thumbnail timestamps or upload dates.
 No unconfirmed course numbers or faculty names should be added.
 
-`assets/js/teaching-videos.js` upgrades poster links to keyboard-accessible buttons.
-A click replaces that poster with the official privacy-enhanced YouTube iframe in
-place and requests playback. No player is loaded or autoplayed on page load.
-The iframe sends its actual origin via the referrer policy, supports inline mobile
-playback and fullscreen, and preserves native controls. Browser policies may
-require pressing Play in the player. The plain YouTube link always remains; if
-JavaScript is unavailable, the poster is also a working YouTube link.
+Each recording is a native YouTube player: `_includes/teaching-videos.html`
+writes an ordinary iframe with its real `src` into the page, so the players
+initialize on page load (`loading="eager"`) and show YouTube's own preview and
+Play button. Playback starts only when the visitor presses Play (`autoplay=0`),
+in place on the page. The embed uses privacy-enhanced mode
+(`youtube-nocookie.com`) with `controls=1`, `playsinline=1`, `rel=0` (related
+videos come from the same channel; YouTube no longer lets sites turn them off)
+and `hl` set to the page language, and sends the site origin as the Referer
+(`referrerpolicy="strict-origin-when-cross-origin"`), which YouTube requires.
+Because the players load with the page, requests to YouTube happen before any
+click; buffering after Play is still possible. Nothing may cover the player or
+its controls, and the player area is at least 200 × 200 px. The "Watch on
+YouTube" link under each player is the fallback if embedding is blocked. The
+earlier click-to-load poster was replaced at the owner's request; do not bring
+it back without the owner's approval. The poster images in `images/teaching/`
+are no longer displayed.
 
 Add notes only after the owner supplies a public-ready file or URL; empty
 notes/positions are not rendered. Transcripts are not published.

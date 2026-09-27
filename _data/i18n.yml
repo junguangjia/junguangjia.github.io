@@ -1,4 +1,6 @@
 # Interface strings for each language (see _data/languages.yml). Generated
+# `name` is how the owner's name is written in that language (English uses
+# the author name in _config.yml); `name_reading` is shown under it.
 # from the English template; edit freely. Keys under `h` are section
 # headings, keys under `log` are Log entry type labels, and footer_credit
 # is a template whose {jekyll}, {academicpages} and {mm} become links.
@@ -18,8 +20,6 @@ en:
   instructor: "instructor"
   teaching_placeholder: "Teaching assistant positions and course notes will be listed here."
   watch_on_youtube: "Watch on YouTube"
-  play_video: "▶ Play video"
-  play_on_page: "Play on this page"
   cv_download: "Download CV here (Last update: {date})"
   cv_date: "Sep. 2026"
   cv_english_note: "The CV is written in English."
@@ -42,6 +42,7 @@ en:
 
 fr:
   label_sep: " : "
+  name: "Junguang JIA"
   nav_main: "Menu principal"
   credit_sep: ", "
   site_updated: "Dernière mise à jour du site : {date}"
@@ -59,8 +60,6 @@ fr:
   instructor: "enseignant"
   teaching_placeholder: "Les postes d’assistant d’enseignement et les notes de cours figureront ici."
   watch_on_youtube: "Regarder sur YouTube"
-  play_video: "▶ Lire la vidéo"
-  play_on_page: "Lire sur cette page"
   cv_download: "Télécharger le CV ici (dernière mise à jour : {date})"
   cv_date: "sept. 2026"
   cv_english_note: "Le CV est rédigé en anglais."
@@ -83,6 +82,8 @@ fr:
 
 ja:
   label_sep: "："
+  name: "賈俊廣"
+  name_reading: "（ジャ・ジュングアン）"
   nav_main: "メインメニュー"
   credit_sep: "。"
   site_updated: "サイト最終更新日：{date}"
@@ -100,12 +101,10 @@ ja:
   instructor: "担当教員"
   teaching_placeholder: "ティーチング・アシスタントの担当歴と講義ノートを、ここに掲載する予定です。"
   watch_on_youtube: "YouTubeで視聴"
-  play_video: "▶ 動画を再生"
-  play_on_page: "このページで再生"
   cv_download: "CVのダウンロードはこちら（最終更新：{date}）"
   cv_date: "2026年9月"
   cv_english_note: "CVは英語で書かれています。"
-  cv_frame_title: "Junguang JiaのCV（PDF）"
+  cv_frame_title: "賈俊廣のCV（PDF）"
   footer_credit: "{jekyll}と{academicpages}（{mm}のフォーク）で作成。"
   h:
     education: "学歴"
@@ -124,6 +123,7 @@ ja:
 
 zh:
   label_sep: "："
+  name: "贾俊廣"
   nav_main: "主菜单"
   credit_sep: "。"
   site_updated: "本站最近更新于 {date}"
@@ -141,12 +141,10 @@ zh:
   instructor: "授课教师"
   teaching_placeholder: "助教经历与课程笔记将在此列出。"
   watch_on_youtube: "在 YouTube 上观看"
-  play_video: "▶ 播放视频"
-  play_on_page: "在本页播放"
   cv_download: "点此下载简历（最近更新：{date}）"
   cv_date: "2026年9月"
   cv_english_note: "简历为英文版。"
-  cv_frame_title: "Junguang Jia 的简历（PDF）"
+  cv_frame_title: "贾俊廣的简历（PDF）"
   footer_credit: "本站基于 {jekyll} 与 {academicpages} 构建，后者派生自 {mm}。"
   h:
     education: "教育背景"

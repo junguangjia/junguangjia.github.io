@@ -1,4 +1,6 @@
 {% include base_path %}
+{% include i18n.html %}
+{% assign site_title_l = t.name | default: site.title %}
 
 <!-- begin SEO -->
 {% if site.url %}
@@ -7,7 +9,7 @@
 {% assign seo_url = seo_url | default: site.github.url %}
 
 {% if page.title %}
-  {% assign seo_title = page.title | append: " " | append: site.title_separator | append: " " | append: site.title %}
+  {% assign seo_title = page.title | append: " " | append: site.title_separator | append: " " | append: site_title_l %}
 {% endif %}
 
 {% if seo_title %}
@@ -18,7 +20,7 @@
   {% assign canonical_url = page.url | replace: "index.html", "" | prepend: site.url %}
 {% endif %}
 
-<title>{{ seo_title | default: site.title }}{% if paginator %}{% unless paginator.page == 1 %} {{ site.title_separator }} {{ site.data.ui-text[site.locale].page | default: "Page" }} {{ paginator.page }}{% endunless %}{% endif %}</title>
+<title>{{ seo_title | default: site_title_l }}{% if paginator %}{% unless paginator.page == 1 %} {{ site.title_separator }} {{ site.data.ui-text[site.locale].page | default: "Page" }} {{ paginator.page }}{% endunless %}{% endif %}</title>
 
 {% assign seo_description = page.description | default: page.excerpt | default: site.description %}
 {% if seo_description %}
@@ -114,8 +116,8 @@
 
 <!-- Open Graph protocol data (https://ogp.me/), used by social media -->
 {% include i18n.html %}<meta property="og:locale" content="{{ lang_meta.og_locale | default: "en_US" }}">
-<meta property="og:site_name" content="{{ site.title }}"> 
-<meta property="og:title" content="{{ page.title | default: site.title | markdownify | strip_html | strip_newlines | escape_once }}">
+<meta property="og:site_name" content="{{ site_title_l }}"> 
+<meta property="og:title" content="{{ page.title | default: site_title_l | markdownify | strip_html | strip_newlines | escape_once }}">
 {% if page.date %}
   <meta property="og:type" content="article">
 {% else %}

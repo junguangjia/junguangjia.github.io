@@ -3,7 +3,7 @@ permalink: /ja/research/
 lang: ja
 ref: research
 title: "研究・プロジェクト"
-description: "Junguang Jiaによる学術プロジェクトと自主的なプロジェクト。確率的トレース推定に関する授業プロジェクトや、文化遺産カタログ・プラットフォームArtVennなどを掲載。"
+description: "賈俊廣による学術プロジェクトと自主的なプロジェクト。確率的トレース推定に関する授業プロジェクトや、文化遺産カタログ・プラットフォームArtVennなどを掲載。"
 author_profile: true
 ---
 

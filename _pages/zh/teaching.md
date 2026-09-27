@@ -3,7 +3,7 @@ permalink: /zh/teaching/
 lang: zh
 ref: teaching
 title: "教学"
-description: "Junguang Jia 在加州大学圣地亚哥分校担任助教时的线性代数与 Java 授课录像，以及学习资料。"
+description: "贾俊廣在加州大学圣地亚哥分校担任助教时的线性代数与 Java 授课录像，以及学习资料。"
 author_profile: true
 ---
 

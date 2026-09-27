@@ -3,7 +3,7 @@ permalink: /zh/log/
 lang: zh
 ref: log
 title: "动态"
-description: "Junguang Jia 的动态记录：研究与项目进展、读过的论文以及里程碑，按时间倒序排列。"
+description: "贾俊廣的动态记录：研究与项目进展、读过的论文以及里程碑，按时间倒序排列。"
 author_profile: true
 ---
 

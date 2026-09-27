@@ -2,6 +2,8 @@
 # Course labels are descriptive; no unconfirmed course numbers are published.
 # Do not infer dates from thumbnail timestamps or YouTube upload dates.
 # Notes appear only when a real, public-ready URL is provided.
+# Videos are shown as native YouTube players (see _includes/teaching-videos.html);
+# `thumbnail` is kept for reference and is not displayed.
 positions: []
 notes: []
 

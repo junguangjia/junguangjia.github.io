@@ -3,7 +3,7 @@ permalink: /ja/log/
 lang: ja
 ref: log
 title: "活動記録"
-description: "Junguang Jiaによる随時更新の活動記録。研究・プロジェクトの進捗、読んだ論文、節目となる出来事を新しい順に掲載。"
+description: "賈俊廣による随時更新の活動記録。研究・プロジェクトの進捗、読んだ論文、節目となる出来事を新しい順に掲載。"
 author_profile: true
 ---
 

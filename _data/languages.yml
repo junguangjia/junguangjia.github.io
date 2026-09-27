@@ -3,24 +3,28 @@
 # strings in _data/i18n.yml and in the `<code>:` blocks of the content data
 # files. `prefix` is the URL prefix of that language's pages.
 - code: en
+  youtube_hl: en
   name: English
   short: EN
   html_lang: en
   og_locale: en_US
   prefix: ""
 - code: fr
+  youtube_hl: fr
   name: Français
   short: FR
   html_lang: fr
   og_locale: fr_FR
   prefix: /fr
 - code: ja
+  youtube_hl: ja
   name: 日本語
   short: 日本語
   html_lang: ja
   og_locale: ja_JP
   prefix: /ja
 - code: zh
+  youtube_hl: zh-CN
   name: 中文
   short: 中文
   html_lang: zh-Hans

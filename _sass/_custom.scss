@@ -356,6 +356,14 @@ body {
     }
   }
 
+  /* Reading of the name (katakana on Japanese pages), under the name. */
+  .author__name-reading {
+    margin: 0.1rem 0 0.2rem;
+    font-size: 0.86rem;
+    color: var(--site-muted-color);
+    letter-spacing: 0.04em;
+  }
+
   .author__pronouns {
     margin: 0.15rem 0 0;
     color: var(--site-muted-color);
@@ -410,7 +418,7 @@ body {
   .sidebar .author__avatar {
     display: block;
     grid-column: 1;
-    grid-row: 1 / span 2;
+    grid-row: 1 / span 3;
     width: 3.25rem;
   }
 
@@ -424,21 +432,28 @@ body {
     align-self: end;
   }
 
-  .sidebar .author__pronouns {
+  /* Row 2 is the name reading (Japanese pages only; empty rows collapse). */
+  .sidebar .author__name-reading {
     grid-column: 2;
     grid-row: 2;
+    margin: 0;
+  }
+
+  .sidebar .author__pronouns {
+    grid-column: 2;
+    grid-row: 3;
     align-self: start;
   }
 
   .sidebar .author__bio {
     grid-column: 1 / -1;
-    grid-row: 3;
+    grid-row: 4;
   }
 
   .sidebar .author__urls-wrapper {
     display: block;
     grid-column: 3;
-    grid-row: 1 / span 2;
+    grid-row: 1 / span 3;
   }
 }
 
@@ -791,14 +806,13 @@ a:focus-visible,
   border: 0;
 }
 
-/* Teaching recordings: click-to-load, same-page YouTube playback. */
+/* Teaching recordings: native YouTube players, loaded with the page. The box
+   reserves a 16:9 area before the player loads (no layout jump) and never gets
+   shorter than YouTube's 200px minimum; on very narrow screens it becomes
+   taller than 16:9 and YouTube letterboxes the video inside. Only the Teaching
+   players are affected (the CV iframe has its own rules). */
 .teaching-example { margin-bottom: 2.2rem; }
 .teaching-video { position: relative; width: 100%; aspect-ratio: 16 / 9; min-height: 200px; margin: 0.9rem 0 0.45rem; }
-.teaching-video-link { position: absolute; inset: 0; display: block; }
-.teaching-video-link img { display: block; width: 100%; height: 100%; object-fit: contain; }
-.teaching-video-label { position: absolute; right: 0.7rem; bottom: 0.7rem; padding: 0.35rem 0.65rem; background: #161616; color: #fff; font-family: $sans-serif; font-size: 0.85rem; }
-.teaching-video-link:focus-visible { outline: 2px solid var(--global-text-color); outline-offset: 3px; }
-.teaching-video-button { width: 100%; height: 100%; border: 0; padding: 0; margin: 0; border-radius: 0; background: #000; cursor: pointer; }
 .teaching-video iframe { position: absolute; inset: 0; display: block; width: 100%; height: 100%; border: 0; }
 
 /* --------------------------------------------------------------------------

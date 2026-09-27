@@ -3,7 +3,7 @@ permalink: /zh/research/
 lang: zh
 ref: research
 title: "研究与项目"
-description: "Junguang Jia 的学术项目与独立项目，包括一项关于随机迹估计的课程项目，以及 ArtVenn 文化遗产编目平台。"
+description: "贾俊廣的学术项目与独立项目，包括一项关于随机迹估计的课程项目，以及 ArtVenn 文化遗产编目平台。"
 author_profile: true
 ---
 
