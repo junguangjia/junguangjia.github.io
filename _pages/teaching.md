@@ -1,14 +1,14 @@
 ---
 permalink: /teaching/
 title: "Teaching"
-description: "Recorded explanations and learning materials in mathematics and computing by Junguang Jia."
+description: "Recorded TA teaching in linear algebra and Java at UC San Diego, with learning materials by Junguang Jia."
 author_profile: true
 ---
 
-I use worked examples and visual explanations to make mathematical and computational ideas easier to follow. The excerpts below were recorded during pandemic-era remote learning.
+The move to remote teaching during the pandemic meant that some of my TA sessions were recorded. I’m glad to have kept a few excerpts from my teaching at UC San Diego.
 
 {% if site.data.teaching.videos.size > 0 %}
-## Recorded Explanations
+## Recorded TA Teaching
 
 {% include teaching-videos.html %}
 {% endif %}

@@ -1,21 +1,28 @@
-# Teaching page: recorded explanations, optional verified teaching roles, and notes.
-# Do not infer a teaching appointment, course number, or recording year from a clip.
-# Video IDs were checked against YouTube metadata; supplied transcripts are private inputs.
+# Teaching recordings: role, institution and quarters confirmed by the owner.
+# Course labels are descriptive; no unconfirmed course numbers are published.
+# Do not infer dates from thumbnail timestamps or YouTube upload dates.
 # Notes appear only when a real, public-ready URL is provided.
 positions: []
 notes: []
 
 videos:
-  - title: "Eigenvalues, Linear Independence, and Diagonalization"
+  - title: "Linear Algebra: Homework Discussion"
+    term: "Fall 2020"
+    role: "Teaching Assistant"
+    institution: "UC San Diego"
+    course: "Mathematics — Linear Algebra"
     youtube_id: "o6Dj2G5Rskk"
     thumbnail: "/images/teaching/linear-algebra.jpg"
     description: >-
-      A proof that eigenvectors associated with distinct eigenvalues are linearly
-      independent, followed by a construction of singular, diagonalizable
-      2 × 2 matrices.
-  - title: "Object Construction and References in Java"
+      A homework walkthrough on eigenvalues, linear independence, and
+      the construction of singular, diagonalizable 2 × 2 matrices.
+  - title: "Java: Constructors and Object References"
+    term: "Fall 2023"
+    role: "Teaching Assistant"
+    institution: "UC San Diego"
+    course: "Computer Science — Java"
     youtube_id: "SKSb5FuAges"
     thumbnail: "/images/teaching/java-objects.jpg"
     description: >-
-      A walkthrough of constructor calls, object references, and method evaluation,
-      using stack frames and heap diagrams to trace a small Java program.
+      A walkthrough of Java constructors, object references, and method calls,
+      using stack-frame and heap diagrams.

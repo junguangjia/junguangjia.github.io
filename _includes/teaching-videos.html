@@ -1,13 +1,18 @@
 {% comment %}
-  Owner-supplied recorded explanations with local YouTube poster snapshots.
-  Direct links do not depend on an embedded player's availability.
+  Owner-confirmed TA recordings. Links work without JavaScript; the page-specific
+  script upgrades each poster to a button that loads the official player in place.
 {% endcomment %}
 {% for video in site.data.teaching.videos %}
 <section class="entry teaching-example" aria-labelledby="video-{{ video.youtube_id }}">
-  <h3 class="entry__title" id="video-{{ video.youtube_id }}">{{ video.title | escape }}</h3>
+  <div class="entry__head">
+    <h3 class="entry__title" id="video-{{ video.youtube_id }}">{{ video.title | escape }}</h3>
+    {% if video.term %}<span class="entry__dates">{{ video.term | escape }}</span>{% endif %}
+  </div>
+  <p class="entry__meta">{{ video.role | escape }} · {{ video.institution | escape }} · {{ video.course | escape }}</p>
   <div class="entry__desc">{{ video.description | markdownify }}</div>
   <div class="teaching-video">
     <a class="teaching-video-link" href="https://www.youtube.com/watch?v={{ video.youtube_id }}"
+      data-youtube-id="{{ video.youtube_id }}" data-video-title="{{ video.title | escape }}"
       aria-label="Watch on YouTube: {{ video.title | escape }}">
       <img src="{{ video.thumbnail | relative_url }}" width="1280" height="720" loading="lazy" alt="">
       <span class="teaching-video-label" aria-hidden="true">Watch on YouTube</span>
@@ -16,3 +21,4 @@
   <p class="entry__links"><a href="https://www.youtube.com/watch?v={{ video.youtube_id }}">Watch on YouTube<span class="sr-only">: {{ video.title | escape }}</span></a></p>
 </section>
 {% endfor %}
+<script src="{{ '/assets/js/teaching-videos.js' | relative_url }}" defer></script>

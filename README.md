@@ -209,10 +209,19 @@ update those provenance fields, and retain the stable website URL. Do not rebuil
 or revise the research project as part of an ordinary website edit.
 
 `_data/teaching.yml` holds `videos`, `notes`, and optional verified `positions`.
-Recordings have a title, an eleven-character YouTube ID, and a short description.
-They use local poster images with direct YouTube links; embedded playback was
-not confirmed in the automated browser, so no third-party player is loaded.
-No autoplay or new JavaScript dependency is added. Do not infer a TA role,
-course number, or recording year from the upload date. Add notes only after the
-owner supplies a public-ready file or URL; empty notes/positions are not rendered.
-No video transcript is published as part of these changes.
+Each recording has a title, quarter, role, institution, descriptive course label,
+YouTube ID, poster, and short description. The owner confirmed UC San Diego TA
+recordings for Linear Algebra in Fall 2020 and Computer Science / Java in Fall 2023.
+Display quarters only; do not substitute thumbnail timestamps or upload dates.
+No unconfirmed course numbers or faculty names should be added.
+
+`assets/js/teaching-videos.js` upgrades poster links to keyboard-accessible buttons.
+A click replaces that poster with the official privacy-enhanced YouTube iframe in
+place and requests playback. No player is loaded or autoplayed on page load.
+The iframe sends its actual origin via the referrer policy, supports inline mobile
+playback and fullscreen, and preserves native controls. Browser policies may
+require pressing Play in the player. The plain YouTube link always remains; if
+JavaScript is unavailable, the poster is also a working YouTube link.
+
+Add notes only after the owner supplies a public-ready file or URL; empty
+notes/positions are not rendered. Transcripts are not published.
