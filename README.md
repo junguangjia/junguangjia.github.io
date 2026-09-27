@@ -13,9 +13,13 @@ hosted for free on GitHub Pages.
 | About (home)        | `_pages/about.md`      | `/`          |
 | CV                  | `_pages/cv.md`         | `/cv/`       |
 | Research & Projects | `_pages/research.md`   | `/research/` |
+| Teaching            | `_pages/teaching.md`   | `/teaching/` |
+| Log                 | `_pages/log.md`        | `/log/`      |
 | Miscellaneous       | `_pages/misc.md`       | `/misc/`     |
 
-Header links are defined in `_data/navigation.yml`.
+Header links are defined in `_data/navigation.yml`. The top bar has no site
+name; the name is shown under the portrait in the sidebar. The old `/news/`
+address redirects to `/log/`.
 
 ## Local preview
 
@@ -50,14 +54,22 @@ so inspect the files directly rather than serving `_site/` with another server.
 
 ## Editing content
 
-- **Biography:** edit the text in `_pages/about.md`.
-- **News:** edit `_data/news.yml` (newest first); it is listed at the bottom of
-  the About page.
+- **Biography:** edit the text in `_pages/about.md`. The signature under it is
+  `images/signature.png` (black ink on a transparent background; the page
+  softens it in light mode and inverts it in dark mode).
+- **Log:** edit `_data/log.yml` (newest first). Each entry has a `date`, a
+  `type` (research, project, reading, teaching, milestone, life), and a short
+  `text`; entries are grouped under year headings taken from the date. Use it
+  for project and research progress, papers read, and other news.
+- **Teaching:** edit `_data/teaching.yml` (`positions` for TA roles, `notes`
+  for course notes; put note PDFs in `files/`). While both lists are empty the
+  page shows a one-line placeholder.
 - **Miscellaneous:** edit `_pages/misc.md`.
-- **Sidebar (name, short bio, location, affiliation, email, GitHub):** edit the
-  `author:` block in `_config.yml`.
+- **Sidebar (name, pronouns, motto, location, affiliation, email, GitHub):**
+  edit the `author:` block in `_config.yml` (`bio` holds the motto).
 - **Education:** edit `_data/education.yml` (shown as plain entries on the
-  About page; dates use the CV style, e.g. `Sep 2025 – Present`).
+  About page; dates use the CV style, e.g. `Sep 2025 – Present`). `logo` names
+  a single-color file in `images/logos/`.
 - **Projects:** edit `_data/projects.yml`. Entries under `academic:` and
   `independent:` appear on the Research & Projects page. Only add `links` for
   real, public URLs.
@@ -86,9 +98,14 @@ a PDF inside a page). The public URL
   that it contains no phone number, GPA, grades, test scores, or other private
   details, and update `cv_updated` in `_pages/cv.md`.
 - The current PDF is generated from `_cv/Junguang_Jia_CV.html` (not published
-  by Jekyll): open it in Google Chrome, Print, Save as PDF, paper Letter,
-  margins Default, headers and footers off, background graphics on, and save
-  it over `files/Junguang_Jia_CV.pdf`.
+  by Jekyll): open it in Google Chrome (version 131 or later, for the page
+  numbers), Print, Save as PDF, paper Letter, margins Default, headers and
+  footers off, background graphics on, and save it over
+  `files/Junguang_Jia_CV.pdf`. Headless Chrome's `page.pdf()` with
+  `preferCSSPageSize` produces the same file.
+- The embedded viewer loads the PDF with `#navpanes=0&pagemode=none&view=FitH`
+  so Chrome, Edge, and Firefox open it without the page-thumbnail sidebar and
+  fit it to the frame width.
 
 ## Appearance
 
@@ -97,9 +114,13 @@ a PDF inside a page). The public URL
   Fontsource WOFF2 files (latin subset) from jsDelivr; the `@font-face` rules
   and the design tokens (colors, sizes, prose measure) are in
   `_sass/_custom.scss`, the font stacks in `_sass/_themes.scss`.
-- Education and project entries are plain typographic entries (no cards); prose
-  is limited to about 70 characters per line, while the CV page uses the full
-  column for the embedded PDF.
+- Layout: the top bar, the sidebar with the content, and the footer share one
+  centered container (at most 1180px wide), and the content fills the space
+  next to the sidebar, so the page has equal margins on both sides. Text is
+  16px on phones, 17px on tablets and laptops, and 18px from 1280px wide.
+- Education and project entries are plain typographic entries (no cards).
+  Education entries start with a single-color school logo drawn as a CSS mask
+  in `--site-logo-color`, so it follows the light and dark themes.
 - Light and dark themes follow the visitor's operating-system setting; there is
   no manual toggle. A small script in `_includes/head/custom.html` applies the
   theme before the first paint, and a `prefers-color-scheme` rule in
@@ -135,8 +156,9 @@ Created from the Academic Pages template
 commit `3d28cd27d0551b3d9dd8132f207538355fbbc7cc` (2026-09-18).
 
 Site-specific changes are limited to: `_config.yml`, `_data/`, `_pages/`,
-`_cv/`, `files/`, `images/portrait.jpg`, `_includes/education-cards.html`,
-`_includes/project-cards.html`, `_includes/news-list.html`,
+`_cv/`, `files/`, `images/portrait.jpg`, `images/signature.png`,
+`images/logos/`, `_includes/education-cards.html`,
+`_includes/project-cards.html`, `_includes/log-list.html`,
 `_sass/_custom.scss`, the font variables in `_sass/_themes.scss`, small edits
 in `_includes/author-profile.html`,
 `_includes/head.html`, `_includes/head/custom.html`, `_includes/seo.html`,
@@ -146,6 +168,21 @@ the `Gemfile` (with a committed `Gemfile.lock`), `.gitignore`, and this
 `README.md` plus `CLAUDE.md`. Template demo content (sample
 publications, talks, teaching, posts, portfolio, files, images, generators,
 Docker setup, and template workflows) was removed.
+
+## Credits
+
+School logos in `images/logos/` are single-color adaptations of files from
+Wikimedia Commons. The logos themselves are trademarks of their institutions.
+
+- `columbia.svg`: the crown only, from "Columbia College of Columbia University
+  Crown 2020.svg" by Acollevecchio, CC BY-SA 4.0
+  (<https://commons.wikimedia.org/wiki/File:Columbia_College_of_Columbia_University_Crown_2020.svg>).
+  This adaptation is shared under the same license.
+- `ucsd.svg`: from "Seal of the University of California, San Diego.svg",
+  public domain
+  (<https://commons.wikimedia.org/wiki/File:Seal_of_the_University_of_California,_San_Diego.svg>).
+- `fudan.svg`: from "Fudan University Logo.svg", public domain
+  (<https://commons.wikimedia.org/wiki/File:Fudan_University_Logo.svg>).
 
 ## License
 

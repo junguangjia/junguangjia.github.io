@@ -1,0 +1,25 @@
+# Teaching page (/teaching/). Both lists may stay empty; the page then shows a
+# short placeholder sentence. Newest first.
+#
+# positions: teaching assistant (or other teaching) roles
+#   - course: "Probability Theory"          # required
+#     code: "STAT GU4001"                     # optional
+#     term: "Fall 2026"                       # optional, shown right-aligned
+#     role: "Teaching Assistant"              # optional
+#     institution: "Columbia University"      # optional
+#     instructor: "Instructor name"           # optional
+#     description: "One or two sentences."    # optional, Markdown allowed
+#     links:                                  # optional
+#       - label: "Course page"
+#         url: "https://..."
+#
+# notes: course notes, recitation handouts, solutions (put PDFs in files/)
+#   - title: "Recitation notes on conditional expectation"   # required
+#     url: "/files/notes/conditional-expectation.pdf"        # optional
+#     course: "STAT GU4001"                                   # optional
+#     date: "Oct 2026"                                        # optional
+#     description: "One line."                                # optional
+
+positions: []
+
+notes: []

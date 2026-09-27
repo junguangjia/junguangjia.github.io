@@ -1,18 +1,23 @@
 # Education entries, newest first. Rendered as plain entries on the About page:
-# institution with `dates` right-aligned, then `degree`, `detail`, and an optional
-# `note`, each on its own line.
+# a single-color school logo, the institution with `dates` right-aligned, then
+# `degree` and `detail`, each on its own line (`note` adds an optional line).
+# `logo` is a file in images/logos/; it is drawn as a CSS mask in the page's
+# muted text color, so any single-color SVG or transparent PNG works.
+
 - institution: "Columbia University"
+  logo: "columbia.svg"
   dates: "Sep 2025 – Present"
   degree: "M.A. in Statistics"
-  detail: "Theory and Methods Track"
+  detail: "Theory and Methods Honors Track"
 
 - institution: "University of California, San Diego"
+  logo: "ucsd.svg"
   dates: "Sep 2020 – Jul 2024"
   degree: "B.S. in Mathematics"
   detail: "Probability and Statistics"
-  note: "Provost Honors (multiple quarters)"
 
 - institution: "Fudan University"
+  logo: "fudan.svg"
   dates: "Aug 2022 – Jun 2023"
-  degree: "Exchange Program"
-  detail: "Probability and Statistics"
+  degree: "B.S. in Statistics"
+  detail: "Exchange term"

@@ -52,6 +52,7 @@ $latin-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+0
   --global-masthead-link-color: #3a3a3a;
   --global-masthead-link-color-hover: #2f617c;
   --global-fig-caption-color: #6a6a6a;
+  --site-logo-color: #555555;           /* school logos (decorative) */
 }
 
 @mixin site-dark-overrides {
@@ -70,6 +71,7 @@ $latin-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+0
   --global-masthead-link-color: #d0d0d0;
   --global-masthead-link-color-hover: #8fb6d0;
   --global-fig-caption-color: #a3a3a3;
+  --site-logo-color: #b8b8b8;
 }
 
 :root[data-theme="dark"] {
@@ -84,7 +86,8 @@ $latin-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+0
 }
 
 /* --------------------------------------------------------------------------
-   Base typography: 16px on phones, 17px from tablets up (template: 18px).
+   Base typography: 16px on phones, 17px on tablets and small laptops, 18px
+   on wide screens (template: 18px from 1280px up as well).
    -------------------------------------------------------------------------- */
 html {
   font-size: 16px;
@@ -93,9 +96,13 @@ html {
     font-size: 17px;
   }
 
+  @include breakpoint($x-large) {
+    font-size: 18px;
+  }
+
   /* Keep keyboard-focused elements clear of the fixed header when the browser
      scrolls them into view. */
-  scroll-padding-top: 80px;
+  scroll-padding-top: 96px;
 }
 
 body {
@@ -159,32 +166,80 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Readable measure for prose (about 70-72 characters per line at 17px Source
-   Serif 4). Pages with wide content such as the embedded CV keep the full
-   column width. Browsers without :has() support simply use the full column. */
-.page__content:not(:has(.cv-embed)) {
-  max-width: 66ch;
+/* --------------------------------------------------------------------------
+   Page layout. The template caps the page at 925px below 1280px wide, then
+   reserves an empty right-hand column for a table of contents this site does
+   not use, which leaves a wide blank strip on the right. Here the top bar,
+   the sidebar with the content, and the footer share one centered container,
+   and the content fills the space next to the sidebar, so the margins on both
+   sides are equal.
+   -------------------------------------------------------------------------- */
+$site-max-width: 1180px;
+$site-sidebar-width: 15rem;             /* 255px at 17px, 270px at 18px */
+
+#main,
+.masthead__inner-wrap,
+.page__footer footer {
+  max-width: $site-max-width;
+
+  @include breakpoint($x-large) {
+    max-width: $site-max-width;
+  }
 }
 
-/* The page title (outside .page__content) follows the same measure. */
-.page__inner-wrap > header {
-  max-width: 66ch;
+@include breakpoint($large) {
+  .sidebar {
+    width: $site-sidebar-width;
+    max-width: none;
+    margin-right: 0;
+    padding-right: 0;
+  }
+
+  .page {
+    width: calc(100% - #{$site-sidebar-width} - 3rem);
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@include breakpoint($x-large) {
+  .page {
+    width: calc(100% - #{$site-sidebar-width} - 4rem);
+  }
 }
 
 /* --------------------------------------------------------------------------
-   Top navigation (Source Sans 3). The template's animated grey bar under
-   hovered links is replaced by a plain color change; the current page keeps
-   its underline.
+   Top navigation (Source Sans 3). The site name is not repeated here (it is
+   under the portrait). The template's animated grey bar under hovered links
+   is replaced by a plain color change; the current page keeps its underline.
    -------------------------------------------------------------------------- */
+.masthead__inner-wrap {
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+}
+
+/* The body starts below the fixed top bar (template: 70px). */
+body {
+  padding-top: 76px;
+}
+
 .greedy-nav {
   a {
-    font-size: 0.92rem;                 /* ~15.5px */
+    margin: 0 1.15rem;
+    padding: 0.85rem 0;
+    font-size: 1.02rem;                 /* ~17.3px, 18.4px on wide screens */
     font-weight: 500;
     letter-spacing: 0.005em;
 
     &:hover {
       color: var(--global-masthead-link-color-hover);
     }
+  }
+
+  /* The "more" button stays vertically centered in the taller bar. */
+  button {
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .visible-links {
@@ -198,11 +253,6 @@ h1, h2, h3, h4, h5, h6 {
       border-bottom-color: var(--global-text-color);
     }
 
-    li:first-child a {
-      font-size: 1rem;
-      font-weight: 600;
-    }
-
     a:before {
       display: none;
     }
@@ -210,6 +260,11 @@ h1, h2, h3, h4, h5, h6 {
 
   .hidden-links {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+    a {
+      margin: 0;
+      padding: 0.6rem 1.2rem;
+    }
   }
 }
 
@@ -238,12 +293,104 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   /* The name is a <p> (not an <h3>) so the page heading stays the first
-     heading in document order. */
+     heading in document order. It is the only place the name is shown, so it
+     is set large, in the heading serif. */
   .author__name {
-    font-size: 1.05rem;                 /* ~18px */
+    font-family: $serif;
+    font-size: 1.3rem;                  /* phones: 21px */
     font-weight: 600;
-    line-height: 1.25;
+    line-height: 1.2;
     color: var(--site-heading-color);
+
+    @include breakpoint($large) {
+      margin: 0.9rem 0 0.15rem;
+      font-size: 1.6rem;                /* 27px at 17px, 29px at 18px */
+    }
+  }
+
+  .author__pronouns {
+    margin: 0.15rem 0 0;
+    color: var(--site-muted-color);
+
+    @include breakpoint($large) {
+      margin: 0;
+    }
+  }
+
+  /* The owner's motto, set as a short italic epigraph. */
+  .author__bio {
+    margin: 0.7rem 0 0;
+    font-family: $serif;
+    font-size: 0.9rem;
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--global-text-color);
+
+    @include breakpoint($large) {
+      margin: 0.85rem 0 1.25rem;
+      padding-left: 0.8rem;
+      border-left: 2px solid var(--global-border-color);
+    }
+  }
+}
+
+/* Wide screens: a slightly larger portrait in the wider sidebar. */
+@include breakpoint($large) {
+  .author__avatar img {
+    max-width: 11rem;
+  }
+}
+
+/* Phones and tablets: portrait, name, and pronouns in one row next to the
+   "Follow" button, with the motto across the full width below them (the
+   template squeezes all of it into a narrow table cell). A rule separates
+   the profile from the page. */
+@media (max-width: #{$large - 1px}) {
+  .sidebar {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--global-border-color);
+  }
+
+  .sidebar [itemtype="http://schema.org/Person"] {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    column-gap: 0.9rem;
+    align-items: center;
+  }
+
+  .sidebar .author__avatar {
+    display: block;
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    width: 3.25rem;
+  }
+
+  .sidebar .author__content {
+    display: contents;
+  }
+
+  .sidebar .author__name {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: end;
+  }
+
+  .sidebar .author__pronouns {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: start;
+  }
+
+  .sidebar .author__bio {
+    grid-column: 1 / -1;
+    grid-row: 3;
+  }
+
+  .sidebar .author__urls-wrapper {
+    display: block;
+    grid-column: 3;
+    grid-row: 1 / span 2;
   }
 }
 
@@ -336,16 +483,110 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* News list on the About page */
-.news-list {
-  padding-left: 1.2em;
+/* Education entries with a school logo. The logo is a single-color mask
+   filled with --site-logo-color, so it matches both themes; browsers without
+   CSS masks leave the space empty. */
+.entry--logo {
+  display: grid;
+  grid-template-columns: 2.4rem minmax(0, 1fr);
+  column-gap: 0.9rem;
+  align-items: start;
 
-  li {
-    margin-bottom: 0.55em;
+  @include breakpoint($small) {
+    grid-template-columns: 2.9rem minmax(0, 1fr);
+    column-gap: 1.1rem;
+  }
+}
+
+.entry__logo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  margin-top: 0.15rem;
+}
+
+@supports ((-webkit-mask-image: none) or (mask-image: none)) {
+  .entry__logo {
+    background-color: var(--site-logo-color);
+    -webkit-mask: var(--logo) center / contain no-repeat;
+            mask: var(--logo) center / contain no-repeat;
+  }
+}
+
+/* Signature under the About text: a transparent PNG of black ink, softened
+   to the text color in light mode and inverted in dark mode. */
+.page__content img.signature {
+  display: block;
+  width: 11.5rem;
+  height: auto;
+  margin: 1.4rem 0 0.4rem;
+  opacity: 0.85;
+}
+
+:root[data-theme="dark"] .page__content img.signature {
+  filter: invert(1);
+  opacity: 0.87;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .page__content img.signature {
+    filter: invert(1);
+    opacity: 0.87;
+  }
+}
+
+/* Log page: entries grouped by year, date on the left, a small type label
+   above each entry. */
+.log-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.page__content .log-item {
+  display: grid;
+  grid-template-columns: 7.5rem minmax(0, 1fr);
+  column-gap: 1.25rem;
+  margin: 0;
+  padding: 0.8rem 0;
+  border-top: 1px solid var(--global-border-color);
+
+  &:first-child {
+    border-top: 0;
+    padding-top: 0.2rem;
   }
 
-  strong {
-    font-weight: 600;
+  @media (max-width: #{$small - 1px}) {
+    display: block;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.page__content .log-item__date {
+  padding-top: 0.12rem;
+  font-family: $sans-serif;
+  font-size: 0.88rem;
+  font-style: italic;
+  color: var(--site-muted-color);
+}
+
+.page__content .log-item__type {
+  margin-bottom: 0.1rem;
+  font-family: $sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--site-muted-color);
+
+}
+
+@media (max-width: #{$small - 1px}) {
+  .page__content .log-item__date {
+    margin-bottom: 0.15rem;
   }
 }
 

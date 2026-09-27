@@ -1,15 +1,22 @@
 {% comment %}
   Renders site.data.education as plain academic entries (used on the About page):
-  institution and dates on one line, then degree, track, and an optional note.
+  a single-color school logo, institution and dates on one line, then degree,
+  track, and an optional note. The logo is a CSS mask filled with the theme's
+  logo color (see .entry__logo in _sass/_custom.scss), so it follows light and
+  dark mode; it is decorative because the institution name follows it.
 {% endcomment %}
+{% include base_path %}
 {% for entry in site.data.education %}
-<div class="entry">
-  <div class="entry__head">
-    <h3 class="entry__title">{{ entry.institution }}</h3>
-    <span class="entry__dates">{{ entry.dates }}</span>
+<div class="entry{% if entry.logo %} entry--logo{% endif %}">
+  {% if entry.logo %}<span class="entry__logo" style="--logo: url('{{ base_path }}/images/logos/{{ entry.logo }}')" aria-hidden="true"></span>{% endif %}
+  <div class="entry__body">
+    <div class="entry__head">
+      <h3 class="entry__title">{{ entry.institution }}</h3>
+      <span class="entry__dates">{{ entry.dates }}</span>
+    </div>
+    <p class="entry__degree">{{ entry.degree }}</p>
+    {% if entry.detail %}<p class="entry__detail">{{ entry.detail }}</p>{% endif %}
+    {% if entry.note %}<p class="entry__detail">{{ entry.note }}</p>{% endif %}
   </div>
-  <p class="entry__degree">{{ entry.degree }}</p>
-  {% if entry.detail %}<p class="entry__detail">{{ entry.detail }}</p>{% endif %}
-  {% if entry.note %}<p class="entry__detail">{{ entry.note }}</p>{% endif %}
 </div>
 {% endfor %}

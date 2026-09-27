@@ -1,0 +1,24 @@
+{% comment %}
+  Renders site.data.log (the /log/ page), newest first, grouped under year
+  headings. The year is the last four characters of each entry's `date`.
+  Links in `text` may be root-relative (for example /research/) because the
+  site has no baseurl.
+{% endcomment %}
+{% assign current_year = "" %}
+{% for item in site.data.log %}
+  {% assign year = item.date | slice: -4, 4 %}
+  {% if year != current_year %}
+    {% unless forloop.first %}</ul>{% endunless %}
+<h2 id="y{{ year }}">{{ year }}</h2>
+<ul class="log-list">
+    {% assign current_year = year %}
+  {% endif %}
+  <li class="log-item">
+    <p class="log-item__date">{{ item.date }}</p>
+    <div class="log-item__body">
+      {% if item.type %}<p class="log-item__type">{{ item.type }}</p>{% endif %}
+      <p class="log-item__text">{{ item.text | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
+    </div>
+  </li>
+  {% if forloop.last %}</ul>{% endif %}
+{% endfor %}

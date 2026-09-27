@@ -38,8 +38,14 @@ See `README.md` for editing instructions.
   `_cv/Junguang_Jia_CV.html`) follows the same rule.
 - Typography is Source Serif 4 (prose, headings) and Source Sans 3 (navigation,
   sidebar, dates, metadata); entries are plain typographic entries, not cards;
-  the theme follows the operating system with no toggle. Keep these unless the
-  owner asks otherwise, and keep every text color at WCAG AA contrast.
+  the theme follows the operating system with no toggle; the layout is one
+  centered container with the content filling the space next to the sidebar
+  (the owner asked for no wide empty strip on the right); the site name is
+  shown under the portrait, not in the top bar. Keep these unless the owner
+  asks otherwise, and keep every text color at WCAG AA contrast.
+- The public CV follows the owner's latest CV (September 2026, v5) minus the
+  private items above. The website's Education section omits Provost Honors at
+  the owner's request (the CV PDF keeps it, as the owner's CV does).
 - Only add a portrait that the site owner explicitly supplies.
 - Keep customizations small and documented. Prefer editing `_config.yml`,
   `_data/*.yml`, `_pages/*.md`, and `_sass/_custom.scss` over changing template

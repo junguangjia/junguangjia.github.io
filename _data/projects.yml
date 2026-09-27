@@ -4,7 +4,7 @@
 #   title       (required)
 #   subtitle    (optional, shown after the title)
 #   dates       (optional, shown right-aligned in italics, CV style)
-#   meta        (optional, one line of context: course, role, status)
+#   meta        (optional, one line of context: course, role, status; Markdown links allowed)
 #   description (required, Markdown allowed)
 #   url         (optional; the project title links here)
 #   links       (optional list of {label, url}; only add real, public URLs)
@@ -12,26 +12,35 @@
 # Keep entries factual. Course projects are labeled as such and are not publications.
 
 academic:
-  - title: "Stochastic Trace Estimation"
-    dates: "Spring 2026"
-    meta: "Course project, STAT GR6104 Computational Statistics, Columbia University"
+  - title: "Stochastic Trace Estimation: Hutchinson and Hutch++"
+    dates: "Spring 2026 – Present"
+    meta: "Course project, STAT GR6104 Computational Statistics, Columbia University; instructor: [Christopher R. Harshaw](https://www.chrisharshaw.com/)"
     description: >-
-      Studied the Hutchinson and Hutch++ trace estimators, including their unbiasedness,
-      variance reduction, and computational complexity. Implemented reproducible
-      experiments in Julia, including an application to triangle counting in sparse graphs.
+      Reconstructed the unbiasedness and complexity arguments for the Hutchinson and
+      Hutch++ trace estimators and examined randomized low-rank sketching as a
+      variance-reduction strategy. Implemented reproducible Julia experiments on
+      structured positive semidefinite (PSD) matrices and graph triangle counting, using
+      dense and implicit sparse matrix-vector operators, seeded Monte Carlo trials, and
+      unit tests. On a 1,000 × 1,000 exponential-spectrum PSD matrix, Hutch++ reached a
+      1% mean relative-error target at 30 matrix-vector products, whereas Hutchinson did
+      not reach it by 120 (1,000 Monte Carlo replications).
     links: []
 
 independent:
   - title: "ArtVenn"
-    subtitle: "Cultural Heritage Catalog and Community Platform"
+    subtitle: "Cultural Heritage Data and Community Platform"
     url: "https://github.com/junguangjia/moya-inscriptions-web"
-    dates: "2026 – Present"
-    meta: "Founder and technical project lead; ongoing independent open-source project (development / pilot)"
+    dates: "Oct 2024 – Present"
+    meta: "Founder and technical project lead; ongoing independent open-source project"
     description: >-
-      An independently developed platform for organizing and presenting Chinese
-      inscriptions and calligraphy materials. Work includes structured catalog data,
-      search, data-import workflows, and editorial publishing, using TypeScript,
-      Next.js/React, Node.js, and PostgreSQL.
+      Field documentation across 200+ cities in China, recording geospatial coordinates
+      and surviving textual and symbolic traces, organized into a structured catalog with
+      provenance, geospatial, and source metadata. The platform includes validated
+      data-import and editorial workflows with transactional updates and controlled
+      publication, OpenAPI contracts, Chinese text normalization, ranked search, and
+      object-storage integration, built with TypeScript, Next.js/React, Node.js, and
+      PostgreSQL. Current work organizes the collected corpus for downstream statistical
+      and machine-learning analysis.
     links:
       - label: "Source code on GitHub (Apache-2.0)"
         url: "https://github.com/junguangjia/moya-inscriptions-web"

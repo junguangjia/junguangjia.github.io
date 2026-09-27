@@ -9,7 +9,7 @@
     <h3 class="entry__title">{% if project.url %}<a href="{{ project.url }}">{{ project.title }}</a>{% else %}{{ project.title }}{% endif %}{% if project.subtitle %} <span class="entry__subtitle">{{ project.subtitle }}</span>{% endif %}</h3>
     {% if project.dates %}<span class="entry__dates">{{ project.dates }}</span>{% endif %}
   </div>
-  {% if project.meta %}<p class="entry__meta">{{ project.meta }}</p>{% endif %}
+  {% if project.meta %}<p class="entry__meta">{{ project.meta | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>{% endif %}
   <div class="entry__desc">{{ project.description | markdownify }}</div>
   {% if project.links and project.links.size > 0 %}
   <p class="entry__links">

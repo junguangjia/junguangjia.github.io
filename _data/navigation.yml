@@ -1,5 +1,5 @@
-# Links shown in the site header, in order. The site title (linking to /) is
-# added automatically before these items.
+# Main navigation links (the top bar). The site name is not repeated here; it
+# is shown under the portrait in the sidebar.
 main:
   - title: "About"
     url: /
@@ -9,6 +9,12 @@ main:
 
   - title: "Research & Projects"
     url: /research/
+
+  - title: "Teaching"
+    url: /teaching/
+
+  - title: "Log"
+    url: /log/
 
   - title: "Miscellaneous"
     url: /misc/

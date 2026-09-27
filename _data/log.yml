@@ -1,0 +1,30 @@
+# Log entries (the /log/ page), newest first. Entries are grouped under a year
+# heading taken from the last four characters of `date`, so write dates like
+# "May 2026", "Spring 2026", or "2025".
+#
+#   date: shown as written
+#   type: one of research, project, reading, teaching, milestone, life
+#         (shown as a small label; any other word also works)
+#   text: one or two sentences; Markdown links are allowed. For a paper,
+#         for example: 'Read [*Title*](https://arxiv.org/abs/...) by A. Author
+#         and B. Author (2024): one line on what stood out.'
+
+- date: "May 2026"
+  type: milestone
+  text: "Passed the Theory and Methods Core Competency Examination, the required examination for the Theory and Methods Honors Track in the Columbia M.A. in Statistics."
+
+- date: "Spring 2026"
+  type: research
+  text: "Started a [project on stochastic trace estimation](/research/) (Hutchinson and Hutch++) in STAT GR6104 Computational Statistics at Columbia; the work is ongoing."
+
+- date: "Sep 2025"
+  type: milestone
+  text: "Started the M.A. in Statistics at Columbia University."
+
+- date: "2025"
+  type: life
+  text: "Completed a 3,680 km [solo cycling expedition](/misc/) from Pingdingshan, Henan, to Lhasa, Tibet."
+
+- date: "Oct 2024"
+  type: project
+  text: "Started [ArtVenn](https://github.com/junguangjia/moya-inscriptions-web), a cultural heritage data and community platform built on field documentation of historical inscriptions across China."
