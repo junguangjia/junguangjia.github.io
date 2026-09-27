@@ -31,6 +31,30 @@ academic:
         url: "/files/stochastic-trace-estimation-report.pdf"
       - label: "Code (GitHub)"
         url: "https://github.com/junguangjia/stochastic-trace-estimation"
+    fr:
+      title: "Estimation stochastique de la trace avec les méthodes de Hutchinson et Hutch++"
+      dates: "printemps 2026 – aujourd’hui"
+      meta: "Projet de cours et étude numérique reproductible, STAT GR6104 Computational Statistics, Université Columbia ; enseignant du cours : [Christopher R. Harshaw](https://www.chrisharshaw.com/)"
+      description: "Mise en œuvre et évaluation des estimateurs de Hutchinson et Hutch++ en Julia, au moyen d’une interface commune de produits matrice-vecteur. L’étude compare la précision et les budgets de requêtes à l’opérateur sur une matrice fixe semi-définie positive (PSD) à spectre exponentiel et sur un graphe synthétique pour le comptage de triangles, rend compte de l’incertitude de Monte-Carlo et mesure les temps de calcul dans une expérience distincte, exécutée en série. Le dépôt public comprend des environnements aux versions figées, des tests, les résultats enregistrés essai par essai et des scripts qui régénèrent le rapport."
+      link_labels:
+        - "Rapport (PDF)"
+        - "Code (GitHub)"
+    ja:
+      title: "HutchinsonおよびHutch++による確率的トレース推定"
+      dates: "2026年春学期〜現在"
+      meta: "授業プロジェクト兼再現可能な計算研究（STAT GR6104「計算統計学」、コロンビア大学）。担当教員：[Christopher R. Harshaw](https://www.chrisharshaw.com/)"
+      description: "共通の行列ベクトル積インターフェースを用いて、HutchinsonとHutch++をJuliaで実装・評価した。指数型スペクトルを持つ固定の半正定値（PSD）行列と、三角形数え上げ用に人工的に生成したグラフを対象に、精度と作用素クエリ予算を比較し、モンテカルロ法による不確実性を報告するとともに、実行時間は別に行った逐次実行の実験で計測している。公開リポジトリには、バージョンを固定した実行環境、テスト、試行単位で保存した結果、レポートを再生成するスクリプトが含まれる。"
+      link_labels:
+        - "レポート（PDF）"
+        - "コード（GitHub）"
+    zh:
+      title: "基于 Hutchinson 与 Hutch++ 的随机迹估计"
+      dates: "2026年春季学期—至今"
+      meta: "课程项目与可复现的计算研究，哥伦比亚大学 STAT GR6104 计算统计学；授课教师：[Christopher R. Harshaw](https://www.chrisharshaw.com/)"
+      description: "使用 Julia 实现并评估了 Hutchinson 与 Hutch++，两种方法共用同一套矩阵-向量乘积接口。该研究在一个固定的、具有指数型谱的半正定（PSD）矩阵和一个用于三角形计数的合成图上，比较了二者的精度与算子查询预算，报告了蒙特卡洛不确定性，并在单独的串行实验中测量了运行时间。公开代码仓库包含锁定版本的环境、测试、已保存的逐次试验结果，以及用于重新生成报告的脚本。"
+      link_labels:
+        - "报告（PDF）"
+        - "代码（GitHub）"
 
 independent:
   - title: "ArtVenn"
@@ -50,3 +74,24 @@ independent:
     links:
       - label: "Source code on GitHub (Apache-2.0)"
         url: "https://github.com/junguangjia/moya-inscriptions-web"
+    fr:
+      subtitle: "Plateforme communautaire et de données sur le patrimoine culturel"
+      dates: "oct. 2024 – aujourd’hui"
+      meta: "Fondateur et responsable technique du projet ; projet open source indépendant en cours"
+      description: "Documentation de terrain dans plus de 200 villes de Chine, avec relevé des coordonnées géospatiales et des traces textuelles et symboliques subsistantes, organisée en un catalogue structuré doté de métadonnées géospatiales, de provenance et de sources. La plateforme comprend des processus d’importation de données et d’édition avec validation, mises à jour transactionnelles et publication contrôlée, des contrats OpenAPI, la normalisation du texte chinois, une recherche avec classement des résultats et l’intégration d’un stockage objet ; elle est développée avec TypeScript, Next.js/React, Node.js et PostgreSQL. Les travaux en cours consistent à organiser le corpus recueilli en vue d’analyses statistiques et d’apprentissage automatique en aval."
+      link_labels:
+        - "Code source sur GitHub (Apache-2.0)"
+    ja:
+      subtitle: "文化遺産データ・コミュニティプラットフォーム"
+      dates: "2024年10月〜現在"
+      meta: "創設者・技術プロジェクトリーダー。進行中の自主的なオープンソースプロジェクト"
+      description: "中国の200以上の都市で現地調査を行い、地理空間座標と、現存する文字や記号の痕跡を記録した。これらを、来歴・地理空間・出典のメタデータを備えた構造化カタログとして整理している。プラットフォームは、トランザクションによる更新と公開管理を備えた検証付きのデータインポート・編集ワークフロー、OpenAPIコントラクト、中国語テキストの正規化、検索結果の順位付け、オブジェクトストレージ連携を含み、TypeScript、Next.js/React、Node.js、PostgreSQLで構築されている。現在は、収集したコーパスを後続の統計解析・機械学習解析に向けて整理している。"
+      link_labels:
+        - "GitHubのソースコード（Apache-2.0）"
+    zh:
+      subtitle: "文化遗产数据与社区平台"
+      dates: "2024年10月—至今"
+      meta: "创始人兼技术项目负责人；进行中的独立开源项目"
+      description: "在中国 200 多座城市开展实地记录，采集地理空间坐标，记录现存的文字与符号遗迹，并整理为附有溯源、地理空间和出处元数据的结构化目录。平台基于 TypeScript、Next.js/React、Node.js 和 PostgreSQL 构建，包括带校验的数据导入与编辑工作流（支持事务性更新和受控发布）、OpenAPI 接口契约、中文文本规范化、排序检索以及对象存储集成。目前的工作是整理已采集的语料，供后续的统计与机器学习分析使用。"
+      link_labels:
+        - "GitHub 源代码（Apache-2.0）"

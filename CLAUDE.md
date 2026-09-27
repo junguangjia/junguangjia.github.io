@@ -38,15 +38,22 @@ See `README.md` for editing instructions.
   `_cv/Junguang_Jia_CV.html`) follows the same rule.
 - Typography is Source Serif 4 (prose, headings), Source Sans 3 (navigation,
   sidebar, metadata), and Latin Modern Roman italic (dates and the track line
-  under each degree, as the owner asked); entries are plain typographic entries, not cards;
+  under each degree, as the owner asked); on Japanese and Chinese pages Noto
+  Serif/Sans JP or SC set the CJK text and nothing is italic; entries are plain typographic entries, not cards;
   the theme follows the operating system with no toggle; the layout is one
   centered container with the content filling the space next to the sidebar
   (the owner asked for no wide empty strip on the right); the site name is
   shown under the portrait, not in the top bar. Keep these unless the owner
   asks otherwise, and keep every text color at WCAG AA contrast.
-- The public CV follows the owner's latest CV (September 2026, v5) minus the
+- The public CV follows the owner's latest CV (September 2026, v6) minus the
   private items above. The website's Education section omits Provost Honors at
   the owner's request (the CV PDF keeps it, as the owner's CV does).
+- The site is multilingual (English template; French, Japanese, Simplified
+  Chinese; see README "Languages"). Any content change made in English must be
+  mirrored in the `fr:`/`ja:`/`zh:` blocks of the data files and in the page
+  files under `_pages/fr|ja|zh/`, or left to fall back to English; never let a
+  translation state something the English does not. Keep the owner's name in
+  Latin letters unless he supplies the Chinese characters.
 - Only add a portrait that the site owner explicitly supplies.
 - Keep customizations small and documented. Prefer editing `_config.yml`,
   `_data/*.yml`, `_pages/*.md`, and `_sass/_custom.scss` over changing template

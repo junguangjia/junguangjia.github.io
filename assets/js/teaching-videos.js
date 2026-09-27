@@ -12,17 +12,19 @@
     var button = document.createElement('button');
     button.type = 'button';
     button.className = 'teaching-video-link teaching-video-button';
-    button.setAttribute('aria-label', 'Play on this page: ' + title);
+    /* Labels come from data attributes so each page language can set them. */
+    button.setAttribute('aria-label', (link.dataset.playAria || 'Play on this page') + (link.dataset.labelSep || ': ') + title);
     while (link.firstChild) button.appendChild(link.firstChild);
-    button.querySelector('.teaching-video-label').textContent = '▶ Play video';
+    button.querySelector('.teaching-video-label').textContent = link.dataset.playLabel || '▶ Play video';
     link.replaceWith(button);
 
+    var frameTitle = link.dataset.frameTitle || (title + ' — UC San Diego TA teaching');
     button.addEventListener('click', function () {
       var frame = document.createElement('iframe');
       var params = new URLSearchParams({
         autoplay: '1', playsinline: '1', rel: '0', origin: window.location.origin
       });
-      frame.title = title + ' — UC San Diego TA teaching';
+      frame.title = frameTitle;
       frame.src = 'https://www.youtube-nocookie.com/embed/' + id + '?' + params.toString();
       frame.width = '560';
       frame.height = '315';

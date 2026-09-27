@@ -12,19 +12,64 @@
 - date: "May 2026"
   type: milestone
   text: "Passed the Theory and Methods Core Competency Examination, the required examination for the Theory and Methods Honors Track in the Columbia M.A. in Statistics."
+  fr:
+    date: "mai 2026"
+    text: "Réussite à l’examen de compétences fondamentales en théorie et méthodes, obligatoire pour le parcours d’excellence Théorie et méthodes du M.A. de statistique de Columbia."
+  ja:
+    date: "2026年5月"
+    text: "コロンビア大学統計学修士（M.A.）課程の理論・方法論オナーズトラックで必須とされる「理論・方法論コア・コンピテンシー試験」に合格した。"
+  zh:
+    date: "2026年5月"
+    text: "通过了哥伦比亚大学统计学硕士（M.A.）理论与方法荣誉方向的必考科目——理论与方法核心能力考试。"
 
 - date: "Spring 2026"
   type: research
   text: "Started a [project on stochastic trace estimation](/research/) (Hutchinson and Hutch++) in STAT GR6104 Computational Statistics at Columbia; the work is ongoing."
+  fr:
+    date: "printemps 2026"
+    text: "Début d’un [projet sur l’estimation stochastique de la trace](/research/) (méthodes de Hutchinson et Hutch++) dans le cadre du cours STAT GR6104 Computational Statistics à Columbia ; travail en cours."
+  ja:
+    date: "2026年春学期"
+    text: "コロンビア大学のSTAT GR6104「計算統計学」で、[確率的トレース推定に関するプロジェクト](/research/)（HutchinsonとHutch++）を開始した。現在も進行中である。"
+  zh:
+    date: "2026年春季学期"
+    text: "在哥伦比亚大学 STAT GR6104 计算统计学课程中启动了[随机迹估计项目](/research/)（Hutchinson 与 Hutch++），目前仍在进行。"
 
 - date: "Sep 2025"
   type: milestone
   text: "Started the M.A. in Statistics at Columbia University."
+  fr:
+    date: "sept. 2025"
+    text: "Début du M.A. de statistique à l’Université Columbia."
+  ja:
+    date: "2025年9月"
+    text: "コロンビア大学統計学修士（M.A.）課程に入学した。"
+  zh:
+    date: "2025年9月"
+    text: "开始在哥伦比亚大学攻读统计学硕士（M.A.）。"
 
 - date: "2025"
   type: life
   text: "Completed a 3,680 km [solo cycling expedition](/misc/) from Pingdingshan, Henan, to Lhasa, Tibet."
+  fr:
+    date: "2025"
+    text: "Réalisation d’une [expédition à vélo en solitaire](/misc/) de 3 680 km reliant Pingdingshan, dans le Henan, à Lhassa, au Tibet."
+  ja:
+    date: "2025年"
+    text: "河南省平頂山からチベットのラサまで、3,680kmの[単独自転車遠征](/misc/)をやり遂げた。"
+  zh:
+    date: "2025年"
+    text: "完成了从河南平顶山到西藏拉萨的[独自骑行之旅](/misc/)，全程 3,680 公里。"
 
 - date: "Oct 2024"
   type: project
   text: "Started [ArtVenn](https://github.com/junguangjia/moya-inscriptions-web), a cultural heritage data and community platform built on field documentation of historical inscriptions across China."
+  fr:
+    date: "oct. 2024"
+    text: "Lancement d’[ArtVenn](https://github.com/junguangjia/moya-inscriptions-web), plateforme communautaire et de données sur le patrimoine culturel, fondée sur la documentation de terrain d’inscriptions historiques dans toute la Chine."
+  ja:
+    date: "2024年10月"
+    text: "中国各地の歴史的な碑文のフィールド記録に基づく文化遺産データ・コミュニティプラットフォーム、[ArtVenn](https://github.com/junguangjia/moya-inscriptions-web)を立ち上げた。"
+  zh:
+    date: "2024年10月"
+    text: "创建了文化遗产数据与社区平台 [ArtVenn](https://github.com/junguangjia/moya-inscriptions-web)，以中国各地历史碑刻的实地记录为基础。"

@@ -113,7 +113,7 @@
 <!-- end SEO -->
 
 <!-- Open Graph protocol data (https://ogp.me/), used by social media -->
-<meta property="og:locale" content="{{ site.locale | default: "en" | replace: "-", "_" }}">
+{% include i18n.html %}<meta property="og:locale" content="{{ lang_meta.og_locale | default: "en_US" }}">
 <meta property="og:site_name" content="{{ site.title }}"> 
 <meta property="og:title" content="{{ page.title | default: site.title | markdownify | strip_html | strip_newlines | escape_once }}">
 {% if page.date %}

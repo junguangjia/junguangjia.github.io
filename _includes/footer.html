@@ -1,11 +1,10 @@
 {% include base_path %}
+{% include i18n.html %}
 
 {% if site.author.github or site.author.bitbucket or site.atom_feed.hide != true %}
 <div class="page__footer-follow">
   <ul class="social-icons">
-    {% if site.data.ui-text[site.locale].follow_label %}
-      <li><strong>{{ site.data.ui-text[site.locale].follow_label }}</strong></li>
-    {% endif %}
+    <li><strong>{{ t.footer_follow | default: t_en.footer_follow }}</strong></li>
     {% if site.author.github %}
       <li><a href="https://github.com/{{ site.author.github }}"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></li>
     {% endif %}
@@ -20,6 +19,7 @@
 {% endif %}
 
 <div class="page__footer-copyright">
-  &copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}, {{ site.data.ui-text[site.locale].powered_by | default: "Powered by" }} <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>, a fork of <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.<br />
-  Site last updated {{ "now" | date: '%Y-%m-%d' }}
+  {% assign credit = t.footer_credit | default: t_en.footer_credit %}{% capture link_jekyll %}<a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>{% endcapture %}{% capture link_ap %}<a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>{% endcapture %}{% capture link_mm %}<a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>{% endcapture %}
+  &copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}{{ t.credit_sep | default: ", " }}{% assign credit_html = credit | replace: "{jekyll}", link_jekyll | replace: "{academicpages}", link_ap | replace: "{mm}", link_mm %}{{ credit_html }}<br />
+  {% assign now_date = "now" | date: '%Y-%m-%d' %}{% assign updated_line = t.site_updated | default: t_en.site_updated | replace: "{date}", now_date %}{{ updated_line }}
 </div>

@@ -1,5 +1,7 @@
 ---
 permalink: /log/
+lang: en
+ref: log
 title: "Log"
 description: "A running log by Junguang Jia: research and project progress, papers read, and milestones, newest first."
 author_profile: true

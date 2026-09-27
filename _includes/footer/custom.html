@@ -58,6 +58,22 @@
       }, 50);
     });
     window.addEventListener('load', function () { syncNav(); syncFollow(); });
+    /* Language menu (a native details element): close it on Escape, on a tap
+       outside it, and when keyboard focus leaves it. */
+    var langMenu = document.querySelector('.lang-switch');
+    if (langMenu) {
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && langMenu.open) { langMenu.open = false; langMenu.querySelector('summary').focus(); }
+      });
+      document.addEventListener('pointerdown', function (e) {
+        if (langMenu.open && !langMenu.contains(e.target)) { langMenu.open = false; }
+      });
+      langMenu.addEventListener('focusout', function () {
+        setTimeout(function () {
+          if (langMenu.open && document.hasFocus() && !langMenu.contains(document.activeElement)) { langMenu.open = false; }
+        }, 0);
+      });
+    }
     /* Visitors who prefer reduced motion get no jQuery fades (the "Follow"
        list); the template script (a module) has run by DOMContentLoaded. */
     document.addEventListener('DOMContentLoaded', function () {

@@ -1,5 +1,7 @@
 ---
 permalink: /misc/
+lang: en
+ref: misc
 title: "Miscellaneous"
 description: "Miscellaneous: a solo cycling expedition to Lhasa and field documentation for ArtVenn."
 author_profile: true

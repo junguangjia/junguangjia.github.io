@@ -1,0 +1,28 @@
+# Site languages. English is the template: every other language has its own
+# pages under _pages/<code>/ (same `ref` as the English page) and translated
+# strings in _data/i18n.yml and in the `<code>:` blocks of the content data
+# files. `prefix` is the URL prefix of that language's pages.
+- code: en
+  name: English
+  short: EN
+  html_lang: en
+  og_locale: en_US
+  prefix: ""
+- code: fr
+  name: Français
+  short: FR
+  html_lang: fr
+  og_locale: fr_FR
+  prefix: /fr
+- code: ja
+  name: 日本語
+  short: 日本語
+  html_lang: ja
+  og_locale: ja_JP
+  prefix: /ja
+- code: zh
+  name: 中文
+  short: 中文
+  html_lang: zh-Hans
+  og_locale: zh_CN
+  prefix: /zh

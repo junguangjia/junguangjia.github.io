@@ -1,0 +1,1 @@
+{% comment %} Outputs lang="en" when include.value (a translation) is missing on a non-English page, so the English fallback text is marked and styled as English. {% endcomment %}{% if i18n_lang != "en" %}{% if include.value == nil or include.value == "" %} lang="en"{% endif %}{% endif %}

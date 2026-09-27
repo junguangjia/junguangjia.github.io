@@ -1,0 +1,6 @@
+{% comment %}
+  Sets the language variables used by the includes: i18n_lang (page.lang, default
+  "en"), t (that language's strings from _data/i18n.yml), t_en (English strings,
+  for fallbacks), lang_meta (its entry in _data/languages.yml) and lang_prefix
+  (its URL prefix, "" for English). Safe to include more than once.
+{% endcomment %}{% assign i18n_lang = page.lang | default: "en" %}{% assign t_en = site.data.i18n.en %}{% assign t = site.data.i18n[i18n_lang] | default: t_en %}{% assign lang_meta = site.data.languages | where: "code", i18n_lang | first %}{% assign lang_prefix = lang_meta.prefix | default: "" %}

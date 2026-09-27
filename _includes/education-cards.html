@@ -3,20 +3,23 @@
   a single-color school logo, institution and dates on one line, then degree,
   track, and an optional note. The logo is a CSS mask filled with the theme's
   logo color (see .entry__logo in _sass/_custom.scss), so it follows light and
-  dark mode; it is decorative because the institution name follows it.
+  dark mode; it is decorative because the institution name follows it. Text
+  comes from the entry's block for the page language (e.g. `fr:`), falling
+  back to English.
 {% endcomment %}
 {% include base_path %}
-{% for entry in site.data.education %}
+{% include i18n.html %}
+{% for entry in site.data.education %}{% assign tr = entry[i18n_lang] %}
 <div class="entry{% if entry.logo %} entry--logo{% endif %}">
   {% if entry.logo %}<span class="entry__logo" style="--logo: url('{{ base_path }}/images/logos/{{ entry.logo }}')" aria-hidden="true"></span>{% endif %}
   <div class="entry__body">
     <div class="entry__head">
-      <h3 class="entry__title">{{ entry.institution }}</h3>
-      <span class="entry__dates">{{ entry.dates }}</span>
+      <h3 class="entry__title"{% include lang-fallback.html value=tr.institution %}>{{ tr.institution | default: entry.institution }}</h3>
+      <span class="entry__dates"{% include lang-fallback.html value=tr.dates %}>{{ tr.dates | default: entry.dates }}</span>
     </div>
-    <p class="entry__degree">{{ entry.degree }}</p>
-    {% if entry.detail %}<p class="entry__detail">{{ entry.detail }}</p>{% endif %}
-    {% if entry.note %}<p class="entry__detail">{{ entry.note }}</p>{% endif %}
+    <p class="entry__degree"{% include lang-fallback.html value=tr.degree %}>{{ tr.degree | default: entry.degree }}</p>
+    {% if entry.detail %}<p class="entry__detail"{% include lang-fallback.html value=tr.detail %}>{{ tr.detail | default: entry.detail }}</p>{% endif %}
+    {% if entry.note %}<p class="entry__detail"{% include lang-fallback.html value=tr.note %}>{{ tr.note | default: entry.note }}</p>{% endif %}
   </div>
 </div>
 {% endfor %}

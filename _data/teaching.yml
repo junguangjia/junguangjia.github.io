@@ -16,6 +16,28 @@ videos:
     description: >-
       A homework walkthrough on eigenvalues, linear independence, and
       the construction of singular, diagonalizable 2 × 2 matrices.
+    fr:
+      role: "Assistant d’enseignement"
+      institution: "UC San Diego"
+      title: "Algèbre linéaire : correction des devoirs"
+      term: "automne 2020"
+      course: "Mathématiques — Algèbre linéaire"
+      description: "Résolution pas à pas d’un devoir portant sur les valeurs propres, l’indépendance linéaire et la construction de matrices 2 × 2 singulières et diagonalisables."
+    ja:
+      role: "ティーチング・アシスタント"
+      institution: "UCサンディエゴ"
+      title: "線形代数：課題の解説"
+      term: "2020年秋学期"
+      course: "数学（線形代数）"
+      description: "固有値、線形独立性、そして特異かつ対角化可能な2 × 2行列の構成を扱う課題の解説。"
+    zh:
+      role: "助教"
+      institution: "加州大学圣地亚哥分校"
+      title: "线性代数：作业讨论"
+      term: "2020年秋季学期"
+      course: "数学——线性代数"
+      description: "一次作业讲解，涵盖特征值、线性无关，以及如何构造奇异且可对角化的 2 × 2 矩阵。"
+
   - title: "Java: Constructors and Object References"
     term: "Fall 2023"
     role: "Teaching Assistant"
@@ -26,3 +48,24 @@ videos:
     description: >-
       A walkthrough of Java constructors, object references, and method calls,
       using stack-frame and heap diagrams.
+    fr:
+      role: "Assistant d’enseignement"
+      institution: "UC San Diego"
+      title: "Java : constructeurs et références d’objets"
+      term: "automne 2023"
+      course: "Informatique — Java"
+      description: "Explication pas à pas des constructeurs Java, des références d’objets et des appels de méthodes, à l’aide de schémas des cadres de pile et du tas."
+    ja:
+      role: "ティーチング・アシスタント"
+      institution: "UCサンディエゴ"
+      title: "Java：コンストラクタとオブジェクト参照"
+      term: "2023年秋学期"
+      course: "コンピュータサイエンス（Java）"
+      description: "スタックフレームとヒープの図を用いた、Javaのコンストラクタ、オブジェクト参照、メソッド呼び出しの解説。"
+    zh:
+      role: "助教"
+      institution: "加州大学圣地亚哥分校"
+      title: "Java：构造方法与对象引用"
+      term: "2023年秋季学期"
+      course: "计算机科学——Java"
+      description: "借助栈帧和堆的示意图，讲解 Java 的构造方法、对象引用和方法调用。"

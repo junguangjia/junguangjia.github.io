@@ -17,9 +17,54 @@ hosted for free on GitHub Pages.
 | Log                 | `_pages/log.md`        | `/log/`      |
 | Miscellaneous       | `_pages/misc.md`       | `/misc/`     |
 
-Header links are defined in `_data/navigation.yml`. The top bar has no site
-name; the name is shown under the portrait in the sidebar. The old `/news/`
+Header links are defined per language in `_data/navigation.yml` (see
+Languages below). The top bar has no site name; the name is shown under the
+portrait in the sidebar, and a language menu sits at the right. The old `/news/`
 address redirects to `/log/`.
+
+## Languages
+
+The site is published in English, French, Japanese, and Simplified Chinese.
+English is the template; every other language mirrors it page for page.
+
+| Language | Home   | Pages                  |
+| -------- | ------ | ---------------------- |
+| English  | `/`    | `_pages/*.md`          |
+| Français | `/fr/` | `_pages/fr/*.md`       |
+| 日本語   | `/ja/` | `_pages/ja/*.md`       |
+| 中文     | `/zh/` | `_pages/zh/*.md`       |
+
+- **Languages:** `_data/languages.yml` lists each language's code, name, `lang`
+  attribute, and URL prefix.
+- **Pages:** each page sets `lang` and `ref` in its front matter. Pages with the
+  same `ref` are translations of each other; the language menu in the top bar
+  and the `hreflang` links in the page head use this to point to the same page
+  in another language.
+- **Interface strings** (navigation, headings, labels, sidebar pronouns, motto,
+  location and affiliation, footer): `_data/i18n.yml`, one block per language.
+  The top navigation per language is in `_data/navigation.yml`. English sidebar
+  text still comes from the `author:` block in `_config.yml`.
+- **Content data** (`_data/education.yml`, `projects.yml`, `log.yml`,
+  `teaching.yml`): each entry keeps its English fields and has `fr:`, `ja:` and
+  `zh:` blocks with the translated text. Anything missing from a language block
+  falls back to English, so a new Log entry can be added in English first and
+  translated later. For projects, `link_labels` translates the `links` labels
+  in order.
+- **Prose** (About, Research, Teaching and Log introductions, Miscellaneous):
+  edit the page file of that language. Section headings shared by all
+  languages (Education, Academic Projects, …) come from `h:` in
+  `_data/i18n.yml`.
+- **Missing translations:** English fallback text on a translated page is
+  marked `lang="en"` (`_includes/lang-fallback.html`), so screen readers and
+  the Japanese/Chinese styles treat it as English.
+- **Typography details:** French uses no-break spaces before `:` `;` `!` `?`
+  and inside « »; Japanese uses 〜 and Chinese — (一字线) in date ranges;
+  Japanese and Chinese pages use strict line breaking.
+- **Fonts:** French uses the English fonts. Japanese and Chinese pages keep
+  Source Serif 4 / Source Sans 3 for Latin letters and digits and add Noto
+  Serif and Noto Sans JP / SC (the Source Han families), loaded only on those
+  pages from pinned Fontsource packages; CJK text is never set in italics.
+- **CV:** the PDF is English only; the other languages say so under the link.
 
 ## Local preview
 
@@ -100,7 +145,8 @@ a PDF inside a page). The public URL
 
 - To use your own PDF, save it at exactly that path. Before committing, check
   that it contains no phone number, GPA, grades, test scores, or other private
-  details, and update `cv_updated` in `_pages/cv.md`.
+  details, and update `cv_date` in every language block (`en`, `fr`, `ja`, `zh`) of
+  `_data/i18n.yml`.
 - The current PDF is generated from `_cv/Junguang_Jia_CV.html` (not published
   by Jekyll): open it in Google Chrome (version 131 or later, for the page
   numbers), Print, Save as PDF, paper Letter, margins Default, headers and
@@ -119,8 +165,11 @@ a PDF inside a page). The public URL
   under each degree. The two Source families are pinned Fontsource WOFF2
   files (latin subset) and Latin Modern is one WOFF2 file from the pinned
   latex.css package, all served by jsDelivr. The `@font-face` rules, the
-  `$latex-serif` stack, and the design tokens (colors, sizes) are in
-  `_sass/_custom.scss`; the Source font stacks are in `_sass/_themes.scss`.
+  font stacks (the `--font-serif`, `--font-sans` and `--font-latex` custom
+  properties, overridden for Japanese and Chinese by `:root:lang(ja|zh)`) and
+  the design tokens (colors, sizes) are in `_sass/_custom.scss`;
+  `_sass/_themes.scss` points `$serif` and `$sans-serif` at the custom
+  properties.
 - Layout: the top bar, the sidebar with the content, and the footer share one
   centered container (at most 1180px wide), and the content fills the space
   next to the sidebar, so the page has equal margins on both sides. Text is
@@ -163,12 +212,16 @@ Created from the Academic Pages template
 (<https://github.com/academicpages/academicpages.github.io>), `master` branch at
 commit `3d28cd27d0551b3d9dd8132f207538355fbbc7cc` (2026-09-18).
 
-Site-specific changes are limited to: `_config.yml`, `_data/`, `_pages/`,
-`_cv/`, `files/`, `images/portrait.jpg`, `images/signature.png`,
-`images/logos/`, `_includes/education-cards.html`,
+Site-specific changes are limited to: `_config.yml`, `_data/`, `_pages/`
+(including the `fr/`, `ja/` and `zh/` translations), `_cv/`, `files/`,
+`images/portrait.jpg`, `images/signature.png`, `images/logos/`,
+`images/teaching/`, `_includes/education-cards.html`,
 `_includes/project-cards.html`, `_includes/log-list.html`,
+`_includes/teaching-videos.html`, `_includes/teaching-sections.html`,
+`_includes/cv-body.html`, `_includes/i18n.html`,
+`_includes/lang-fallback.html`, `assets/js/teaching-videos.js`,
 `_sass/_custom.scss`, the font variables in `_sass/_themes.scss`, small edits
-in `_includes/author-profile.html`,
+in `_layouts/default.html` (the page `lang`), `_includes/author-profile.html`,
 `_includes/head.html`, `_includes/head/custom.html`, `_includes/seo.html`,
 `_includes/footer.html`, `_includes/footer/custom.html`,
 `_includes/masthead.html`, `assets/css/main.scss`,

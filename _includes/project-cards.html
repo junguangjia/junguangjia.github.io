@@ -1,19 +1,22 @@
 {% comment %}
   Renders a list of projects as plain academic entries. Usage:
     {% include project-cards.html projects=site.data.projects.academic %}
-  Links are rendered only when an entry provides real URLs.
+  Links are rendered only when an entry provides real URLs. Text comes from the
+  entry's block for the page language (e.g. `fr:`, with `link_labels` in the
+  order of `links`), falling back to English.
 {% endcomment %}
-{% for project in include.projects %}
+{% include i18n.html %}
+{% for project in include.projects %}{% assign tr = project[i18n_lang] %}
 <div class="entry">
   <div class="entry__head">
-    <h3 class="entry__title">{% if project.url %}<a href="{{ project.url }}">{{ project.title }}</a>{% else %}{{ project.title }}{% endif %}{% if project.subtitle %} <span class="entry__subtitle">{{ project.subtitle }}</span>{% endif %}</h3>
-    {% if project.dates %}<span class="entry__dates">{{ project.dates }}</span>{% endif %}
+    <h3 class="entry__title"{% include lang-fallback.html value=tr.title %}>{% assign p_title = tr.title | default: project.title %}{% if project.url %}<a href="{{ project.url }}">{{ p_title }}</a>{% else %}{{ p_title }}{% endif %}{% if project.subtitle %} <span class="entry__subtitle"{% include lang-fallback.html value=tr.subtitle %}>{{ tr.subtitle | default: project.subtitle }}</span>{% endif %}</h3>
+    {% if project.dates %}<span class="entry__dates"{% include lang-fallback.html value=tr.dates %}>{{ tr.dates | default: project.dates }}</span>{% endif %}
   </div>
-  {% if project.meta %}<p class="entry__meta">{{ project.meta | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>{% endif %}
-  <div class="entry__desc">{{ project.description | markdownify }}</div>
+  {% if project.meta %}{% assign p_meta = tr.meta | default: project.meta %}<p class="entry__meta"{% include lang-fallback.html value=tr.meta %}>{{ p_meta | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>{% endif %}
+  {% assign p_desc = tr.description | default: project.description %}<div class="entry__desc"{% include lang-fallback.html value=tr.description %}>{{ p_desc | markdownify }}</div>
   {% if project.links and project.links.size > 0 %}
   <p class="entry__links">
-    {% for link in project.links %}<a href="{{ link.url }}">{{ link.label }}</a>{% unless forloop.last %} · {% endunless %}{% endfor %}
+    {% for link in project.links %}<a href="{{ link.url }}">{{ tr.link_labels[forloop.index0] | default: link.label }}</a>{% unless forloop.last %} · {% endunless %}{% endfor %}
   </p>
   {% endif %}
 </div>

@@ -1,20 +1,59 @@
-# Main navigation links (the top bar). The site name is not repeated here; it
-# is shown under the portrait in the sidebar.
-main:
+# Top navigation, one list per language (codes from _data/languages.yml).
+# The first item is the language home page. The site name is not repeated
+# here; it is shown under the portrait in the sidebar.
+
+en:
   - title: "About"
     url: /
-
   - title: "CV"
     url: /cv/
-
   - title: "Research & Projects"
     url: /research/
-
   - title: "Teaching"
     url: /teaching/
-
   - title: "Log"
     url: /log/
-
   - title: "Miscellaneous"
     url: /misc/
+
+fr:
+  - title: "À propos"
+    url: /fr/
+  - title: "CV"
+    url: /fr/cv/
+  - title: "Recherche et projets"
+    url: /fr/research/
+  - title: "Enseignement"
+    url: /fr/teaching/
+  - title: "Journal"
+    url: /fr/log/
+  - title: "Divers"
+    url: /fr/misc/
+
+ja:
+  - title: "プロフィール"
+    url: /ja/
+  - title: "CV"
+    url: /ja/cv/
+  - title: "研究・プロジェクト"
+    url: /ja/research/
+  - title: "教育"
+    url: /ja/teaching/
+  - title: "活動記録"
+    url: /ja/log/
+  - title: "その他"
+    url: /ja/misc/
+
+zh:
+  - title: "关于"
+    url: /zh/
+  - title: "简历"
+    url: /zh/cv/
+  - title: "研究与项目"
+    url: /zh/research/
+  - title: "教学"
+    url: /zh/teaching/
+  - title: "动态"
+    url: /zh/log/
+  - title: "其他"
+    url: /zh/misc/

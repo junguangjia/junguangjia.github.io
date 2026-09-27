@@ -10,15 +10,60 @@
   dates: "Sep 2025 – Present"
   degree: "M.A. in Statistics"
   detail: "Theory and Methods Honors Track"
+  fr:
+    institution: "Université Columbia"
+    dates: "sept. 2025 – aujourd’hui"
+    degree: "M.A. de statistique"
+    detail: "Parcours d’excellence Théorie et méthodes"
+  ja:
+    institution: "コロンビア大学"
+    dates: "2025年9月〜現在"
+    degree: "統計学修士（M.A.）"
+    detail: "理論・方法論オナーズトラック"
+  zh:
+    institution: "哥伦比亚大学"
+    dates: "2025年9月—至今"
+    degree: "统计学硕士（M.A.）"
+    detail: "理论与方法荣誉方向"
 
 - institution: "University of California, San Diego"
   logo: "ucsd.svg"
   dates: "Sep 2020 – Jul 2024"
   degree: "B.S. in Mathematics"
   detail: "Probability and Statistics"
+  fr:
+    institution: "Université de Californie à San Diego"
+    dates: "sept. 2020 – juil. 2024"
+    degree: "B.S. de mathématiques"
+    detail: "Probabilités et statistique"
+  ja:
+    institution: "カリフォルニア大学サンディエゴ校"
+    dates: "2020年9月〜2024年7月"
+    degree: "数学学士（B.S.）"
+    detail: "確率・統計"
+  zh:
+    institution: "加州大学圣地亚哥分校"
+    dates: "2020年9月—2024年7月"
+    degree: "数学学士（B.S.）"
+    detail: "概率与统计方向"
 
 - institution: "Fudan University"
   logo: "fudan.svg"
   dates: "Aug 2022 – Jun 2023"
   degree: "B.S. in Statistics"
   detail: "Exchange term"
+  fr:
+    institution: "Université Fudan"
+    dates: "août 2022 – juin 2023"
+    degree: "B.S. de statistique"
+    detail: "Séjour d’échange"
+  ja:
+    institution: "復旦大学"
+    dates: "2022年8月〜2023年6月"
+    degree: "統計学学士（B.S.）"
+    detail: "交換留学"
+  zh:
+    institution: "复旦大学"
+    dates: "2022年8月—2023年6月"
+    degree: "统计学学士（B.S.）"
+    detail: "交换学习"

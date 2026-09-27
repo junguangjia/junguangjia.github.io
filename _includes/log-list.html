@@ -1,11 +1,15 @@
 {% comment %}
-  Renders site.data.log (the /log/ page), newest first, grouped under year
-  headings. The year is the last four characters of each entry's `date`.
-  Links in `text` may be root-relative (for example /research/) because the
-  site has no baseurl.
+  Renders site.data.log (the Log page), newest first, grouped under year
+  headings. The year is the last four characters of each entry's English
+  `date`. Text comes from the entry's block for the page language (e.g. `fr:`
+  with `date` and `text`), falling back to English. Root-relative links to
+  site pages (for example /research/) point to the same page in the page's
+  language.
 {% endcomment %}
+{% include i18n.html %}
 {% assign current_year = "" %}
 {% for item in site.data.log %}
+  {% assign tr = item[i18n_lang] %}
   {% assign year = item.date | slice: -4, 4 %}
   {% if year != current_year %}
     {% unless forloop.first %}</ul>{% endunless %}
@@ -13,11 +17,13 @@
 <ul class="log-list">
     {% assign current_year = year %}
   {% endif %}
+  {% assign item_text = tr.text | default: item.text | markdownify | remove: '<p>' | remove: '</p>' | strip %}
+  {% if lang_prefix != "" %}{% for nav_link in site.data.navigation.en offset: 1 %}{% assign from = 'href="' | append: nav_link.url | append: '"' %}{% assign to = 'href="' | append: lang_prefix | append: nav_link.url | append: '"' %}{% assign item_text = item_text | replace: from, to %}{% endfor %}{% endif %}
   <li class="log-item">
-    <p class="log-item__date">{{ item.date }}</p>
+    <p class="log-item__date"{% include lang-fallback.html value=tr.date %}>{{ tr.date | default: item.date }}</p>
     <div class="log-item__body">
-      {% if item.type %}<p class="log-item__type">{{ item.type }}</p>{% endif %}
-      <p class="log-item__text">{{ item.text | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
+      {% if item.type %}<p class="log-item__type">{{ t.log[item.type] | default: t_en.log[item.type] | default: item.type }}</p>{% endif %}
+      <p class="log-item__text"{% include lang-fallback.html value=tr.text %}>{{ item_text }}</p>
     </div>
   </li>
   {% if forloop.last %}</ul>{% endif %}

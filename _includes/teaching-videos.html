@@ -1,24 +1,30 @@
 {% comment %}
   Owner-confirmed TA recordings. Links work without JavaScript; the page-specific
   script upgrades each poster to a button that loads the official player in place.
+  Text comes from the video's block for the page language (e.g. `fr:`), falling
+  back to English; the player labels are passed to the script as data attributes.
 {% endcomment %}
-{% for video in site.data.teaching.videos %}
+{% include i18n.html %}
+{% for video in site.data.teaching.videos %}{% assign tr = video[i18n_lang] %}{% assign v_title = tr.title | default: video.title %}{% assign v_watch = t.watch_on_youtube | default: t_en.watch_on_youtube %}
 <section class="entry teaching-example" aria-labelledby="video-{{ video.youtube_id }}">
   <div class="entry__head">
-    <h3 class="entry__title" id="video-{{ video.youtube_id }}">{{ video.title | escape }}</h3>
-    {% if video.term %}<span class="entry__dates">{{ video.term | escape }}</span>{% endif %}
+    <h3 class="entry__title" id="video-{{ video.youtube_id }}"{% include lang-fallback.html value=tr.title %}>{{ v_title | escape }}</h3>
+    {% if video.term %}{% assign v_term = tr.term | default: video.term %}<span class="entry__dates"{% include lang-fallback.html value=tr.term %}>{{ v_term | escape }}</span>{% endif %}
   </div>
-  <p class="entry__meta">{{ video.role | escape }} · {{ video.institution | escape }} · {{ video.course | escape }}</p>
-  <div class="entry__desc">{{ video.description | markdownify }}</div>
+  {% assign v_role = tr.role | default: video.role %}{% assign v_inst = tr.institution | default: video.institution %}{% assign v_course = tr.course | default: video.course %}{% assign sep = t.label_sep | default: ": " %}
+  <p class="entry__meta">{{ v_role | escape }} · {{ v_inst | escape }} · {{ v_course | escape }}</p>
+  {% assign v_desc = tr.description | default: video.description %}<div class="entry__desc"{% include lang-fallback.html value=tr.description %}>{{ v_desc | markdownify }}</div>
   <div class="teaching-video">
     <a class="teaching-video-link" href="https://www.youtube.com/watch?v={{ video.youtube_id }}"
-      data-youtube-id="{{ video.youtube_id }}" data-video-title="{{ video.title | escape }}"
-      aria-label="Watch on YouTube: {{ video.title | escape }}">
+      data-youtube-id="{{ video.youtube_id }}" data-video-title="{{ v_title | escape }}"
+      data-play-label="{{ t.play_video | default: t_en.play_video | escape }}" data-play-aria="{{ t.play_on_page | default: t_en.play_on_page | escape }}"
+      data-label-sep="{{ sep | escape }}" data-frame-title="{{ v_title | escape }} · {{ v_role | escape }} · {{ v_inst | escape }}"
+      aria-label="{{ v_watch | escape }}{{ sep | escape }}{{ v_title | escape }}">
       <img src="{{ video.thumbnail | relative_url }}" width="1280" height="720" loading="lazy" alt="">
-      <span class="teaching-video-label" aria-hidden="true">Watch on YouTube</span>
+      <span class="teaching-video-label" aria-hidden="true">{{ v_watch | escape }}</span>
     </a>
   </div>
-  <p class="entry__links"><a href="https://www.youtube.com/watch?v={{ video.youtube_id }}">Watch on YouTube<span class="sr-only">: {{ video.title | escape }}</span></a></p>
+  <p class="entry__links"><a href="https://www.youtube.com/watch?v={{ video.youtube_id }}">{{ v_watch | escape }}<span class="sr-only">{{ sep | escape }}{{ v_title | escape }}</span></a></p>
 </section>
 {% endfor %}
 <script src="{{ '/assets/js/teaching-videos.js' | relative_url }}" defer></script>

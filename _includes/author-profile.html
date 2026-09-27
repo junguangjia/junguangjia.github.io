@@ -1,4 +1,5 @@
 {% include base_path %}
+{% include i18n.html %}
 
 {% if page.author and site.data.authors[page.author] %}
   {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.author %}
@@ -18,25 +19,25 @@
 
   <div class="author__content{% unless author.avatar %} author__content--no-avatar{% endunless %}">
     <p class="author__name">{{ author.name }}</p>
-    {% if author.pronouns %}<p class="author__pronouns">{{ author.pronouns }}</p>{% endif %}
-    {% if author.bio %}<p class="author__bio">{{ author.bio }}</p>{% endif %}
+    {% assign author_pronouns = t.pronouns | default: author.pronouns %}{% if author_pronouns %}<p class="author__pronouns">{{ author_pronouns }}</p>{% endif %}
+    {% assign author_bio = t.memo | default: author.bio %}{% if author_bio %}<p class="author__bio">{{ author_bio }}</p>{% endif %}
   </div>
 
   <div class="author__urls-wrapper">
-    <button class="btn btn--inverse" type="button" aria-expanded="false" aria-controls="author-urls">Follow</button>
+    <button class="btn btn--inverse" type="button" aria-expanded="false" aria-controls="author-urls">{{ t.follow | default: "Follow" }}</button>
     <ul class="author__urls social-icons" id="author-urls">
       <!-- Font Awesome icons / Biographic information  -->
       {% if author.location %}
-        <li class="author__desktop"><i class="fas fa-fw fa-location-dot icon-pad-right" aria-hidden="true"></i>{{ author.location }}</li>
+        <li class="author__desktop"><i class="fas fa-fw fa-location-dot icon-pad-right" aria-hidden="true"></i>{{ t.location | default: author.location }}</li>
       {% endif %}
       {% if author.employer %}
-        <li class="author__desktop"><i class="fas fa-fw fa-building-columns icon-pad-right" aria-hidden="true"></i>{{ author.employer }}</li>
+        <li class="author__desktop"><i class="fas fa-fw fa-building-columns icon-pad-right" aria-hidden="true"></i>{{ t.employer | default: author.employer }}</li>
       {% endif %}
       {% if author.uri %}
         <li><a href="{{ author.uri }}"><i class="fas fa-fw fa-link icon-pad-right" aria-hidden="true"></i>{{ site.data.ui-text[site.locale].website_label | default: "Website" }}</a></li>
       {% endif %}
       {% if author.email %}
-        <li><a href="mailto:{{ author.email }}"><i class="fas fa-fw fa-envelope icon-pad-right" aria-hidden="true"></i>{{ site.data.ui-text[site.locale].email_label | default: "Email" }}</a></li>
+        <li><a href="mailto:{{ author.email }}"><i class="fas fa-fw fa-envelope icon-pad-right" aria-hidden="true"></i>{{ t.email | default: "Email" }}</a></li>
       {% endif %}
 
       <!-- Font Awesome and Academicons icons / Academic websites -->
@@ -49,7 +50,7 @@
       {% if author.googlescholar and author.googlescholar != "" %}
         <li><a href="{{ author.googlescholar }}"><i class="fab fa-fw fa-google-scholar icon-pad-right" aria-hidden="true"></i>Google Scholar</a></li>
       {% elsif author.googlescholar == "" %}
-        <li><span class="author__placeholder"><i class="fab fa-fw fa-google-scholar icon-pad-right" aria-hidden="true"></i>Google Scholar<span class="sr-only"> (profile link not yet available)</span></span></li>
+        <li><span class="author__placeholder"><i class="fab fa-fw fa-google-scholar icon-pad-right" aria-hidden="true"></i>Google Scholar<span class="sr-only"> {{ t.profile_pending | default: t_en.profile_pending }}</span></span></li>
       {% endif %}
       {% if author.inspire-hep %}
         <li><a href="{{ author.inspire-hep }}"><i class="ai ai-inspire ai-fw icon-pad-right"></i>INSPIRE-HEP</a></li>
@@ -133,7 +134,7 @@
       {% if author.linkedin and author.linkedin != "" %}
         <li><a href="https://www.linkedin.com/in/{{ author.linkedin }}"><i class="fab fa-fw fa-linkedin icon-pad-right" aria-hidden="true"></i>LinkedIn</a></li>
       {% elsif author.linkedin == "" %}
-        <li><span class="author__placeholder"><i class="fab fa-fw fa-linkedin icon-pad-right" aria-hidden="true"></i>LinkedIn<span class="sr-only"> (profile link not yet available)</span></span></li>
+        <li><span class="author__placeholder"><i class="fab fa-fw fa-linkedin icon-pad-right" aria-hidden="true"></i>LinkedIn<span class="sr-only"> {{ t.profile_pending | default: t_en.profile_pending }}</span></span></li>
       {% endif %}      
       {% if author.mastodon %}
         <li><a href="{{ author.mastodon }}"><i class="fab fa-fw fa-mastodon icon-pad-right" aria-hidden="true"></i>Mastodon</a></li>

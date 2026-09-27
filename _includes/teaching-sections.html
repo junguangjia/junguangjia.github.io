@@ -1,0 +1,48 @@
+{% comment %}
+  Body of the Teaching page in every language: recorded TA sessions, then
+  optional TA positions and notes from _data/teaching.yml. Headings come from
+  _data/i18n.yml; if the page would otherwise be empty, a placeholder sentence
+  is shown.
+{% endcomment %}
+{% include i18n.html %}
+{% if site.data.teaching.videos.size > 0 %}
+## {{ t.h.recorded_teaching | default: t_en.h.recorded_teaching }}
+
+{% include teaching-videos.html %}
+{% endif %}
+
+{% assign positions = site.data.teaching.positions %}
+{% assign notes = site.data.teaching.notes %}
+{% if positions.size > 0 %}
+## {{ t.h.teaching_assistant | default: t_en.h.teaching_assistant }}
+
+{% for p in positions %}{% assign tr = p[i18n_lang] %}{% assign p_course = tr.course | default: p.course %}{% assign p_term = tr.term | default: p.term %}{% assign p_role = tr.role | default: p.role %}{% assign p_inst = tr.institution | default: p.institution %}{% assign p_desc = tr.description | default: p.description %}
+<div class="entry">
+  <div class="entry__head">
+    <h3 class="entry__title"{% include lang-fallback.html value=tr.course %}>{{ p_course }}{% if p.code %} <span class="entry__subtitle">{{ p.code }}</span>{% endif %}</h3>
+    {% if p.term %}<span class="entry__dates"{% include lang-fallback.html value=tr.term %}>{{ p_term }}</span>{% endif %}
+  </div>
+  {% capture line %}{% if p.role %}{{ p_role }}{% endif %}{% if p.institution %}{% if p.role %}, {% endif %}{{ p_inst }}{% endif %}{% if p.instructor %}; {{ t.instructor | default: t_en.instructor }}{{ t.label_sep | default: ": " }}{{ p.instructor }}{% endif %}{% endcapture %}
+  {% if line != "" %}<p class="entry__meta">{{ line | strip }}</p>{% endif %}
+  {% if p.description %}<div class="entry__desc"{% include lang-fallback.html value=tr.description %}>{{ p_desc | markdownify }}</div>{% endif %}
+  {% if p.links and p.links.size > 0 %}<p class="entry__links">{% for link in p.links %}<a href="{{ link.url }}">{{ tr.link_labels[forloop.index0] | default: link.label }}</a>{% unless forloop.last %} · {% endunless %}{% endfor %}</p>{% endif %}
+</div>
+{% endfor %}
+{% endif %}
+{% if notes.size > 0 %}
+## {{ t.h.notes | default: t_en.h.notes }}
+
+{% for n in notes %}{% assign tr = n[i18n_lang] %}{% assign n_title = tr.title | default: n.title %}{% assign n_desc = tr.description | default: n.description %}
+<div class="entry">
+  <div class="entry__head">
+    <h3 class="entry__title"{% include lang-fallback.html value=tr.title %}>{% if n.url %}<a href="{{ n.url }}">{{ n_title }}</a>{% else %}{{ n_title }}{% endif %}</h3>
+    {% if n.date %}<span class="entry__dates"{% include lang-fallback.html value=tr.date %}>{{ tr.date | default: n.date }}</span>{% endif %}
+  </div>
+  {% if n.course %}<p class="entry__meta">{{ n.course }}</p>{% endif %}
+  {% if n.description %}<div class="entry__desc"{% include lang-fallback.html value=tr.description %}>{{ n_desc | markdownify }}</div>{% endif %}
+</div>
+{% endfor %}
+{% endif %}
+{% if site.data.teaching.videos.size == 0 and positions.size == 0 and notes.size == 0 %}
+{{ t.teaching_placeholder | default: t_en.teaching_placeholder }}
+{% endif %}

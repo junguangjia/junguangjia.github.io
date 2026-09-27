@@ -19,8 +19,11 @@ $indent-var                 : 1.3em;
    sets navigation, the sidebar, dates, metadata and other utility text (every
    template rule that uses $sans-serif). Template defaults were Georgia and the
    system sans-serif stack. */
-$serif                      : "Source Serif 4", Georgia, "Times New Roman", serif;
-$sans-serif                 : "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+/* The stacks are CSS custom properties (defined in _sass/_custom.scss) so that
+   Japanese and Chinese pages can add their CJK fonts; English and French use
+   "Source Serif 4", Georgia, serif and "Source Sans 3", system sans-serif. */
+$serif                      : var(--font-serif);
+$sans-serif                 : var(--font-sans);
 $monospace                  : Monaco, Consolas, "Lucida Console", monospace;
 
 /* Sans serif typefaces */

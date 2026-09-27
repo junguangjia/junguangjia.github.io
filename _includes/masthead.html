@@ -1,18 +1,20 @@
 {% include base_path %}
+{% include i18n.html %}
+{% assign nav_links = site.data.navigation[i18n_lang] | default: site.data.navigation.en %}
 <div class="masthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav" aria-label="Main">
-        <button type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="site-nav-hidden-links"><span class="navicon"></span></button>
+      <nav id="site-nav" class="greedy-nav" aria-label="{{ t.nav_main | default: t_en.nav_main | default: 'Main' }}">
+        <button type="button" aria-label="{{ t.nav_toggle | default: t_en.nav_toggle }}" aria-expanded="false" aria-controls="site-nav-hidden-links"><span class="navicon"></span></button>
         <ul class="visible-links">
-          {% for link in site.data.navigation.main %}
+          {% for link in nav_links %}
             {% if link.url contains 'http' %}
               {% assign domain = '' %}
             {% else %}
               {% assign domain = base_path %}
             {% endif %}
             {% assign link_selected = false %}
-            {% if link.url == '/' %}{% if page.url == '/' %}{% assign link_selected = true %}{% endif %}{% elsif page.url contains link.url %}{% assign link_selected = true %}{% endif %}
+            {% if forloop.first %}{% if page.url == link.url %}{% assign link_selected = true %}{% endif %}{% elsif page.url contains link.url %}{% assign link_selected = true %}{% endif %}
             <li class="masthead__menu-item {% if link_selected %}selected{% endif %}">
               <a href="{{ domain }}{{ link.url }}"{% if link_selected %} aria-current="page"{% endif %}>{{ link.title }}</a>
             </li>
@@ -20,6 +22,19 @@
         </ul>
         <ul class="hidden-links hidden" id="site-nav-hidden-links"></ul>
       </nav>
+      {% comment %} Language menu: links to this page in each language (same
+         `ref`), or to that language's home page. {% endcomment %}
+      <details class="lang-switch">
+        <summary class="lang-switch__toggle"><i class="fas fa-globe" aria-hidden="true"></i><span class="lang-switch__current" aria-hidden="true">{{ lang_meta.short }}</span><span class="sr-only">{{ t.language | default: t_en.language }}{{ t.label_sep | default: ": " }}{{ lang_meta.name }}</span></summary>
+        <ul class="lang-switch__menu">
+          {% for l in site.data.languages %}
+            {% assign lang_target = nil %}
+            {% if page.ref %}{% assign lang_target = site.pages | where: "ref", page.ref | where: "lang", l.code | first %}{% endif %}
+            {% if lang_target %}{% assign lang_href = lang_target.url %}{% else %}{% assign lang_href = l.prefix | append: "/" %}{% endif %}
+            <li><a href="{{ base_path }}{{ lang_href }}" lang="{{ l.html_lang }}" hreflang="{{ l.html_lang }}"{% if l.code == i18n_lang %} aria-current="true"{% endif %}>{{ l.name }}</a></li>
+          {% endfor %}
+        </ul>
+      </details>
     </div>
   </div>
 </div>
