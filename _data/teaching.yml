@@ -1,25 +1,21 @@
-# Teaching page (/teaching/). Both lists may stay empty; the page then shows a
-# short placeholder sentence. Newest first.
-#
-# positions: teaching assistant (or other teaching) roles
-#   - course: "Probability Theory"          # required
-#     code: "STAT GU4001"                     # optional
-#     term: "Fall 2026"                       # optional, shown right-aligned
-#     role: "Teaching Assistant"              # optional
-#     institution: "Columbia University"      # optional
-#     instructor: "Instructor name"           # optional
-#     description: "One or two sentences."    # optional, Markdown allowed
-#     links:                                  # optional
-#       - label: "Course page"
-#         url: "https://..."
-#
-# notes: course notes, recitation handouts, solutions (put PDFs in files/)
-#   - title: "Recitation notes on conditional expectation"   # required
-#     url: "/files/notes/conditional-expectation.pdf"        # optional
-#     course: "STAT GU4001"                                   # optional
-#     date: "Oct 2026"                                        # optional
-#     description: "One line."                                # optional
-
+# Teaching page: recorded explanations, optional verified teaching roles, and notes.
+# Do not infer a teaching appointment, course number, or recording year from a clip.
+# Video IDs were checked against YouTube metadata; supplied transcripts are private inputs.
+# Notes appear only when a real, public-ready URL is provided.
 positions: []
-
 notes: []
+
+videos:
+  - title: "Eigenvalues, Linear Independence, and Diagonalization"
+    youtube_id: "o6Dj2G5Rskk"
+    thumbnail: "/images/teaching/linear-algebra.jpg"
+    description: >-
+      A proof that eigenvectors associated with distinct eigenvalues are linearly
+      independent, followed by a construction of singular, diagonalizable
+      2 × 2 matrices.
+  - title: "Object Construction and References in Java"
+    youtube_id: "SKSb5FuAges"
+    thumbnail: "/images/teaching/java-objects.jpg"
+    description: >-
+      A walkthrough of constructor calls, object references, and method evaluation,
+      using stack frames and heap diagrams to trace a small Java program.

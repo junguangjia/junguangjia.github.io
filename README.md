@@ -196,3 +196,23 @@ institutions.
 ## License
 
 The template is released under the MIT License (see `LICENSE`).
+
+## Research report and teaching recordings
+
+The trace-estimation title and `Report (PDF)` link open the same-site file
+`files/stochastic-trace-estimation-report.pdf`. `Code (GitHub)` opens the separate
+public `junguangjia/stochastic-trace-estimation` repository. The PDF is an unchanged
+snapshot of that repository's `latex/trace-estimation-report.pdf`; its source commit
+and SHA-256 are recorded in `_data/projects.yml`. Treat the research repository as
+the source of truth. When replacing the report, verify its PDF content and hash,
+update those provenance fields, and retain the stable website URL. Do not rebuild
+or revise the research project as part of an ordinary website edit.
+
+`_data/teaching.yml` holds `videos`, `notes`, and optional verified `positions`.
+Recordings have a title, an eleven-character YouTube ID, and a short description.
+They use local poster images with direct YouTube links; embedded playback was
+not confirmed in the automated browser, so no third-party player is loaded.
+No autoplay or new JavaScript dependency is added. Do not infer a TA role,
+course number, or recording year from the upload date. Add notes only after the
+owner supplies a public-ready file or URL; empty notes/positions are not rendered.
+No video transcript is published as part of these changes.

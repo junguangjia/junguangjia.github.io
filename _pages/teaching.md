@@ -1,13 +1,20 @@
 ---
 permalink: /teaching/
 title: "Teaching"
-description: "Teaching by Junguang Jia: teaching assistant positions and course notes."
+description: "Recorded explanations and learning materials in mathematics and computing by Junguang Jia."
 author_profile: true
 ---
 
+I use worked examples and visual explanations to make mathematical and computational ideas easier to follow. The excerpts below were recorded during pandemic-era remote learning.
+
+{% if site.data.teaching.videos.size > 0 %}
+## Recorded Explanations
+
+{% include teaching-videos.html %}
+{% endif %}
+
 {% assign positions = site.data.teaching.positions %}
 {% assign notes = site.data.teaching.notes %}
-{% if positions.size > 0 or notes.size > 0 %}
 {% if positions.size > 0 %}
 ## Teaching Assistant
 
@@ -37,7 +44,4 @@ author_profile: true
   {% if n.description %}<div class="entry__desc">{{ n.description | markdownify }}</div>{% endif %}
 </div>
 {% endfor %}
-{% endif %}
-{% else %}
-Teaching assistant positions and course notes will be listed here.
 {% endif %}

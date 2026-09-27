@@ -12,19 +12,25 @@
 # Keep entries factual. Course projects are labeled as such and are not publications.
 
 academic:
-  - title: "Stochastic Trace Estimation: Hutchinson and Hutch++"
+  - title: "Stochastic Trace Estimation with Hutchinson and Hutch++"
+    url: "/files/stochastic-trace-estimation-report.pdf"
     dates: "Spring 2026 – Present"
-    meta: "Course project, STAT GR6104 Computational Statistics, Columbia University; instructor: [Christopher R. Harshaw](https://www.chrisharshaw.com/)"
+    meta: "Course project and reproducible computational study, STAT GR6104 Computational Statistics, Columbia University; course instructor: [Christopher R. Harshaw](https://www.chrisharshaw.com/)"
     description: >-
-      Reconstructed the unbiasedness and complexity arguments for the Hutchinson and
-      Hutch++ trace estimators and examined randomized low-rank sketching as a
-      variance-reduction strategy. Implemented reproducible Julia experiments on
-      structured positive semidefinite (PSD) matrices and graph triangle counting, using
-      dense and implicit sparse matrix-vector operators, seeded Monte Carlo trials, and
-      unit tests. On a 1,000 × 1,000 exponential-spectrum PSD matrix, Hutch++ reached a
-      1% mean relative-error target at 30 matrix-vector products, whereas Hutchinson did
-      not reach it by 120 (1,000 Monte Carlo replications).
-    links: []
+      Implemented and evaluated Hutchinson and Hutch++ in Julia using a common
+      matrix–vector interface. The study compares accuracy and operator-query budgets
+      on a fixed exponential-spectrum PSD matrix and a synthetic graph for triangle
+      counting, reports Monte Carlo uncertainty, and measures runtime in a separate
+      serial experiment. The public repository includes pinned environments, tests,
+      saved trial-level results, and scripts that regenerate the report.
+    # The website PDF is an unchanged snapshot of the public research repository.
+    report_source_commit: "35a26f96a3a4d27ba5fe60b1c419184ec8c728aa"
+    report_sha256: "68072a180eb5d1e67b0def25e13ba51055654902d2846a84a60dc85efc3ce6bc"
+    links:
+      - label: "Report (PDF)"
+        url: "/files/stochastic-trace-estimation-report.pdf"
+      - label: "Code (GitHub)"
+        url: "https://github.com/junguangjia/stochastic-trace-estimation"
 
 independent:
   - title: "ArtVenn"
