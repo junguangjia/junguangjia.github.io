@@ -65,8 +65,12 @@ so inspect the files directly rather than serving `_site/` with another server.
   for course notes; put note PDFs in `files/`). While both lists are empty the
   page shows a one-line placeholder.
 - **Miscellaneous:** edit `_pages/misc.md`.
-- **Sidebar (name, pronouns, motto, location, affiliation, email, GitHub):**
+- **Sidebar (name, pronouns, motto, location, affiliation, email, profiles):**
   edit the `author:` block in `_config.yml` (`bio` holds the motto).
+  `googlescholar` takes the full profile URL and `linkedin` the username
+  (`linkedin.com/in/USERNAME`). While either is an empty string (`""`), the
+  sidebar lists it like the other entries but without a link; delete the line
+  to hide it.
 - **Education:** edit `_data/education.yml` (shown as plain entries on the
   About page; dates use the CV style, e.g. `Sep 2025 – Present`). `logo` names
   a single-color file in `images/logos/`.
@@ -110,17 +114,21 @@ a PDF inside a page). The public URL
 ## Appearance
 
 - Typography: Source Serif 4 for body text and headings; Source Sans 3 for
-  navigation, the sidebar, dates, and metadata. Both are loaded as pinned
-  Fontsource WOFF2 files (latin subset) from jsDelivr; the `@font-face` rules
-  and the design tokens (colors, sizes, prose measure) are in
-  `_sass/_custom.scss`, the font stacks in `_sass/_themes.scss`.
+  navigation, the sidebar, and metadata; Latin Modern Roman italic (the LaTeX
+  typeface, from the pinned latex.css package) for dates and the track line
+  under each degree. The two Source families are pinned Fontsource WOFF2
+  files (latin subset) and Latin Modern is one WOFF2 file from the pinned
+  latex.css package, all served by jsDelivr. The `@font-face` rules, the
+  `$latex-serif` stack, and the design tokens (colors, sizes) are in
+  `_sass/_custom.scss`; the Source font stacks are in `_sass/_themes.scss`.
 - Layout: the top bar, the sidebar with the content, and the footer share one
   centered container (at most 1180px wide), and the content fills the space
   next to the sidebar, so the page has equal margins on both sides. Text is
   16px on phones, 17px on tablets and laptops, and 18px from 1280px wide.
 - Education and project entries are plain typographic entries (no cards).
   Education entries start with a single-color school logo drawn as a CSS mask
-  in `--site-logo-color`, so it follows the light and dark themes.
+  in `--site-logo-color`, a light grey chosen so the logos stay in the
+  background; it follows the light and dark themes.
 - Light and dark themes follow the visitor's operating-system setting; there is
   no manual toggle. A small script in `_includes/head/custom.html` applies the
   theme before the first paint, and a `prefers-color-scheme` rule in
@@ -172,14 +180,15 @@ Docker setup, and template workflows) was removed.
 ## Credits
 
 School logos in `images/logos/` are single-color adaptations of files from
-Wikimedia Commons. The logos themselves are trademarks of their institutions.
+Wikimedia Commons. The logos themselves are trademarks or insignia of their
+institutions.
 
-- `columbia.svg`: the crown only, from "Columbia College of Columbia University
-  Crown 2020.svg" by Acollevecchio, CC BY-SA 4.0
-  (<https://commons.wikimedia.org/wiki/File:Columbia_College_of_Columbia_University_Crown_2020.svg>).
-  This adaptation is shared under the same license.
-- `ucsd.svg`: from "Seal of the University of California, San Diego.svg",
-  public domain
+- `columbia.svg`: the Columbia University crown (crown and base bar only),
+  from "Columbia University 1754.svg", public domain text logo
+  (<https://commons.wikimedia.org/wiki/File:Columbia_University_1754.svg>).
+- `ucsd.svg`: the seal as a solid ring with the lettering cut out and the
+  center artwork kept, from "Seal of the University of California, San
+  Diego.svg", public domain
   (<https://commons.wikimedia.org/wiki/File:Seal_of_the_University_of_California,_San_Diego.svg>).
 - `fudan.svg`: from "Fudan University Logo.svg", public domain
   (<https://commons.wikimedia.org/wiki/File:Fudan_University_Logo.svg>).

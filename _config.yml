@@ -26,7 +26,9 @@ author:
   employer         : "Columbia University"
   uri              :
   email            : "junguang.jia@columbia.edu"
+  googlescholar    : ""  # full profile URL; while empty (""), the sidebar lists "Google Scholar" without a link
   github           : "junguangjia"
+  linkedin         : ""  # LinkedIn username (linkedin.com/in/USERNAME); while empty (""), listed without a link
 
 # Site Settings
 breadcrumbs              : false

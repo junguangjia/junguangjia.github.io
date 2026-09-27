@@ -1,8 +1,9 @@
 # Education entries, newest first. Rendered as plain entries on the About page:
 # a single-color school logo, the institution with `dates` right-aligned, then
 # `degree` and `detail`, each on its own line (`note` adds an optional line).
-# `logo` is a file in images/logos/; it is drawn as a CSS mask in the page's
-# muted text color, so any single-color SVG or transparent PNG works.
+# `logo` is a file in images/logos/; it is drawn as a CSS mask in
+# --site-logo-color (a light grey in each theme, set in _sass/_custom.scss),
+# so any single-color SVG or transparent PNG works.
 
 - institution: "Columbia University"
   logo: "columbia.svg"

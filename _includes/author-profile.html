@@ -46,8 +46,10 @@
       {% if author.arxiv %}
         <li><a href="{{ author.arxiv }}"><i class="ai ai-arxiv ai-fw icon-pad-right"></i>arXiv</a></li>
       {% endif %}      
-      {% if author.googlescholar %}
-        <li><a href="{{ author.googlescholar }}"><i class="ai ai-google-scholar ai-fw icon-pad-right"></i>Google Scholar</a></li>
+      {% if author.googlescholar and author.googlescholar != "" %}
+        <li><a href="{{ author.googlescholar }}"><i class="fab fa-fw fa-google-scholar icon-pad-right" aria-hidden="true"></i>Google Scholar</a></li>
+      {% elsif author.googlescholar == "" %}
+        <li><span class="author__placeholder"><i class="fab fa-fw fa-google-scholar icon-pad-right" aria-hidden="true"></i>Google Scholar<span class="sr-only"> (profile link not yet available)</span></span></li>
       {% endif %}
       {% if author.inspire-hep %}
         <li><a href="{{ author.inspire-hep }}"><i class="ai ai-inspire ai-fw icon-pad-right"></i>INSPIRE-HEP</a></li>
@@ -128,8 +130,10 @@
       {% if author.lastfm %}
         <li><a href="https://last.fm/user/{{ author.lastfm }}"><i class="fab fa-fw fa-lastfm icon-pad-right" aria-hidden="true"></i>Last.fm</a></li>
       {% endif %}      
-      {% if author.linkedin %}
+      {% if author.linkedin and author.linkedin != "" %}
         <li><a href="https://www.linkedin.com/in/{{ author.linkedin }}"><i class="fab fa-fw fa-linkedin icon-pad-right" aria-hidden="true"></i>LinkedIn</a></li>
+      {% elsif author.linkedin == "" %}
+        <li><span class="author__placeholder"><i class="fab fa-fw fa-linkedin icon-pad-right" aria-hidden="true"></i>LinkedIn<span class="sr-only"> (profile link not yet available)</span></span></li>
       {% endif %}      
       {% if author.mastodon %}
         <li><a href="{{ author.mastodon }}"><i class="fab fa-fw fa-mastodon icon-pad-right" aria-hidden="true"></i>Mastodon</a></li>

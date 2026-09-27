@@ -32,6 +32,19 @@ $latin-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+0
 @include webfont("Source Sans 3", "source-sans-3", 500, normal);
 @include webfont("Source Sans 3", "source-sans-3", 600, normal);
 
+/* Latin Modern Roman italic (the LaTeX typeface, GUST Font License) for dates
+   and the track lines under each degree, as in the owner's LaTeX CV. Pinned
+   latex.css package on jsDelivr. */
+@font-face {
+  font-family: "Latin Modern Roman";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/npm/latex.css@1.14.0/fonts/LM-italic.woff2") format("woff2");
+}
+
+$latex-serif: "Latin Modern Roman", "Latin Modern", "CMU Serif", Georgia, serif;
+
 /* --------------------------------------------------------------------------
    Colors. Every text color meets WCAG AA (4.5:1) on its background:
    light: text #333 12.6:1, muted #6a6a6a 5.4:1, links #2f617c 6.7:1;
@@ -52,7 +65,7 @@ $latin-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+0
   --global-masthead-link-color: #3a3a3a;
   --global-masthead-link-color-hover: #2f617c;
   --global-fig-caption-color: #6a6a6a;
-  --site-logo-color: #555555;           /* school logos (decorative) */
+  --site-logo-color: #bdbdbd;           /* school logos: decorative, kept quiet */
 }
 
 @mixin site-dark-overrides {
@@ -71,7 +84,7 @@ $latin-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+0
   --global-masthead-link-color: #d0d0d0;
   --global-masthead-link-color-hover: #8fb6d0;
   --global-fig-caption-color: #a3a3a3;
-  --site-logo-color: #b8b8b8;
+  --site-logo-color: #4a4a4a;
 }
 
 :root[data-theme="dark"] {
@@ -394,6 +407,32 @@ body {
   }
 }
 
+/* Sidebar icons share one style: Font Awesome glyphs in the text color (the
+   template tints some brand icons, e.g. LinkedIn blue). */
+.sidebar .author__urls {
+  .fas,
+  .fab,
+  .ai {
+    color: inherit;
+  }
+}
+
+/* Profile entries listed before their link exists (Google Scholar, LinkedIn
+   with an empty value in _config.yml): laid out and colored exactly like the
+   other entries, but not links. */
+.author__urls .author__placeholder {
+  display: block;
+  margin-bottom: 5px;
+  padding: 2px 5px 2px 0;
+  cursor: default;
+}
+
+/* The phone "Follow" menu's pointer arrow is hard-coded white in the
+   template; match the menu background so it also works in dark mode. */
+.author__urls:after {
+  border-color: var(--global-bg-color) transparent;
+}
+
 /* Text-only sidebar: remove the indent reserved for the avatar on small screens */
 .author__content--no-avatar {
   padding-left: 0;
@@ -401,8 +440,8 @@ body {
 
 /* --------------------------------------------------------------------------
    Education and project entries: plain academic entries separated by
-   whitespace. Title (Source Serif 4, 600) with dates right-aligned (Source
-   Sans 3 italic); the dates wrap under the title on narrow screens.
+   whitespace. Title (Source Serif 4, 600) with dates right-aligned (Latin
+   Modern Roman italic); the dates wrap under the title on narrow screens.
    -------------------------------------------------------------------------- */
 .entry {
   margin: 0 0 1.75rem;
@@ -436,8 +475,8 @@ body {
 }
 
 .entry__dates {
-  font-family: $sans-serif;
-  font-size: 0.88rem;                   /* 15px */
+  font-family: $latex-serif;
+  font-size: 0.88rem;
   font-style: italic;
   color: var(--site-muted-color);
   white-space: nowrap;
@@ -462,6 +501,12 @@ body {
     font-size: 0.9rem;                  /* ~15.3px */
     line-height: 1.5;
     color: var(--site-muted-color);
+  }
+
+  /* Track lines under each degree: LaTeX italic, like the dates. */
+  .entry__detail {
+    font-family: $latex-serif;
+    font-style: italic;
   }
 
   .entry__desc {
@@ -567,7 +612,7 @@ body {
 
 .page__content .log-item__date {
   padding-top: 0.12rem;
-  font-family: $sans-serif;
+  font-family: $latex-serif;
   font-size: 0.88rem;
   font-style: italic;
   color: var(--site-muted-color);

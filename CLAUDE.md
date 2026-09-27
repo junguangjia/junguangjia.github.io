@@ -36,8 +36,9 @@ See `README.md` for editing instructions.
   owner explicitly asks. The public email is junguang.jia@columbia.edu. The
   public CV PDF (`files/Junguang_Jia_CV.pdf`, generated from
   `_cv/Junguang_Jia_CV.html`) follows the same rule.
-- Typography is Source Serif 4 (prose, headings) and Source Sans 3 (navigation,
-  sidebar, dates, metadata); entries are plain typographic entries, not cards;
+- Typography is Source Serif 4 (prose, headings), Source Sans 3 (navigation,
+  sidebar, metadata), and Latin Modern Roman italic (dates and the track line
+  under each degree, as the owner asked); entries are plain typographic entries, not cards;
   the theme follows the operating system with no toggle; the layout is one
   centered container with the content filling the space next to the sidebar
   (the owner asked for no wide empty strip on the right); the site name is
