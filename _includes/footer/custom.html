@@ -58,6 +58,11 @@
       }, 50);
     });
     window.addEventListener('load', function () { syncNav(); syncFollow(); });
+    /* Visitors who prefer reduced motion get no jQuery fades (the "Follow"
+       list); the template script (a module) has run by DOMContentLoaded. */
+    document.addEventListener('DOMContentLoaded', function () {
+      if (window.jQuery && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) { window.jQuery.fx.off = true; }
+    });
   })();
 </script>
 

@@ -14,12 +14,13 @@ $paragraph-indent           : false; // true, false (default)
 $indent-var                 : 1.3em;
 
 /* System typefaces */
-/* Site-specific: every text style uses Latin Modern, the LaTeX typeface (loaded in
-   _sass/_custom.scss). Template defaults were Georgia for $serif and the system
-   sans-serif stack for $sans-serif. */
-$latex-serif                : "Latin Modern Roman", "CMU Serif", "Computer Modern Serif", Georgia, "Times New Roman", serif;
-$serif                      : $latex-serif;
-$sans-serif                 : $latex-serif;
+/* Site-specific: two-family academic typography (web fonts are declared in
+   _sass/_custom.scss). Source Serif 4 sets body text and headings; Source Sans 3
+   sets navigation, the sidebar, dates, metadata and other utility text (every
+   template rule that uses $sans-serif). Template defaults were Georgia and the
+   system sans-serif stack. */
+$serif                      : "Source Serif 4", Georgia, "Times New Roman", serif;
+$sans-serif                 : "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
 $monospace                  : Monaco, Consolas, "Lucida Console", monospace;
 
 /* Sans serif typefaces */
@@ -43,8 +44,8 @@ $type-size-6                : 0.75em;   // ~12px
 $type-size-7                : 0.6875em; // ~11px
 $type-size-8                : 0.625em;  // ~10px
 
-$global-font-family         : $sans-serif;
-$header-font-family         : $sans-serif;
+$global-font-family         : $serif;
+$header-font-family         : $serif;
 $caption-font-family        : $serif;
 
 /* ==========================================================================

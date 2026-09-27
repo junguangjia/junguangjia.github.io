@@ -1,13 +1,15 @@
 {% comment %}
-  Renders site.data.education as a list of cards (used on the About page).
+  Renders site.data.education as plain academic entries (used on the About page):
+  institution and dates on one line, then degree, track, and an optional note.
 {% endcomment %}
 {% for entry in site.data.education %}
-<div class="entry-card">
-  <div class="entry-card__head">
-    <h3 class="entry-card__title">{{ entry.institution }}</h3>
-    <span class="entry-card__dates">{{ entry.dates }}</span>
+<div class="entry">
+  <div class="entry__head">
+    <h3 class="entry__title">{{ entry.institution }}</h3>
+    <span class="entry__dates">{{ entry.dates }}</span>
   </div>
-  <p class="entry-card__line"><strong>{{ entry.degree }}</strong>{% if entry.detail %}, {{ entry.detail }}{% endif %}</p>
-  {% if entry.note %}<p class="entry-card__line">{{ entry.note }}</p>{% endif %}
+  <p class="entry__degree">{{ entry.degree }}</p>
+  {% if entry.detail %}<p class="entry__detail">{{ entry.detail }}</p>{% endif %}
+  {% if entry.note %}<p class="entry__detail">{{ entry.note }}</p>{% endif %}
 </div>
 {% endfor %}

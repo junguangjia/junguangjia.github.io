@@ -1,95 +1,250 @@
 /* ==========================================================================
    SITE-SPECIFIC CUSTOMIZATIONS (junguangjia.github.io)
-   Everything else in _sass/ is unchanged Academic Pages template code.
+   Everything else in _sass/ is Academic Pages template code, apart from the
+   font stacks in _themes.scss and the dark-theme mixin in theme/_default_dark.scss.
    ========================================================================== */
 
-/* Latin Modern Roman, the LaTeX typeface (GUST Font License), served by jsDelivr
-   from the pinned latex.css package. The font stack itself is set in
-   _sass/_themes.scss ($latex-serif). */
-$lm-fonts: "https://cdn.jsdelivr.net/npm/latex.css@1.14.0/fonts";
-@font-face { font-family: "Latin Modern Roman"; font-style: normal; font-weight: 400; font-display: swap; src: url("#{$lm-fonts}/LM-regular.woff2") format("woff2"); }
-@font-face { font-family: "Latin Modern Roman"; font-style: italic; font-weight: 400; font-display: swap; src: url("#{$lm-fonts}/LM-italic.woff2") format("woff2"); }
-@font-face { font-family: "Latin Modern Roman"; font-style: normal; font-weight: 700; font-display: swap; src: url("#{$lm-fonts}/LM-bold.woff2") format("woff2"); }
-@font-face { font-family: "Latin Modern Roman"; font-style: italic; font-weight: 700; font-display: swap; src: url("#{$lm-fonts}/LM-bold-italic.woff2") format("woff2"); }
+/* --------------------------------------------------------------------------
+   Web fonts: Source Serif 4 and Source Sans 3 (SIL Open Font License 1.1),
+   Fontsource static WOFF2 files, latin subset, pinned version, via jsDelivr.
+   Only the faces the site uses are declared; browsers download a face only
+   when text actually needs it.
+   -------------------------------------------------------------------------- */
+$fontsource: "https://cdn.jsdelivr.net/npm/@fontsource";
+$latin-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 
-/* Colors: link and secondary-text colors chosen so that text meets the WCAG AA
-   4.5:1 contrast ratio in both the light and the dark theme. The template's
-   defaults (#52adc8 links, #bdc1c4 footer/button text) fall well below it. */
+@mixin webfont($family, $pkg, $weight, $style) {
+  @font-face {
+    font-family: $family;
+    font-style: $style;
+    font-weight: $weight;
+    font-display: swap;
+    src: url("#{$fontsource}/#{$pkg}@5.3.0/files/#{$pkg}-latin-#{$weight}-#{$style}.woff2") format("woff2");
+    unicode-range: $latin-range;
+  }
+}
+
+@include webfont("Source Serif 4", "source-serif-4", 400, normal);
+@include webfont("Source Serif 4", "source-serif-4", 400, italic);
+@include webfont("Source Serif 4", "source-serif-4", 600, normal);
+@include webfont("Source Sans 3", "source-sans-3", 400, normal);
+@include webfont("Source Sans 3", "source-sans-3", 400, italic);
+@include webfont("Source Sans 3", "source-sans-3", 500, normal);
+@include webfont("Source Sans 3", "source-sans-3", 600, normal);
+
+/* --------------------------------------------------------------------------
+   Colors. Every text color meets WCAG AA (4.5:1) on its background:
+   light: text #333 12.6:1, muted #6a6a6a 5.4:1, links #2f617c 6.7:1;
+   dark:  text #dedede 13.4:1, muted #a3a3a3 7.2:1, links #8fb6d0 8.4:1.
+   -------------------------------------------------------------------------- */
 :root {
-  --global-link-color: #2f7f93;
-  --global-text-color-light: #666a6d; /* footer text, "Follow" button */
-  --site-muted-color: #666a6d;        /* card dates and project context */
-  /* The template writes these light-theme values as unevaluated Sass mix()
-     strings, which browsers ignore; these are the evaluated colors. */
-  --global-link-color-hover: #235f6e;
-  --global-masthead-link-color-hover: #5c6266;
-  --global-fig-caption-color: #777a7d;
+  --global-text-color: #333333;
+  --global-text-color-light: #6a6a6a;   /* footer text, "Follow" button */
+  --site-heading-color: #292929;
+  --site-muted-color: #6a6a6a;          /* dates, degree details, metadata */
+  --global-border-color: #e4e4e4;
+  --global-dark-border-color: #d9d9d9;
+  --global-footer-bg-color: #ffffff;
+  --global-thead-color: #f2f2f2;
+  --global-link-color: #2f617c;
+  --global-link-color-hover: #1f4458;
+  --global-link-color-visited: #2f617c;
+  --global-masthead-link-color: #3a3a3a;
+  --global-masthead-link-color-hover: #2f617c;
+  --global-fig-caption-color: #6a6a6a;
 }
 
 @mixin site-dark-overrides {
-  --global-link-color: #7fd3ea;
-  --global-link-color-hover: #b3e6f5;
-  --global-masthead-link-color-hover: #7fd3ea;
-  --site-muted-color: #b8bcc0;
+  --global-bg-color: #161616;
+  --global-footer-bg-color: #161616;
+  --global-text-color: #dedede;
+  --global-text-color-light: #a3a3a3;
+  --site-heading-color: #eeeeee;
+  --site-muted-color: #a3a3a3;
+  --global-border-color: #333333;
+  --global-dark-border-color: #3d3d3d;
+  --global-thead-color: #262626;
+  --global-link-color: #8fb6d0;
+  --global-link-color-hover: #b5d0e2;
+  --global-link-color-visited: #8fb6d0;
+  --global-masthead-link-color: #d0d0d0;
+  --global-masthead-link-color-hover: #8fb6d0;
+  --global-fig-caption-color: #a3a3a3;
 }
 
 :root[data-theme="dark"] {
   @include site-dark-overrides;
 }
 
+/* Visitors without JavaScript still follow the operating-system setting. */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
     @include site-dark-overrides;
   }
 }
 
-/* Dark theme: the collapsed-navigation hover bar is light grey in the template,
-   which makes the light-blue hover text illegible; use a darker bar instead. */
-:root[data-theme="dark"] .greedy-nav .hidden-links a:hover {
-  background: #3a3a3a;
-}
-
-/* Keep keyboard-focused elements clear of the fixed header and footer when
-   the browser scrolls them into view. */
+/* --------------------------------------------------------------------------
+   Base typography: 16px on phones, 17px from tablets up (template: 18px).
+   -------------------------------------------------------------------------- */
 html {
+  font-size: 16px;
+
+  @include breakpoint($medium) {
+    font-size: 17px;
+  }
+
+  /* Keep keyboard-focused elements clear of the fixed header when the browser
+     scrolls them into view. */
   scroll-padding-top: 80px;
-  scroll-padding-bottom: 130px;
 }
 
-/* Keyboard focus indicator with at least 3:1 contrast in both themes. The
-   template's default ring is a 2.3:1 orange, and its hamburger button sets
-   outline: none. */
-a:focus-visible,
-.btn:focus-visible,
-.greedy-nav button:focus-visible {
-  outline: 2px solid var(--global-text-color);
-  outline-offset: 2px;
+body {
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Screen-reader-only text (used for the home page heading). Defined here so it
-   ships in main.css and does not depend on the async-loaded icon stylesheet. */
-/* The sidebar is a scroll container at wide widths, so draw the ring inside it */
-.sidebar .author__urls a:focus-visible {
-  outline-offset: -2px;
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: var(--site-heading-color);
 }
 
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-/* The sidebar name is a <p> (not an <h3>) so the page heading stays the first
-   heading in document order; keep the template's heading look. */
-.sidebar .author__name {
-  font-weight: bold;
+.page__title {
+  margin-bottom: 0.7em;
+  font-size: 1.75rem;
   line-height: 1.2;
+
+  @include breakpoint($medium) {
+    font-size: 2rem;                    /* 34px */
+  }
+}
+
+.page__content {
+  h2 {
+    margin: 2.4rem 0 1rem;
+    padding-bottom: 0.35rem;
+    font-size: 1.35rem;
+    line-height: 1.3;
+    border-bottom: 1px solid var(--global-border-color);
+
+    @include breakpoint($medium) {
+      font-size: 1.47rem;               /* 25px */
+    }
+  }
+
+  /* A section heading that opens the page sits closer to the page title. */
+  > h2:first-child {
+    margin-top: 0.6rem;
+  }
+
+  h3 {
+    font-size: 1.12rem;                 /* 19px */
+    line-height: 1.35;
+  }
+
+  p {
+    margin: 0 0 1.1em;
+  }
+
+  a {
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.17em;
+  }
+
+  /* Media (videos, maps, figures) scale down with the column. */
+  iframe,
+  img,
+  video {
+    max-width: 100%;
+  }
+}
+
+/* Readable measure for prose (about 70-72 characters per line at 17px Source
+   Serif 4). Pages with wide content such as the embedded CV keep the full
+   column width. Browsers without :has() support simply use the full column. */
+.page__content:not(:has(.cv-embed)) {
+  max-width: 66ch;
+}
+
+/* The page title (outside .page__content) follows the same measure. */
+.page__inner-wrap > header {
+  max-width: 66ch;
+}
+
+/* --------------------------------------------------------------------------
+   Top navigation (Source Sans 3). The template's animated grey bar under
+   hovered links is replaced by a plain color change; the current page keeps
+   its underline.
+   -------------------------------------------------------------------------- */
+.greedy-nav {
+  a {
+    font-size: 0.92rem;                 /* ~15.5px */
+    font-weight: 500;
+    letter-spacing: 0.005em;
+
+    &:hover {
+      color: var(--global-masthead-link-color-hover);
+    }
+  }
+
+  .visible-links {
+    /* Every link reserves the current-page underline, so the header keeps the
+       same height on every page. */
+    a {
+      border-bottom: 2px solid transparent;
+    }
+
+    .masthead__menu-item.selected a {
+      border-bottom-color: var(--global-text-color);
+    }
+
+    li:first-child a {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    a:before {
+      display: none;
+    }
+  }
+
+  .hidden-links {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.masthead__menu-item.selected a {
+  font-weight: 600;
+}
+
+:root[data-theme="dark"] .greedy-nav .hidden-links a:hover {
+  background: #262626;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .greedy-nav .hidden-links a:hover {
+    background: #262626;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Author sidebar (Source Sans 3; the template renders it at ~12px).
+   -------------------------------------------------------------------------- */
+.sidebar {
+  p,
+  li {
+    font-size: 0.86rem;                 /* ~14.6px */
+    line-height: 1.5;
+  }
+
+  /* The name is a <p> (not an <h3>) so the page heading stays the first
+     heading in document order. */
+  .author__name {
+    font-size: 1.05rem;                 /* ~18px */
+    font-weight: 600;
+    line-height: 1.25;
+    color: var(--site-heading-color);
+  }
 }
 
 /* Text-only sidebar: remove the indent reserved for the avatar on small screens */
@@ -97,74 +252,107 @@ a:focus-visible,
   padding-left: 0;
 }
 
-/* Entry cards used for education (About page) and projects (Research page) */
-.entry-card {
-  margin: 1em 0 1.5em;
-  padding: 1.25em 1.5em;
-  border: 1px solid var(--global-border-color);
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+/* --------------------------------------------------------------------------
+   Education and project entries: plain academic entries separated by
+   whitespace. Title (Source Serif 4, 600) with dates right-aligned (Source
+   Sans 3 italic); the dates wrap under the title on narrow screens.
+   -------------------------------------------------------------------------- */
+.entry {
+  margin: 0 0 1.75rem;
 
-  p:last-child {
+  &:last-child {
     margin-bottom: 0;
   }
 }
 
-/* Card header: title on the left, dates right-aligned in italics (CV style);
-   the dates wrap under the title on narrow screens. */
-.entry-card__head {
+.entry__head {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: baseline;
-  column-gap: 1em;
-  margin-bottom: 0.4em;
+  column-gap: 1.25rem;
 }
 
-.page__content .entry-card__title {
+.page__content .entry__title {
   margin: 0;
-  font-size: $type-size-4;
-  line-height: 1.3;
+  font-size: 1.12rem;                   /* 19px */
+  line-height: 1.35;
 }
 
-.entry-card__dates {
-  font-style: italic;
-  white-space: nowrap;
-}
-
-.entry-card__subtitle {
+.entry__subtitle {
   display: block;
-  margin-top: 0.15em;
-  font-size: $type-size-6;
-  font-weight: normal;
-  color: var(--site-muted-color);
+  margin-top: 0.1em;
+  font-size: 0.84em;                    /* ~16px */
+  font-style: italic;
+  font-weight: 400;
+  color: var(--global-text-color);
 }
 
-.entry-card__meta {
-  margin: 0 0 0.6em;
-  font-size: $type-size-6;
+.entry__dates {
+  font-family: $sans-serif;
+  font-size: 0.88rem;                   /* 15px */
+  font-style: italic;
   color: var(--site-muted-color);
+  white-space: nowrap;
+
+  /* On phones the dates always take their own line under the title, so every
+     entry in a list is laid out the same way. */
+  @media (max-width: #{$small - 1px}) {
+    flex-basis: 100%;
+  }
 }
 
-.page__content .entry-card__line {
-  margin: 0;
+.page__content {
+  .entry__degree {
+    margin: 0.15rem 0 0;
+    font-size: 0.94rem;                 /* 16px */
+  }
 
-  & + .entry-card__line {
-    margin-top: 0.2em;
+  .entry__detail,
+  .entry__meta {
+    margin: 0.1rem 0 0;
+    font-family: $sans-serif;
+    font-size: 0.9rem;                  /* ~15.3px */
+    line-height: 1.5;
+    color: var(--site-muted-color);
+  }
+
+  .entry__desc {
+    margin-top: 0.55rem;
+
+    p {
+      margin: 0 0 0.6em;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .entry__links {
+    margin: 0.45rem 0 0;
+    font-family: $sans-serif;
+    font-size: 0.9rem;
   }
 }
 
 /* News list on the About page */
-.news-list li {
-  margin-bottom: 0.6em;
+.news-list {
+  padding-left: 1.2em;
+
+  li {
+    margin-bottom: 0.55em;
+  }
+
+  strong {
+    font-weight: 600;
+  }
 }
 
-/* CV page: download link and embedded PDF viewer. Phones cannot display a PDF
-   inside a page, so the viewer is hidden there and the download link remains. */
-.cv-download {
-  font-size: $type-size-4;
-}
-
+/* --------------------------------------------------------------------------
+   CV page: download link and embedded PDF viewer. Phones cannot display a PDF
+   inside a page, so the viewer is hidden there and the download link remains.
+   -------------------------------------------------------------------------- */
 .cv-embed {
   display: none;
 
@@ -179,4 +367,105 @@ a:focus-visible,
     min-height: 640px;
     border: 1px solid var(--global-border-color);
   }
+}
+
+/* --------------------------------------------------------------------------
+   Footer: quiet, in Source Sans 3, and at the end of the page. The template
+   pins it to the bottom of the viewport on tablets and desktops, where it
+   permanently covers part of the screen, and leaves it mid-screen on short
+   phone pages; here it sits at the bottom of the document on every width
+   (html is position: relative with min-height: 100%, and the template script
+   reserves the footer's height below the content).
+   -------------------------------------------------------------------------- */
+.page__footer {
+  border-top: 1px solid var(--global-border-color);
+  font-family: $sans-serif;
+}
+
+.page__footer {
+  position: absolute;
+  bottom: 0;
+}
+
+/* Space for the footer before the template script measures it (and without
+   JavaScript); the footer is taller on phones, where its text wraps. */
+@media screen and (max-width: 768px) {
+  body {
+    padding-bottom: 12rem;
+  }
+}
+
+.page__footer-copyright {
+  font-family: $sans-serif;
+  font-size: 0.8rem;
+}
+
+.page__footer-follow li {
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+}
+
+.page__footer-follow a {
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   Motion: no fade-in on page load (template "intro" animations), and no
+   transitions or smooth scrolling for visitors who prefer reduced motion.
+   -------------------------------------------------------------------------- */
+.masthead,
+.breadcrumbs,
+.page__hero,
+.page__hero--overlay,
+#main,
+.page__footer {
+  -webkit-animation: none;
+          animation: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Accessibility helpers
+   -------------------------------------------------------------------------- */
+
+/* Keyboard focus indicator with at least 3:1 contrast in both themes. The
+   template's default ring is a 2.3:1 orange, and its hamburger button sets
+   outline: none. */
+a:focus-visible,
+.btn:focus-visible,
+.greedy-nav button:focus-visible {
+  outline: 2px solid var(--global-text-color);
+  outline-offset: 2px;
+}
+
+/* The sidebar is a scroll container at wide widths, so draw the ring inside it */
+.sidebar .author__urls a:focus-visible {
+  outline-offset: -2px;
+}
+
+/* Screen-reader-only text (used for the home page heading). Defined here so it
+   ships in main.css and does not depend on the async-loaded icon stylesheet. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }

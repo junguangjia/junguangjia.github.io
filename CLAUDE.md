@@ -36,8 +36,10 @@ See `README.md` for editing instructions.
   owner explicitly asks. The public email is junguang.jia@columbia.edu. The
   public CV PDF (`files/Junguang_Jia_CV.pdf`, generated from
   `_cv/Junguang_Jia_CV.html`) follows the same rule.
-- Typography is Latin Modern (LaTeX style) site-wide, and the theme follows the
-  operating system with no toggle; keep both unless the owner asks otherwise.
+- Typography is Source Serif 4 (prose, headings) and Source Sans 3 (navigation,
+  sidebar, dates, metadata); entries are plain typographic entries, not cards;
+  the theme follows the operating system with no toggle. Keep these unless the
+  owner asks otherwise, and keep every text color at WCAG AA contrast.
 - Only add a portrait that the site owner explicitly supplies.
 - Keep customizations small and documented. Prefer editing `_config.yml`,
   `_data/*.yml`, `_pages/*.md`, and `_sass/_custom.scss` over changing template

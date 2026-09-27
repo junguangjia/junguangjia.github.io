@@ -1,6 +1,6 @@
-# Education entries, newest first. Rendered as cards on the About page.
-# `degree` is shown in bold, followed by `detail`; `dates` is shown right-aligned in
-# italics (CV style); `note` (optional) is a second line.
+# Education entries, newest first. Rendered as plain entries on the About page:
+# institution with `dates` right-aligned, then `degree`, `detail`, and an optional
+# `note`, each on its own line.
 - institution: "Columbia University"
   dates: "Sep 2025 – Present"
   degree: "M.A. in Statistics"

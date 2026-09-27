@@ -56,8 +56,8 @@ so inspect the files directly rather than serving `_site/` with another server.
 - **Miscellaneous:** edit `_pages/misc.md`.
 - **Sidebar (name, short bio, location, affiliation, email, GitHub):** edit the
   `author:` block in `_config.yml`.
-- **Education:** edit `_data/education.yml` (shown as cards on the About page;
-  dates use the CV style, e.g. `Sep 2025 – Present`).
+- **Education:** edit `_data/education.yml` (shown as plain entries on the
+  About page; dates use the CV style, e.g. `Sep 2025 – Present`).
 - **Projects:** edit `_data/projects.yml`. Entries under `academic:` and
   `independent:` appear on the Research & Projects page. Only add `links` for
   real, public URLs.
@@ -92,9 +92,14 @@ a PDF inside a page). The public URL
 
 ## Appearance
 
-- All text uses Latin Modern, the LaTeX typeface, loaded from the pinned
-  `latex.css@1.14.0` package on jsDelivr (see `_sass/_custom.scss` and
-  `$latex-serif` in `_sass/_themes.scss`).
+- Typography: Source Serif 4 for body text and headings; Source Sans 3 for
+  navigation, the sidebar, dates, and metadata. Both are loaded as pinned
+  Fontsource WOFF2 files (latin subset) from jsDelivr; the `@font-face` rules
+  and the design tokens (colors, sizes, prose measure) are in
+  `_sass/_custom.scss`, the font stacks in `_sass/_themes.scss`.
+- Education and project entries are plain typographic entries (no cards); prose
+  is limited to about 70 characters per line, while the CV page uses the full
+  column for the embedded PDF.
 - Light and dark themes follow the visitor's operating-system setting; there is
   no manual toggle. A small script in `_includes/head/custom.html` applies the
   theme before the first paint, and a `prefers-color-scheme` rule in

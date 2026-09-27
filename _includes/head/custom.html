@@ -13,9 +13,11 @@
   })();
 </script>
 
-<!-- Latin Modern web fonts (LaTeX typeface), declared in _sass/_custom.scss -->
+<!-- Source Serif 4 / Source Sans 3 web fonts (Fontsource, pinned, latin subset),
+     declared in _sass/_custom.scss; preload the body and navigation faces. -->
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/latex.css@1.14.0/fonts/LM-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fontsource/source-serif-4@5.3.0/files/source-serif-4-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fontsource/source-sans-3@5.3.0/files/source-sans-3-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
 
 <!-- Support for Academicons -->
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -33,7 +35,7 @@
 <link rel="manifest" href="{{ base_path }}/images/manifest.json"/>
 <link rel="icon" href="/images/favicon.ico"/>
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"/>
-<meta name="theme-color" content="#474747" media="(prefers-color-scheme: dark)"/>
+<meta name="theme-color" content="#161616" media="(prefers-color-scheme: dark)"/>
 
 {% if page.sitemap == false %}
 <meta name="robots" content="noindex">
