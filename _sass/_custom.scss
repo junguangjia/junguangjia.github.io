@@ -390,7 +390,12 @@ body {
   }
 }
 
-/* Wide screens: a slightly larger portrait in the wider sidebar. */
+/* The portrait stays round (template circle); wide screens show it a little
+   larger in the wider sidebar. */
+.author__avatar img {
+  height: auto;
+}
+
 @include breakpoint($large) {
   .author__avatar img {
     max-width: 11rem;

@@ -18,7 +18,7 @@ repository               : "junguangjia/junguangjia.github.io"
 # Blank fields are not shown. `avatar` is a file in /images/; leave it empty for a
 # text-only sidebar.
 author:
-  avatar           : "portrait.jpg"
+  avatar           : "portrait.jpg"  # 600x600 head-and-shoulders crop, shown in a circle
   name             : "Junguang Jia"
   pronouns         : "He/Him"
   bio              : "The reason anyone would do this, if they could—which they can’t—would be because they could, which they can’t. So I always try first."

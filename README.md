@@ -151,11 +151,11 @@ nothing on the site should claim publications, awards, or results that do not ex
 
 ## Portrait
 
-The sidebar shows `images/portrait.jpg` (400×400 px, metadata stripped), set by
-`avatar: "portrait.jpg"` in the `author:` block of `_config.yml`. To replace it,
-save a new web-sized square copy (roughly 400×400 px) with metadata stripped at
-the same path, and keep the original photo outside this repository. Setting
-`avatar` to empty gives a text-only sidebar.
+The sidebar shows `images/portrait.jpg` in a circle: a 600×600 px
+head-and-shoulders crop (metadata stripped), set by `avatar:` in the `author:`
+block of `_config.yml`. To replace it, save a new square crop (about 600×600
+px) with metadata stripped at the same path, and keep the original photo
+outside this repository. Setting `avatar` to empty gives a text-only sidebar.
 
 ## CV PDF
 
