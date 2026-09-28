@@ -7,7 +7,6 @@
 
 en:
   label_sep: ": "
-  cv_intro: "Curriculum vitae of Junguang Jia, M.A. student in Statistics at Columbia University: education, academic distinctions, research and project experience, selected coursework, work experience, and technical skills."
   nav_main: "Main"
   credit_sep: ", "
   site_updated: "Site last updated {date}"
@@ -39,12 +38,12 @@ en:
     project: "Project"
     reading: "Reading"
     teaching: "Teaching"
+    work: "Work"
     milestone: "Milestone"
     life: "Life"
 
 fr:
   label_sep: " : "
-  cv_intro: "Curriculum vitae de Junguang Jia, étudiant en M.A. de statistique à l’Université Columbia : formation, distinctions académiques, expérience de recherche et de projets, cours suivis, expérience professionnelle et compétences techniques."
   name: "Junguang JIA"
   nav_main: "Menu principal"
   credit_sep: ", "
@@ -81,12 +80,12 @@ fr:
     project: "Projet"
     reading: "Lecture"
     teaching: "Enseignement"
+    work: "Travail"
     milestone: "Étape"
     life: "Vie personnelle"
 
 ja:
   label_sep: "："
-  cv_intro: "コロンビア大学統計学修士（M.A.）課程に在籍する賈俊廣のCVです。学歴、学術上の評価、研究・プロジェクト経験、主な履修科目、職歴、技術スキルを掲載しています。"
   name: "賈俊廣"
   name_reading: "（ジャ・ジュングアン）"
   nav_main: "メインメニュー"
@@ -124,12 +123,12 @@ ja:
     project: "プロジェクト"
     reading: "文献"
     teaching: "教育"
+    work: "仕事"
     milestone: "節目"
     life: "生活"
 
 zh:
   label_sep: "："
-  cv_intro: "哥伦比亚大学统计学硕士（M.A.）在读学生贾俊廣的简历，内容包括教育背景、学术荣誉、研究与项目经历、主要课程、工作经历和技术技能。"
   name: "贾俊廣"
   nav_main: "主菜单"
   credit_sep: "。"
@@ -166,5 +165,6 @@ zh:
     project: "项目"
     reading: "阅读"
     teaching: "教学"
+    work: "工作"
     milestone: "里程碑"
     life: "生活"

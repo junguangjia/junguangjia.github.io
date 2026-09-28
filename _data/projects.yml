@@ -8,16 +8,18 @@
 #   description (required, Markdown allowed)
 #   url         (optional; the project title links here. Research entries link
 #               their PDF report in /files/; leave it out until a report exists)
-#   images      (optional list of {src, width, height, alt, full}: figures from
+#   images      (optional list of {src, width, height, alt, caption, full}: figures from
 #               the project, floated beside the description so the text wraps
 #               around them; each links to `full` (a larger version) or to
 #               itself; metadata stripped. Use more than one only when it shows
 #               something the first does not)
+#   figure_layout (optional; "row" puts the figures side by side under the
+#               description; default: one figure floats beside the text)
 #   github      (optional; a GitHub logo at the end of the description links here)
 #   links       (optional list of {label, url}; only add real, public URLs)
 # A language block (fr, ja, zh) may translate title, subtitle, dates, meta,
-# description, image_alts (in the order of `images`) and link_labels (in the
-# order of `links`).
+# description, image_alts and image_captions (in the order of `images`) and
+# link_labels (in the order of `links`).
 #
 # Keep entries factual and never claim publications. Research done in a course
 # or grown out of one is called a research project in its field (for example
@@ -30,7 +32,7 @@ academic:
     url: "/files/ts-calibration-report.pdf"
     dates: "Sep 2026 – Present"
     meta: "Independent time series research project, developed from STAT GR5221 Time Series Analysis (Spring 2026), Columbia University; course instructor: [Franz Rembart](https://franzrembart.com/)"
-    description: "Studies whether volatility normalization helps one-step sequential prediction intervals recover after a scale change, and how long scale errors stored in past normalized scores can keep a rolling calibration window miscalibrated. In a 200-path synthetic pilot with a threefold upward scale step, a 250-score rolling window and nominal 95% coverage, empirical coverage over the first 25 forecasts after the step was 53.7% under raw rolling calibration and 83.4% with causal EWMA normalization. In a separate idealized model with independent scores, an exact calculation shows that 25 threefold-inflated past scores in a 250-score window raise repeated-sample coverage from 95.2% to 99.0% even when the current scale is exact. The feasibility study claims no new method and no general conditional-coverage guarantee; its derivations need independent review, and comparisons with fitted GARCH scale forecasts and online conformal methods remain open."
+    description: "Analyzed volatility-estimation lag and calibration memory in rolling prediction intervals, with a causal Python simulation in which every forecast is issued before its observation. On 200 synthetic scale-jump paths, EWMA normalization raised coverage over the first 25 forecasts after an upward shift from 53.7% to 83.4%, still below the 95% target in this exploratory design."
     # The website PDF is an unchanged copy of latex/ts-calibration-report.pdf in the public research repository.
     report_source_commit: "88131468a9a246fa60ef1dc29bbacb8a596a4971"
     report_sha256: "df019cac9d63f68990dffa924d30e3d5b1ceb956150be226ec5307a38c53798e"
@@ -39,113 +41,151 @@ academic:
         width: 1200
         height: 762
         alt: "Line chart of mean conditional coverage after an upward scale step in 200 synthetic paths: raw rolling calibration starts near 0.55 and recovers slowly toward 0.95, EWMA-normalized intervals start near 0.84 and reach about 0.96 within 50 forecasts, and the oracle-scale reference stays near 0.95."
+        caption: "Mean conditional coverage after an upward scale step"
     github: "https://github.com/junguangjia/ts-calibration"
     fr:
       title: "Retard d’estimation de la volatilité et mémoire de calibration dans les intervalles de prédiction séquentiels"
       dates: "sept. 2026 – aujourd’hui"
       meta: "Projet de recherche indépendant en séries temporelles, issu du cours STAT GR5221 Time Series Analysis (printemps 2026), Université Columbia ; enseignant du cours : [Franz Rembart](https://franzrembart.com/)"
-      description: "Étude visant à déterminer si la normalisation par la volatilité aide les intervalles de prédiction séquentiels à un pas à se rétablir après un changement d’échelle, et pendant combien de temps les erreurs d’échelle conservées dans les scores normalisés passés peuvent continuer de fausser la calibration d’une fenêtre glissante. Dans une étude pilote sur 200 trajectoires synthétiques, avec un saut d’échelle à la hausse d’un facteur trois, une fenêtre glissante de 250 scores et un niveau nominal de 95 %, la couverture empirique sur les 25 premières prévisions suivant le saut était de 53,7 % avec la calibration glissante brute et de 83,4 % avec une normalisation EWMA causale. Dans un modèle idéalisé distinct, à scores indépendants, un calcul exact montre que 25 scores passés gonflés d’un facteur trois dans une fenêtre de 250 scores portent la couverture en échantillonnage répété de 95,2 % à 99,0 %, alors même que l’échelle courante est exacte. Cette étude de faisabilité ne prétend proposer ni nouvelle méthode ni garantie générale de couverture conditionnelle ; ses démonstrations doivent encore faire l’objet d’un examen indépendant, et les comparaisons avec des prévisions d’échelle GARCH ajustées et avec les méthodes de prédiction conforme en ligne restent à faire."
+      description: "Analyse du retard d’estimation de la volatilité et de la mémoire de calibration dans les intervalles de prédiction glissants, à l’aide d’une simulation causale en Python où chaque prévision est émise avant l’observation correspondante. Sur 200 trajectoires synthétiques à sauts d’échelle, la normalisation EWMA a fait passer de 53,7 % à 83,4 % la couverture des 25 premières prévisions suivant une hausse d’échelle, soit un niveau encore inférieur à la cible de 95 % dans ce cadre exploratoire."
       image_alts:
         - "Graphique en courbes de la couverture conditionnelle moyenne sur 200 trajectoires synthétiques après un saut d’échelle à la hausse : la calibration glissante brute part d’environ 0,55 et remonte lentement vers 0,95, les intervalles normalisés par EWMA partent d’environ 0,84 et atteignent environ 0,96 dans les 50 premières prévisions, et la référence à échelle oracle reste proche de 0,95."
+      image_captions:
+        - "Couverture conditionnelle moyenne après une hausse d’échelle"
     ja:
       title: "逐次予測区間におけるボラティリティ推定の遅れとキャリブレーションの記憶"
       dates: "2026年9月〜現在"
       meta: "時系列解析の自主研究プロジェクト。コロンビア大学STAT GR5221「時系列解析」（2026年春学期）から発展したもの。同授業の担当教員：[Franz Rembart](https://franzrembart.com/)"
-      description: "ボラティリティによる正規化が、スケールの変化後に1期先の逐次予測区間の回復を助けるのか、また過去の正規化スコアに残ったスケールの誤差が、ローリング窓によるキャリブレーションをどの程度の期間狂わせ続けうるのかを調べている。スケールが3倍に上方変化し、250個のスコアからなるローリング窓を用いる名目被覆率95%の設定で、200本の合成系列によるパイロット実験を行ったところ、変化直後の25回の予測における経験的な被覆率は、素のローリング・キャリブレーションで53.7%、因果的EWMAによる正規化で83.4%であった。これとは別に、スコアが互いに独立な理想化モデルでの厳密な計算により、過去のスコア250個からなる窓のうち25個が3倍に膨らんでいると、現在のスケールが正確であっても反復標本での被覆率が95.2%から99.0%に上がることを示した。本研究は実現可能性の検討であり、新しい手法を提案したり、一般的な条件付き被覆を保証したりするものではない。導出には独立した検証が必要であり、推定したGARCHモデルによるスケール予測やオンライン・コンフォーマル予測手法との比較も今後の課題である。"
+      description: "ローリング予測区間におけるボラティリティ推定の遅れとキャリブレーションの記憶を分析し、各予測を観測値より先に確定させる因果的なPythonシミュレーションを実装した。スケールがジャンプする200本の合成系列では、EWMAで正規化すると、上方へのジャンプ後の最初の25回の予測における被覆率が53.7%から83.4%に上がったが、この探索的な設定では目標の95%には届いていない。"
       image_alts:
         - "200本の合成系列でスケールが上方に変化した後の平均条件付き被覆率を示す折れ線グラフ。素のローリング・キャリブレーションは約0.55から始まってゆっくり0.95に近づき、EWMAで正規化した区間は約0.84から始まって50回以内の予測で約0.96に達し、オラクル・スケールの参照線は約0.95で推移する。"
+      image_captions:
+        - "スケール上昇後の平均条件付き被覆率"
     zh:
       title: "序贯预测区间中的波动率估计滞后与校准记忆"
       dates: "2026年9月—至今"
       meta: "独立开展的时间序列研究项目，由哥伦比亚大学 STAT GR5221 时间序列分析课程（2026年春季学期）发展而来；课程授课教师：[Franz Rembart](https://franzrembart.com/)"
-      description: "研究波动率标准化能否帮助单步序贯预测区间在尺度变化后更快恢复，以及保存在历史标准化得分中的尺度误差可能使滚动校准窗口失准多久。在一项包含 200 条合成路径的初步实验中（尺度上跳至原来的三倍，滚动窗口含 250 个得分，名义覆盖率为 95%），就尺度上跳后的前 25 次预测而言，原始滚动校准的经验覆盖率为 53.7%，采用因果 EWMA 标准化后为 83.4%。在另一个得分相互独立的理想化模型中，精确计算表明：在含 250 个得分的窗口中，若有 25 个历史得分被放大至三倍，即使当前尺度预测完全准确，重复抽样覆盖率也会从 95.2% 升至 99.0%。该可行性研究并不声称提出了新方法或一般的条件覆盖保证；其推导仍需独立审查，与拟合 GARCH 模型的尺度预测及在线共形预测方法的比较也尚待开展。"
+      description: "分析了滚动预测区间中的波动率估计滞后与校准记忆，并实现了一个因果 Python 模拟，保证每次预测都在相应观测之前给出。在 200 条含尺度跳变的合成路径上，EWMA 标准化使尺度上跳后前 25 次预测的覆盖率从 53.7% 提高到 83.4%，但在这一探索性设计中仍低于 95% 的目标。"
       image_alts:
         - "200 条合成路径中尺度上跳后平均条件覆盖率的折线图：原始滚动校准从约 0.55 开始，缓慢回升至接近 0.95；EWMA 标准化区间从约 0.84 开始，在 50 次预测内达到约 0.96；理想尺度（oracle）参照线保持在约 0.95。"
+      image_captions:
+        - "尺度上跳后的平均条件覆盖率"
 
   - title: "Bayesian Modeling of Pulmonary Fibrosis Trajectories"
     url: "/files/bayesian-fvc-trajectories-report.pdf"
     dates: "May 2026 – Sep 2026"
     meta: "Bayesian statistics research project, STAT GR5224 Bayesian Statistics, Columbia University, later extended into a reproducible study; course instructor: [Dobrin Marchev](https://stat.columbia.edu/department-directory/faculty/name/dobrin-marchev/)"
-    description: "Modeled longitudinal forced vital capacity (FVC) in R and Stan on the course-provided dataset (176 patients, 1,549 measurements). The study compares pooled, hierarchical, and covariate-adjusted Gaussian models, evaluates predictions for new patients with five-fold cross-validation that holds out entire patients, and runs prior-sensitivity analyses and predictive checks. The primary hierarchical model estimates a mean FVC change of −4.25 mL/week (95% credible interval [−5.12, −3.40]), although the residuals still show serial dependence. No participant-level data are distributed; the public repository provides a synthetic-data workflow and aggregate results."
+    description: "Fit pooled, hierarchical, and covariate-adjusted Bayesian models in R and Stan to the pulmonary fibrosis trajectories of 176 patients (1,549 forced vital capacity measurements). New-patient prediction was evaluated with five-fold patient-held-out validation, prior sensitivity analyses and posterior predictive checks, which identified residual serial dependence as a limitation. No participant-level data are published."
     # The website PDF is an unchanged copy of results/research/report.pdf in the public research repository.
     report_source_commit: "a3b9a3650c1e04039a05962c431e56075080d430"
     report_sha256: "46205c91bfb70f13785bf5dc6dbaa8925112af46a057bc14e5edd9f75b50d42d"
+    figure_layout: row
     images:
       - src: "/images/research/bayesian-fvc-overall-slopes.webp"
         width: 1200
         height: 335
-        alt: "Forest plot of posterior means and 95% credible intervals for the overall FVC slope in the pooled, hierarchical, and covariate-adjusted models; the hierarchical and adjusted slopes are about −4.25 mL/week, clear of zero."
+        alt: "Forest plot of posterior means and 95% credible intervals for the overall FVC slope in the pooled (P), hierarchical (H), and covariate-adjusted (C) models: the pooled slope is about −1.5 mL/week with an interval that includes zero, while the hierarchical and adjusted slopes are about −4.25 mL/week, clear of zero."
+        caption: "Overall FVC slope: pooled (P), hierarchical (H) and covariate-adjusted (C) models"
       - src: "/images/research/bayesian-fvc-sensitivity.webp"
         width: 1200
         height: 666
         alt: "Forest plot of posterior means and 95% credible intervals for the overall FVC slope in the hierarchical (H) and covariate-adjusted (C) models under the primary analysis, halved and doubled prior scales, and a variant that keeps every original row instead of averaging repeated measurements from the same patient and week: all eight intervals are nearly identical, spanning about −5.1 to −3.4 mL/week with posterior means near −4.2, clear of zero."
+        caption: "The slope under prior and data-handling variants"
     github: "https://github.com/junguangjia/bayesian-fvc-trajectories"
     fr:
       title: "Modélisation bayésienne des trajectoires de la fibrose pulmonaire"
       dates: "mai 2026 – sept. 2026"
       meta: "Projet de recherche en statistique bayésienne, STAT GR5224 Bayesian Statistics, Université Columbia, prolongé ensuite en une étude reproductible ; enseignant du cours : [Dobrin Marchev](https://stat.columbia.edu/department-directory/faculty/name/dobrin-marchev/)"
-      description: "Modélisation de l’évolution longitudinale de la capacité vitale forcée (CVF) en R et Stan à partir du jeu de données fourni dans le cadre du cours (176 patients, 1 549 mesures). L’étude compare des modèles gaussiens poolé, hiérarchique et ajusté sur des covariables, évalue les prédictions pour de nouveaux patients par une validation croisée à cinq blocs qui exclut des patients entiers, et comprend des analyses de sensibilité aux lois a priori ainsi que des vérifications prédictives. Le modèle hiérarchique principal estime une variation moyenne de la CVF de −4,25 mL par semaine (intervalle de crédibilité à 95 % [−5,12 ; −3,40]), bien que les résidus présentent encore une dépendance sérielle. Aucune donnée individuelle n’est diffusée : le dépôt public fournit une chaîne de traitement sur données synthétiques et des résultats agrégés."
+      description: "Estimation, en R et Stan, de modèles bayésiens poolé, hiérarchique et ajusté sur des covariables à partir des trajectoires de fibrose pulmonaire de 176 patients (1 549 mesures de capacité vitale forcée, ou CVF). La prédiction pour de nouveaux patients a été évaluée par une validation croisée à cinq blocs excluant des patients entiers, des analyses de sensibilité aux lois a priori et des vérifications prédictives a posteriori, qui ont mis en évidence une dépendance sérielle résiduelle comme limite du modèle. Aucune donnée individuelle n’est publiée."
       image_alts:
-        - "Graphique en forêt des moyennes a posteriori et des intervalles de crédibilité à 95 % de la pente globale de la CVF dans les modèles poolé, hiérarchique et ajusté sur des covariables ; les pentes des modèles hiérarchique et ajusté sont d’environ −4,25 mL par semaine, nettement inférieures à zéro."
+        - "Graphique en forêt des moyennes a posteriori et des intervalles de crédibilité à 95 % de la pente globale de la CVF dans les modèles poolé (P), hiérarchique (H) et ajusté sur des covariables (C) : la pente du modèle poolé est d’environ −1,5 mL par semaine, avec un intervalle qui contient zéro, tandis que celles des modèles hiérarchique et ajusté sont d’environ −4,25 mL par semaine, nettement inférieures à zéro."
         - "Graphique en forêt des moyennes a posteriori et des intervalles de crédibilité à 95 % de la pente globale de la CVF dans les modèles hiérarchique (H) et ajusté sur des covariables (C), pour l’analyse principale, pour des échelles des lois a priori divisées ou multipliées par deux et pour une variante qui conserve toutes les lignes d’origine au lieu de moyenner les mesures répétées d’un même patient au cours d’une même semaine ; les huit intervalles, presque identiques, vont d’environ −5,1 à −3,4 mL par semaine, avec des moyennes a posteriori proches de −4,2, et excluent zéro."
+      image_captions:
+        - "Pente globale de la CVF : modèles poolé (P), hiérarchique (H) et ajusté sur des covariables (C)"
+        - "La pente selon les variantes de lois a priori et de traitement des données"
     ja:
       title: "肺線維症における経時的推移のベイズモデリング"
       dates: "2026年5月〜2026年9月"
       meta: "ベイズ統計学の研究プロジェクト（STAT GR5224「ベイズ統計学」、コロンビア大学）。のちに再現可能な研究へと拡張。担当教員：[Dobrin Marchev](https://stat.columbia.edu/department-directory/faculty/name/dobrin-marchev/)"
-      description: "授業で提供されたデータセット（患者176人、測定1,549件）を用いて、努力性肺活量（FVC）の経時変化をRとStanでモデル化した。プールモデル、階層モデル、共変量で調整したモデルという3つのガウスモデルを比較し、患者単位で丸ごと除外する5分割交差検証によって新規患者に対する予測を評価したほか、事前分布の感度分析と予測チェックも行っている。主要な階層モデルによるFVCの平均変化の推定値は−4.25mL/週（95%信用区間[−5.12, −3.40]）だが、残差にはなお系列相関が見られる。参加者単位のデータは公開しておらず、公開リポジトリには合成データによるワークフローと集計結果を収めている。"
+      description: "RとStanを用いて、肺線維症患者176人の努力性肺活量（FVC）の経時的推移（測定1,549件）に、プールモデル、階層モデル、共変量調整モデルという3つのベイズモデルを当てはめた。新規患者に対する予測を、患者単位で除外する5分割交差検証、事前分布の感度分析、事後予測チェックで評価し、残差の系列相関がモデルの限界であることを明らかにした。参加者単位のデータは公開していない。"
       image_alts:
-        - "プールモデル・階層モデル・共変量調整モデルにおけるFVCの全体の傾きの事後平均と95%信用区間を示すフォレストプロット。階層モデルと調整モデルの傾きは約−4.25mL/週で、ゼロから明確に離れている。"
+        - "プールモデル（P）・階層モデル（H）・共変量調整モデル（C）におけるFVCの全体の傾きの事後平均と95%信用区間を示すフォレストプロット。プールモデルの傾きは約−1.5mL/週で区間がゼロを含む一方、階層モデルと調整モデルの傾きは約−4.25mL/週で、ゼロから明確に離れている。"
         - "階層モデル（H）と共変量調整モデル（C）におけるFVCの全体の傾きの事後平均と95%信用区間を、主解析、事前分布のスケールを半分または2倍にした解析、同一患者・同一週の複数の測定値を平均せずに元の行をすべて残した解析のそれぞれについて示すフォレストプロット。8つの区間はほぼ同じで、事後平均はいずれも約−4.2mL/週、区間はおよそ−5.1〜−3.4mL/週で、ゼロから明確に離れている。"
+      image_captions:
+        - "FVCの全体の傾き：プール（P）・階層（H）・共変量調整（C）モデル"
+        - "事前分布とデータ処理を変えた場合の傾き"
     zh:
       title: "肺纤维化病程轨迹的贝叶斯建模"
       dates: "2026年5月—2026年9月"
       meta: "贝叶斯统计研究项目，哥伦比亚大学 STAT GR5224 贝叶斯统计，课程结束后扩展为可复现的研究；授课教师：[Dobrin Marchev](https://stat.columbia.edu/department-directory/faculty/name/dobrin-marchev/)"
-      description: "基于课程提供的数据集（176 名患者、1,549 次测量），使用 R 和 Stan 对用力肺活量（FVC）的纵向变化进行建模。研究比较了合并模型、分层模型和协变量调整模型三种高斯模型，采用按患者整体留出的五折交叉验证评估对新患者的预测，并开展了先验敏感性分析和预测检验。主要分层模型估计的 FVC 平均变化为每周 −4.25 mL（95% 可信区间 [−5.12, −3.40]），但残差中仍存在序列相关。项目不公开任何参与者层面的数据；公开代码仓库提供基于合成数据的工作流程和汇总结果。"
+      description: "使用 R 和 Stan，基于 176 名患者的 1,549 次用力肺活量（FVC）测量，对其肺纤维化病程轨迹拟合了合并、分层及协变量调整三种贝叶斯模型。通过按患者整体留出的五折交叉验证、先验敏感性分析和后验预测检验评估对新患者的预测，并发现残差序列相关是模型的局限。项目不公开任何参与者层面的数据。"
       image_alts:
-        - "合并模型、分层模型和协变量调整模型中 FVC 总体斜率的后验均值及 95% 可信区间森林图；分层模型与调整模型的斜率约为每周 −4.25 mL，明显偏离零。"
+        - "合并模型（P）、分层模型（H）和协变量调整模型（C）中 FVC 总体斜率的后验均值及 95% 可信区间森林图：合并模型的斜率约为每周 −1.5 mL，区间包含零；分层模型与调整模型的斜率约为每周 −4.25 mL，明显偏离零。"
         - "分层模型（H）与协变量调整模型（C）中 FVC 总体斜率的后验均值及 95% 可信区间森林图，涵盖主分析、先验尺度减半、先验尺度加倍，以及不对同一患者同一周的多次测量取平均、保留全部原始行这四种情形。八个区间几乎相同，后验均值均约为每周 −4.2 mL，区间约为每周 −5.1 至 −3.4 mL，均明显偏离零。"
+      image_captions:
+        - "FVC 总体斜率：合并（P）、分层（H）与协变量调整（C）模型"
+        - "不同先验与数据处理方式下的斜率"
 
   - title: "Stochastic Trace Estimation with Hutchinson and Hutch++"
     url: "/files/stochastic-trace-estimation-report.pdf"
     dates: "Spring 2026 – Present"
     meta: "Computational statistics research project, STAT GR6104 Computational Statistics, Columbia University; course instructor: [Christopher R. Harshaw](https://www.chrisharshaw.com/)"
-    description: "Implemented and evaluated Hutchinson and Hutch++ in Julia using a common matrix–vector interface. The study compares accuracy and operator-query budgets on a fixed exponential-spectrum PSD matrix and a synthetic graph for triangle counting, reports Monte Carlo uncertainty, and measures runtime in a separate serial experiment. The public repository includes pinned environments, tests, saved trial-level results, and scripts that regenerate the report."
+    description: "Reconstructed the unbiasedness and complexity arguments for Hutchinson and Hutch++ and implemented reproducible Julia comparisons on a fixed PSD matrix and a synthetic graph, comparing error and matrix–vector query cost over 1,000 trials per budget, with runtime timed separately. On the fixed PSD instance, Hutch++ reached below 1% mean absolute relative error at 30 queries."
     # The website PDF is an unchanged snapshot of the public research repository.
     report_source_commit: "35a26f96a3a4d27ba5fe60b1c419184ec8c728aa"
     report_sha256: "68072a180eb5d1e67b0def25e13ba51055654902d2846a84a60dc85efc3ce6bc"
+    figure_layout: row
     images:
       - src: "/images/research/trace-psd-error.webp"
         width: 1200
         height: 720
         alt: "Plot of mean absolute relative error against the operator-query budget on the exponential-spectrum PSD matrix: the Hutch++ error falls by several orders of magnitude while the Hutchinson error decreases only slowly."
+        caption: "Error on a fixed exponential-spectrum PSD matrix"
+      - src: "/images/research/trace-sbm-error.webp"
+        width: 1200
+        height: 720
+        alt: "Plot of mean absolute relative error of triangle-count estimates against the operator-query budget on one synthetic stochastic block model graph: both methods improve as the budget grows, and Hutch++ stays below Hutchinson at every budget."
+        caption: "Triangle-count error on a synthetic SBM graph"
     github: "https://github.com/junguangjia/stochastic-trace-estimation"
     fr:
       title: "Estimation stochastique de la trace avec les méthodes de Hutchinson et Hutch++"
       dates: "printemps 2026 – aujourd’hui"
       meta: "Projet de recherche en statistique computationnelle, STAT GR6104 Computational Statistics, Université Columbia ; enseignant du cours : [Christopher R. Harshaw](https://www.chrisharshaw.com/)"
-      description: "Mise en œuvre et évaluation des estimateurs de Hutchinson et Hutch++ en Julia, au moyen d’une interface commune de produits matrice-vecteur. L’étude compare la précision et les budgets de requêtes à l’opérateur sur une matrice fixe semi-définie positive (PSD) à spectre exponentiel et sur un graphe synthétique pour le comptage de triangles, rend compte de l’incertitude de Monte-Carlo et mesure les temps de calcul dans une expérience distincte, exécutée en série. Le dépôt public comprend des environnements aux versions figées, des tests, les résultats enregistrés essai par essai et des scripts qui régénèrent le rapport."
+      description: "Reconstitution des arguments d’absence de biais et de complexité des méthodes de Hutchinson et Hutch++, et mise en œuvre en Julia de comparaisons reproductibles sur une matrice fixe semi-définie positive (PSD) et un graphe synthétique, portant sur l’erreur et le coût en produits matrice-vecteur, avec 1 000 essais par budget, le temps de calcul étant mesuré séparément. Sur l’instance PSD fixe, Hutch++ passe sous 1 % d’erreur relative absolue moyenne dès 30 requêtes."
       image_alts:
         - "Graphique de l’erreur relative absolue moyenne en fonction du budget de requêtes à l’opérateur sur la matrice PSD à spectre exponentiel : l’erreur de Hutch++ diminue de plusieurs ordres de grandeur, tandis que celle de Hutchinson ne diminue que lentement."
+        - "Graphique de l’erreur relative absolue moyenne des estimations du nombre de triangles en fonction du budget de requêtes à l’opérateur sur un graphe synthétique à blocs stochastiques : les deux méthodes s’améliorent quand le budget augmente, et Hutch++ reste sous Hutchinson pour chaque budget."
+      image_captions:
+        - "Erreur sur une matrice PSD fixe à spectre exponentiel"
+        - "Erreur de comptage des triangles sur un graphe SBM synthétique"
     ja:
       title: "HutchinsonおよびHutch++による確率的トレース推定"
       dates: "2026年春学期〜現在"
       meta: "計算統計学の研究プロジェクト（STAT GR6104「計算統計学」、コロンビア大学）。担当教員：[Christopher R. Harshaw](https://www.chrisharshaw.com/)"
-      description: "共通の行列ベクトル積インターフェースを用いて、HutchinsonとHutch++をJuliaで実装・評価した。指数型スペクトルを持つ固定の半正定値（PSD）行列と、三角形数え上げ用に人工的に生成したグラフを対象に、精度と作用素クエリ予算を比較し、モンテカルロ法による不確実性を報告するとともに、実行時間は別に行った逐次実行の実験で計測している。公開リポジトリには、バージョンを固定した実行環境、テスト、試行単位で保存した結果、レポートを再生成するスクリプトが含まれる。"
+      description: "HutchinsonとHutch++の不偏性と計算量に関する議論を再構成し、固定の半正定値（PSD）行列と合成グラフを対象に、Juliaで再現可能な比較を実装した。クエリ予算ごとに1,000回の試行を行って誤差と行列ベクトル積のクエリ数を比較し、実行時間は別途計測した。固定のPSD行列では、Hutch++は30回のクエリで平均絶対相対誤差1%未満を達成した。"
       image_alts:
         - "指数型スペクトルのPSD行列における、作用素クエリ予算に対する平均絶対相対誤差のグラフ。Hutch++の誤差は数桁にわたって減少する一方、Hutchinsonの誤差はゆっくりとしか減少しない。"
+        - "確率的ブロックモデルで生成した合成グラフ1つについて、三角形数推定の平均絶対相対誤差を作用素クエリ予算に対して示した図。予算が増えるとどちらの手法も改善し、どの予算でもHutch++の誤差がHutchinsonの誤差を下回る。"
+      image_captions:
+        - "指数型スペクトルの固定PSD行列での誤差"
+        - "合成SBMグラフでの三角形数推定の誤差"
     zh:
       title: "基于 Hutchinson 与 Hutch++ 的随机迹估计"
       dates: "2026年春季学期—至今"
       meta: "计算统计研究项目，哥伦比亚大学 STAT GR6104 计算统计学；授课教师：[Christopher R. Harshaw](https://www.chrisharshaw.com/)"
-      description: "使用 Julia 实现并评估了 Hutchinson 与 Hutch++，两种方法共用同一套矩阵-向量乘积接口。该研究在一个固定的、具有指数型谱的半正定（PSD）矩阵和一个用于三角形计数的合成图上，比较了二者的精度与算子查询预算，报告了蒙特卡洛不确定性，并在单独的串行实验中测量了运行时间。公开代码仓库包含锁定版本的环境、测试、已保存的逐次试验结果，以及用于重新生成报告的脚本。"
+      description: "重新推导了 Hutchinson 与 Hutch++ 的无偏性和复杂度论证，并用 Julia 在一个固定的半正定（PSD）矩阵和一个合成图上完成了可复现的对比实验，每个预算重复 1,000 次试验，比较误差和矩阵-向量查询成本，运行时间则单独计时。在固定 PSD 实例上，Hutch++ 在 30 次查询时平均绝对相对误差低于 1%。"
       image_alts:
         - "指数型谱 PSD 矩阵上平均绝对相对误差随算子查询预算变化的图：Hutch++ 的误差下降了几个数量级，而 Hutchinson 的误差仅缓慢下降。"
+        - "在一个合成随机块模型图上，三角形计数估计的平均绝对相对误差随算子查询预算变化的图：两种方法的误差都随预算增加而下降，且在每个预算下 Hutch++ 的误差都低于 Hutchinson。"
+      image_captions:
+        - "具有指数型谱的固定 PSD 矩阵上的误差"
+        - "合成 SBM 图上三角形计数的误差"
 
   - title: "Finite-Horizon Inference for Weak Ornstein–Uhlenbeck Mean Reversion"
     url: "/files/ou-inference-report.pdf"
     dates: "Spring 2026 – Present"
     meta: "Stochastic processes research project, developed from STAT GU4264/GR5264 Stochastic Processes–Applications I (Spring 2026), Columbia University; course instructor: [Steven Campbell](https://www.stevenacampbell.com/)"
-    description: "Asks how informative inference on the mean-reversion rate can be from one finite observation window when the drift and diffusion scale are unknown. The Julia code implements an exact Ornstein–Uhlenbeck likelihood, including irregular observation times and the Brownian-with-drift boundary, analytic nuisance profiling, and a chronological split-profile rule that specializes universal inference, checked against frozen Python and independent base-R references. In a 1,600-trajectory development pilot covering 16 settings (100 trajectories each), the split-profile rule contained the true rate in 99–100% of trajectories in every setting yet excluded zero in at most 1%, even at the strongest mean reversion tested, while an uncalibrated likelihood-ratio cutoff contained it in only 57–91%, depending on the setting. The study claims no new method; full confidence-set inversion and a grid-bootstrap comparison remain future work."
+    description: "Derived and implemented the exact Ornstein–Uhlenbeck likelihood and analytic nuisance profiling in Julia for irregular observation times, including the Brownian-with-drift boundary. Studied finite-horizon inference through information bounds and 1,600 simulated trajectories, finding conservative split-profile inference with limited power, checked against independent Python and R calculations. The study claims no new method."
     # The website PDF is an unchanged copy of latex/ou-inference-report.pdf in the public research repository.
     report_source_commit: "b440c1c50af9027566b0091b04f5c2cd51e0b479"
     report_sha256: "2643bdeb229ddee770b4b5f991769758f4c004f62a81b4b3e1ea373681121b95"
@@ -155,50 +195,56 @@ academic:
         width: 1200
         height: 869
         alt: "Plot of true-parameter membership with 95% Wilson intervals (100 trajectories per point) for regular sampling with n = 64 transitions: the split-profile rule stays at 0.99–1.00 for every true κT (0, 0.1, 1, 4), while the uncalibrated likelihood-ratio diagnostic is about 0.72–0.73 up to κT = 1 and 0.89 at κT = 4, below the dashed 0.95 line."
+        caption: "Truth membership, regular sampling"
     github: "https://github.com/junguangjia/ou-inference"
     fr:
       title: "Inférence à horizon fini sur un faible retour à la moyenne dans les processus d’Ornstein–Uhlenbeck"
       dates: "printemps 2026 – aujourd’hui"
       meta: "Projet de recherche en processus stochastiques, issu du cours STAT GU4264/GR5264 Stochastic Processes–Applications I (printemps 2026), Université Columbia ; enseignant du cours : [Steven Campbell](https://www.stevenacampbell.com/)"
-      description: "Étude de la quantité d’information qu’une seule fenêtre d’observation finie peut apporter à l’inférence sur la vitesse de retour à la moyenne, lorsque la dérive et l’échelle de diffusion sont inconnues. Le code Julia met en œuvre une vraisemblance exacte du processus d’Ornstein–Uhlenbeck, y compris pour des instants d’observation irréguliers et le cas limite du mouvement brownien avec dérive, un profilage analytique des paramètres de nuisance et une règle de vraisemblance profilée à découpage chronologique, cas particulier de l’inférence universelle, le tout vérifié par comparaison avec des résultats de référence figés en Python et avec des calculs indépendants en R de base. Dans une étude pilote de développement portant sur 1 600 trajectoires réparties en 16 configurations (100 trajectoires chacune), la règle de vraisemblance profilée à découpage contenait la vraie vitesse dans 99 à 100 % des trajectoires de chaque configuration, mais n’excluait zéro que dans 1 % au plus des trajectoires, même pour le retour à la moyenne le plus fort testé, tandis qu’avec un seuil non calibré de rapport de vraisemblance, la vraie vitesse n’était contenue que dans 57 à 91 % des trajectoires selon la configuration. L’étude ne prétend proposer aucune nouvelle méthode ; la construction complète des ensembles de confiance par inversion et une comparaison avec le bootstrap sur grille restent à faire."
+      description: "Établissement et mise en œuvre en Julia de la vraisemblance exacte du processus d’Ornstein–Uhlenbeck et d’un profilage analytique des paramètres de nuisance pour des instants d’observation irréguliers, y compris le cas limite du mouvement brownien avec dérive. Étude de l’inférence à horizon fini au moyen de bornes d’information et de 1 600 trajectoires simulées : l’inférence par vraisemblance profilée à découpage s’est révélée conservatrice et de puissance limitée, avec des vérifications numériques indépendantes en Python et en R. L’étude ne prétend proposer aucune nouvelle méthode."
       image_alts:
         - "Graphique du taux d’appartenance du vrai paramètre à l’ensemble de confiance, avec intervalles de Wilson à 95 % (100 trajectoires par point), pour un échantillonnage régulier de n = 64 transitions : la règle de vraisemblance profilée à découpage reste entre 0,99 et 1,00 pour chaque vraie valeur de κT (0 ; 0,1 ; 1 ; 4), tandis que le diagnostic de rapport de vraisemblance non calibré vaut environ 0,72 à 0,73 jusqu’à κT = 1 et 0,89 à κT = 4, sous la ligne pointillée à 0,95."
+      image_captions:
+        - "Appartenance du vrai paramètre à l’ensemble de confiance, échantillonnage régulier"
     ja:
       title: "オルンシュタイン＝ウーレンベック過程における弱い平均回帰の有限期間推測"
       dates: "2026年春学期〜現在"
       meta: "確率過程の研究プロジェクト。コロンビア大学STAT GU4264/GR5264「確率過程とその応用 I」（2026年春学期）から発展したもの。同授業の担当教員：[Steven Campbell](https://www.stevenacampbell.com/)"
-      description: "ドリフトと拡散のスケールがともに未知のとき、1つの有限な観測期間から平均回帰の速さについてどの程度の情報をもつ推測ができるかを調べている。Juliaコードは、オルンシュタイン＝ウーレンベック過程の厳密な尤度（不規則な観測時点に対応し、ドリフト付きブラウン運動という境界の場合も含む）、局外パラメータについて解析的に最大化したプロファイル尤度、ユニバーサル推測（universal inference）を特殊化した時間順の分割プロファイル法を実装し、固定したPythonの参照結果、および独立したbase Rの計算と照合して検証している。16の設定（各100本）からなる計1,600本の系列による開発段階のパイロット実験では、分割プロファイル法はどの設定でも99〜100%の系列で真の値を含んだ一方、試した中で最も強い平均回帰の設定を含め、どの設定でもゼロを除外したのは1%以下であった。これに対し、較正していない尤度比のしきい値で真の値を含んだのは、設定によって57〜91%にとどまった。本研究は新しい手法を提案したと主張するものではなく、信頼集合の完全な構成とグリッド・ブートストラップとの比較は今後の課題である。"
+      description: "不規則な観測時点に対応したオルンシュタイン＝ウーレンベック過程の厳密な尤度と局外パラメータの解析的なプロファイリングを、ドリフト付きブラウン運動という境界の場合も含めて導出し、Juliaで実装した。情報量の上界と1,600本のシミュレーション系列を用いて有限期間の推測を調べ、分割プロファイル法による推測が保守的で検出力が低いことを確認し、PythonとRによる独立した数値検証も行った。本研究は新しい手法を提案したと主張するものではない。"
       image_alts:
         - "等間隔観測（n = 64回の推移）における真のパラメータの包含率を95% Wilson区間（各点100本の系列）とともに示すグラフ。分割プロファイル法はどの真のκT（0、0.1、1、4）でも0.99〜1.00である一方、較正していない尤度比診断はκT = 1までは約0.72〜0.73、κT = 4では0.89で、0.95の破線を下回る。"
+      image_captions:
+        - "真の値の包含率（等間隔観測）"
     zh:
       title: "Ornstein–Uhlenbeck 过程弱均值回归的有限时域推断"
       dates: "2026年春季学期—至今"
       meta: "随机过程研究项目，由哥伦比亚大学 STAT GU4264/GR5264 随机过程及其应用 I 课程（2026年春季学期）发展而来；课程授课教师：[Steven Campbell](https://www.stevenacampbell.com/)"
-      description: "研究在漂移与扩散尺度均未知时，仅凭一个有限观测窗口，对均值回归速率的推断能提供多少信息。Julia 代码实现了 Ornstein–Uhlenbeck 过程的精确似然（支持不规则观测时间，并涵盖带漂移布朗运动这一边界情形）、对冗余参数的解析剖面化，以及按时间顺序切分样本、作为通用推断（universal inference）特例的分割剖面规则，并与冻结的 Python 参考结果及独立编写的 base R 参考实现进行了核对。在包含 16 种设定（每种 100 条轨迹）、共 1,600 条轨迹的开发阶段初步实验中，分割剖面规则在每种设定下都在 99%～100% 的轨迹中包含真实速率，但即使在所测试的最强均值回归下，任一设定中排除零的比例也都不超过 1%；而未经校准的似然比阈值在各设定下仅在 57%～91% 的轨迹中包含真实值。该研究并不声称提出了新方法；通过检验反演构造完整置信集以及与网格自助法的比较，均留待后续工作。"
+      description: "推导并用 Julia 实现了 Ornstein–Uhlenbeck 过程的精确似然与冗余参数的解析剖面化，支持不规则观测时间，并涵盖带漂移布朗运动这一边界情形。借助信息界与 1,600 条模拟轨迹研究有限时域推断，发现分割剖面推断偏保守且功效有限，并以独立的 Python 和 R 数值计算进行核对。该研究并不声称提出了新方法。"
       image_alts:
         - "等间隔采样（n = 64 次转移）下真实参数包含率及 95% Wilson 区间（每点 100 条轨迹）的图：对每个真实 κT（0、0.1、1、4），分割剖面规则都在 0.99～1.00 之间，而未经校准的似然比诊断在 κT 不超过 1 时约为 0.72～0.73，在 κT = 4 时为 0.89，均低于 0.95 处的虚线。"
+      image_captions:
+        - "真实参数包含率（等间隔采样）"
 
 independent:
-
   - title: "ArtVenn"
     subtitle: "Cultural Heritage Data and Community Platform"
     url: "https://github.com/junguangjia/moya-inscriptions-web"
     dates: "Oct 2024 – Present"
     meta: "Founder and technical project lead; ongoing independent open-source project"
-    description: "Field documentation across 200+ cities in China, recording geospatial coordinates and surviving textual and symbolic traces, organized into a structured catalog with provenance, geospatial, and source metadata. The platform includes validated data-import and editorial workflows with transactional updates and controlled publication, OpenAPI contracts, Chinese text normalization, ranked search, and object-storage integration, built with TypeScript, Next.js/React, Node.js, and PostgreSQL. Current work organizes the collected corpus for downstream statistical and machine-learning analysis."
+    description: "Documented sites across 200+ cities in China, recording geospatial coordinates and surviving textual and symbolic traces with provenance metadata. Built the catalog, data-import, editorial and search workflows with PostgreSQL, TypeScript/Next.js, Node.js and OpenAPI; the corpus is now being organized for statistical analysis."
     github: "https://github.com/junguangjia/moya-inscriptions-web"
     fr:
       subtitle: "Plateforme communautaire et de données sur le patrimoine culturel"
       dates: "oct. 2024 – aujourd’hui"
       meta: "Fondateur et responsable technique du projet ; projet open source indépendant en cours"
-      description: "Documentation de terrain dans plus de 200 villes de Chine, avec relevé des coordonnées géospatiales et des traces textuelles et symboliques subsistantes, organisée en un catalogue structuré doté de métadonnées géospatiales, de provenance et de sources. La plateforme comprend des processus d’importation de données et d’édition avec validation, mises à jour transactionnelles et publication contrôlée, des contrats OpenAPI, la normalisation du texte chinois, une recherche avec classement des résultats et l’intégration d’un stockage objet ; elle est développée avec TypeScript, Next.js/React, Node.js et PostgreSQL. Les travaux en cours consistent à organiser le corpus recueilli en vue d’analyses statistiques et d’apprentissage automatique en aval."
+      description: "Documentation de sites dans plus de 200 villes de Chine, avec relevé des coordonnées géospatiales et des traces textuelles et symboliques subsistantes, accompagnées de métadonnées de provenance. Développement des processus de catalogage, d’importation de données, d’édition et de recherche avec PostgreSQL, TypeScript/Next.js, Node.js et OpenAPI ; le corpus est en cours d’organisation en vue d’analyses statistiques."
     ja:
       subtitle: "文化遺産データ・コミュニティプラットフォーム"
       dates: "2024年10月〜現在"
       meta: "創設者・技術プロジェクトリーダー。進行中の自主的なオープンソースプロジェクト"
-      description: "中国の200以上の都市で現地調査を行い、地理空間座標と、現存する文字や記号の痕跡を記録した。これらを、来歴・地理空間・出典のメタデータを備えた構造化カタログとして整理している。プラットフォームは、トランザクションによる更新と公開管理を備えた検証付きのデータインポート・編集ワークフロー、OpenAPIコントラクト、中国語テキストの正規化、検索結果の順位付け、オブジェクトストレージ連携を含み、TypeScript、Next.js/React、Node.js、PostgreSQLで構築されている。現在は、収集したコーパスを後続の統計解析・機械学習解析に向けて整理している。"
+      description: "中国200以上の都市で現地調査を行い、地理空間座標と現存する文字や記号の痕跡を、来歴メタデータとともに記録した。PostgreSQL、TypeScript/Next.js、Node.js、OpenAPIを用いて、カタログ、データ取り込み、編集、検索のワークフローを構築し、現在は統計解析に向けてコーパスを整理している。"
     zh:
       subtitle: "文化遗产数据与社区平台"
       dates: "2024年10月—至今"
       meta: "创始人兼技术项目负责人；进行中的独立开源项目"
-      description: "在中国 200 多座城市开展实地记录，采集地理空间坐标，记录现存的文字与符号遗迹，并整理为附有溯源、地理空间和出处元数据的结构化目录。平台基于 TypeScript、Next.js/React、Node.js 和 PostgreSQL 构建，包括带校验的数据导入与编辑工作流（支持事务性更新和受控发布）、OpenAPI 接口契约、中文文本规范化、排序检索以及对象存储集成。目前的工作是整理已采集的语料，供后续的统计与机器学习分析使用。"
+      description: "在中国 200 多座城市开展实地记录，采集各地点的地理空间坐标，著录现存的文字与符号遗迹，并附上来源元数据。使用 PostgreSQL、TypeScript/Next.js、Node.js 和 OpenAPI 构建了编目、数据导入、编辑与检索工作流，目前正在整理语料以供统计分析。"

@@ -3,11 +3,37 @@
 # "May 2026", "Spring 2026", or "2025".
 #
 #   date: shown as written
-#   type: one of research, project, reading, teaching, milestone, life
+#   type: one of research, project, reading, teaching, work, milestone, life
 #         (shown as a small label; any other word also works)
 #   text: one or two sentences; Markdown links are allowed. For a paper,
 #         for example: 'Read [*Title*](https://arxiv.org/abs/...) by A. Author
 #         and B. Author (2024): one line on what stood out.'
+
+- date: "Sep 2026"
+  type: project
+  text: "Launched this website in English, French, Japanese and Chinese."
+  fr:
+    date: "sept. 2026"
+    text: "Mise en ligne de ce site, en anglais, en français, en japonais et en chinois."
+  ja:
+    date: "2026年9月"
+    text: "英語・フランス語・日本語・中国語の4言語でこのウェブサイトを公開した。"
+  zh:
+    date: "2026年9月"
+    text: "上线了这个网站，提供英文、法文、日文和中文四种语言版本。"
+
+- date: "Sep 2026"
+  type: milestone
+  text: "Began the fall term with Ph.D.-level Theoretical Statistics I (STAT GR6201), Probabilistic Models and Machine Learning (STCS GR6701) and Optimization I (IEOR E6613), alongside Theory of Diffusion Models, Unsupervised Learning and Advanced Data Analysis."
+  fr:
+    date: "sept. 2026"
+    text: "Début du semestre d’automne avec trois cours de niveau doctoral, Theoretical Statistics I (STAT GR6201), Probabilistic Models and Machine Learning (STCS GR6701) et Optimization I (IEOR E6613), ainsi que Theory of Diffusion Models, Unsupervised Learning et Advanced Data Analysis."
+  ja:
+    date: "2026年9月"
+    text: "秋学期から、博士課程レベルの3科目（STAT GR6201「理論統計学 I」、STCS GR6701「確率モデルと機械学習」、IEOR E6613「最適化 I」）に加えて、「拡散モデルの理論」「教師なし学習」「上級データ解析」の履修を始めた。"
+  zh:
+    date: "2026年9月"
+    text: "秋季学期开始，修读理论统计 I（STAT GR6201）、概率模型与机器学习（STCS GR6701）和最优化 I（IEOR E6613）三门博士生课程，同时修读扩散模型理论、无监督学习和高级数据分析。"
 
 - date: "Sep 2026"
   type: research
@@ -100,6 +126,19 @@
     date: "2025年"
     text: "完成了从河南平顶山到西藏拉萨的[独自骑行之旅](/misc/)，全程 3,680 公里。"
 
+- date: "2024–2025"
+  type: project
+  text: "Spent a gap year traveling through 200+ cities in China, with further field trips to Mongolia, Japan and South Korea, documenting more than 1,300 historical inscriptions and cliff carvings for ArtVenn ([route map](/misc/))."
+  fr:
+    date: "2024–2025"
+    text: "Année de césure passée à parcourir plus de 200 villes de Chine, avec d’autres missions de terrain en Mongolie, au Japon et en Corée du Sud, en documentant pour ArtVenn plus de 1 300 inscriptions historiques et gravures rupestres ([carte des itinéraires](/misc/))."
+  ja:
+    date: "2024〜2025年"
+    text: "ギャップイヤーを使い、中国200以上の都市を巡り、モンゴル・日本・韓国でも現地調査を行いながら、ArtVennのために1,300件を超える歴史的な碑文や磨崖石刻を記録した（[ルート地図](/misc/)）。"
+  zh:
+    date: "2024—2025年"
+    text: "利用间隔年走过中国 200 多座城市，并赴蒙古国、日本和韩国实地考察，为 ArtVenn 记录了 1,300 余处历史碑刻与摩崖石刻（[路线图](/misc/)）。"
+
 - date: "Oct 2024"
   type: project
   text: "Started [ArtVenn](https://github.com/junguangjia/moya-inscriptions-web), a cultural heritage data and community platform built on field documentation of historical inscriptions across China."
@@ -112,3 +151,120 @@
   zh:
     date: "2024年10月"
     text: "创建了文化遗产数据与社区平台 [ArtVenn](https://github.com/junguangjia/moya-inscriptions-web)，以中国各地历史碑刻的实地记录为基础。"
+
+- date: "Jul 2024"
+  type: milestone
+  text: "Completed the B.S. in Mathematics (Probability and Statistics) at the University of California, San Diego."
+  fr:
+    date: "juil. 2024"
+    text: "Fin du B.S. de mathématiques (probabilités et statistique) à l’Université de Californie à San Diego."
+  ja:
+    date: "2024年7月"
+    text: "カリフォルニア大学サンディエゴ校の数学学士（B.S.、確率・統計）課程を修了した。"
+  zh:
+    date: "2024年7月"
+    text: "完成加州大学圣地亚哥分校数学学士（B.S.，概率与统计方向）学业。"
+
+- date: "Fall 2023"
+  type: teaching
+  text: "Served as a teaching assistant for a Java course at UC San Diego ([recording](/teaching/))."
+  fr:
+    date: "automne 2023"
+    text: "Assistant d’enseignement pour un cours de Java à l’UC San Diego ([enregistrement](/teaching/))."
+  ja:
+    date: "2023年秋学期"
+    text: "UCサンディエゴのJavaの授業でティーチング・アシスタントを務めた（[録画](/teaching/)）。"
+  zh:
+    date: "2023年秋季学期"
+    text: "在加州大学圣地亚哥分校担任 Java 课程助教（[录像](/teaching/)）。"
+
+- date: "Jul 2023"
+  type: work
+  text: "Worked as a data analyst at Mobalytics in California (Jul – Sep 2023), analyzing player behavior across three games with SQL and regression and building Tableau dashboards and segmentation analyses."
+  fr:
+    date: "juil. 2023"
+    text: "Analyste de données chez Mobalytics, en Californie (juil. – sept. 2023) : analyse du comportement des joueurs de trois jeux à l’aide de SQL et de la régression, et création de tableaux de bord Tableau et d’analyses de segmentation."
+  ja:
+    date: "2023年7月"
+    text: "カリフォルニアのMobalyticsでデータアナリストとして勤務し（2023年7月〜9月）、SQLと回帰分析で3つのゲームのプレイヤー行動を分析し、Tableauのダッシュボードとセグメンテーション分析を作成した。"
+  zh:
+    date: "2023年7月"
+    text: "在加州 Mobalytics 担任数据分析师（2023年7月—9月），运用 SQL 和回归方法分析三款游戏的玩家行为，并制作 Tableau 仪表板、开展用户细分分析。"
+
+- date: "Sep 2022"
+  type: work
+  text: "Worked as a financial assistant at Shanghai Dingbang International Trading Co., Ltd. (Sep – Dec 2022), maintaining production records and daily variance reports."
+  fr:
+    date: "sept. 2022"
+    text: "Assistant financier chez Shanghai Dingbang International Trading Co., Ltd. (sept. – déc. 2022) : tenue des registres de production et des rapports quotidiens d’écarts."
+  ja:
+    date: "2022年9月"
+    text: "Shanghai Dingbang International Trading Co., Ltd.で財務アシスタントとして勤務し（2022年9月〜12月）、生産記録と日次の差異報告を管理した。"
+  zh:
+    date: "2022年9月"
+    text: "在 Shanghai Dingbang International Trading Co., Ltd. 担任财务助理（2022年9月—12月），负责维护生产记录和每日差异报告。"
+
+- date: "Aug 2022"
+  type: milestone
+  text: "Began an exchange term in Statistics at Fudan University (Aug 2022 – Jun 2023)."
+  fr:
+    date: "août 2022"
+    text: "Début d’un séjour d’échange en statistique à l’Université Fudan (août 2022 – juin 2023)."
+  ja:
+    date: "2022年8月"
+    text: "復旦大学で統計学の交換留学を始めた（2022年8月〜2023年6月）。"
+  zh:
+    date: "2022年8月"
+    text: "赴复旦大学统计学专业交换学习（2022年8月—2023年6月）。"
+
+- date: "Jul 2022"
+  type: work
+  text: "Worked as an investment research analyst at Hua An Securities in Shanghai (Jul – Sep 2022), researching the catalyst industry with multiple regression and principal component analysis."
+  fr:
+    date: "juil. 2022"
+    text: "Analyste en recherche d’investissement chez Hua An Securities, à Shanghai (juil. – sept. 2022) : étude du secteur des catalyseurs à l’aide de la régression multiple et de l’analyse en composantes principales."
+  ja:
+    date: "2022年7月"
+    text: "上海のHua An Securitiesで投資リサーチアナリストとして勤務し（2022年7月〜9月）、重回帰分析と主成分分析を用いて触媒業界を調査した。"
+  zh:
+    date: "2022年7月"
+    text: "在上海 Hua An Securities 担任投资研究分析师（2022年7月—9月），运用多元回归和主成分分析研究催化剂行业。"
+
+- date: "Jun 2021"
+  type: work
+  text: "Worked as an R&D assistant at Shanghai Yunyi Huan Yu Technology Co., Ltd. (Jun – Aug 2021), supporting Python/Spark data integration, model analysis and validation for O2O and SaaS platforms."
+  fr:
+    date: "juin 2021"
+    text: "Assistant de R&D chez Shanghai Yunyi Huan Yu Technology Co., Ltd. (juin – août 2021) : appui à l’intégration de données en Python et Spark ainsi qu’à l’analyse et à la validation de modèles pour des plateformes O2O et SaaS."
+  ja:
+    date: "2021年6月"
+    text: "Shanghai Yunyi Huan Yu Technology Co., Ltd.で研究開発アシスタントとして勤務し（2021年6月〜8月）、O2OおよびSaaSプラットフォーム向けにPython/Sparkによるデータ統合、モデル分析と検証を支援した。"
+  zh:
+    date: "2021年6月"
+    text: "在 Shanghai Yunyi Huan Yu Technology Co., Ltd. 担任研发助理（2021年6月—8月），为 O2O 和 SaaS 平台提供 Python/Spark 数据整合、模型分析与验证支持。"
+
+- date: "Fall 2020"
+  type: teaching
+  text: "Served as a teaching assistant for Linear Algebra at UC San Diego ([recording](/teaching/))."
+  fr:
+    date: "automne 2020"
+    text: "Assistant d’enseignement en algèbre linéaire à l’UC San Diego ([enregistrement](/teaching/))."
+  ja:
+    date: "2020年秋学期"
+    text: "UCサンディエゴの線形代数の授業でティーチング・アシスタントを務めた（[録画](/teaching/)）。"
+  zh:
+    date: "2020年秋季学期"
+    text: "在加州大学圣地亚哥分校担任线性代数助教（[录像](/teaching/)）。"
+
+- date: "Sep 2020"
+  type: milestone
+  text: "Started the B.S. in Mathematics (Probability and Statistics) at the University of California, San Diego."
+  fr:
+    date: "sept. 2020"
+    text: "Début du B.S. de mathématiques (probabilités et statistique) à l’Université de Californie à San Diego."
+  ja:
+    date: "2020年9月"
+    text: "カリフォルニア大学サンディエゴ校の数学学士（B.S.、確率・統計）課程に入学した。"
+  zh:
+    date: "2020年9月"
+    text: "开始在加州大学圣地亚哥分校攻读数学学士（B.S.，概率与统计方向）。"

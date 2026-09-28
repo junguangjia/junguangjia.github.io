@@ -7,7 +7,7 @@ description: "Research and independent projects by Junguang Jia: statistics rese
 author_profile: true
 ---
 
-I am broadly interested in theoretical statistics, machine learning, diffusion models, optimization, and artificial intelligence. Academic research projects are listed separately from independent technical work.
+I am broadly interested in theoretical statistics, machine learning, diffusion models, optimization, and artificial intelligence.
 
 ## {{ site.data.i18n.en.h.academic_projects }}
 

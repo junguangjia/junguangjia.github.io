@@ -7,7 +7,7 @@ description: "Projets de recherche et projets indépendants de Junguang Jia : r
 author_profile: true
 ---
 
-Je m’intéresse, au sens large, à la statistique théorique, à l’apprentissage automatique, aux modèles de diffusion, à l’optimisation et à l’intelligence artificielle. Les projets de recherche universitaires sont présentés séparément des travaux techniques indépendants.
+Je m’intéresse, au sens large, à la statistique théorique, à l’apprentissage automatique, aux modèles de diffusion, à l’optimisation et à l’intelligence artificielle.
 
 ## {{ site.data.i18n.fr.h.academic_projects }}
 

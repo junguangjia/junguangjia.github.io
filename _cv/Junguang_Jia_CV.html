@@ -2,8 +2,9 @@
 <!--
   Source of files/Junguang_Jia_CV.pdf (public version of the CV).
   Not published by Jekyll (folders starting with "_" are skipped).
-  Content follows the owner's CV of September 2026 (v6) with the phone number,
-  GPAs, course grades, and GRE scores removed.
+  Content follows the owner's CV of September 2026 (v6, revision of 2026-09-28,
+  with all four research projects) with the phone number, GPAs, course grades,
+  and GRE scores removed.
   Fonts are the TrueType (.ttf) Latin Modern files so that the PDF text stays
   searchable in every viewer (Chrome embeds the CFF-based .woff2 files as Type3).
   The footer (name, page number) comes from the @page margin boxes below
@@ -24,33 +25,36 @@
   @font-face { font-family: "LM"; font-style: italic; font-weight: 700; src: url("https://cdn.jsdelivr.net/npm/latex.css@1.14.0/fonts/LM-bold-italic.ttf") format("truetype"); }
   @page {
     size: Letter;
-    margin: 0.65in 0.7in 0.75in 0.8in;
+    margin: 0.6in 0.75in 0.7in 0.75in;
     @bottom-left { content: "Junguang Jia"; font-family: "LM", serif; font-size: 8pt; color: #777; vertical-align: top; padding-top: 0.2in; }
-    @bottom-right { content: counter(page) "\2009/\2009" counter(pages); font-family: "LM", serif; font-size: 8pt; color: #777; vertical-align: top; padding-top: 0.2in; padding-right: 0.1in; }
+    @bottom-right { content: counter(page) "\2009/\2009" counter(pages); font-family: "LM", serif; font-size: 8pt; color: #777; vertical-align: top; padding-top: 0.2in; }
   }
-  html { font-family: "LM", "Latin Modern Roman", "CMU Serif", serif; font-size: 10.6pt; color: #000; }
-  body { margin: 0 0.1in 0 0; line-height: 1.3; }
+  html { font-family: "LM", "Latin Modern Roman", "CMU Serif", serif; font-size: 10.4pt; color: #000; font-variant-ligatures: no-common-ligatures; }
+  body { margin: 0; line-height: 1.25; }
   a { color: #2f5f8a; text-decoration: none; }
-  a.aside { margin-left: 1.1em; font-size: 0.92em; }
+  a.code, .nw { white-space: nowrap; }
+  .role { margin: 0 0 1pt; }
+  p.job { margin: 1pt 0 0; }
   h1 { text-align: center; font-size: 22pt; letter-spacing: 0.05em; margin: 0 0 5pt; }
   .contact { text-align: center; margin: 0 0 12pt; }
   .contact .sep { margin: 0 0.7em; color: #555; }
-  h2 { font-size: 11pt; letter-spacing: 0.02em; margin: 12pt 0 6pt; padding-bottom: 2pt; border-bottom: 0.6pt solid #000; }
+  h2 { font-size: 11pt; letter-spacing: 0.02em; margin: 10pt 0 5pt; padding-bottom: 2pt; border-bottom: 0.6pt solid #000; break-after: avoid; }
   h2.new-page { break-before: page; margin-top: 0; }
-  .entry { margin: 0 0 7pt; break-inside: avoid; }
+  .entry { margin: 0 0 6pt; break-inside: avoid; }
   .row { display: flex; justify-content: space-between; align-items: baseline; gap: 1em; }
   .row .r { white-space: nowrap; }
   .it { font-style: italic; }
   .b { font-weight: 700; }
   .ind { padding-left: 1.4em; }
   p.desc { margin: 1pt 0 0; }
-  ul { margin: 3pt 0 0 0; padding-left: 1.6em; }
+  ul { margin: 3pt 0 0 0; padding-left: 1.4em; }
   li { margin: 0 0 2.5pt; }
-  .course-group { margin: 0 0 7pt; break-inside: avoid; }
+  .course-group { margin: 0 0 6pt; break-inside: avoid; }
   .course-group > .b { margin-bottom: 2pt; }
   .grid2 { display: grid; grid-template-columns: 1fr 1fr; column-gap: 1.5em; row-gap: 1pt; }
   table.skills { border-collapse: collapse; }
   table.skills td { padding: 0 1em 1.5pt 0; vertical-align: top; }
+  table.skills td.b { white-space: nowrap; }
   .latex { font-family: inherit; }
   .latex sup { font-size: 0.72em; vertical-align: 0.28em; margin-left: -0.32em; margin-right: -0.12em; }
   .latex sub { font-size: 1em; vertical-align: -0.22em; margin-left: -0.1em; margin-right: -0.1em; }
@@ -75,41 +79,60 @@
   <div class="ind it">B.S. in Statistics (Term Exchange)</div>
 </div>
 
-<h2>ACADEMIC DISTINCTIONS</h2>
+<h2>ACADEMIC EXAMINATIONS</h2>
 <div class="entry">
-  <div class="row"><a class="b" href="https://ma.stat.columbia.edu/program-requirements/ma-tracks-and-requirements/#theory-and-methods">Theory &amp; Methods Core Competency Examination</a><span class="r it">May 2026</span></div>
-  <p class="desc">Passed the required examination for the Theory &amp; Methods Honors Track, a rigorous theory-focused curriculum in probability and mathematical statistics with research experience for doctoral preparation.</p>
+  <div class="row"><a class="b" href="https://ma.stat.columbia.edu/program-requirements/ma-tracks-and-requirements/#theory-and-methods">Core Competency Examination</a><span class="r it">May 2026</span></div>
+  <p class="desc">Passed the examination for the Theory &amp; Methods Honors Track, designed for doctoral preparation.</p>
 </div>
 
-<h2>RESEARCH &amp; PROJECT EXPERIENCE</h2>
+<h2>RESEARCH EXPERIENCE</h2>
 <div class="entry">
-  <div class="row"><span><a class="b" href="https://github.com/junguangjia/stochastic-trace-estimation">Stochastic Trace Estimation: Hutchinson and Hutch++</a><a class="aside" href="https://junguangjia.github.io/files/stochastic-trace-estimation-report.pdf">Report</a></span><span class="r it">Spring 2026 – Present</span></div>
-  <div class="it">Computational Statistics Project, Columbia University</div>
-  <div><span class="it">Instructor:</span> <a class="it" href="https://www.chrisharshaw.com/">Christopher R. Harshaw</a></div>
+  <div class="row"><a class="b" href="https://junguangjia.github.io/files/bayesian-fvc-trajectories-report.pdf">Bayesian Modeling of Pulmonary Fibrosis Trajectories</a><span class="r it">May 2026 – Sep 2026</span></div>
+  <div class="role it">Bayesian Statistics Project; Instructor: <a href="https://stat.columbia.edu/department-directory/faculty/name/dobrin-marchev/">Dobrin Marchev</a></div>
   <ul>
-    <li>Reconstructed unbiasedness and complexity arguments for Hutchinson and Hutch++; examined randomized low-rank sketching as a variance-reduction strategy.</li>
-    <li>Implemented reproducible Julia experiments for structured positive semidefinite (PSD) matrices and graph triangle counting, using dense and implicit sparse matrix-vector operators, seeded Monte Carlo trials, and unit tests.</li>
-    <li>On a 1,000 × 1,000 exponential-spectrum PSD matrix, Hutch++ reached a 1% mean relative-error target at 30 matrix-vector products, whereas Hutchinson did not reach it by 120 (1,000 Monte Carlo replications).</li>
+    <li>Fit pooled, hierarchical, and covariate-adjusted Bayesian models in R/Stan to pulmonary fibrosis trajectories from 176 patients (1,549 measurements of forced vital capacity).</li>
+    <li>Evaluated new-patient prediction with five-fold patient-held-out validation, prior sensitivity, and posterior predictive checks; identified residual serial dependence as a model limitation.&nbsp;<a class="code" href="https://github.com/junguangjia/bayesian-fvc-trajectories">[code]</a></li>
   </ul>
 </div>
 <div class="entry">
-  <div class="row"><a class="b" href="https://github.com/junguangjia/moya-inscriptions-web">ArtVenn – Cultural Heritage Data &amp; Community Platform</a><span class="r it">Oct 2024 – Present</span></div>
-  <div class="it">Founder &amp; Technical Project Lead</div>
+  <div class="row"><a class="b" href="https://junguangjia.github.io/files/ou-inference-report.pdf">Inference for Weak OU Mean Reversion: A Reproducible Finite-Horizon Study</a><span class="r it">Spring 2026 – Present</span></div>
+  <div class="role it">Stochastic Processes Project; Instructor: <a href="https://www.stevenacampbell.com/">Steven Campbell</a></div>
   <ul>
-    <li>Conducted field documentation across 200+ cities in China, recording geospatial coordinates and analyzing surviving textual and symbolic traces to build structured location and condition data.</li>
-    <li>Designed relational catalog schemas with provenance, geospatial, and source metadata; developed validated data-import and editorial workflows with transactional updates and controlled publication.</li>
-    <li>Built the platform with TypeScript, Next.js/React, Node.js, and PostgreSQL; implemented OpenAPI contracts, Chinese text normalization, ranked search, and object-storage integration.</li>
-    <li>Ongoing work focuses on organizing the collected corpus and preparing it for downstream statistical and machine-learning analysis.</li>
+    <li>Derived and implemented exact Ornstein–Uhlenbeck likelihood and analytic nuisance profiling in Julia for irregular observation times, including the Brownian-with-drift boundary.</li>
+    <li>Studied finite-horizon inference through information bounds and 1,600 simulated trajectories; assessed conservative split-profile inference and limited power, with independent Python/R numerical checks.&nbsp;<a class="code" href="https://github.com/junguangjia/ou-inference">[code]</a></li>
+  </ul>
+</div>
+<div class="entry">
+  <div class="row"><a class="b" href="https://junguangjia.github.io/files/stochastic-trace-estimation-report.pdf">Stochastic Trace Estimation with Hutchinson and Hutch++: A Reproducible Computational Study</a><span class="r it">Spring 2026 – Present</span></div>
+  <div class="role it">Computational Statistics Project; Instructor: <a href="https://www.chrisharshaw.com/">Christopher R. Harshaw</a></div>
+  <ul>
+    <li>Reconstructed unbiasedness and complexity arguments for Hutchinson and Hutch++; implemented reproducible Julia comparisons on a fixed PSD matrix and a synthetic graph.</li>
+    <li>Compared error, matrix-vector query cost, and runtime over 1,000 trials per budget. On the fixed PSD instance, Hutch++ attained below 1% mean absolute relative error at 30 queries.&nbsp;<a class="code" href="https://github.com/junguangjia/stochastic-trace-estimation">[code]</a></li>
+  </ul>
+</div>
+<div class="entry">
+  <div class="row"><a class="b" href="https://junguangjia.github.io/files/ts-calibration-report.pdf">Volatility-Estimation Lag and Calibration Memory: A Sequential <span class="nw">Prediction-Interval</span> Feasibility Study</a><span class="r it">Sep 2026 – Present</span></div>
+  <div class="role it">Time Series Analysis Project; Instructor: <a href="https://franzrembart.com/">Franz Rembart</a></div>
+  <ul>
+    <li>Analyzed volatility-estimation lag and calibration memory in rolling prediction intervals; implemented a causal Python simulation that preserves forecasts issued before each observation.</li>
+    <li>Examined 200 synthetic scale-jump paths: EWMA normalization raised coverage over the first 25 forecasts after an upward shift from 53.7% to 83.4%, still below the 95% target in this exploratory design.&nbsp;<a class="code" href="https://github.com/junguangjia/ts-calibration">[code]</a></li>
   </ul>
 </div>
 
-<h2 class="new-page">SELECTED COURSEWORK</h2>
+<h2>PROJECT EXPERIENCE</h2>
+<div class="entry">
+  <div class="row"><span class="b">ArtVenn – Cultural Heritage Data &amp; Community Platform</span><span class="r it">Oct 2024 – Present</span></div>
+  <div class="role it">Founder &amp; Technical Project Lead</div>
+  <ul>
+    <li>Documented sites across 200+ cities in China, recording geospatial coordinates and surviving textual and symbolic traces with provenance metadata.</li>
+    <li>Built catalog, data-import, editorial, and search workflows with PostgreSQL, TypeScript/Next.js, Node.js, and OpenAPI; organizing the corpus for statistical analysis.&nbsp;<a class="code" href="https://github.com/junguangjia/moya-inscriptions-web">[code]</a></li>
+  </ul>
+</div>
+
+<h2>MATHEMATICS &amp; STATISTICS COURSEWORK</h2>
 <div class="course-group">
-  <div class="b">Ph.D.-Level Coursework – Columbia University</div>
-  <div class="row"><span>Computational Statistics (STAT GR6104)</span><span class="r"></span></div>
-  <div class="row"><span>Theoretical Statistics I (STAT GR6201)</span><span class="r it">In progress</span></div>
-  <div class="row"><span>Probabilistic Models and Machine Learning (STCS GR6701)</span><span class="r it">In progress</span></div>
-  <div class="row"><span>Optimization I (IEOR E6613)</span><span class="r it">In progress</span></div>
+  <div class="b">Ph.D.-Level Coursework</div>
+  <div>Computational Statistics (STAT GR6104). In progress: Theoretical Statistics I (STAT GR6201); Probabilistic Models and Machine Learning (STCS GR6701); Optimization I (IEOR E6613).</div>
 </div>
 <div class="course-group">
   <div class="b">Other Selected Coursework</div>
@@ -125,39 +148,27 @@
 <h2>WORK EXPERIENCE</h2>
 <div class="entry">
   <div class="row"><span class="b">Mobalytics</span><span class="r it">Jul 2023 – Sep 2023</span></div>
-  <div class="row"><span class="it">Data Analyst, Data Department</span><span class="r it">California, USA</span></div>
-  <ul>
-    <li>Analyzed demographic and player-behavior data across three games using SQL, correlation, and regression analysis to examine engagement and personalization opportunities.</li>
-    <li>Built Tableau visualizations and player-segmentation analyses; translated findings into recommendations for the marketing team.</li>
-  </ul>
+  <p class="job"><span class="it">Data Analyst, California.</span> Analyzed player behavior across three games with SQL and regression; built Tableau dashboards and segmentation analyses for engagement and marketing recommendations.</p>
 </div>
 <div class="entry">
   <div class="row"><span class="b">Shanghai Dingbang International Trading Co., Ltd.</span><span class="r it">Sep 2022 – Dec 2022</span></div>
-  <div class="row"><span class="it">Financial Assistant, Production Statistics Department</span><span class="r it">Shanghai, China</span></div>
-  <ul>
-    <li>Maintained production-statistics records and compiled daily reports to identify deviations; coordinated reporting schedules to reduce end-of-period workloads.</li>
-  </ul>
+  <p class="job"><span class="it">Financial Assistant, Shanghai.</span> Maintained production records and daily variance reports; coordinated reporting schedules and period-end workflows.</p>
 </div>
 <div class="entry">
   <div class="row"><span class="b">Hua An Securities</span><span class="r it">Jul 2022 – Sep 2022</span></div>
-  <div class="row"><span class="it">Investment Research Analyst, Investment Research Department</span><span class="r it">Shanghai, China</span></div>
-  <ul>
-    <li>Conducted company and industry research in the catalyst sector; applied multiple linear regression and principal component analysis to interpret market dynamics and support investment recommendations.</li>
-  </ul>
+  <p class="job"><span class="it">Investment Research Analyst, Shanghai.</span> Researched the catalyst industry and applied multiple regression and principal component analysis to support investment recommendations.</p>
 </div>
 <div class="entry">
   <div class="row"><span class="b">Shanghai Yunyi Huan Yu Technology Co., Ltd.</span><span class="r it">Jun 2021 – Aug 2021</span></div>
-  <div class="row"><span class="it">R&amp;D Assistant, Data Analysis Department</span><span class="r it">Shanghai, China</span></div>
-  <ul>
-    <li>Supported Python/Spark data integration, model analysis, and validation for O2O and SaaS platforms serving small and medium-sized enterprises and e-commerce businesses.</li>
-  </ul>
+  <p class="job"><span class="it">R&amp;D Assistant, Shanghai.</span> Supported Python/Spark data integration, model analysis, and validation for O2O and SaaS platforms.</p>
 </div>
 
 <h2>TECHNICAL SKILLS</h2>
 <table class="skills">
-  <tr><td class="b">Programming</td><td>Python, R, Julia, SQL, TypeScript</td></tr>
-  <tr><td class="b">Data &amp; Web</td><td>PostgreSQL, Apache Spark, Tableau, Next.js, React, Node.js</td></tr>
-  <tr><td class="b">Tools</td><td>Git, Docker, Linux, GitHub Actions, <span class="latex">L<sup>A</sup>T<sub>E</sub>X</span></td></tr>
+  <tr><td class="b">Programming</td><td>R, Python, Julia, SQL, TypeScript, Swift</td></tr>
+  <tr><td class="b">Scientific Computing</td><td>Stan/RStan, NumPy, SciPy, R Markdown</td></tr>
+  <tr><td class="b">Data &amp; Visualization</td><td>PostgreSQL, Apache Spark, Tableau</td></tr>
+  <tr><td class="b">Development</td><td>Next.js/React, Node.js, OpenAPI, Docker, Linux, Git, GitHub Actions, <span class="latex">L<sup>A</sup>T<sub>E</sub>X</span></td></tr>
 </table>
 </body>
 </html>

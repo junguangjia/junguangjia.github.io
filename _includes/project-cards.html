@@ -2,24 +2,27 @@
   Renders a list of projects as plain academic entries. Usage:
     {% include project-cards.html projects=site.data.projects.academic %}
   The title links to `url` (a research entry's PDF report) when there is one.
-  `images` (a list) adds figures that float beside the description from 600px
-  up, with the text wrapping around and under them (on phones they sit under
-  the meta line); each opens its `full` (a larger version) or itself.
+  `images` (a list, each with an optional `caption`) adds figures from the
+  project: by default they float beside the description from 600px up, with
+  the text wrapping around them; `figure_layout: row` puts them side by side
+  under the description instead. On phones they span the column. Each opens
+  its `full` (a larger version) or itself.
   `github` puts a GitHub logo at the end of the description. `links` are
   rendered only when an entry provides real URLs. Text comes from the entry's
-  block for the page language (e.g. `fr:`, with `image_alts` in the order of
-  `images` and `link_labels` in the order of `links`), falling back to English.
+  block for the page language (e.g. `fr:`, with `image_alts` and
+  `image_captions` in the order of `images` and `link_labels` in the order of
+  `links`), falling back to English.
 {% endcomment %}
 {% include i18n.html %}{% include base_path %}{% assign p_gh_label = t.code_on_github | default: t_en.code_on_github %}{% assign p_sep = t.label_sep | default: ": " %}
 {% for project in include.projects %}{% assign tr = project[i18n_lang] %}
-<div class="entry{% if project.images and project.images.size > 0 %} entry--figures{% endif %}">
+<div class="entry{% if project.images and project.images.size > 0 %} entry--figures{% if project.figure_layout == "row" %} entry--figrow{% endif %}{% endif %}">
   <div class="entry__head">
     <h3 class="entry__title">{% assign p_title = tr.title | default: project.title %}{% capture p_title_lang %}{% include lang-fallback.html value=tr.title %}{% endcapture %}{% if project.url %}<a href="{{ project.url }}"{{ p_title_lang }}>{{ p_title }}</a>{% else %}<span{{ p_title_lang }}>{{ p_title }}</span>{% endif %}{% if project.subtitle %} <span class="entry__subtitle"{% include lang-fallback.html value=tr.subtitle %}>{{ tr.subtitle | default: project.subtitle }}</span>{% endif %}</h3>
     {% if project.dates %}<span class="entry__dates"{% include lang-fallback.html value=tr.dates %}>{{ tr.dates | default: project.dates }}</span>{% endif %}
   </div>
   {% if project.meta %}{% assign p_meta = tr.meta | default: project.meta %}<p class="entry__meta"{% include lang-fallback.html value=tr.meta %}>{{ p_meta | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>{% endif %}
-  {% if project.images and project.images.size > 0 %}<div class="entry__figures">{% for img in project.images %}{% assign p_img_tr = tr.image_alts[forloop.index0] %}{% assign p_img_alt = p_img_tr | default: img.alt %}{% assign p_img_full = img.full | default: img.src %}<a class="entry__thumb" href="{{ base_path }}{{ p_img_full }}"><img src="{{ base_path }}{{ img.src }}" width="{{ img.width }}" height="{{ img.height }}" loading="lazy" decoding="async" alt="{{ p_img_alt | escape }}"{% include lang-fallback.html value=p_img_tr %}></a>{% endfor %}</div>{% endif %}
-  {% assign p_desc = tr.description | default: project.description %}{% if project.github %}{% capture p_gh_name %}{{ p_gh_label }}{{ p_sep }}{{ p_title }}{% endcapture %}{% capture p_gh %}&#8288;<a class="entry__code" href="{{ project.github }}" title="{{ p_gh_name | strip | escape }}"><i class="fab fa-github" aria-hidden="true"></i><span class="sr-only">{{ p_gh_name | strip | escape }}</span></a>{% endcapture %}{% assign p_desc = p_desc | strip | append: p_gh %}{% endif %}<div class="entry__desc"{% include lang-fallback.html value=tr.description %}>{{ p_desc | markdownify }}</div>
+  {% assign p_figrow = false %}{% if project.figure_layout == "row" %}{% assign p_figrow = true %}{% endif %}{% capture p_figs %}{% if project.images and project.images.size > 0 %}<div class="entry__figures">{% for img in project.images %}{% assign p_img_tr = tr.image_alts[forloop.index0] %}{% assign p_img_alt = p_img_tr | default: img.alt %}{% assign p_img_full = img.full | default: img.src %}{% assign p_cap_tr = tr.image_captions[forloop.index0] %}{% assign p_cap = p_cap_tr | default: img.caption %}<figure class="entry__figure"><a class="entry__thumb" href="{{ base_path }}{{ p_img_full }}"><img src="{{ base_path }}{{ img.src }}" width="{{ img.width }}" height="{{ img.height }}" loading="lazy" decoding="async" alt="{{ p_img_alt | escape }}"{% include lang-fallback.html value=p_img_tr %}></a>{% if p_cap %}<figcaption class="entry__caption"{% include lang-fallback.html value=p_cap_tr %}>{{ p_cap }}</figcaption>{% endif %}</figure>{% endfor %}</div>{% endif %}{% endcapture %}{% unless p_figrow %}{{ p_figs }}{% endunless %}
+  {% assign p_desc = tr.description | default: project.description %}{% if project.github %}{% capture p_gh_name %}{{ p_gh_label }}{{ p_sep }}{{ p_title }}{% endcapture %}{% capture p_gh %}&#8288;<a class="entry__code" href="{{ project.github }}" title="{{ p_gh_name | strip | escape }}"><i class="fab fa-github" aria-hidden="true"></i><span class="sr-only">{{ p_gh_name | strip | escape }}</span></a>{% endcapture %}{% assign p_desc = p_desc | strip | append: p_gh %}{% endif %}<div class="entry__desc"{% include lang-fallback.html value=tr.description %}>{{ p_desc | markdownify }}</div>{% if p_figrow %}{{ p_figs }}{% endif %}
   {% if project.links and project.links.size > 0 %}
   <p class="entry__links">
     {% for link in project.links %}<a href="{{ link.url }}">{{ tr.link_labels[forloop.index0] | default: link.label }}</a>{% unless forloop.last %} · {% endunless %}{% endfor %}

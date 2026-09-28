@@ -132,7 +132,7 @@ so inspect the files directly rather than serving `_site/` with another server.
   `images/signature.png` (black ink on a transparent background; the page
   softens it in light mode and inverts it in dark mode).
 - **Log:** edit `_data/log.yml` (newest first). Each entry has a `date`, a
-  `type` (research, project, reading, teaching, milestone, life), and a short
+  `type` (research, project, reading, teaching, work, milestone, life), and a short
   `text`; entries are grouped under year headings taken from the date. Use it
   for project and research progress, papers read, and other news. Date a
   project entry by when the project started, not by its first GitHub push.
@@ -160,13 +160,15 @@ so inspect the files directly rather than serving `_site/` with another server.
   "Computational statistics research project"), names the course it was done
   in or grew out of, and links the course instructor's personal website (their
   Columbia profile when they have none; never call them a supervisor),
-  `images` lists one or more figures from the project that float beside the
-  description, which wraps around and under them so a long text never leaves
-  an empty column (`images/research/`, metadata stripped; never a figure with
-  participant-level data; add a second figure only when it shows something the
-  first does not and the text is long enough to wrap past both), and `github`
-  puts a GitHub logo at the end of the description instead of text links. Only
-  add `links` for real, public URLs.
+  `images` lists figures from the project, each with a short `caption`
+  (`images/research/`, metadata stripped; never a figure with participant-level
+  data). The layout is chosen per entry for the reader (owner's request): one
+  figure floats beside a short description (about 50 words, taken from the
+  owner's CV bullets), and `figure_layout: row` puts two figures side by side
+  under the description. `github` puts a GitHub logo at the end of the
+  description instead of text links. The line under each title (course,
+  instructor) uses the same Latin Modern italic as the dates. Only add `links`
+  for real, public URLs.
 - **Math:** MathJax is not loaded. If a page needs LaTeX, add the MathJax
   script back to `_includes/footer/custom.html`.
 

@@ -49,12 +49,15 @@ See `README.md` for editing instructions.
   (the owner asked for no wide empty strip on the right); the site name is
   shown under the portrait, not in the top bar; tab pages do not show their
   title visually (the `<h1>` stays for screen readers, and the current tab
-  never folds into the narrow-screen menu); research entries let
-  the text wrap around floated figures (no empty column beside or under a
-  figure). Keep these unless the owner
+  never folds into the narrow-screen menu); research entries keep
+  short descriptions (about 50 words, from the owner's CV) with captioned
+  figures laid out per entry (one figure beside the text, or two side by side
+  under it; no empty column beside or under a figure), and the line under
+  each title uses the dates' Latin Modern italic. Keep these unless the owner
   asks otherwise, and keep every text color at WCAG AA contrast.
-- The public CV follows the owner's latest CV (September 2026, v6) minus the
-  private items above. The website's Education section omits Provost Honors at
+- The public CV follows the owner's latest CV (September 2026, v6 as revised
+  on 2026-09-28, with all four research projects) minus the private items
+  above; the CV page shows no intro sentence (owner's request). The website's Education section omits Provost Honors at
   the owner's request (the CV PDF keeps it, as the owner's CV does).
 - The site is multilingual (English template; French, Japanese, Simplified
   Chinese; see README "Languages"). Any content change made in English must be

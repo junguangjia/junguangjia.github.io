@@ -562,11 +562,15 @@ body {
     font-size: 0.94rem;                 /* 16px */
   }
 
+  /* The line under a title (course, role, instructor) and the education track
+     lines use the same Latin Modern italic, at the same size, as the dates
+     (owner's request). */
   .entry__detail,
   .entry__meta {
-    margin: 0.1rem 0 0;
-    font-family: $sans-serif;
-    font-size: 0.9rem;                  /* ~15.3px */
+    margin: 0.15rem 0 0;
+    font-family: $latex-serif;
+    font-size: 0.88rem;
+    font-style: italic;
     line-height: 1.5;
     color: var(--site-muted-color);
   }
@@ -950,6 +954,7 @@ a:focus-visible,
   .sidebar .author__bio,
   .entry__subtitle,
   .entry__dates,
+  .page__content .entry__meta,
   .page__content .entry__detail,
   .page__content .log-item__date,
   .page__content em {
@@ -988,6 +993,7 @@ a:focus-visible,
 
   .entry__subtitle[lang|="en"],
   .entry__dates[lang|="en"],
+  .page__content .entry__meta[lang|="en"],
   .page__content .entry__detail[lang|="en"],
   .page__content .log-item__date[lang|="en"] {
     font-style: italic;
@@ -1033,11 +1039,12 @@ a:focus-visible,
   }
 }
 
-/* Research entries: figures from the project float beside the description,
-   which wraps around and under them, so a long description never leaves an
-   empty column (owner's request). From 600px up they float at 42% of the
-   column (at most 15rem); on phones they span the column under the meta line.
-   Each figure keeps its own shape inside a thin white frame. */
+/* Research entries: figures from the project, each with a short caption.
+   By default they float beside the description (from 600px up, 38% of the
+   column, at most 13.5rem) and the text wraps around them; entries with
+   `figure_layout: row` show their figures side by side under the text. On
+   phones figures span the column. No frames: the plots sit on the page like
+   figures in a paper. */
 .page__content .entry--figures {
   display: flow-root;
 }
@@ -1046,47 +1053,115 @@ a:focus-visible,
   margin: 0.7rem 0 0.9rem;
 }
 
+.page__content .entry__figure {
+  display: block;
+  margin: 0;
+
+  & + .entry__figure {
+    margin-top: 1rem;
+  }
+}
+
 .page__content .entry__thumb {
   display: block;
-  box-sizing: border-box;
-  width: 100%;
-  padding: 0.4rem;
-  background: #fff;
-  border: 1px solid var(--global-border-color);
-  border-radius: 6px;
-
-  & + .entry__thumb {
-    margin-top: 0.7rem;
-  }
 
   img {
     display: block;
     width: 100%;
     height: auto;
+    margin: 0;
+    border-radius: 0;
   }
 
-  &:hover,
   &:focus-visible {
-    border-color: var(--global-link-color);
+    outline: 2px solid var(--global-link-color);
+    outline-offset: 3px;
   }
 }
 
+.page__content .entry__caption {
+  margin: 0.4rem 0 0;
+  font-family: $sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: var(--site-muted-color);
+}
+
 @media (min-width: $small) {
-  .page__content .entry__figures {
+  .page__content .entry--figures:not(.entry--figrow) .entry__figures {
     float: right;
-    width: 42%;
-    max-width: 15rem;
-    margin: 0.5rem 0 0.8rem 1.6rem;
+    width: 38%;
+    max-width: 13.5rem;
+    margin: 0.4rem 0 0.6rem 1.6rem;
+  }
+
+  /* Chinese and Japanese text is denser, so the same description is shorter;
+     a narrower figure keeps it level with the text. */
+  :root:lang(zh) .page__content .entry--figures:not(.entry--figrow) .entry__figures {
+    width: 33%;
+    max-width: 11.5rem;
+  }
+
+  :root:lang(ja) .page__content .entry--figures:not(.entry--figrow) .entry__figures {
+    width: 36%;
+    max-width: 12.75rem;
+  }
+
+  .page__content .entry--figrow .entry__figures {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    grid-template-rows: auto auto;
+    column-gap: 1.6rem;
+    align-items: end;                   /* fallback where subgrid is unsupported */
+    margin: 0.9rem 0 0.2rem;
+  }
+
+  /* Images share the first row and captions the second (subgrid), so the
+     captions line up even when one of them wraps. */
+  .page__content .entry--figrow .entry__figure {
+    display: grid;
+    grid-row: span 2;
+    grid-template-rows: subgrid;
+  }
+
+  .page__content .entry--figrow .entry__thumb {
+    align-self: end;
+  }
+
+  .page__content .entry--figrow .entry__figure + .entry__figure {
+    margin-top: 0;
+  }
+}
+
+/* Phones: every entry reads title, dates, meta, text, then figures (the
+   floated figure comes first in the HTML only so it can float from 600px up). */
+@media (max-width: #{$small - 1px}) {
+  .page__content .entry--figures {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .page__content .entry--figures > .entry__figures {
+    order: 1;
+    margin: 0.9rem 0 0.3rem;
+  }
+
+  .page__content .entry--figures > .entry__links {
+    order: 2;
   }
 }
 
 /* Dim the white plots a little in the dark theme so they do not glare. */
 :root[data-theme="dark"] .page__content .entry__thumb {
+  padding: 0.35rem;
+  background: #fff;
   filter: brightness(0.86);
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) .page__content .entry__thumb {
+    padding: 0.35rem;
+    background: #fff;
     filter: brightness(0.86);
   }
 }
