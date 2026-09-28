@@ -9,6 +9,19 @@
 #         for example: 'Read [*Title*](https://arxiv.org/abs/...) by A. Author
 #         and B. Author (2024): one line on what stood out.'
 
+- date: "Sep 2026"
+  type: research
+  text: "Started an independent [research-feasibility study on volatility-estimation lag and calibration memory in sequential prediction intervals](/research/), developed from homework in STAT GR5221 Time Series Analysis at Columbia; the work is ongoing."
+  fr:
+    date: "sept. 2026"
+    text: "Début d’une [étude de faisabilité indépendante sur le retard d’estimation de la volatilité et la mémoire de calibration dans les intervalles de prédiction séquentiels](/research/), issue de devoirs du cours STAT GR5221 Time Series Analysis à Columbia ; travail en cours."
+  ja:
+    date: "2026年9月"
+    text: "コロンビア大学のSTAT GR5221「時系列解析」の課題をもとに、[逐次予測区間におけるボラティリティ推定の遅れとキャリブレーションの記憶に関する自主研究](/research/)を開始した。現在も進行中である。"
+  zh:
+    date: "2026年9月"
+    text: "在哥伦比亚大学 STAT GR5221 时间序列分析课程作业的基础上，启动了[序贯预测区间中波动率估计滞后与校准记忆的独立研究](/research/)，目前仍处于可行性探索阶段。"
+
 - date: "May 2026"
   type: milestone
   text: "Passed the Theory and Methods Core Competency Examination, the required examination for the Theory and Methods Honors Track in the Columbia M.A. in Statistics."
@@ -21,6 +34,19 @@
   zh:
     date: "2026年5月"
     text: "通过了哥伦比亚大学统计学硕士（M.A.）理论与方法荣誉方向的必考科目——理论与方法核心能力考试。"
+
+- date: "May 2026"
+  type: project
+  text: "Began a [Bayesian analysis of pulmonary fibrosis trajectories](/research/) as the final project for STAT GR5224 Bayesian Statistics at Columbia; the work was later extended into a reproducible R and Stan study."
+  fr:
+    date: "mai 2026"
+    text: "Début d’une [analyse bayésienne des trajectoires de la fibrose pulmonaire](/research/), projet final du cours STAT GR5224 Bayesian Statistics à Columbia ; ce travail a ensuite été prolongé en une étude reproductible en R et Stan."
+  ja:
+    date: "2026年5月"
+    text: "コロンビア大学のSTAT GR5224「ベイズ統計学」の最終プロジェクトとして、[肺線維症における経時的推移のベイズモデリング](/research/)に着手した。のちにRとStanによる再現可能な研究へと拡張した。"
+  zh:
+    date: "2026年5月"
+    text: "在哥伦比亚大学 STAT GR5224 贝叶斯统计课程中，以期末项目的形式启动了[肺纤维化病程轨迹的贝叶斯建模](/research/)，后来将其扩展为基于 R 和 Stan 的可复现研究。"
 
 - date: "Spring 2026"
   type: research

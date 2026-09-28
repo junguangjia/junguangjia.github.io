@@ -126,11 +126,15 @@ so inspect the files directly rather than serving `_site/` with another server.
 - **Log:** edit `_data/log.yml` (newest first). Each entry has a `date`, a
   `type` (research, project, reading, teaching, milestone, life), and a short
   `text`; entries are grouped under year headings taken from the date. Use it
-  for project and research progress, papers read, and other news.
+  for project and research progress, papers read, and other news. Date a
+  project entry by when the project started, not by its first GitHub push.
 - **Teaching:** edit `_data/teaching.yml` (`positions` for TA roles, `notes`
   for course notes; put note PDFs in `files/`). While both lists are empty the
   page shows a one-line placeholder.
-- **Miscellaneous:** edit `_pages/misc.md`.
+- **Miscellaneous:** edit `_pages/misc.md` (and the translated copies in
+  `_pages/fr|ja|zh/misc.md`). The field-documentation map is
+  `images/misc/artvenn-footprint-map.webp` (metadata stripped), shown in a
+  `<figure class="misc-figure">` with a caption.
 - **Sidebar (name, pronouns, motto, location, affiliation, email, profiles):**
   edit the `author:` block in `_config.yml` (`bio` holds the motto).
   `googlescholar` takes the full profile URL and `linkedin` the username
@@ -141,8 +145,10 @@ so inspect the files directly rather than serving `_site/` with another server.
   About page; dates use the CV style, e.g. `Sep 2025 – Present`). `logo` names
   a single-color file in `images/logos/`.
 - **Projects:** edit `_data/projects.yml`. Entries under `academic:` and
-  `independent:` appear on the Research & Projects page. Only add `links` for
-  real, public URLs.
+  `independent:` appear on the Research & Projects page, newest first. Only
+  add `links` for real, public URLs. For a course project or work that grew
+  out of a course, the `meta` line names the course and links the course
+  instructor's faculty page; it does not call the instructor a supervisor.
 - **Math:** MathJax is not loaded. If a page needs LaTeX, add the MathJax
   script back to `_includes/footer/custom.html`.
 
@@ -195,7 +201,12 @@ a PDF inside a page). The public URL
   centered container (at most 1180px wide), and the content fills the space
   next to the sidebar, so the page has equal margins on both sides. Text is
   16px on phones, 17px on tablets and laptops, and 18px from 1280px wide.
+  `html` has `scrollbar-gutter: stable`, so a page too short to scroll (such
+  as Miscellaneous on a tall window) keeps the same horizontal position as
+  the others where the system shows classic scrollbars.
 - Education and project entries are plain typographic entries (no cards).
+  From tablet width up, a long title wraps inside its own column so the dates
+  stay on the right; on phones the dates go on their own line under the title.
   Education entries start with a single-color school logo drawn as a CSS mask
   in `--site-logo-color`, a light grey chosen so the logos stay in the
   background; it follows the light and dark themes.

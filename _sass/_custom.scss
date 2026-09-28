@@ -151,6 +151,11 @@ html {
   /* Keep keyboard-focused elements clear of the fixed header when the browser
      scrolls them into view. */
   scroll-padding-top: 96px;
+
+  /* Reserve the scrollbar's space on every page, so a page too short to
+     scroll (e.g. Miscellaneous on a tall window) does not shift sideways when
+     classic scrollbars are shown. No effect with overlay scrollbars. */
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -518,6 +523,13 @@ body {
   margin: 0;
   font-size: 1.12rem;                   /* 19px */
   line-height: 1.35;
+
+  /* From tablet width up, a long title wraps inside its own column, so the
+     dates stay on the right of its first line like every other entry. */
+  @media (min-width: $small) {
+    flex: 1 1 0;
+    min-width: 0;
+  }
 }
 
 .entry__subtitle {
@@ -991,4 +1003,29 @@ a:focus-visible,
   font-family: $sans-serif;
   font-size: 0.9rem;
   color: var(--site-muted-color);
+}
+
+/* Figures in page text (e.g. the field-documentation map on Miscellaneous):
+   full column width, linked to the full-size image, with a quiet caption. */
+.page__content .misc-figure {
+  margin: 1.4rem 0 1.6rem;
+
+  a {
+    display: block;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+  }
+
+  figcaption {
+    margin-top: 0.55rem;
+    font-family: $sans-serif;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: var(--site-muted-color);
+  }
 }

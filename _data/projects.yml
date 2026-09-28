@@ -12,6 +12,76 @@
 # Keep entries factual. Course projects are labeled as such and are not publications.
 
 academic:
+  - title: "Volatility-Estimation Lag and Calibration Memory in Sequential Prediction Intervals"
+    url: "https://github.com/junguangjia/ts-calibration"
+    dates: "Sep 2026 – Present"
+    meta: "Ongoing independent research-feasibility study, developed from homework in STAT GR5221 Time Series Analysis (Spring 2026), Columbia University; course instructor: [Franz Rembart](https://stat.columbia.edu/department-directory/adjunct-faculty/name/franz-rembart/)"
+    description: "Studies when volatility normalization improves one-step-ahead sequential prediction intervals, and whether scale-forecast errors stored in past normalized scores keep a rolling calibration window miscalibrated after the scale forecast has recovered. The MIT-licensed Python code implements a forecast-before-reveal protocol for fixed-window rolling calibration, with tests; working scripts add a causal-EWMA pilot on synthetic scale-jump paths. All data are synthetic; the work is at an early feasibility stage, and proofs and comparisons with online conformal methods remain open."
+    links:
+      - label: "Code (GitHub)"
+        url: "https://github.com/junguangjia/ts-calibration"
+    fr:
+      title: "Retard d’estimation de la volatilité et mémoire de calibration dans les intervalles de prédiction séquentiels"
+      dates: "sept. 2026 – aujourd’hui"
+      meta: "Étude de faisabilité de recherche indépendante en cours, développée à partir de devoirs du cours STAT GR5221 Time Series Analysis (printemps 2026), Université Columbia ; enseignant du cours : [Franz Rembart](https://stat.columbia.edu/department-directory/adjunct-faculty/name/franz-rembart/)"
+      description: "Étude des conditions dans lesquelles la normalisation par la volatilité améliore les intervalles de prédiction séquentiels à un pas, et de la question de savoir si les erreurs de prévision d’échelle conservées dans les scores normalisés passés continuent de fausser la calibration d’une fenêtre glissante une fois la prévision d’échelle rétablie. Le code Python, sous licence MIT, met en œuvre un protocole de calibration sur fenêtre glissante fixe dans lequel chaque prévision est émise avant que l’observation ne soit révélée, avec des tests ; des scripts de travail y ajoutent une étude pilote avec normalisation EWMA causale sur des trajectoires synthétiques à sauts d’échelle. Toutes les données sont synthétiques ; le travail en est à un stade précoce de faisabilité, et les preuves ainsi que les comparaisons avec les méthodes de prédiction conforme en ligne restent à établir."
+      link_labels:
+        - "Code (GitHub)"
+    ja:
+      title: "逐次予測区間におけるボラティリティ推定の遅れとキャリブレーションの記憶"
+      dates: "2026年9月〜現在"
+      meta: "進行中の自主研究（実現可能性の検討段階）。コロンビア大学STAT GR5221「時系列解析」（2026年春学期）の課題から発展したもの。同授業の担当教員：[Franz Rembart](https://stat.columbia.edu/department-directory/adjunct-faculty/name/franz-rembart/)"
+      description: "ボラティリティによる正規化が1期先の逐次予測区間をどのような条件で改善するのか、また過去の正規化スコアに残ったスケール予測の誤差が、スケール予測の回復後もローリング窓によるキャリブレーションを狂わせ続けるのかを調べている。MITライセンスで公開したPythonコードは、固定長のローリング窓によるキャリブレーションについて、予測を先に確定させてから観測値を明かす（forecast-before-reveal）プロトコルをテストとともに実装しており、作業用スクリプトでは合成したスケールジャンプ系列を用いて因果的EWMAのパイロット実験を行っている。データはすべて合成データで、研究は実現可能性を検討する初期段階にあり、証明やオンライン・コンフォーマル予測手法との比較は今後の課題である。"
+      link_labels:
+        - "コード（GitHub）"
+    zh:
+      title: "序贯预测区间中的波动率估计滞后与校准记忆"
+      dates: "2026年9月—至今"
+      meta: "进行中的独立研究（可行性探索阶段），由哥伦比亚大学 STAT GR5221 时间序列分析课程（2026年春季学期）的作业发展而来；课程授课教师：[Franz Rembart](https://stat.columbia.edu/department-directory/adjunct-faculty/name/franz-rembart/)"
+      description: "研究波动率标准化在什么条件下能改进单步序贯预测区间，以及在尺度预测恢复之后，保存在历史标准化得分中的尺度预测误差是否仍会使滚动校准窗口持续失准。以 MIT 许可证开源的 Python 代码为固定窗口滚动校准实现了“先预测、后揭示”（forecast-before-reveal）协议并附有测试；工作脚本另外包括在合成尺度跳变路径上开展的因果 EWMA 初步模拟实验。所有数据均为合成数据，研究尚处于早期可行性阶段，相关证明以及与在线共形预测方法的比较仍有待完成。"
+      link_labels:
+        - "代码（GitHub）"
+
+  - title: "Bayesian Modeling of Pulmonary Fibrosis Trajectories"
+    url: "https://github.com/junguangjia/bayesian-fvc-trajectories/blob/main/results/research/report.pdf"
+    dates: "May 2026 – Sep 2026"
+    meta: "Course final project, STAT GR5224 Bayesian Statistics, Columbia University, later extended into a reproducible study; course instructor: [Dobrin Marchev](https://stat.columbia.edu/department-directory/faculty/name/dobrin-marchev/)"
+    description: "Modeled longitudinal forced vital capacity (FVC) in R and Stan on the course-provided dataset (176 patients, 1,549 measurements). The study compares pooled, hierarchical, and covariate-adjusted Gaussian models, evaluates predictions for new patients with five-fold cross-validation that holds out entire patients, and runs prior-sensitivity analyses and predictive checks. The primary hierarchical model estimates a mean FVC change of −4.25 mL/week (95% credible interval [−5.12, −3.40]), although the residuals still show serial dependence. No participant-level data are distributed; the public repository provides a synthetic-data workflow and aggregate results."
+    links:
+      - label: "Code (GitHub)"
+        url: "https://github.com/junguangjia/bayesian-fvc-trajectories"
+      - label: "Report (PDF)"
+        url: "https://github.com/junguangjia/bayesian-fvc-trajectories/blob/main/results/research/report.pdf"
+      - label: "Validation report (PDF)"
+        url: "https://github.com/junguangjia/bayesian-fvc-trajectories/blob/main/results/research/validation.pdf"
+    fr:
+      title: "Modélisation bayésienne des trajectoires de la fibrose pulmonaire"
+      dates: "mai 2026 – sept. 2026"
+      meta: "Projet final de cours, STAT GR5224 Bayesian Statistics, Université Columbia, prolongé ensuite en une étude reproductible ; enseignant du cours : [Dobrin Marchev](https://stat.columbia.edu/department-directory/faculty/name/dobrin-marchev/)"
+      description: "Modélisation de l’évolution longitudinale de la capacité vitale forcée (CVF) en R et Stan à partir du jeu de données fourni dans le cadre du cours (176 patients, 1 549 mesures). L’étude compare des modèles gaussiens poolé, hiérarchique et ajusté sur des covariables, évalue les prédictions pour de nouveaux patients par une validation croisée à cinq blocs qui exclut des patients entiers, et comprend des analyses de sensibilité aux lois a priori ainsi que des vérifications prédictives. Le modèle hiérarchique principal estime une variation moyenne de la CVF de −4,25 mL par semaine (intervalle de crédibilité à 95 % [−5,12 ; −3,40]), bien que les résidus présentent encore une dépendance sérielle. Aucune donnée individuelle n’est diffusée : le dépôt public fournit une chaîne de traitement sur données synthétiques et des résultats agrégés."
+      link_labels:
+        - "Code (GitHub)"
+        - "Rapport (PDF)"
+        - "Rapport de validation (PDF)"
+    ja:
+      title: "肺線維症における経時的推移のベイズモデリング"
+      dates: "2026年5月〜2026年9月"
+      meta: "授業の最終プロジェクト（STAT GR5224「ベイズ統計学」、コロンビア大学）。のちに再現可能な研究へと拡張。担当教員：[Dobrin Marchev](https://stat.columbia.edu/department-directory/faculty/name/dobrin-marchev/)"
+      description: "授業で提供されたデータセット（患者176人、測定1,549件）を用いて、努力性肺活量（FVC）の経時変化をRとStanでモデル化した。プールモデル、階層モデル、共変量で調整したモデルという3つのガウスモデルを比較し、患者単位で丸ごと除外する5分割交差検証によって新規患者に対する予測を評価したほか、事前分布の感度分析と予測チェックも行っている。主要な階層モデルによるFVCの平均変化の推定値は−4.25mL/週（95%信用区間[−5.12, −3.40]）だが、残差にはなお系列相関が見られる。参加者単位のデータは公開しておらず、公開リポジトリには合成データによるワークフローと集計結果を収めている。"
+      link_labels:
+        - "コード（GitHub）"
+        - "レポート（PDF）"
+        - "検証レポート（PDF）"
+    zh:
+      title: "肺纤维化病程轨迹的贝叶斯建模"
+      dates: "2026年5月—2026年9月"
+      meta: "课程期末项目，哥伦比亚大学 STAT GR5224 贝叶斯统计，课程结束后扩展为可复现的研究；授课教师：[Dobrin Marchev](https://stat.columbia.edu/department-directory/faculty/name/dobrin-marchev/)"
+      description: "基于课程提供的数据集（176 名患者、1,549 次测量），使用 R 和 Stan 对用力肺活量（FVC）的纵向变化进行建模。研究比较了合并模型、分层模型和协变量调整模型三种高斯模型，采用按患者整体留出的五折交叉验证评估对新患者的预测，并开展了先验敏感性分析和预测检验。主要分层模型估计的 FVC 平均变化为每周 −4.25 mL（95% 可信区间 [−5.12, −3.40]），但残差中仍存在序列相关。项目不公开任何参与者层面的数据；公开代码仓库提供基于合成数据的工作流程和汇总结果。"
+      link_labels:
+        - "代码（GitHub）"
+        - "报告（PDF）"
+        - "验证报告（PDF）"
+
   - title: "Stochastic Trace Estimation with Hutchinson and Hutch++"
     url: "/files/stochastic-trace-estimation-report.pdf"
     dates: "Spring 2026 – Present"
