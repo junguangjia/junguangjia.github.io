@@ -1,0 +1,8 @@
+[
+{"id": "china-green", "label": "China · Trip 1", "color": "#238368", "sketch_color": "green"},
+{"id": "china-red", "label": "China · Trip 2", "color": "#C85D49", "sketch_color": "red"},
+{"id": "china-purple", "label": "China · Trip 3", "color": "#8A58A0", "sketch_color": "purple"},
+{"id": "korea", "label": "South Korea", "color": "#C48A18"},
+{"id": "japan", "label": "Japan", "color": "#326BA5"},
+{"id": "mongolia", "label": "Mongolia", "color": "#805A32"}
+]

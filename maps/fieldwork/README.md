@@ -1,40 +1,46 @@
-# ArtVenn — East Asia Field Atlas
+# Fieldwork route map
 
-A static, self-hosted Leaflet 1.9.4 map for Junguang Jia's academic website. The map uses real vector geography; no generative map imagery, map tiles, keys, account, backend or runtime geocoding are required.
+A static, self-hosted Leaflet 1.9.4 map of Junguang Jia's fieldwork trips for ArtVenn (China, South Korea, Japan, Mongolia), shown on the Miscellaneous page of the website. It replaced the earlier interactive "field atlas" on 2026-09-28 and is a port of the approved simplified preview (`simple-map-v2-20260928`), not a new design.
 
-## Install / embed
+What it shows: a real geographic basemap, one colour per trip, solid lines for ground travel, dashed lines for flights, city/site markers and a small legend. Interaction is ordinary pan and zoom (drag, + / − buttons, double-click, pinch, keyboard); the mouse wheel is left to the page. There are no tabs, panels, statistics, downloads or region switches. No map tiles, API keys, accounts, backend or runtime geocoding are used, and nothing is loaded from third-party servers.
 
-Copy this complete folder to `maps/fieldwork/` in the website repository. Open `index.html` directly or serve the folder over HTTP. Use the included Jekyll include and height listener (delivered alongside the folder) to embed it responsively. A plain iframe also works:
+Caption (on the Miscellaneous page, and on this page when it is opened on its own): "Routes are schematic reconstructions rather than GPS tracks."
 
-```html
-<iframe src="/maps/fieldwork/" title="ArtVenn field atlas — East Asia" loading="lazy" allow="fullscreen" style="width:100%;height:880px;border:1px solid #dce4e4"></iframe>
-```
+## Embedding
 
-## Evidence and interpretation
+`_includes/fieldwork-map.html` puts `index.html` in an iframe with a 4:3 shape (420–620 px tall) and the caption underneath. All four language versions of the Miscellaneous page use the same include, so the map and caption stay in English everywhere. The map fills whatever box it is given, so no resize script is needed.
 
-- China: 15 sketch segments from `route_traces_pixels.json`, affine-registered to approximate city-label control points in Web Mercator and converted to longitude/latitude. These are schematic reconstructions, not GPS tracks. The original stroke-color groups have no confirmed transport meaning. No navigation snapping or invented intermediate stops were applied.
-- Mongolia: Ulaanbaatar plus the owner-supplied Yanran Inscription location, rounded for public display. The line indicates an endpoint connection only.
-- South Korea: the supplied 17 inscription entries grouped into 13 city/county areas. Regional gazetteer markers are not exact monuments or museum holding locations. Individual visits and order are unconfirmed. No circuit is invented.
-- Japan: five explicitly named visited cities. Geographic connectors do not claim travel order or transport mode.
-- The screenshot's 210-city number refers to China only, and is not calculated from map markers. There is no global visited-city total in this atlas.
-- Nearby China basemap town labels are geographic context only, not a new visit inventory.
+## Trips and what is approximate
 
-## Data / sources
+| Trip | Route | Notes |
+|---|---|---|
+| China · Trip 1 (green) | 4 ground traces, 1 flight (Beijing–Dalian) | China routes are the green / red / purple strokes of a hand-drawn route sketch on an Amap screenshot, affine-registered to city anchors (`audit/georeferencing.json`). The geometry is unchanged from the earlier atlas; only the grouping into trips and the solid / dashed reading are new. Shapes are approximate corridors, not GPS tracks and not road routing. |
+| China · Trip 2 (red) | 5 ground traces | as above |
+| China · Trip 3 (purple) | 4 ground traces, 2 flights | Sketch trace P4 is split where its dashed part (mainland coast to Taiwan) meets the solid part within Taiwan. |
+| South Korea | Flight Shanghai → Seoul; ground Seoul → Yeoju / Wonju → Chungju → Cheonan → Gongju → Boryeong → Hadong → Changnyeong → Daegu → Gyeongju → Pohang → Uljin → Incheon | Straight segments between city positions. Yeoju and Wonju are both on the route, but their relative order is not asserted. |
+| Japan | Flight Shanghai → Tokyo; ground Tokyo → Nagoya → Kyoto → Nara → Osaka | Schematic: straight segments between cities, not rail or road routing. |
+| Mongolia | Ground Ulaanbaatar → Yanran Inscription | One straight schematic segment. The flight to Ulaanbaatar is omitted until its departure city is known. The inscription position is rounded (about 1 km) for public display. |
 
-- `data/land.geojson`: Natural Earth 10m Land, clipped to [24,-28,179.9,80], simplified at 0.005 degrees preserving topology, rounded to five decimal places. The 10m label is cartographic scale 1:10 million, not 10-meter accuracy.
-- `data/borders.geojson`: Natural Earth 50m Admin 0 Boundary Lines Land, similarly clipped and simplified at 0.003 degrees. Borders are contextual and do not express a position on sovereignty.
-- `data/places.geojson`: selected place anchors from Natural Earth and GeoNames, plus owner-supplied monument coordinates. Point-level provenance is stored in each feature.
-- `data/china-traces.geojson`: reconstructed paths with explicit uncertainty properties.
-- `audit/georeferencing.json`: transform, approximate controls and registration residuals. These residuals are not GPS accuracy estimates.
-- `audit/sources.json`: source URLs and input download checksums.
-- `data.js`: assembled runtime copy. When updating data, run `python3 rebuild-data.py` to regenerate it from the versioned GeoJSON files rather than maintaining conflicting versions.
+Flights between two points are drawn as a gentle arc for legibility; the arc is not a flight path. Markers mark cities (or, for the Yanran Inscription, a site), not individual monuments. Grey markers in China are reference cities for orientation (mostly the sketch's georeferencing anchors); they are not meant as a list of visits.
 
-Natural Earth data are public domain: https://www.naturalearthdata.com/about/terms-of-use/
-GeoNames data are CC BY 4.0: https://download.geonames.org/export/dump/readme.txt
-Leaflet is BSD-2-Clause; see `vendor/LEAFLET-LICENSE.txt`.
+## Files
 
-## Scope / maintenance
+- `index.html`, `map.css`, `map.js`: the page. English only.
+- `data.js`: runtime copy of `data/`, generated by `python3 rebuild-data.py` (also checks trip ids and modes). Edit the files in `data/`, then rebuild; do not edit `data.js` by hand.
+- `data/trips.json`: trip id, legend label and colour.
+- `data/routes.geojson`: 21 LineStrings with `trip`, `mode` (`ground` or `flight`), a note and the source of each.
+- `data/places.geojson`: 52 city / site points with `region`, `trip` (null for reference cities), label `priority` and source.
+- `data/land.geojson`: Natural Earth 10m Land, clipped to [24, −28, 179.9, 80], simplified at 0.005° preserving topology, rounded to five decimals. "10m" is the 1:10 million scale, not 10-metre accuracy.
+- `data/borders.geojson`: Natural Earth 50m Admin 0 Boundary Lines Land, clipped and simplified at 0.003°. Boundaries are geographic context and do not express a position on sovereignty.
+- `audit/georeferencing.json`: the affine transform, control anchors and residuals used to register the China sketch. Residuals measure the fit to approximate label positions, not route accuracy.
+- `audit/sources.json`: download URLs and checksums of the Natural Earth, GeoNames and Leaflet inputs.
+- `vendor/`: Leaflet 1.9.4 (`leaflet.js`, `leaflet.css`) and its licence.
 
-All map text is English. Existing non-English Miscellaneous pages share this English map as a deliberate fallback. Keep the existing website videos, profile and academic content unchanged. Do not re-introduce the earlier generated map as geographic evidence. Do not claim the entire country's area was surveyed because it appears in the background.
+## Sources and licences
 
-The map intentionally stops at overview/regional zooms. To publish detailed routes, replace approximate trace geometry with verified GPX/GeoJSON records. To publish site locations, resolve actual visited venues rather than geocoding the artifact title alone.
+- Natural Earth (land, boundary lines, some city positions): public domain, https://www.naturalearthdata.com/about/terms-of-use/
+- GeoNames (Korean and some Japanese city positions): CC BY 4.0, https://download.geonames.org/export/dump/readme.txt — credited in the map's attribution line.
+- Leaflet: BSD-2-Clause, see `vendor/LEAFLET-LICENSE.txt`.
+- Routes, trip grouping and the Yanran Inscription position: personal records supplied by Junguang Jia.
+
+To show more exact routes later, replace the schematic geometry in `data/routes.geojson` with verified GPX / GeoJSON tracks and rebuild `data.js`.

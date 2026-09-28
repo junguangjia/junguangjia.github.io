@@ -1,0 +1,60 @@
+/* Fieldwork route map. Ported from the approved simplified preview
+   (simple-map-v2-20260928): real basemap, one colour per trip, solid = ground,
+   dashed = flight, city/site markers, small legend. No other UI. */
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+html, body { background: #fff; color: #273746; font-family: Arial, Helvetica, sans-serif; }
+body { overflow: hidden; display: flex; flex-direction: column; }
+
+.map-wrap { position: relative; flex: 1 1 auto; min-height: 0; }
+#map { position: absolute; inset: 0; background: #EAF1F5; outline-offset: -3px; }
+
+/* Legend */
+.legend {
+  position: absolute; bottom: 25px; left: 19px; z-index: 700;
+  background: rgba(255, 255, 255, .97); border: 1px solid #D9E1E4;
+  padding: 11px 13px; pointer-events: none; max-width: 390px;
+  font-size: 11px; line-height: 1.6;
+}
+.legend[hidden] { display: none; }
+.trip-legend { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 16px; row-gap: 5px; margin: 0; padding: 0; list-style: none; }
+.key { display: flex; align-items: center; white-space: nowrap; gap: 7px; }
+.swatch { width: 22px; height: 0; border-top: 2.8px solid var(--c, #455561); flex: none; }
+.mode-key { display: flex; gap: 20px; border-top: 1px solid #E1E6E8; padding-top: 7px; margin: 8px 0 0; list-style: none; padding-left: 0; color: #485A65; }
+.mode-key .swatch { border-color: #455561; }
+.swatch.flight { border-top-style: dashed; }
+.dot { width: 6px; height: 6px; border-radius: 50%; background: #516978; flex: none; margin: 0 2px; }
+
+/* Leaflet chrome */
+.leaflet-container { font-family: Arial, Helvetica, sans-serif; }
+.leaflet-control-attribution { font-size: 9px !important; background: rgba(255, 255, 255, .9) !important; }
+.leaflet-control-attribution a { color: #456D88; }
+.leaflet-bar { border: 1px solid #D5DFE4 !important; box-shadow: none !important; }
+.leaflet-bar a { color: #415867; }
+
+/* Labels */
+.leaflet-tooltip.city {
+  background: none; border: 0; box-shadow: none; padding: 0;
+  color: #283C4D; font-size: 11px; line-height: 1.2; white-space: nowrap;
+  text-shadow: -1px -1px #fff, 1px -1px #fff, -1px 1px #fff, 1px 1px #fff;
+}
+.leaflet-tooltip.city::before { display: none; }
+.country-label { font: 11px Arial, sans-serif; letter-spacing: .16em; color: #7A8E99; text-align: center; white-space: nowrap; }
+.water-label { font: italic 14px Georgia, serif; color: #91A8B5; text-align: center; white-space: nowrap; }
+
+/* Caption: shown when the page is opened on its own; inside the website the
+   figure caption on the Miscellaneous page carries the same sentence. */
+.caption { flex: none; margin: 0; padding: 10px 27px 13px; color: #647581; font-size: 11px; line-height: 1.5; border-top: 1px solid #D8E1E5; }
+.embedded .caption { display: none; }
+.unavailable { padding: 30px; color: #555; }
+
+@media (max-width: 600px) {
+  .legend { left: 10px; bottom: 23px; padding: 8px 9px; font-size: 10px; max-width: calc(100% - 20px); }
+  .trip-legend { column-gap: 11px; row-gap: 2px; }
+  .swatch { width: 15px; }
+  .mode-key { gap: 13px; margin-top: 5px; padding-top: 5px; }
+  .caption { padding: 9px 14px; font-size: 10px; }
+}
+@media (max-width: 340px) {
+  .trip-legend { grid-template-columns: repeat(2, 1fr); }
+}

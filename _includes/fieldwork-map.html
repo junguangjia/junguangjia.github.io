@@ -1,12 +1,8 @@
-{% comment %}Shared English atlas: real geographic data and explicitly approximate personal routes.{% endcomment %}
-<figure class="fieldwork-atlas-embed" lang="en">
-  <iframe class="fieldwork-atlas-frame" src="{{ '/maps/fieldwork/' | relative_url }}"
-    title="ArtVenn field atlas: China, Mongolia, South Korea and Japan"
-    loading="lazy" allow="fullscreen" allowfullscreen
-    style="display:block;width:100%;height:980px;border:1px solid var(--global-border-color);background:transparent;"></iframe>
-  <figcaption>
-    <a href="{{ '/maps/fieldwork/' | relative_url }}" target="_blank" rel="noopener">Open the interactive atlas ↗</a>
-    <span> · English map. Approximate routes and selected locations; not GPS tracks.</span>
-  </figcaption>
+{% comment %}Fieldwork route map (maps/fieldwork/): Natural Earth basemap with schematic routes, one colour per trip. English on every language page. The frame keeps a 4:3 shape within fixed limits, so it needs no resize script.{% endcomment %}
+<figure class="misc-figure fieldwork-map" lang="en">
+  <iframe class="fieldwork-map__frame" src="{{ '/maps/fieldwork/' | relative_url }}"
+    title="Map of fieldwork trips across China, South Korea, Japan and Mongolia"
+    loading="lazy"
+    style="display:block;width:100%;height:auto;aspect-ratio:4/3;min-height:420px;max-height:620px;margin:0;border:1px solid var(--global-border-color);border-radius:6px;background:#EAF1F5;"></iframe>
+  <figcaption>Routes are schematic reconstructions rather than GPS tracks.</figcaption>
 </figure>
-<script src="{{ '/assets/js/fieldwork-map-embed.js' | relative_url }}" defer></script>
