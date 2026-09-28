@@ -13,6 +13,8 @@ author_profile: true
 
 En 2025, j’ai relié seul à vélo Pingdingshan, dans le Henan, à Lhassa, au Tibet : 3 680 km (2 286 miles) en 51 jours, en traversant 4 provinces, 16 villes et 15 grands tronçons de montagne avant d’atteindre le plateau tibétain. Au-delà de la distance elle-même, ce voyage m’a appris combien la persévérance peut naître de la curiosité, et combien un long voyage peut être façonné par la gentillesse des personnes rencontrées en chemin.
 
+{% include youtube-player.html id="0iH1HRoggic" title="À vélo en solitaire jusqu’à Lhassa | 3 680 km en 51 jours" %}
+
 ## Documentation de terrain pour ArtVenn
 
 Pendant mon année de césure, je me suis rendu dans plus de 200 villes à travers la Chine et j’ai effectué d’autres déplacements sur le terrain en Mongolie, au Japon et en Corée du Sud ; j’ai documenté plus de 1 300 inscriptions historiques et gravures rupestres, et parcouru environ 54 000 km (33 500 miles). J’ai recueilli des photographies, des coordonnées géographiques et des informations de contexte afin de constituer le fonds de sources primaires sur lequel repose ArtVenn, dans le but de conserver ces matériaux sous une forme structurée, à des fins de documentation, de consultation et de recherches futures.

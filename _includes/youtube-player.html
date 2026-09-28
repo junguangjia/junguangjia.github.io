@@ -1,0 +1,28 @@
+{% comment %}
+  A native YouTube player, shared by the Teaching page and Miscellaneous. Usage:
+    {% include youtube-player.html id="VIDEO_ID" title="Accessible player title" link_title="Video title" %}
+  The iframe is in the generated HTML with its real src and loads with the page
+  (loading="eager"), so YouTube's own preview and Play button are ready before
+  any interaction; playback starts only when the visitor presses Play
+  (autoplay=0). Parameters
+  (https://developers.google.com/youtube/player_parameters): controls=1,
+  playsinline=1 (inline on iOS), rel=0 (related videos from the same channel
+  only; they cannot be turned off), hl = the page language. The embed uses
+  privacy-enhanced mode (youtube-nocookie.com) and sends the site origin as the
+  Referer, as YouTube requires. Nothing may cover the player
+  (https://developers.google.com/youtube/terms/required-minimum-functionality).
+  The "Watch on YouTube" link below the player is the fallback if embedding is
+  blocked. Do not bring back a click-to-load poster without the owner's approval.
+  `class` adds classes to the player box; `link_title` (default: `title`) is
+  the screen-reader text after "Watch on YouTube".
+{% endcomment %}
+{% include i18n.html %}{% assign yt_hl = lang_meta.youtube_hl | default: "en" %}{% assign yt_watch = t.watch_on_youtube | default: t_en.watch_on_youtube %}{% assign yt_sep = t.label_sep | default: ": " %}{% assign yt_link_title = include.link_title | default: include.title %}
+<div class="video-embed{% if include.class %} {{ include.class }}{% endif %}">
+  <iframe src="https://www.youtube-nocookie.com/embed/{{ include.id }}?autoplay=0&amp;controls=1&amp;playsinline=1&amp;rel=0&amp;hl={{ yt_hl }}"
+    title="{{ include.title | escape }}"
+    width="560" height="315" loading="eager"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen></iframe>
+</div>
+<p class="entry__links"><a href="https://www.youtube.com/watch?v={{ include.id }}">{{ yt_watch | escape }}<span class="sr-only">{{ yt_sep | escape }}{{ yt_link_title | escape }}</span></a></p>

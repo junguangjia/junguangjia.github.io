@@ -1,38 +1,19 @@
 {% comment %}
-  Owner-confirmed TA recordings as native YouTube players. Each iframe is in the
-  generated HTML with its real src and loads with the page (loading="eager"), so
-  YouTube's own preview and Play button are ready before any interaction;
-  playback starts only when the visitor presses Play (autoplay=0). Parameters
-  (https://developers.google.com/youtube/player_parameters): controls=1,
-  playsinline=1 (inline on iOS), rel=0 (related videos from the same channel
-  only; they cannot be turned off), hl = the page language. The embed uses
-  privacy-enhanced mode (youtube-nocookie.com) and sends the site origin as the
-  Referer, as YouTube requires. Nothing may cover the player
-  (https://developers.google.com/youtube/terms/required-minimum-functionality).
-  The "Watch on YouTube" link below each player is the fallback if embedding is
-  blocked. Do not bring back a click-to-load poster without the owner's approval.
-  Text comes from the video's block for the page language (e.g. `fr:`), falling
-  back to English.
+  Owner-confirmed TA recordings as native YouTube players; the player itself
+  (parameters, privacy-enhanced mode, "Watch on YouTube" fallback) is
+  _includes/youtube-player.html. Text comes from the video's block for the page
+  language (e.g. `fr:`), falling back to English.
 {% endcomment %}
 {% include i18n.html %}
-{% assign yt_hl = lang_meta.youtube_hl | default: "en" %}
-{% for video in site.data.teaching.videos %}{% assign tr = video[i18n_lang] %}{% assign v_title = tr.title | default: video.title %}{% assign v_watch = t.watch_on_youtube | default: t_en.watch_on_youtube %}
+{% for video in site.data.teaching.videos %}{% assign tr = video[i18n_lang] %}{% assign v_title = tr.title | default: video.title %}
 <section class="entry teaching-example" aria-labelledby="video-{{ video.youtube_id }}">
   <div class="entry__head">
     <h3 class="entry__title" id="video-{{ video.youtube_id }}"{% include lang-fallback.html value=tr.title %}>{{ v_title | escape }}</h3>
     {% if video.term %}{% assign v_term = tr.term | default: video.term %}<span class="entry__dates"{% include lang-fallback.html value=tr.term %}>{{ v_term | escape }}</span>{% endif %}
   </div>
-  {% assign v_role = tr.role | default: video.role %}{% assign v_inst = tr.institution | default: video.institution %}{% assign v_course = tr.course | default: video.course %}{% assign sep = t.label_sep | default: ": " %}
+  {% assign v_role = tr.role | default: video.role %}{% assign v_inst = tr.institution | default: video.institution %}{% assign v_course = tr.course | default: video.course %}
   <p class="entry__meta">{{ v_role | escape }} · {{ v_inst | escape }} · {{ v_course | escape }}</p>
   {% assign v_desc = tr.description | default: video.description %}<div class="entry__desc"{% include lang-fallback.html value=tr.description %}>{{ v_desc | markdownify }}</div>
-  <div class="teaching-video">
-    <iframe src="https://www.youtube-nocookie.com/embed/{{ video.youtube_id }}?autoplay=0&amp;controls=1&amp;playsinline=1&amp;rel=0&amp;hl={{ yt_hl }}"
-      title="{{ v_title | escape }} · {{ v_role | escape }} · {{ v_inst | escape }}"
-      width="560" height="315" loading="eager"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowfullscreen></iframe>
-  </div>
-  <p class="entry__links"><a href="https://www.youtube.com/watch?v={{ video.youtube_id }}">{{ v_watch | escape }}<span class="sr-only">{{ sep | escape }}{{ v_title | escape }}</span></a></p>
+  {% capture v_player_title %}{{ v_title }} · {{ v_role }} · {{ v_inst }}{% endcapture %}{% include youtube-player.html id=video.youtube_id title=v_player_title link_title=v_title class="teaching-video" %}
 </section>
 {% endfor %}

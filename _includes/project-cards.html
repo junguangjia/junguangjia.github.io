@@ -1,19 +1,23 @@
 {% comment %}
   Renders a list of projects as plain academic entries. Usage:
     {% include project-cards.html projects=site.data.projects.academic %}
-  Links are rendered only when an entry provides real URLs. Text comes from the
-  entry's block for the page language (e.g. `fr:`, with `link_labels` in the
-  order of `links`), falling back to English.
+  The title links to `url` (a research entry's PDF report) when there is one.
+  `image` adds a small figure beside the description (it opens `image.full`,
+  a larger version, or the image itself), and `github` puts a GitHub logo at the end of the description.
+  `links` are rendered only when an entry provides real URLs. Text comes from
+  the entry's block for the page language (e.g. `fr:`, with `link_labels` in
+  the order of `links`), falling back to English.
 {% endcomment %}
-{% include i18n.html %}
+{% include i18n.html %}{% include base_path %}{% assign p_gh_label = t.code_on_github | default: t_en.code_on_github %}{% assign p_sep = t.label_sep | default: ": " %}
 {% for project in include.projects %}{% assign tr = project[i18n_lang] %}
-<div class="entry">
+<div class="entry{% if project.image %} entry--thumb{% endif %}">
   <div class="entry__head">
-    <h3 class="entry__title"{% include lang-fallback.html value=tr.title %}>{% assign p_title = tr.title | default: project.title %}{% if project.url %}<a href="{{ project.url }}">{{ p_title }}</a>{% else %}{{ p_title }}{% endif %}{% if project.subtitle %} <span class="entry__subtitle"{% include lang-fallback.html value=tr.subtitle %}>{{ tr.subtitle | default: project.subtitle }}</span>{% endif %}</h3>
+    <h3 class="entry__title">{% assign p_title = tr.title | default: project.title %}{% capture p_title_lang %}{% include lang-fallback.html value=tr.title %}{% endcapture %}{% if project.url %}<a href="{{ project.url }}"{{ p_title_lang }}>{{ p_title }}</a>{% else %}<span{{ p_title_lang }}>{{ p_title }}</span>{% endif %}{% if project.subtitle %} <span class="entry__subtitle"{% include lang-fallback.html value=tr.subtitle %}>{{ tr.subtitle | default: project.subtitle }}</span>{% endif %}</h3>
     {% if project.dates %}<span class="entry__dates"{% include lang-fallback.html value=tr.dates %}>{{ tr.dates | default: project.dates }}</span>{% endif %}
   </div>
   {% if project.meta %}{% assign p_meta = tr.meta | default: project.meta %}<p class="entry__meta"{% include lang-fallback.html value=tr.meta %}>{{ p_meta | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>{% endif %}
-  {% assign p_desc = tr.description | default: project.description %}<div class="entry__desc"{% include lang-fallback.html value=tr.description %}>{{ p_desc | markdownify }}</div>
+  {% if project.image %}{% assign p_img_alt = tr.image_alt | default: project.image.alt %}{% assign p_img_full = project.image.full | default: project.image.src %}<a class="entry__thumb" href="{{ base_path }}{{ p_img_full }}"><img src="{{ base_path }}{{ project.image.src }}" width="{{ project.image.width }}" height="{{ project.image.height }}" loading="lazy" decoding="async" alt="{{ p_img_alt | escape }}"{% include lang-fallback.html value=tr.image_alt %}></a>{% endif %}
+  {% assign p_desc = tr.description | default: project.description %}{% if project.github %}{% capture p_gh_name %}{{ p_gh_label }}{{ p_sep }}{{ p_title }}{% endcapture %}{% capture p_gh %}&#8288;<a class="entry__code" href="{{ project.github }}" title="{{ p_gh_name | strip | escape }}"><i class="fab fa-github" aria-hidden="true"></i><span class="sr-only">{{ p_gh_name | strip | escape }}</span></a>{% endcapture %}{% assign p_desc = p_desc | strip | append: p_gh %}{% endif %}<div class="entry__desc"{% include lang-fallback.html value=tr.description %}>{{ p_desc | markdownify }}</div>
   {% if project.links and project.links.size > 0 %}
   <p class="entry__links">
     {% for link in project.links %}<a href="{{ link.url }}">{{ tr.link_labels[forloop.index0] | default: link.label }}</a>{% unless forloop.last %} · {% endunless %}{% endfor %}

@@ -145,15 +145,23 @@ so inspect the files directly rather than serving `_site/` with another server.
   About page; dates use the CV style, e.g. `Sep 2025 – Present`). `logo` names
   a single-color file in `images/logos/`.
 - **Projects:** edit `_data/projects.yml`. Entries under `academic:` and
-  `independent:` appear on the Research & Projects page, newest first. Only
-  add `links` for real, public URLs. For a course project or work that grew
-  out of a course, the `meta` line names the course and links the course
-  instructor's faculty page; it does not call the instructor a supervisor.
+  `independent:` appear on the Research & Projects page, newest first by
+  start date. Every research entry follows the same pattern: the title opens
+  the PDF report in `files/` (`url`; leave it out until a report exists), the
+  `meta` line says what kind of research project it is (for example
+  "Computational statistics research project"), names the course it was done
+  in or grew out of, and links the course instructor's personal website (their
+  Columbia profile when they have none; never call them a supervisor), an
+  optional `image` shows a small figure from the project beside the text
+  (`images/research/`, metadata stripped; never a figure with participant-level
+  data), and `github` puts a GitHub logo at the end of the description instead
+  of text links. Only add `links` for real, public URLs.
 - **Math:** MathJax is not loaded. If a page needs LaTeX, add the MathJax
   script back to `_includes/footer/custom.html`.
 
-Keep everything factual. Course projects are labeled as course projects, and
-nothing on the site should claim publications, awards, or results that do not exist.
+Keep everything factual. Research projects name the course they came from,
+and nothing on the site should claim publications, awards, or results that do
+not exist.
 
 ## Portrait
 
@@ -282,16 +290,35 @@ institutions.
 
 The template is released under the MIT License (see `LICENSE`).
 
-## Research report and teaching recordings
+## Research reports, figures and videos
 
-The trace-estimation title and `Report (PDF)` link open the same-site file
-`files/stochastic-trace-estimation-report.pdf`. `Code (GitHub)` opens the separate
-public `junguangjia/stochastic-trace-estimation` repository. The PDF is an unchanged
-snapshot of that repository's `latex/trace-estimation-report.pdf`; its source commit
-and SHA-256 are recorded in `_data/projects.yml`. Treat the research repository as
-the source of truth. When replacing the report, verify its PDF content and hash,
-update those provenance fields, and retain the stable website URL. Do not rebuild
-or revise the research project as part of an ordinary website edit.
+Research titles open same-site PDF reports, each an unchanged copy of the
+report in the owner's public research repository:
+
+| Website file (`files/`) | Repository | Source file |
+| --- | --- | --- |
+| `ts-calibration-report.pdf` | `junguangjia/ts-calibration` | `latex/ts-calibration-report.pdf` |
+| `bayesian-fvc-trajectories-report.pdf` | `junguangjia/bayesian-fvc-trajectories` | `results/research/report.pdf` |
+| `stochastic-trace-estimation-report.pdf` | `junguangjia/stochastic-trace-estimation` | `latex/trace-estimation-report.pdf` |
+| `ou-inference-report.pdf` | `junguangjia/ou-inference` | `latex/ou-inference-report.pdf` |
+
+Each entry records the source commit and SHA-256 in `_data/projects.yml`.
+Treat the research repositories as the source of truth. When replacing a
+report, check its PDF content and metadata for anything private, verify the
+hash, update those provenance fields and the entry text if the results
+changed, and keep the stable website URL. Do not rebuild or revise a research
+project as part of an ordinary website edit.
+
+The thumbnails in `images/research/` are lossless WebP copies of figures from
+the same reports or repositories (synthetic or aggregate results only):
+Figure 1 of the ts-calibration report, Figure 1 of the Bayesian report
+(posterior overall slopes), `figures/psd_error.svg` (trace estimation), and
+one panel of Figure 1 of the OU report (`ou-membership-regular64.webp`; the
+thumbnail opens the whole figure, `ou-membership-grid.webp`).
+
+YouTube players (Teaching recordings and the cycling video on Miscellaneous)
+come from `_includes/youtube-player.html`; the notes below apply to all of
+them. The cycling video is `0iH1HRoggic` on the owner's channel.
 
 `_data/teaching.yml` holds `videos`, `notes`, and optional verified `positions`.
 Each recording has a title, quarter, role, institution, descriptive course label,
@@ -300,7 +327,7 @@ recordings for Linear Algebra in Fall 2020 and Computer Science / Java in Fall 2
 Display quarters only; do not substitute thumbnail timestamps or upload dates.
 No unconfirmed course numbers or faculty names should be added.
 
-Each recording is a native YouTube player: `_includes/teaching-videos.html`
+Each recording is a native YouTube player: `_includes/youtube-player.html`
 writes an ordinary iframe with its real `src` into the page, so the players
 initialize on page load (`loading="eager"`) and show YouTube's own preview and
 Play button. Playback starts only when the visitor presses Play (`autoplay=0`),

@@ -11,16 +11,16 @@
 
 - date: "Sep 2026"
   type: research
-  text: "Started an independent [research-feasibility study on volatility-estimation lag and calibration memory in sequential prediction intervals](/research/), developed from homework in STAT GR5221 Time Series Analysis at Columbia; the work is ongoing."
+  text: "Started an independent time series [research project on volatility-estimation lag and calibration memory in sequential prediction intervals](/research/), developed from STAT GR5221 Time Series Analysis at Columbia; the work is ongoing."
   fr:
     date: "sept. 2026"
-    text: "Début d’une [étude de faisabilité indépendante sur le retard d’estimation de la volatilité et la mémoire de calibration dans les intervalles de prédiction séquentiels](/research/), issue de devoirs du cours STAT GR5221 Time Series Analysis à Columbia ; travail en cours."
+    text: "Début d’un [projet de recherche indépendant en séries temporelles sur le retard d’estimation de la volatilité et la mémoire de calibration dans les intervalles de prédiction séquentiels](/research/), issu du cours STAT GR5221 Time Series Analysis à Columbia ; travail en cours."
   ja:
     date: "2026年9月"
-    text: "コロンビア大学のSTAT GR5221「時系列解析」の課題をもとに、[逐次予測区間におけるボラティリティ推定の遅れとキャリブレーションの記憶に関する自主研究](/research/)を開始した。現在も進行中である。"
+    text: "コロンビア大学のSTAT GR5221「時系列解析」から発展した、[逐次予測区間におけるボラティリティ推定の遅れとキャリブレーションの記憶に関する時系列解析の自主研究プロジェクト](/research/)を開始した。現在も進行中である。"
   zh:
     date: "2026年9月"
-    text: "在哥伦比亚大学 STAT GR5221 时间序列分析课程作业的基础上，启动了[序贯预测区间中波动率估计滞后与校准记忆的独立研究](/research/)，目前仍处于可行性探索阶段。"
+    text: "在哥伦比亚大学 STAT GR5221 时间序列分析课程的基础上，开始独立开展[关于序贯预测区间中波动率估计滞后与校准记忆的时间序列研究项目](/research/)，目前仍在进行。"
 
 - date: "May 2026"
   type: milestone
@@ -36,30 +36,43 @@
     text: "通过了哥伦比亚大学统计学硕士（M.A.）理论与方法荣誉方向的必考科目——理论与方法核心能力考试。"
 
 - date: "May 2026"
-  type: project
-  text: "Began a [Bayesian analysis of pulmonary fibrosis trajectories](/research/) as the final project for STAT GR5224 Bayesian Statistics at Columbia; the work was later extended into a reproducible R and Stan study."
+  type: research
+  text: "Began a Bayesian statistics [research project on pulmonary fibrosis trajectories](/research/) in STAT GR5224 Bayesian Statistics at Columbia; the work was later extended into a reproducible R and Stan study."
   fr:
     date: "mai 2026"
-    text: "Début d’une [analyse bayésienne des trajectoires de la fibrose pulmonaire](/research/), projet final du cours STAT GR5224 Bayesian Statistics à Columbia ; ce travail a ensuite été prolongé en une étude reproductible en R et Stan."
+    text: "Début d’un [projet de recherche en statistique bayésienne sur les trajectoires de la fibrose pulmonaire](/research/) dans le cadre du cours STAT GR5224 Bayesian Statistics à Columbia ; ce travail a ensuite été prolongé en une étude reproductible en R et Stan."
   ja:
     date: "2026年5月"
-    text: "コロンビア大学のSTAT GR5224「ベイズ統計学」の最終プロジェクトとして、[肺線維症における経時的推移のベイズモデリング](/research/)に着手した。のちにRとStanによる再現可能な研究へと拡張した。"
+    text: "コロンビア大学のSTAT GR5224「ベイズ統計学」で、[肺線維症における経時的推移に関するベイズ統計学の研究プロジェクト](/research/)に着手した。のちにRとStanによる再現可能な研究へと拡張した。"
   zh:
     date: "2026年5月"
-    text: "在哥伦比亚大学 STAT GR5224 贝叶斯统计课程中，以期末项目的形式启动了[肺纤维化病程轨迹的贝叶斯建模](/research/)，后来将其扩展为基于 R 和 Stan 的可复现研究。"
+    text: "在哥伦比亚大学 STAT GR5224 贝叶斯统计课程中，启动了[关于肺纤维化病程轨迹的贝叶斯统计研究项目](/research/)，后来将其扩展为基于 R 和 Stan 的可复现研究。"
 
 - date: "Spring 2026"
   type: research
-  text: "Started a [project on stochastic trace estimation](/research/) (Hutchinson and Hutch++) in STAT GR6104 Computational Statistics at Columbia; the work is ongoing."
+  text: "Started a computational statistics [research project on stochastic trace estimation](/research/) (Hutchinson and Hutch++) in STAT GR6104 Computational Statistics at Columbia; the work is ongoing."
   fr:
     date: "printemps 2026"
-    text: "Début d’un [projet sur l’estimation stochastique de la trace](/research/) (méthodes de Hutchinson et Hutch++) dans le cadre du cours STAT GR6104 Computational Statistics à Columbia ; travail en cours."
+    text: "Début d’un [projet de recherche en statistique computationnelle sur l’estimation stochastique de la trace](/research/) (méthodes de Hutchinson et Hutch++) dans le cadre du cours STAT GR6104 Computational Statistics à Columbia ; travail en cours."
   ja:
     date: "2026年春学期"
-    text: "コロンビア大学のSTAT GR6104「計算統計学」で、[確率的トレース推定に関するプロジェクト](/research/)（HutchinsonとHutch++）を開始した。現在も進行中である。"
+    text: "コロンビア大学のSTAT GR6104「計算統計学」で、[確率的トレース推定に関する計算統計学の研究プロジェクト](/research/)（HutchinsonとHutch++）を開始した。現在も進行中である。"
   zh:
     date: "2026年春季学期"
-    text: "在哥伦比亚大学 STAT GR6104 计算统计学课程中启动了[随机迹估计项目](/research/)（Hutchinson 与 Hutch++），目前仍在进行。"
+    text: "在哥伦比亚大学 STAT GR6104 计算统计学课程中，启动了[关于随机迹估计的计算统计研究项目](/research/)（Hutchinson 与 Hutch++），目前仍在进行。"
+
+- date: "Spring 2026"
+  type: research
+  text: "Started a stochastic processes [research project on finite-horizon inference for weak Ornstein–Uhlenbeck mean reversion](/research/), developed from STAT GU4264/GR5264 Stochastic Processes–Applications I at Columbia; the work is ongoing."
+  fr:
+    date: "printemps 2026"
+    text: "Début d’un [projet de recherche en processus stochastiques sur l’inférence à horizon fini pour un faible retour à la moyenne dans les processus d’Ornstein–Uhlenbeck](/research/), issu du cours STAT GU4264/GR5264 Stochastic Processes–Applications I à Columbia ; travail en cours."
+  ja:
+    date: "2026年春学期"
+    text: "コロンビア大学のSTAT GU4264/GR5264「確率過程とその応用 I」から発展した、[オルンシュタイン＝ウーレンベック過程における弱い平均回帰の有限期間推測に関する確率過程の研究プロジェクト](/research/)を開始した。現在も進行中である。"
+  zh:
+    date: "2026年春季学期"
+    text: "在哥伦比亚大学 STAT GU4264/GR5264 随机过程及其应用 I 课程的基础上，启动了[关于 Ornstein–Uhlenbeck 过程弱均值回归有限时域推断的随机过程研究项目](/research/)，目前仍在进行。"
 
 - date: "Sep 2025"
   type: milestone

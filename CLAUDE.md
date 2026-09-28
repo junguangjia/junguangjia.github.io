@@ -25,8 +25,12 @@ See `README.md` for editing instructions.
 ## Rules
 
 - Factual accuracy first. Do not invent publications, awards, results,
-  supervisors, collaborations, profiles, dates, or credentials. Course projects
-  stay labeled as course projects. Junguang is an M.A. student, not a PhD
+  supervisors, collaborations, profiles, dates, or credentials. Research done
+  in or grown out of a course is called a research project in its field (the
+  owner's wording, e.g. "Computational statistics research project"), names
+  the course, and links the course instructor (never called a supervisor);
+  it is never presented as a publication. Log and Research dates are project
+  start dates, not GitHub push dates. Junguang is an M.A. student, not a PhD
   student or candidate.
 - Never commit private inputs: transcripts, recommendation letters, application
   drafts, identity documents, phone numbers, home addresses, credentials, or
@@ -58,8 +62,10 @@ See `README.md` for editing instructions.
   (賈 is the Japanese form of 贾, which the Japanese web font lacks), French
   "Junguang JIA" (surname in capitals) in the sidebar, title and footer, and
   "Junguang Jia" in running text.
-- Teaching recordings are native YouTube iframes that load with the page and
-  play only when the visitor presses YouTube's Play button (owner's request).
+- YouTube videos (Teaching recordings and the cycling video on Miscellaneous,
+  all via `_includes/youtube-player.html`) are native YouTube iframes that load
+  with the page and play only when the visitor presses YouTube's Play button
+  (owner's request).
   Do not replace them with a click-to-load poster, overlay anything on the
   player, or turn on autoplay without the owner's approval.
 - Only add a portrait that the site owner explicitly supplies.

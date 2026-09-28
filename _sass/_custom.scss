@@ -823,14 +823,15 @@ a:focus-visible,
   border: 0;
 }
 
-/* Teaching recordings: native YouTube players, loaded with the page. The box
-   reserves a 16:9 area before the player loads (no layout jump) and never gets
-   shorter than YouTube's 200px minimum; on very narrow screens it becomes
-   taller than 16:9 and YouTube letterboxes the video inside. Only the Teaching
-   players are affected (the CV iframe has its own rules). */
+/* YouTube players (_includes/youtube-player.html: Teaching recordings and the
+   cycling video on Miscellaneous), loaded with the page. The box reserves a
+   16:9 area before the player loads (no layout jump) and never gets shorter
+   than YouTube's 200px minimum; on very narrow screens it becomes taller than
+   16:9 and YouTube letterboxes the video inside. The CV iframe has its own
+   rules. */
 .teaching-example { margin-bottom: 2.2rem; }
-.teaching-video { position: relative; width: 100%; aspect-ratio: 16 / 9; min-height: 200px; margin: 0.9rem 0 0.45rem; }
-.teaching-video iframe { position: absolute; inset: 0; display: block; width: 100%; height: 100%; border: 0; }
+.video-embed { position: relative; width: 100%; aspect-ratio: 16 / 9; min-height: 200px; margin: 0.9rem 0 0.45rem; }
+.video-embed iframe { position: absolute; inset: 0; display: block; width: 100%; height: 100%; border: 0; }
 
 /* --------------------------------------------------------------------------
    Language menu in the top bar (a native <details> element, so it works
@@ -1027,5 +1028,86 @@ a:focus-visible,
     font-size: 0.88rem;
     line-height: 1.5;
     color: var(--site-muted-color);
+  }
+}
+
+/* Research entries: a small figure beside the description (from tablet width
+   up; on phones it sits under the meta line) in a thin white frame that keeps
+   the figure's own shape, and a GitHub logo at the end of the text. */
+.page__content .entry__thumb {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 20rem;
+  margin: 0.7rem 0 0.2rem;
+  padding: 0.4rem;
+  background: #fff;
+  border: 1px solid var(--global-border-color);
+  border-radius: 6px;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  &:hover,
+  &:focus-visible {
+    border-color: var(--global-link-color);
+  }
+}
+
+/* Dim the white plots a little in the dark theme so they do not glare. */
+:root[data-theme="dark"] .page__content .entry__thumb {
+  filter: brightness(0.86);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .page__content .entry__thumb {
+    filter: brightness(0.86);
+  }
+}
+
+@media (min-width: $medium) {
+  .page__content .entry--thumb {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 15rem;
+    column-gap: 1.6rem;
+    align-items: start;
+
+    > * {
+      grid-column: 1 / -1;
+    }
+
+    .entry__desc {
+      grid-column: 1;
+      grid-row: 3;
+    }
+
+    .entry__thumb {
+      grid-column: 2;
+      grid-row: 3;
+      margin-top: 0.55rem;
+    }
+  }
+}
+
+/* The logo follows a word joiner (U+2060) in the template and is laid out as
+   inline text (Font Awesome makes icons inline-blocks, which always allow a
+   line break before them), so it never wraps onto a line of its own. */
+.page__content .entry__code {
+  display: inline;
+  margin-inline-start: 0.4em;
+  font-size: 1.05em;
+  color: var(--site-muted-color);
+  text-decoration: none;
+
+  .fab {
+    display: inline;
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: var(--global-link-color);
   }
 }
