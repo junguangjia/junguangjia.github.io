@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ArtVenn — East Asia Field Atlas</title>
+<meta name="description" content="An interactive geographic overview of ArtVenn field documentation in China, Mongolia, South Korea and Japan. Reconstructed corridors and supplied locations, not GPS tracks.">
+<link rel="stylesheet" href="vendor/leaflet.css"><link rel="stylesheet" href="atlas.css">
+<script src="vendor/leaflet.js" defer></script><script src="data.js" defer></script><script src="atlas.js" defer></script>
+</head>
+<body>
+<main class="atlas">
+<header class="atlas-header"><div><p class="eyebrow">ARTVENN / FIELD DOCUMENTATION</p><h1>Across East Asia</h1><p class="subtitle">An atlas of inscriptions, places and journeys.</p></div><button id="expand" class="utility" type="button" aria-label="Enter full screen">Expand ↗</button></header>
+<nav class="region-nav" aria-label="Explore a region">
+<button type="button" data-region="overview" aria-pressed="true">East Asia</button><button type="button" data-region="china" aria-pressed="false"><i class="dot china"></i>China</button><button type="button" data-region="mongolia" aria-pressed="false"><i class="dot mongolia"></i>Mongolia</button><button type="button" data-region="korea" aria-pressed="false"><i class="dot korea"></i>South Korea</button><button type="button" data-region="japan" aria-pressed="false"><i class="dot japan"></i>Japan</button>
+</nav>
+<div class="workspace"><section class="map-wrap" aria-label="Interactive geographic map">
+<div id="map" role="region" aria-label="Map of fieldwork across East Asia. Use the region buttons or location list to explore."></div>
+<div class="map-options"><label><input type="checkbox" id="routes" checked> Corridors</label><label><input type="checkbox" id="labels" checked> Labels</label><button type="button" id="reset" title="Reset the current region view">Reset view</button></div>
+<div class="map-hint">Drag to explore · use + / − to zoom</div>
+</section><aside id="inspector" aria-label="Region details" aria-live="polite"></aside></div>
+<footer class="map-footer"><span><b>Reading the map</b> · Lines are approximate, not GPS tracks. Markers are selected locations, not a full city census.</span><button type="button" id="download">GeoJSON ↓</button></footer>
+<details class="method"><summary>Sources, precision &amp; interpretation</summary><div class="method-body">
+<p><strong>China:</strong> 15 editable segments digitized from a supplied hand-drawn Amap screenshot, then registered to geographic coordinates. Colors in the original sketch do not establish a transport mode, trip count or travel direction. Town labels on the basemap are geographic references, not an added visit list.</p>
+<p><strong>Mongolia:</strong> Ulaanbaatar and the Yanran Inscription are the supplied endpoints. The connecting line is schematic. No intermediate towns have been invented. The monument location is rounded for public display.</p>
+<p><strong>South Korea:</strong> 17 supplied inscription entries are grouped into 13 city/county areas. Markers locate those areas, not exact monument positions or current museum holdings. Individual visit completion and itinerary order still require confirmation, so no route order is asserted.</p>
+<p><strong>Japan:</strong> five named cities are shown. Dashed links organize them geographically; they are not a dated itinerary or a transport track.</p>
+<p><strong>Counts:</strong> the supplied screenshot reports 210 cities in China. It does not establish a worldwide total. This atlas is a selected overview, not the complete 1,300+ inscription collection.</p>
+<p><strong>Cartography:</strong> geographic shapes come from Natural Earth (10m land; 50m boundary lines), clipped to the region and simplified for web display, never redrawn by an image model. The map uses Web Mercator. Boundaries are for geographic reference and do not express a position on sovereignty.</p>
+<p><a href="https://leafletjs.com/" target="_blank" rel="noopener">Leaflet 1.9.4</a> · <a href="https://www.naturalearthdata.com/about/terms-of-use/" target="_blank" rel="noopener">Natural Earth — public domain</a> · <a href="https://www.geonames.org/" target="_blank" rel="noopener">GeoNames — CC BY 4.0</a> · Personal records supplied by Junguang Jia. Full source and registration notes are included with the map files.</p>
+</div></details>
+<noscript><p class="noscript">This interactive atlas needs JavaScript. The locations and routes are also available in the GeoJSON files under <code>data/</code>.</p></noscript>
+</main>
+</body></html>

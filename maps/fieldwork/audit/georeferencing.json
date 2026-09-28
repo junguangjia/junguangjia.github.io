@@ -1,0 +1,260 @@
+{
+  "source_dimensions": [
+    1408,
+    1056
+  ],
+  "assumed_projection": "Web Mercator (EPSG:3857)",
+  "output": "WGS84 longitude,latitude (EPSG:4326)",
+  "transform": "Affine fit from approximate city-label anchors; no basemap geometry transformed.",
+  "coefficients": [
+    [
+      4937.740788441401,
+      -63.588101237601734
+    ],
+    [
+      3.0108630027480103,
+      -4905.297301900268
+    ],
+    [
+      8275835.534314456,
+      6764766.340272808
+    ]
+  ],
+  "control_residual_rmse_px": 9.67,
+  "limitations": [
+    "Label positions are not precise control points.",
+    "GCJ-02 source offsets are not separately corrected; the coarse registration is unsuitable for street/site navigation.",
+    "Residuals measure fit to approximate labels, not real route accuracy.",
+    "Source hand-drawn routes contain additional unknown displacement and crossovers."
+  ],
+  "anchors": [
+    {
+      "name": "Urumqi",
+      "pixel": [
+        296,
+        265
+      ],
+      "lonlat": [
+        87.617,
+        43.825
+      ],
+      "fit_residual_px": 3.47
+    },
+    {
+      "name": "Hami",
+      "pixel": [
+        430,
+        296
+      ],
+      "lonlat": [
+        93.515,
+        42.827
+      ],
+      "fit_residual_px": 2.05
+    },
+    {
+      "name": "Harbin",
+      "pixel": [
+        1177,
+        200
+      ],
+      "lonlat": [
+        126.648,
+        45.752
+      ],
+      "fit_residual_px": 6.79
+    },
+    {
+      "name": "Beijing",
+      "pixel": [
+        958,
+        370
+      ],
+      "lonlat": [
+        116.3942,
+        39.90172
+      ],
+      "fit_residual_px": 12.72
+    },
+    {
+      "name": "Dalian",
+      "pixel": [
+        1065,
+        384
+      ],
+      "lonlat": [
+        121.627885,
+        38.924784
+      ],
+      "fit_residual_px": 20.84
+    },
+    {
+      "name": "Lhasa",
+      "pixel": [
+        377,
+        669
+      ],
+      "lonlat": [
+        91.10001,
+        29.64502
+      ],
+      "fit_residual_px": 0.44
+    },
+    {
+      "name": "Nyingchi",
+      "pixel": [
+        449,
+        668
+      ],
+      "lonlat": [
+        94.36,
+        29.65
+      ],
+      "fit_residual_px": 1.88
+    },
+    {
+      "name": "Shanghai",
+      "pixel": [
+        1064,
+        626
+      ],
+      "lonlat": [
+        121.43456,
+        31.2184
+      ],
+      "fit_residual_px": 7.57
+    },
+    {
+      "name": "Chengdu",
+      "pixel": [
+        671,
+        644
+      ],
+      "lonlat": [
+        104.06807,
+        30.67195
+      ],
+      "fit_residual_px": 5.65
+    },
+    {
+      "name": "Kunming",
+      "pixel": [
+        646,
+        787
+      ],
+      "lonlat": [
+        102.69744,
+        25.04286
+      ],
+      "fit_residual_px": 8.12
+    },
+    {
+      "name": "Fuzhou",
+      "pixel": [
+        1009,
+        757
+      ],
+      "lonlat": [
+        119.2981,
+        26.08194
+      ],
+      "fit_residual_px": 6.02
+    },
+    {
+      "name": "Nanjing",
+      "pixel": [
+        1000,
+        605
+      ],
+      "lonlat": [
+        118.78,
+        32.06
+      ],
+      "fit_residual_px": 7.8
+    },
+    {
+      "name": "Zhengzhou",
+      "pixel": [
+        882,
+        532
+      ],
+      "lonlat": [
+        113.66315,
+        34.75694
+      ],
+      "fit_residual_px": 7.68
+    },
+    {
+      "name": "Wuhan",
+      "pixel": [
+        899,
+        644
+      ],
+      "lonlat": [
+        114.26807,
+        30.58198
+      ],
+      "fit_residual_px": 6.13
+    },
+    {
+      "name": "Chongqing",
+      "pixel": [
+        724,
+        674
+      ],
+      "lonlat": [
+        106.55,
+        29.56
+      ],
+      "fit_residual_px": 7.22
+    },
+    {
+      "name": "Taipei",
+      "pixel": [
+        1060,
+        776
+      ],
+      "lonlat": [
+        121.5654,
+        25.033
+      ],
+      "fit_residual_px": 4.72
+    },
+    {
+      "name": "Nanning",
+      "pixel": [
+        766,
+        811
+      ],
+      "lonlat": [
+        108.32,
+        22.82
+      ],
+      "fit_residual_px": 25.93
+    },
+    {
+      "name": "Xining",
+      "pixel": [
+        620,
+        478
+      ],
+      "lonlat": [
+        101.76806,
+        36.62194
+      ],
+      "fit_residual_px": 2.35
+    },
+    {
+      "name": "Lanzhou",
+      "pixel": [
+        666,
+        495
+      ],
+      "lonlat": [
+        103.79005,
+        36.05797
+      ],
+      "fit_residual_px": 3.79
+    }
+  ]
+}

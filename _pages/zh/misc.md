@@ -19,9 +19,6 @@ author_profile: true
 
 间隔年期间，我走过了国内 200 多座城市，此外还前往蒙古、日本和韩国实地考察，记录了 1,300 余处历史碑刻与摩崖石刻，总行程约 54,000 公里（33,500 英里）。我采集了照片、地理坐标和相关背景记录，建立起 ArtVenn 所依托的一手资料库，希望以结构化的形式保存这些资料，用于存档、检索和今后的研究。
 
-<figure class="misc-figure">
-  <a href="{{ base_path }}/images/misc/artvenn-footprint-map.webp"><img src="{{ base_path }}/images/misc/artvenn-footprint-map.webp" width="1445" height="1064" loading="lazy" alt="东亚地图，标出在中国、蒙古、韩国和日本的实地记录路线"></a>
-  <figcaption>实地记录路线：中国各地的实地考察、蒙古考察、韩国碑刻调查与日本研究之行。</figcaption>
-</figure>
+{% include fieldwork-map.html %}
 
 这些经历反映出我更广泛的兴趣：顺着问题一路追下去，直到能亲身理解它——无论是通过研究、实地考察，还是仅仅去一个从未去过的地方。

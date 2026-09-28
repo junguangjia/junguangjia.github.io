@@ -19,9 +19,6 @@ author_profile: true
 
 ギャップイヤーの間に、中国各地の200以上の都市を巡り、さらにモンゴル、日本、韓国にも現地調査に出かけました。1,300点を超える歴史的な碑文や磨崖石刻を記録し、移動距離はおよそ54,000km（33,500マイル）に及びました。写真、地理座標、そして背景情報の記録を集め、ArtVennを支える一次資料コレクションを構築しました。これらの資料を、記録、検索、そして将来の研究のために、構造化された形で保存することを目指しています。
 
-<figure class="misc-figure">
-  <a href="{{ base_path }}/images/misc/artvenn-footprint-map.webp"><img src="{{ base_path }}/images/misc/artvenn-footprint-map.webp" width="1445" height="1064" loading="lazy" alt="中国、モンゴル、韓国、日本でのフィールド記録の経路を示す東アジアの地図"></a>
-  <figcaption>フィールド記録の経路：中国各地での現地調査、モンゴル遠征、韓国での碑文調査、日本での研究旅行。</figcaption>
-</figure>
+{% include fieldwork-map.html %}
 
 こうした経験には、私のより広い関心が表れています。それは、研究であれ、フィールドワークであれ、あるいは単にまだ行ったことのない場所へ足を運ぶことであれ、問いを身をもって理解できるところまで追いかけることです。

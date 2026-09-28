@@ -1,0 +1,36 @@
+{
+  "land.zip": {
+    "url": "https://naturalearth.s3.amazonaws.com/10m_physical/ne_10m_land.zip",
+    "sha256": "e547d749445eaa0964aba76738090ec88f5e63c4585122170f98c67a7ea922dc"
+  },
+  "borders.zip": {
+    "url": "https://naturalearth.s3.amazonaws.com/50m_cultural/ne_50m_admin_0_boundary_lines_land.zip",
+    "sha256": "02f369ae10578c4ce33fc4a08f8cdd69ea11eb39b44d7923e88eb7199aaff8ea"
+  },
+  "places.zip": {
+    "url": "https://naturalearth.s3.amazonaws.com/10m_cultural/ne_10m_populated_places.zip",
+    "sha256": "cd149186f03d2603e0410da399b980a4357d0ac32d3a2305a49ed3dffcc41d7b"
+  },
+  "leaflet.js": {
+    "url": "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js",
+    "sha256": "db49d009c841f5ca34a888c96511ae936fd9f5533e90d8b2c4d57596f4e5641a"
+  },
+  "leaflet.css": {
+    "url": "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css",
+    "sha256": "a7837102824184820dfa198d1ebcd109ff6d0ff9a2672a074b9a1b4d147d04c6"
+  },
+  "LEAFLET-LICENSE.txt": {
+    "url": "https://unpkg.com/leaflet@1.9.4/LICENSE",
+    "sha256": "53e8dc25862014e4324741ca18fbe3611e11d42ef69f59f86ea8c5389647d4cb"
+  },
+  "KR.zip": {
+    "url": "https://download.geonames.org/export/dump/KR.zip",
+    "sha256": "3f861cfcdc0afb0cf07a078b4eb7ef1188982b100a6110ae215f1b6a4099f8e5",
+    "license": "CC BY 4.0"
+  },
+  "JP.zip": {
+    "url": "https://download.geonames.org/export/dump/JP.zip",
+    "sha256": "4e3ccdea1db6c0f8a43b3c19ddac52438d5e4a6e2e659a16db01db96295a850a",
+    "license": "CC BY 4.0"
+  }
+}
