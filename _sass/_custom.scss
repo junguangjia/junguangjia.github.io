@@ -229,7 +229,7 @@ h1, h2, h3, h4, h5, h6 {
    sides are equal.
    -------------------------------------------------------------------------- */
 $site-max-width: 1180px;
-$site-sidebar-width: 15rem;             /* 255px at 17px, 270px at 18px */
+$site-sidebar-width: 13rem;             /* 221px at 17px, 234px at 18px */
 
 #main,
 .masthead__inner-wrap,
@@ -242,10 +242,16 @@ $site-sidebar-width: 15rem;             /* 255px at 17px, 270px at 18px */
 }
 
 @include breakpoint($large) {
+  /* From here the sidebar is a scroll container (sticky, overflow: auto),
+     which clips anything drawn outside its box: the name's first serif "J"
+     reaches slightly left of its line box. A little inner padding, offset by
+     an equal negative margin, gives the glyphs room without moving them. */
   .sidebar {
-    width: $site-sidebar-width;
+    width: calc(#{$site-sidebar-width} + 0.3rem);
     max-width: none;
+    margin-left: -0.3rem;
     margin-right: 0;
+    padding-left: 0.3rem;
     padding-right: 0;
   }
 
@@ -342,7 +348,7 @@ body {
 .sidebar {
   p,
   li {
-    font-size: 0.86rem;                 /* ~14.6px */
+    font-size: 0.82rem;                 /* ~14px */
     line-height: 1.5;
   }
 
@@ -357,8 +363,8 @@ body {
     color: var(--site-heading-color);
 
     @include breakpoint($large) {
-      margin: 0.9rem 0 0.15rem;
-      font-size: 1.6rem;                /* 27px at 17px, 29px at 18px */
+      margin: 0.8rem 0 0.1rem;
+      font-size: 1.4rem;                /* 24px at 17px, 25px at 18px */
     }
   }
 
@@ -383,14 +389,14 @@ body {
   .author__bio {
     margin: 0.7rem 0 0;
     font-family: $serif;
-    font-size: 0.9rem;
+    font-size: 0.84rem;
     font-style: italic;
     line-height: 1.5;
     color: var(--global-text-color);
 
     @include breakpoint($large) {
-      margin: 0.85rem 0 1.25rem;
-      padding-left: 0.8rem;
+      margin: 0.75rem 0 1.1rem;
+      padding-left: 0.7rem;
       border-left: 2px solid var(--global-border-color);
     }
   }
@@ -404,7 +410,7 @@ body {
 
 @include breakpoint($large) {
   .author__avatar img {
-    max-width: 11rem;
+    max-width: 9.5rem;
   }
 }
 
