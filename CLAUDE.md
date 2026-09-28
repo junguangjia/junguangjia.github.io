@@ -47,7 +47,11 @@ See `README.md` for editing instructions.
   the theme follows the operating system with no toggle; the layout is one
   centered container with the content filling the space next to the sidebar
   (the owner asked for no wide empty strip on the right); the site name is
-  shown under the portrait, not in the top bar. Keep these unless the owner
+  shown under the portrait, not in the top bar; tab pages do not show their
+  title visually (the `<h1>` stays for screen readers, and the current tab
+  never folds into the narrow-screen menu); research entries let
+  the text wrap around floated figures (no empty column beside or under a
+  figure). Keep these unless the owner
   asks otherwise, and keep every text color at WCAG AA contrast.
 - The public CV follows the owner's latest CV (September 2026, v6) minus the
   private items above. The website's Education section omits Provost Honors at

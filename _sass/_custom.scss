@@ -192,9 +192,10 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 
-  /* A section heading that opens the page sits closer to the page title. */
+  /* A section heading that opens the page lines up with the top of the
+     portrait (the page title is only for screen readers on the tabs). */
   > h2:first-child {
-    margin-top: 0.6rem;
+    margin-top: 0;
   }
 
   h3 {
@@ -809,7 +810,8 @@ a:focus-visible,
   outline-offset: -2px;
 }
 
-/* Screen-reader-only text (used for the home page heading). Defined here so it
+/* Screen-reader-only text (used for page titles on the tabs, the home page
+   heading and icon-link labels). Defined here so it
    ships in main.css and does not depend on the async-loaded icon stylesheet. */
 .sr-only {
   position: absolute;
@@ -1031,19 +1033,31 @@ a:focus-visible,
   }
 }
 
-/* Research entries: a small figure beside the description (from tablet width
-   up; on phones it sits under the meta line) in a thin white frame that keeps
-   the figure's own shape, and a GitHub logo at the end of the text. */
+/* Research entries: figures from the project float beside the description,
+   which wraps around and under them, so a long description never leaves an
+   empty column (owner's request). From 600px up they float at 42% of the
+   column (at most 15rem); on phones they span the column under the meta line.
+   Each figure keeps its own shape inside a thin white frame. */
+.page__content .entry--figures {
+  display: flow-root;
+}
+
+.page__content .entry__figures {
+  margin: 0.7rem 0 0.9rem;
+}
+
 .page__content .entry__thumb {
   display: block;
   box-sizing: border-box;
   width: 100%;
-  max-width: 20rem;
-  margin: 0.7rem 0 0.2rem;
   padding: 0.4rem;
   background: #fff;
   border: 1px solid var(--global-border-color);
   border-radius: 6px;
+
+  & + .entry__thumb {
+    margin-top: 0.7rem;
+  }
 
   img {
     display: block;
@@ -1057,6 +1071,15 @@ a:focus-visible,
   }
 }
 
+@media (min-width: $small) {
+  .page__content .entry__figures {
+    float: right;
+    width: 42%;
+    max-width: 15rem;
+    margin: 0.5rem 0 0.8rem 1.6rem;
+  }
+}
+
 /* Dim the white plots a little in the dark theme so they do not glare. */
 :root[data-theme="dark"] .page__content .entry__thumb {
   filter: brightness(0.86);
@@ -1065,30 +1088,6 @@ a:focus-visible,
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) .page__content .entry__thumb {
     filter: brightness(0.86);
-  }
-}
-
-@media (min-width: $medium) {
-  .page__content .entry--thumb {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 15rem;
-    column-gap: 1.6rem;
-    align-items: start;
-
-    > * {
-      grid-column: 1 / -1;
-    }
-
-    .entry__desc {
-      grid-column: 1;
-      grid-row: 3;
-    }
-
-    .entry__thumb {
-      grid-column: 2;
-      grid-row: 3;
-      margin-top: 0.55rem;
-    }
   }
 }
 

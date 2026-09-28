@@ -8,8 +8,13 @@
 var $nav = $('#site-nav');
 var $btn = $('#site-nav button');
 var $vlinks = $('#site-nav .visible-links');
-var $vlinks_persist_tail = $vlinks.children("*.persist.tail");
 var $hlinks = $('#site-nav .hidden-links');
+
+// The current page's tab never folds into the menu: the tab pages have no
+// visible title, so the tab bar is what names the page on narrow screens.
+// Each item remembers its place so it returns to it when there is room again.
+var movable = "*:not(.persist):not(.selected)";
+$vlinks.children().each(function (i) { $(this).attr("data-nav-order", i); });
 
 var breaks = [];
 
@@ -20,12 +25,12 @@ function updateNav() {
   // The visible list is overflowing the nav
   if ($vlinks.width() > availableSpace) {
 
-    while ($vlinks.width() > availableSpace && $vlinks.children("*:not(.persist)").length > 0) {
+    while ($vlinks.width() > availableSpace && $vlinks.children(movable).length > 0) {
       // Record the width of the list
       breaks.push($vlinks.width());
 
       // Move item to the hidden list
-      $vlinks.children("*:not(.persist)").last().prependTo($hlinks);
+      $vlinks.children(movable).last().prependTo($hlinks);
 
       availableSpace = $btn.hasClass("hidden") ? $nav.width() : $nav.width() - $btn.width() - 30;
 
@@ -38,12 +43,11 @@ function updateNav() {
 
     // There is space for another item in the nav
     while (breaks.length > 0 && availableSpace > breaks[breaks.length - 1]) {
-      // Move the item to the visible list
-      if ($vlinks_persist_tail.children().length > 0) {
-        $hlinks.children().first().insertBefore($vlinks_persist_tail);
-      } else {
-        $hlinks.children().first().appendTo($vlinks);
-      }
+      // Move the item back to its original place in the visible list
+      var $item = $hlinks.children().first();
+      var order = +$item.attr("data-nav-order");
+      var $next = $vlinks.children().filter(function () { return +$(this).attr("data-nav-order") > order; }).first();
+      if ($next.length) { $item.insertBefore($next); } else { $item.appendTo($vlinks); }
       breaks.pop();
     }
 

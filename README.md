@@ -19,8 +19,16 @@ hosted for free on GitHub Pages.
 
 Header links are defined per language in `_data/navigation.yml` (see
 Languages below). The top bar has no site name; the name is shown under the
-portrait in the sidebar, and a language menu sits at the right. The old `/news/`
-address redirects to `/log/`.
+portrait in the sidebar, and a language menu sits at the right. The tab
+pages do not repeat the tab name as a visible heading (the owner's request):
+`_layouts/single.html` gives the page title `sr-only` when the page has a
+`ref`, so screen readers and search engines still get the `<h1>`, and the
+content starts level with the portrait. Pages without `ref` (the 404 page)
+keep a visible title. On narrow screens the current page's tab always stays in
+the top bar (other tabs fold into the menu first, in their original order;
+`assets/js/plugins/jquery.greedy-navigation.js`, bundled into
+`assets/js/main.min.js` with `npm run uglify`), so the page is still named
+once. The old `/news/` address redirects to `/log/`.
 
 ## Languages
 
@@ -151,11 +159,14 @@ so inspect the files directly rather than serving `_site/` with another server.
   `meta` line says what kind of research project it is (for example
   "Computational statistics research project"), names the course it was done
   in or grew out of, and links the course instructor's personal website (their
-  Columbia profile when they have none; never call them a supervisor), an
-  optional `image` shows a small figure from the project beside the text
-  (`images/research/`, metadata stripped; never a figure with participant-level
-  data), and `github` puts a GitHub logo at the end of the description instead
-  of text links. Only add `links` for real, public URLs.
+  Columbia profile when they have none; never call them a supervisor),
+  `images` lists one or more figures from the project that float beside the
+  description, which wraps around and under them so a long text never leaves
+  an empty column (`images/research/`, metadata stripped; never a figure with
+  participant-level data; add a second figure only when it shows something the
+  first does not and the text is long enough to wrap past both), and `github`
+  puts a GitHub logo at the end of the description instead of text links. Only
+  add `links` for real, public URLs.
 - **Math:** MathJax is not loaded. If a page needs LaTeX, add the MathJax
   script back to `_includes/footer/custom.html`.
 
@@ -311,8 +322,9 @@ project as part of an ordinary website edit.
 
 The thumbnails in `images/research/` are lossless WebP copies of figures from
 the same reports or repositories (synthetic or aggregate results only):
-Figure 1 of the ts-calibration report, Figure 1 of the Bayesian report
-(posterior overall slopes), `figures/psd_error.svg` (trace estimation), and
+Figure 1 of the ts-calibration report, Figures 1 and 2 of the Bayesian report
+(posterior overall slopes and their sensitivity analysis),
+`figures/psd_error.svg` (trace estimation), and
 one panel of Figure 1 of the OU report (`ou-membership-regular64.webp`; the
 thumbnail opens the whole figure, `ou-membership-grid.webp`).
 
