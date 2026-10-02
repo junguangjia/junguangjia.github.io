@@ -23,16 +23,14 @@ author_profile: true
 
 ## 写真
 
-2015年から写真を撮っており、自分では普通のプロの写真家だと思っています。ドキュメンタリー写真が好きです。2020年には、写真作品『Clay Oven』と『My uncle&#39;s kitchen』がそれぞれ、Scholastic Art & Writing Awards（Lancaster Museum of Artと共同で授与）の写真部門でゴールド・キー（Gold Key）を受賞しました。ほかの作品は[写真のウェブサイト](https://photo.junguangjia.workers.dev/)でご覧いただけます。
+2015年から写真を撮っていて、自分では普通のプロの写真家だと思っています。つまり、うまく撮れる確率は小さいけれど、ゼロではありません。ドキュメンタリー写真が好きなのは、現実がポーズをとらないからです。統計学を学ぶ身としては、偏りのない標本はありがたいものです。2020年には外れ値が2枚、ゴールド・キーを受賞しました（下の賞状）。残りの標本は[写真のウェブサイト](https://photo.junguangjia.workers.dev/)でご覧いただけます。
 
 <div class="misc-figures">
   <figure class="misc-figure">
     <a href="{{ base_path }}/images/misc/scholastic-2020-gold-key-clay-oven.webp"><img src="{{ base_path }}/images/misc/scholastic-2020-gold-key-clay-oven.webp" width="1600" height="1211" loading="lazy" alt="賞状：2020年のScholastic Art &amp; Writing AwardsとLancaster Museum of Artが、写真作品『Clay Oven』に対してJunguang Jiaにゴールド・キーを授与したもの（For Excellence in Art）。"></a>
-    <figcaption>写真部門ゴールド・キー：『Clay&nbsp;Oven』</figcaption>
   </figure>
   <figure class="misc-figure">
     <a href="{{ base_path }}/images/misc/scholastic-2020-gold-key-my-uncles-kitchen.webp"><img src="{{ base_path }}/images/misc/scholastic-2020-gold-key-my-uncles-kitchen.webp" width="1600" height="1211" loading="lazy" alt="賞状：2020年のScholastic Art &amp; Writing AwardsとLancaster Museum of Artが、写真作品『My uncle's kitchen』に対してJunguang Jiaにゴールド・キーを授与したもの（For Excellence in Art）。"></a>
-    <figcaption>写真部門ゴールド・キー：『My&nbsp;uncle's&nbsp;kitchen』</figcaption>
   </figure>
 </div>
 

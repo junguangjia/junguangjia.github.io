@@ -23,16 +23,14 @@ During my gap year, I traveled through 200+ cities across China and made additio
 
 ## Photography
 
-I have been taking photographs since 2015 and consider myself an ordinary professional photographer. I like documentary photography. In 2020, two of my photographs, *Clay Oven* and *My uncle’s kitchen*, each received a Gold Key in Photography from the Scholastic Art & Writing Awards, presented with the Lancaster Museum of Art. More of my work is on my [photography website](https://photo.junguangjia.workers.dev/).
+Since 2015 I have been an ordinary professional photographer, which is to say a small but nonzero fraction of my shots turn out well. I like documentary photography because reality never poses, and a statistics student learns to appreciate an unbiased sample. In 2020 two outliers earned Gold Keys (below); the rest of the sample is on my [photography website](https://photo.junguangjia.workers.dev/).
 
 <div class="misc-figures">
   <figure class="misc-figure">
     <a href="{{ base_path }}/images/misc/scholastic-2020-gold-key-clay-oven.webp"><img src="{{ base_path }}/images/misc/scholastic-2020-gold-key-clay-oven.webp" width="1600" height="1211" loading="lazy" alt="Certificate: the 2020 Scholastic Art &amp; Writing Awards and the Lancaster Museum of Art present this Gold Key to Junguang Jia for Clay Oven, Photography, for excellence in art."></a>
-    <figcaption>Gold Key, Photography: <em>Clay Oven</em></figcaption>
   </figure>
   <figure class="misc-figure">
     <a href="{{ base_path }}/images/misc/scholastic-2020-gold-key-my-uncles-kitchen.webp"><img src="{{ base_path }}/images/misc/scholastic-2020-gold-key-my-uncles-kitchen.webp" width="1600" height="1211" loading="lazy" alt="Certificate: the 2020 Scholastic Art &amp; Writing Awards and the Lancaster Museum of Art present this Gold Key to Junguang Jia for My uncle’s kitchen, Photography, for excellence in art."></a>
-    <figcaption>Gold Key, Photography: <em>My uncle’s kitchen</em></figcaption>
   </figure>
 </div>
 

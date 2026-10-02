@@ -23,16 +23,14 @@ Pendant mon année de césure, je me suis rendu dans plus de 200 villes à trave
 
 ## Photographie
 
-Je photographie depuis 2015 et je me considère comme un photographe professionnel ordinaire. J’aime la photographie documentaire. En 2020, deux de mes photographies, *Clay Oven* et *My uncle’s kitchen*, ont chacune reçu une Gold Key en photographie aux Scholastic Art & Writing Awards, décernée conjointement avec le Lancaster Museum of Art. D’autres travaux sont visibles sur mon [site de photographie](https://photo.junguangjia.workers.dev/).
+Depuis 2015, je suis un photographe professionnel ordinaire, autrement dit la probabilité qu’une de mes photos soit réussie est faible mais non nulle. J’aime la photographie documentaire parce que la réalité ne pose jamais et qu’un étudiant en statistique apprend à apprécier un échantillon non biaisé. En 2020, deux valeurs aberrantes ont chacune décroché une Gold Key (ci-dessous) ; le reste de l’échantillon se trouve sur mon [site de photographie](https://photo.junguangjia.workers.dev/).
 
 <div class="misc-figures">
   <figure class="misc-figure">
     <a href="{{ base_path }}/images/misc/scholastic-2020-gold-key-clay-oven.webp"><img src="{{ base_path }}/images/misc/scholastic-2020-gold-key-clay-oven.webp" width="1600" height="1211" loading="lazy" alt="Certificat : les Scholastic Art &amp; Writing Awards 2020 et le Lancaster Museum of Art décernent cette Gold Key à Junguang Jia pour Clay Oven, en photographie, pour l’excellence en art."></a>
-    <figcaption>Gold Key, photographie : <em>Clay Oven</em></figcaption>
   </figure>
   <figure class="misc-figure">
     <a href="{{ base_path }}/images/misc/scholastic-2020-gold-key-my-uncles-kitchen.webp"><img src="{{ base_path }}/images/misc/scholastic-2020-gold-key-my-uncles-kitchen.webp" width="1600" height="1211" loading="lazy" alt="Certificat : les Scholastic Art &amp; Writing Awards 2020 et le Lancaster Museum of Art décernent cette Gold Key à Junguang Jia pour My uncle’s kitchen, en photographie, pour l’excellence en art."></a>
-    <figcaption>Gold Key, photographie : <em>My uncle’s kitchen</em></figcaption>
   </figure>
 </div>
 

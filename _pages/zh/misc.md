@@ -23,16 +23,14 @@ author_profile: true
 
 ## 摄影
 
-我从 2015年开始摄影，自认为是一名普通的职业摄影师，喜欢纪实摄影。2020年，我的两幅摄影作品《Clay Oven》和《My uncle&#39;s kitchen》分别获得由 Scholastic Art & Writing Awards 与 Lancaster Museum of Art 联合颁发的摄影类金钥匙奖（Gold Key）。更多作品见我的[摄影网站](https://photo.junguangjia.workers.dev/)。
+从 2015年起，我一直是一名普通的职业摄影师。所谓普通，就是出片率很低，但不为零。我喜欢纪实摄影，因为现实从不摆拍，而学统计的人懂得珍惜无偏样本。2020年，样本中的两个离群值拿到了金钥匙奖（见下方证书）；其余样本都在我的[摄影网站](https://photo.junguangjia.workers.dev/)上。
 
 <div class="misc-figures">
   <figure class="misc-figure">
     <a href="{{ base_path }}/images/misc/scholastic-2020-gold-key-clay-oven.webp"><img src="{{ base_path }}/images/misc/scholastic-2020-gold-key-clay-oven.webp" width="1600" height="1211" loading="lazy" alt="证书：2020年 Scholastic Art &amp; Writing Awards 与 Lancaster Museum of Art 授予 Junguang Jia 金钥匙奖（Gold Key），作品《Clay Oven》，摄影类，以表彰其在艺术上的卓越表现。"></a>
-    <figcaption>金钥匙奖（摄影类）：《Clay Oven》</figcaption>
   </figure>
   <figure class="misc-figure">
     <a href="{{ base_path }}/images/misc/scholastic-2020-gold-key-my-uncles-kitchen.webp"><img src="{{ base_path }}/images/misc/scholastic-2020-gold-key-my-uncles-kitchen.webp" width="1600" height="1211" loading="lazy" alt="证书：2020年 Scholastic Art &amp; Writing Awards 与 Lancaster Museum of Art 授予 Junguang Jia 金钥匙奖（Gold Key），作品《My uncle's kitchen》，摄影类，以表彰其在艺术上的卓越表现。"></a>
-    <figcaption>金钥匙奖（摄影类）：《My uncle's kitchen》</figcaption>
   </figure>
 </div>
 
