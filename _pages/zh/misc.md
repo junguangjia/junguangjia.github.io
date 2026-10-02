@@ -3,7 +3,7 @@ permalink: /zh/misc/
 lang: zh
 ref: misc
 title: "其他"
-description: "其他：独自骑行前往拉萨，以及为 ArtVenn 所做的实地记录。"
+description: "其他：独自骑行前往拉萨、为 ArtVenn 所做的实地记录，以及纪实摄影。"
 author_profile: true
 ---
 
@@ -20,5 +20,20 @@ author_profile: true
 间隔年期间，我走过了国内 200 多座城市，此外还前往蒙古、日本和韩国实地考察，记录了 1,300 余处历史碑刻与摩崖石刻，总行程约 54,000 公里（33,500 英里）。我采集了照片、地理坐标和相关背景记录，建立起 ArtVenn 所依托的一手资料库，希望以结构化的形式保存这些资料，用于存档、检索和今后的研究。
 
 {% include fieldwork-map.html %}
+
+## 摄影
+
+我从 2015年开始摄影，自认为是一名普通的职业摄影师，喜欢纪实摄影。2020年，我的两幅摄影作品《Clay Oven》和《My uncle&#39;s kitchen》分别获得由 Scholastic Art & Writing Awards 与 Lancaster Museum of Art 联合颁发的摄影类金钥匙奖（Gold Key）。更多作品见我的[摄影网站](https://photo.junguangjia.workers.dev/)。
+
+<div class="misc-figures">
+  <figure class="misc-figure">
+    <a href="{{ base_path }}/images/misc/scholastic-2020-gold-key-clay-oven.webp"><img src="{{ base_path }}/images/misc/scholastic-2020-gold-key-clay-oven.webp" width="1600" height="1211" loading="lazy" alt="证书：2020年 Scholastic Art &amp; Writing Awards 与 Lancaster Museum of Art 授予 Junguang Jia 金钥匙奖（Gold Key），作品《Clay Oven》，摄影类，以表彰其在艺术上的卓越表现。"></a>
+    <figcaption>金钥匙奖（摄影类）：《Clay Oven》</figcaption>
+  </figure>
+  <figure class="misc-figure">
+    <a href="{{ base_path }}/images/misc/scholastic-2020-gold-key-my-uncles-kitchen.webp"><img src="{{ base_path }}/images/misc/scholastic-2020-gold-key-my-uncles-kitchen.webp" width="1600" height="1211" loading="lazy" alt="证书：2020年 Scholastic Art &amp; Writing Awards 与 Lancaster Museum of Art 授予 Junguang Jia 金钥匙奖（Gold Key），作品《My uncle's kitchen》，摄影类，以表彰其在艺术上的卓越表现。"></a>
+    <figcaption>金钥匙奖（摄影类）：《My uncle's kitchen》</figcaption>
+  </figure>
+</div>
 
 这些经历反映出我更广泛的兴趣：顺着问题一路追下去，直到能亲身理解它——无论是通过研究、实地考察，还是仅仅去一个从未去过的地方。

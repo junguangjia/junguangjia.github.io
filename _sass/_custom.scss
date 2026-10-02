@@ -1045,6 +1045,36 @@ a:focus-visible,
   }
 }
 
+/* Two figures side by side on Miscellaneous (the photography certificates);
+   stacked on phones. The certificates carry their own black frame, so no
+   rounded corners. */
+.page__content .misc-figures {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.2rem;
+  margin: 1.4rem 0 1.6rem;
+
+  @media (min-width: $small) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 1.4rem;
+  }
+
+  .misc-figure {
+    display: block;                     /* the theme makes figures wrapping flex boxes */
+    margin: 0;
+  }
+
+  img {
+    margin: 0;                          /* the theme adds a bottom margin to figure images */
+    border-radius: 0;
+  }
+
+  figcaption {
+    margin: 0.5rem 0 0;
+  }
+}
+
+
 /* Research entries: figures from the project, each with a short caption.
    By default they float beside the description (from 600px up, 38% of the
    column, at most 13.5rem) and the text wraps around them; entries with

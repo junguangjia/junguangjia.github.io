@@ -3,7 +3,7 @@
 # "May 2026", "Spring 2026", or "2025".
 #
 #   date: shown as written
-#   type: one of research, project, reading, teaching, work, milestone, life
+#   type: one of research, project, reading, teaching, work, award, milestone, life
 #         (shown as a small label; any other word also works)
 #   text: one or two sentences; Markdown links are allowed. For a paper,
 #         for example: 'Read [*Title*](https://arxiv.org/abs/...) by A. Author
@@ -268,3 +268,29 @@
   zh:
     date: "2020年9月"
     text: "开始在加州大学圣地亚哥分校攻读数学学士（B.S.，概率与统计方向）。"
+
+- date: "2020"
+  type: award
+  text: "Received two Gold Keys in Photography from the 2020 Scholastic Art & Writing Awards, presented with the Lancaster Museum of Art, for *Clay Oven* and *My uncle’s kitchen* ([certificates](/misc/))."
+  fr:
+    date: "2020"
+    text: "Deux Gold Keys en photographie aux Scholastic Art & Writing Awards 2020, décernées conjointement avec le Lancaster Museum of Art, pour *Clay Oven* et *My uncle’s kitchen* ([certificats](/misc/))."
+  ja:
+    date: "2020年"
+    text: "2020年のScholastic Art & Writing Awards（Lancaster Museum of Artと共同で授与）の写真部門で、『Clay Oven』と『My uncle&#39;s kitchen』がそれぞれゴールド・キーを受賞した（[賞状](/misc/)）。"
+  zh:
+    date: "2020年"
+    text: "摄影作品《Clay Oven》和《My uncle&#39;s kitchen》分别获得由 2020年 Scholastic Art & Writing Awards 与 Lancaster Museum of Art 联合颁发的摄影类金钥匙奖（[证书](/misc/)）。"
+
+- date: "2015"
+  type: milestone
+  text: "Started photography; I like documentary photography ([photography website](https://photo.junguangjia.workers.dev/))."
+  fr:
+    date: "2015"
+    text: "Débuts en photographie ; j’aime la photographie documentaire ([site de photographie](https://photo.junguangjia.workers.dev/))."
+  ja:
+    date: "2015年"
+    text: "写真を始めた。ドキュメンタリー写真が好きである（[写真のウェブサイト](https://photo.junguangjia.workers.dev/)）。"
+  zh:
+    date: "2015年"
+    text: "开始摄影，喜欢纪实摄影（[摄影网站](https://photo.junguangjia.workers.dev/)）。"

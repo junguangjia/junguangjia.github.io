@@ -132,7 +132,7 @@ so inspect the files directly rather than serving `_site/` with another server.
   `images/signature.png` (black ink on a transparent background; the page
   softens it in light mode and inverts it in dark mode).
 - **Log:** edit `_data/log.yml` (newest first). Each entry has a `date`, a
-  `type` (research, project, reading, teaching, work, milestone, life), and a short
+  `type` (research, project, reading, teaching, work, award, milestone, life), and a short
   `text`; entries are grouped under year headings taken from the date. Use it
   for project and research progress, papers read, and other news. Date a
   project entry by when the project started, not by its first GitHub push.
@@ -140,9 +140,14 @@ so inspect the files directly rather than serving `_site/` with another server.
   for course notes; put note PDFs in `files/`). While both lists are empty the
   page shows a one-line placeholder.
 - **Miscellaneous:** edit `_pages/misc.md` (and the translated copies in
-  `_pages/fr|ja|zh/misc.md`). The field-documentation map is
-  `images/misc/artvenn-footprint-map.webp` (metadata stripped), shown in a
-  `<figure class="misc-figure">` with a caption.
+  `_pages/fr|ja|zh/misc.md`). Sections: the cycling video
+  (`_includes/youtube-player.html`), the field-documentation route map
+  (`_includes/fieldwork-map.html`, which embeds `maps/fieldwork/`), and
+  Photography, which shows the owner's two 2020 Scholastic Art & Writing
+  Awards Gold Key certificates (`images/misc/scholastic-2020-gold-key-*.webp`,
+  metadata stripped) side by side in `<div class="misc-figures">` and links the
+  owner's photography website. The earlier footprint screenshot
+  `images/misc/artvenn-footprint-map.webp` is kept but no longer shown.
 - **Sidebar (name, pronouns, motto, location, affiliation, email, profiles):**
   edit the `author:` block in `_config.yml` (`bio` holds the motto).
   `googlescholar` takes the full profile URL and `linkedin` the username
