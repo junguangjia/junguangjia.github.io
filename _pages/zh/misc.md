@@ -23,7 +23,7 @@ author_profile: true
 
 ## 摄影
 
-从 2015年起，我一直是一名普通的职业摄影师。所谓普通，就是出片率很低，但不为零。我喜欢纪实摄影，因为现实从不摆拍，而学统计的人懂得珍惜无偏样本。2020年，样本中的两个离群值拿到了金钥匙奖（见下方证书）；其余样本都在我的[摄影网站](https://photo.junguangjia.workers.dev/)上。
+从 2015年起，我一直是一名普通的职业摄影师。所谓普通，就是出片率很低，但不为零。我喜欢纪实摄影，因为现实从不摆拍，而学统计的人懂得珍惜无偏样本。2020年，样本中的两个离群值拿到了 Scholastic Art & Writing Awards 摄影类金钥匙奖（见下方证书）；其余样本都在我的[摄影网站](https://photo.junguangjia.workers.dev/)上。
 
 <div class="misc-figures">
   <figure class="misc-figure">

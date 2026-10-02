@@ -23,7 +23,7 @@ During my gap year, I traveled through 200+ cities across China and made additio
 
 ## Photography
 
-Since 2015 I have been an ordinary professional photographer, which is to say a small but nonzero fraction of my shots turn out well. I like documentary photography because reality never poses, and a statistics student learns to appreciate an unbiased sample. In 2020 two outliers earned Gold Keys (below); the rest of the sample is on my [photography website](https://photo.junguangjia.workers.dev/).
+Since 2015 I have been an ordinary professional photographer, which is to say a small but nonzero fraction of my shots turn out well. I like documentary photography because reality never poses, and a statistics student learns to appreciate an unbiased sample. In 2020 two outliers earned Gold Keys in Photography at the Scholastic Art & Writing Awards (below); the rest of the sample is on my [photography website](https://photo.junguangjia.workers.dev/).
 
 <div class="misc-figures">
   <figure class="misc-figure">

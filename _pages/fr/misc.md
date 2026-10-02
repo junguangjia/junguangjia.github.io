@@ -23,7 +23,7 @@ Pendant mon année de césure, je me suis rendu dans plus de 200 villes à trave
 
 ## Photographie
 
-Depuis 2015, je suis un photographe professionnel ordinaire, autrement dit la probabilité qu’une de mes photos soit réussie est faible mais non nulle. J’aime la photographie documentaire parce que la réalité ne pose jamais et qu’un étudiant en statistique apprend à apprécier un échantillon non biaisé. En 2020, deux valeurs aberrantes ont chacune décroché une Gold Key (ci-dessous) ; le reste de l’échantillon se trouve sur mon [site de photographie](https://photo.junguangjia.workers.dev/).
+Depuis 2015, je suis un photographe professionnel ordinaire, autrement dit la probabilité qu’une de mes photos soit réussie est faible mais non nulle. J’aime la photographie documentaire parce que la réalité ne pose jamais et qu’un étudiant en statistique apprend à apprécier un échantillon non biaisé. En 2020, deux valeurs aberrantes ont chacune décroché une Gold Key en photographie aux Scholastic Art & Writing Awards (ci-dessous) ; le reste de l’échantillon se trouve sur mon [site de photographie](https://photo.junguangjia.workers.dev/).
 
 <div class="misc-figures">
   <figure class="misc-figure">
