@@ -31,7 +31,7 @@
             {% assign lang_target = nil %}
             {% if page.ref %}{% assign lang_target = site.pages | where: "ref", page.ref | where: "lang", l.code | first %}{% endif %}
             {% if lang_target %}{% assign lang_href = lang_target.url %}{% else %}{% assign lang_href = l.prefix | append: "/" %}{% endif %}
-            <li><a href="{{ base_path }}{{ lang_href }}" lang="{{ l.html_lang }}" hreflang="{{ l.html_lang }}"{% if l.code == i18n_lang %} aria-current="true"{% endif %}>{{ l.name }}</a></li>
+            <li><a href="{{ base_path }}{{ lang_href }}?lang={{ l.code }}" data-site-language="{{ l.code }}" lang="{{ l.html_lang }}" hreflang="{{ l.html_lang }}"{% if l.code == i18n_lang %} aria-current="true"{% endif %}>{{ l.name }}</a></li>
           {% endfor %}
         </ul>
       </details>
