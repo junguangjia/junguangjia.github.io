@@ -9,6 +9,32 @@
 #         for example: 'Read [*Title*](https://arxiv.org/abs/...) by A. Author
 #         and B. Author (2024): one line on what stood out.'
 
+- date: "Oct 2026"
+  type: project
+  text: "Launched the public catalog for [ArtVenn (由于艺)](https://artvenn.com). The first public batch makes 60 catalog records and 422 images available to browse and search."
+  fr:
+    date: "oct. 2026"
+    text: "Mise en ligne du catalogue public d’[ArtVenn (由于艺)](https://artvenn.com). Le premier lot public comprend 60 notices de catalogue et 422 images, accessibles à la consultation et à la recherche."
+  ja:
+    date: "2026年10月"
+    text: "[ArtVenn（由于艺）](https://artvenn.com)の公開カタログを開設した。初回公開分の目録レコード60件と画像422点を閲覧・検索できる。"
+  zh:
+    date: "2026年10月"
+    text: "上线了[由于艺 / ArtVenn](https://artvenn.com)的公开目录。首批公开 60 条目录记录和 422 张图像，可供浏览与检索。"
+
+- date: "Oct 2026"
+  type: award
+  text: "Received the 2026 Statistics Chair’s List of Academic Achievements recognition from Columbia University for the 2025–2026 academic year on October 19."
+  fr:
+    date: "oct. 2026"
+    text: "Réception, le 19 octobre, de la distinction 2026 Statistics Chair’s List of Academic Achievements de l’Université Columbia pour l’année universitaire 2025–2026."
+  ja:
+    date: "2026年10月"
+    text: "10月19日、2025〜2026年度を対象とするコロンビア大学の「2026 Statistics Chair’s List of Academic Achievements」の表彰を受けた。"
+  zh:
+    date: "2026年10月"
+    text: "10月19日，获得哥伦比亚大学面向2025—2026学年的2026年统计学系 Chair’s List of Academic Achievements 表彰。"
+
 - date: "Sep 2026"
   type: project
   text: "Launched this website in English, French, Japanese and Chinese."
