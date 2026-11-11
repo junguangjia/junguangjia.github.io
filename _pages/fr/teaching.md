@@ -3,7 +3,7 @@ permalink: /fr/teaching/
 lang: fr
 ref: teaching
 title: "Enseignement"
-description: "Séances de TD enregistrées en algèbre linéaire et en Java à UC San Diego, avec des supports pédagogiques de Junguang Jia."
+description: "Enregistrements des séances de TD de Junguang Jia en algèbre linéaire et en Java à UC San Diego."
 author_profile: true
 ---
 

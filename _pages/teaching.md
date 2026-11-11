@@ -3,7 +3,7 @@ permalink: /teaching/
 lang: en
 ref: teaching
 title: "Teaching"
-description: "Recorded TA teaching in linear algebra and Java at UC San Diego, with learning materials by Junguang Jia."
+description: "Recordings from Junguang Jia’s linear algebra and Java teaching assistant sessions at UC San Diego."
 author_profile: true
 ---
 

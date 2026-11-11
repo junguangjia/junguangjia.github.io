@@ -3,7 +3,7 @@ permalink: /zh/teaching/
 lang: zh
 ref: teaching
 title: "教学"
-description: "贾俊廣在加州大学圣地亚哥分校担任助教时的线性代数与 Java 授课录像，以及学习资料。"
+description: "贾俊廣在加州大学圣地亚哥分校担任线性代数与 Java 课程助教时的教学录像。"
 author_profile: true
 ---
 

@@ -3,7 +3,7 @@ permalink: /fr/research/
 lang: fr
 ref: research
 title: "Recherche et projets"
-description: "Projets de recherche et projets indépendants de Junguang Jia : recherche en statistique sur l’estimation stochastique de la trace, la modélisation bayésienne de la fibrose pulmonaire, les intervalles de prédiction séquentiels et l’inférence pour les processus d’Ornstein–Uhlenbeck, ainsi qu’ArtVenn, plateforme de catalogage du patrimoine culturel."
+description: "Projets de Junguang Jia sur les processus de décision markoviens avec exécution imparfaite des politiques, travaux de statistique issus de cours et plateforme de catalogage du patrimoine culturel ArtVenn."
 author_profile: true
 ---
 

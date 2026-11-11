@@ -28,9 +28,29 @@
 # they have none).
 
 academic:
+  - title: "Markov Decision Processes with Imperfect Policy Execution"
+    dates: "Nov 2026 – Present"
+    meta: "Ongoing research project with [Vineet Goyal](https://ieor.columbia.edu/content/vineet-goyal) at Columbia IEOR"
+    description: "Studies stochastic control problems in which the state can change while an action is being computed. A related application asks how the probability of executing each prescribed action correctly affects an AI agent’s chance of completing a task."
+    fr:
+      title: "Processus de décision markoviens avec exécution imparfaite des politiques"
+      dates: "nov. 2026 – aujourd’hui"
+      meta: "Projet de recherche en cours avec [Vineet Goyal](https://ieor.columbia.edu/content/vineet-goyal) au département IEOR de l’Université Columbia"
+      description: "Étude de problèmes de contrôle stochastique où l’état peut évoluer pendant le calcul d’une action. Une application examine comment la probabilité d’exécuter correctement chaque action prescrite influe sur les chances d’un agent d’IA de mener une tâche à bien."
+    ja:
+      title: "方策の実行が不完全なマルコフ決定過程"
+      dates: "2026年11月〜現在"
+      meta: "コロンビア大学IEORの[Vineet Goyal](https://ieor.columbia.edu/content/vineet-goyal)教授との共同研究。現在進行中。"
+      description: "行動の計算中に状態が変化しうる確率制御問題を研究しています。応用として、指示された各行動を正しく実行できる確率が、AIエージェントのタスク完了確率にどう影響するかを調べています。"
+    zh:
+      title: "策略执行不完美的马尔可夫决策过程"
+      dates: "2026年11月—至今"
+      meta: "与哥伦比亚大学工业工程与运筹学系 [Vineet Goyal](https://ieor.columbia.edu/content/vineet-goyal) 教授合作开展的研究，目前进行中"
+      description: "研究计算动作期间状态可能发生变化的随机控制问题。一个相关应用是考察 AI 智能体正确执行各项指令的概率，如何影响其完成整个任务的概率。"
+
   - title: "Volatility-Estimation Lag and Calibration Memory in Sequential Prediction Intervals"
     url: "/files/ts-calibration-report.pdf"
-    dates: "Sep 2026 – Present"
+    dates: "Sep 2026"
     meta: "Independent time series research project, developed from STAT GR5221 Time Series Analysis (Spring 2026), Columbia University; course instructor: [Franz Rembart](https://franzrembart.com/)"
     description: "Analyzed volatility-estimation lag and calibration memory in rolling prediction intervals, with a causal Python simulation in which every forecast is issued before its observation. On 200 synthetic scale-jump paths, EWMA normalization raised coverage over the first 25 forecasts after an upward shift from 53.7% to 83.4%, still below the 95% target in this exploratory design."
     # The website PDF is an unchanged copy of latex/ts-calibration-report.pdf in the public research repository.
@@ -45,7 +65,7 @@ academic:
     github: "https://github.com/junguangjia/ts-calibration"
     fr:
       title: "Retard d’estimation de la volatilité et mémoire de calibration dans les intervalles de prédiction séquentiels"
-      dates: "sept. 2026 – aujourd’hui"
+      dates: "sept. 2026"
       meta: "Projet de recherche indépendant en séries temporelles, issu du cours STAT GR5221 Time Series Analysis (printemps 2026), Université Columbia ; enseignant du cours : [Franz Rembart](https://franzrembart.com/)"
       description: "Analyse du retard d’estimation de la volatilité et de la mémoire de calibration dans les intervalles de prédiction glissants, à l’aide d’une simulation causale en Python où chaque prévision est émise avant l’observation correspondante. Sur 200 trajectoires synthétiques à sauts d’échelle, la normalisation EWMA a fait passer de 53,7 % à 83,4 % la couverture des 25 premières prévisions suivant une hausse d’échelle, soit un niveau encore inférieur à la cible de 95 % dans ce cadre exploratoire."
       image_alts:
@@ -54,7 +74,7 @@ academic:
         - "Couverture conditionnelle moyenne après une hausse d’échelle"
     ja:
       title: "逐次予測区間におけるボラティリティ推定の遅れとキャリブレーションの記憶"
-      dates: "2026年9月〜現在"
+      dates: "2026年9月"
       meta: "時系列解析の自主研究プロジェクト。コロンビア大学STAT GR5221「時系列解析」（2026年春学期）から発展したもの。同授業の担当教員：[Franz Rembart](https://franzrembart.com/)"
       description: "ローリング予測区間におけるボラティリティ推定の遅れとキャリブレーションの記憶を分析し、各予測を観測値より先に確定させる因果的なPythonシミュレーションを実装した。スケールがジャンプする200本の合成系列では、EWMAで正規化すると、上方へのジャンプ後の最初の25回の予測における被覆率が53.7%から83.4%に上がったが、この探索的な設定では目標の95%には届いていない。"
       image_alts:
@@ -63,7 +83,7 @@ academic:
         - "スケール上昇後の平均条件付き被覆率"
     zh:
       title: "序贯预测区间中的波动率估计滞后与校准记忆"
-      dates: "2026年9月—至今"
+      dates: "2026年9月"
       meta: "独立开展的时间序列研究项目，由哥伦比亚大学 STAT GR5221 时间序列分析课程（2026年春季学期）发展而来；课程授课教师：[Franz Rembart](https://franzrembart.com/)"
       description: "分析了滚动预测区间中的波动率估计滞后与校准记忆，并实现了一个因果 Python 模拟，保证每次预测都在相应观测之前给出。在 200 条含尺度跳变的合成路径上，EWMA 标准化使尺度上跳后前 25 次预测的覆盖率从 53.7% 提高到 83.4%，但在这一探索性设计中仍低于 95% 的目标。"
       image_alts:
@@ -128,7 +148,7 @@ academic:
 
   - title: "Stochastic Trace Estimation with Hutchinson and Hutch++"
     url: "/files/stochastic-trace-estimation-report.pdf"
-    dates: "Spring 2026 – Present"
+    dates: "Spring 2026"
     meta: "Computational statistics research project, STAT GR6104 Computational Statistics, Columbia University; course instructor: [Christopher R. Harshaw](https://www.chrisharshaw.com/)"
     description: "Reconstructed the unbiasedness and complexity arguments for Hutchinson and Hutch++ and implemented reproducible Julia comparisons on a fixed PSD matrix and a synthetic graph, comparing error and matrix–vector query cost over 1,000 trials per budget, with runtime timed separately. On the fixed PSD instance, Hutch++ reached below 1% mean absolute relative error at 30 queries."
     # The website PDF is an unchanged snapshot of the public research repository.
@@ -149,7 +169,7 @@ academic:
     github: "https://github.com/junguangjia/stochastic-trace-estimation"
     fr:
       title: "Estimation stochastique de la trace avec les méthodes de Hutchinson et Hutch++"
-      dates: "printemps 2026 – aujourd’hui"
+      dates: "printemps 2026"
       meta: "Projet de recherche en statistique computationnelle, STAT GR6104 Computational Statistics, Université Columbia ; enseignant du cours : [Christopher R. Harshaw](https://www.chrisharshaw.com/)"
       description: "Reconstitution des arguments d’absence de biais et de complexité des méthodes de Hutchinson et Hutch++, et mise en œuvre en Julia de comparaisons reproductibles sur une matrice fixe semi-définie positive (PSD) et un graphe synthétique, portant sur l’erreur et le coût en produits matrice-vecteur, avec 1 000 essais par budget, le temps de calcul étant mesuré séparément. Sur l’instance PSD fixe, Hutch++ passe sous 1 % d’erreur relative absolue moyenne dès 30 requêtes."
       image_alts:
@@ -160,7 +180,7 @@ academic:
         - "Erreur de comptage des triangles sur un graphe SBM synthétique"
     ja:
       title: "HutchinsonおよびHutch++による確率的トレース推定"
-      dates: "2026年春学期〜現在"
+      dates: "2026年春学期"
       meta: "計算統計学の研究プロジェクト（STAT GR6104「計算統計学」、コロンビア大学）。担当教員：[Christopher R. Harshaw](https://www.chrisharshaw.com/)"
       description: "HutchinsonとHutch++の不偏性と計算量に関する議論を再構成し、固定の半正定値（PSD）行列と合成グラフを対象に、Juliaで再現可能な比較を実装した。クエリ予算ごとに1,000回の試行を行って誤差と行列ベクトル積のクエリ数を比較し、実行時間は別途計測した。固定のPSD行列では、Hutch++は30回のクエリで平均絶対相対誤差1%未満を達成した。"
       image_alts:
@@ -171,7 +191,7 @@ academic:
         - "合成SBMグラフでの三角形数推定の誤差"
     zh:
       title: "基于 Hutchinson 与 Hutch++ 的随机迹估计"
-      dates: "2026年春季学期—至今"
+      dates: "2026年春季学期"
       meta: "计算统计研究项目，哥伦比亚大学 STAT GR6104 计算统计学；授课教师：[Christopher R. Harshaw](https://www.chrisharshaw.com/)"
       description: "重新推导了 Hutchinson 与 Hutch++ 的无偏性和复杂度论证，并用 Julia 在一个固定的半正定（PSD）矩阵和一个合成图上完成了可复现的对比实验，每个预算重复 1,000 次试验，比较误差和矩阵-向量查询成本，运行时间则单独计时。在固定 PSD 实例上，Hutch++ 在 30 次查询时平均绝对相对误差低于 1%。"
       image_alts:
@@ -183,7 +203,7 @@ academic:
 
   - title: "Finite-Horizon Inference for Weak Ornstein–Uhlenbeck Mean Reversion"
     url: "/files/ou-inference-report.pdf"
-    dates: "Spring 2026 – Present"
+    dates: "Spring 2026"
     meta: "Stochastic processes research project, developed from STAT GU4264/GR5264 Stochastic Processes–Applications I (Spring 2026), Columbia University; course instructor: [Steven Campbell](https://www.stevenacampbell.com/)"
     description: "Derived and implemented the exact Ornstein–Uhlenbeck likelihood and analytic nuisance profiling in Julia for irregular observation times, including the Brownian-with-drift boundary. Studied finite-horizon inference through information bounds and 1,600 simulated trajectories, finding conservative split-profile inference with limited power, checked against independent Python and R calculations. The study claims no new method."
     # The website PDF is an unchanged copy of latex/ou-inference-report.pdf in the public research repository.
@@ -199,7 +219,7 @@ academic:
     github: "https://github.com/junguangjia/ou-inference"
     fr:
       title: "Inférence à horizon fini sur un faible retour à la moyenne dans les processus d’Ornstein–Uhlenbeck"
-      dates: "printemps 2026 – aujourd’hui"
+      dates: "printemps 2026"
       meta: "Projet de recherche en processus stochastiques, issu du cours STAT GU4264/GR5264 Stochastic Processes–Applications I (printemps 2026), Université Columbia ; enseignant du cours : [Steven Campbell](https://www.stevenacampbell.com/)"
       description: "Établissement et mise en œuvre en Julia de la vraisemblance exacte du processus d’Ornstein–Uhlenbeck et d’un profilage analytique des paramètres de nuisance pour des instants d’observation irréguliers, y compris le cas limite du mouvement brownien avec dérive. Étude de l’inférence à horizon fini au moyen de bornes d’information et de 1 600 trajectoires simulées : l’inférence par vraisemblance profilée à découpage s’est révélée conservatrice et de puissance limitée, avec des vérifications numériques indépendantes en Python et en R. L’étude ne prétend proposer aucune nouvelle méthode."
       image_alts:
@@ -208,7 +228,7 @@ academic:
         - "Appartenance du vrai paramètre à l’ensemble de confiance, échantillonnage régulier"
     ja:
       title: "オルンシュタイン＝ウーレンベック過程における弱い平均回帰の有限期間推測"
-      dates: "2026年春学期〜現在"
+      dates: "2026年春学期"
       meta: "確率過程の研究プロジェクト。コロンビア大学STAT GU4264/GR5264「確率過程とその応用 I」（2026年春学期）から発展したもの。同授業の担当教員：[Steven Campbell](https://www.stevenacampbell.com/)"
       description: "不規則な観測時点に対応したオルンシュタイン＝ウーレンベック過程の厳密な尤度と局外パラメータの解析的なプロファイリングを、ドリフト付きブラウン運動という境界の場合も含めて導出し、Juliaで実装した。情報量の上界と1,600本のシミュレーション系列を用いて有限期間の推測を調べ、分割プロファイル法による推測が保守的で検出力が低いことを確認し、PythonとRによる独立した数値検証も行った。本研究は新しい手法を提案したと主張するものではない。"
       image_alts:
@@ -217,7 +237,7 @@ academic:
         - "真の値の包含率（等間隔観測）"
     zh:
       title: "Ornstein–Uhlenbeck 过程弱均值回归的有限时域推断"
-      dates: "2026年春季学期—至今"
+      dates: "2026年春季学期"
       meta: "随机过程研究项目，由哥伦比亚大学 STAT GU4264/GR5264 随机过程及其应用 I 课程（2026年春季学期）发展而来；课程授课教师：[Steven Campbell](https://www.stevenacampbell.com/)"
       description: "推导并用 Julia 实现了 Ornstein–Uhlenbeck 过程的精确似然与冗余参数的解析剖面化，支持不规则观测时间，并涵盖带漂移布朗运动这一边界情形。借助信息界与 1,600 条模拟轨迹研究有限时域推断，发现分割剖面推断偏保守且功效有限，并以独立的 Python 和 R 数值计算进行核对。该研究并不声称提出了新方法。"
       image_alts:

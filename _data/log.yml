@@ -9,6 +9,19 @@
 #         for example: 'Read [*Title*](https://arxiv.org/abs/...) by A. Author
 #         and B. Author (2024): one line on what stood out.'
 
+- date: "Nov 2026"
+  type: research
+  text: "Started a [research project on Markov decision processes with imperfect policy execution](/research/) with Professor Vineet Goyal in Columbia University’s Department of Industrial Engineering and Operations Research. We study stochastic control when the state changes during action computation or when an action is carried out incorrectly."
+  fr:
+    date: "nov. 2026"
+    text: "Début d’un [projet de recherche sur les processus de décision markoviens avec exécution imparfaite des politiques](/research/) avec le professeur Vineet Goyal, du département de génie industriel et de recherche opérationnelle de l’Université Columbia. Nous étudions la commande stochastique lorsque l’état change pendant le calcul d’une action ou lorsque celle-ci est mal exécutée."
+  ja:
+    date: "2026年11月"
+    text: "コロンビア大学の産業工学・オペレーションズリサーチ学科のVineet Goyal教授と、[方策が不完全に実行されるマルコフ決定過程の研究](/research/)を始めた。行動の計算中に状態が変化する場合や、行動が正しく実行されない場合の確率制御を研究している。"
+  zh:
+    date: "2026年11月"
+    text: "与哥伦比亚大学工业工程与运筹学系的 Vineet Goyal 教授开始研究[策略执行不完美的马尔可夫决策过程](/research/)，探讨动作计算期间状态发生变化或动作未被正确执行时的随机控制问题。"
+
 - date: "Oct 2026"
   type: project
   text: "Launched the public catalog for [ArtVenn (由于艺)](https://artvenn.com). The first public batch makes 60 catalog records and 422 images available to browse and search."
@@ -24,16 +37,16 @@
 
 - date: "Oct 2026"
   type: award
-  text: "Received the 2026 Statistics Chair’s List of Academic Achievements recognition from Columbia University for the 2025–2026 academic year on October 19."
+  text: "Received the [2026 Statistics Chair’s List of Academic Achievements](/files/2026-statistics-chairs-list.pdf) recognition from Columbia University for the 2025–2026 academic year on October 19."
   fr:
     date: "oct. 2026"
-    text: "Réception, le 19 octobre, de la distinction 2026 Statistics Chair’s List of Academic Achievements de l’Université Columbia pour l’année universitaire 2025–2026."
+    text: "Réception, le 19 octobre, de la distinction [2026 Statistics Chair’s List of Academic Achievements](/files/2026-statistics-chairs-list.pdf) de l’Université Columbia pour l’année universitaire 2025–2026."
   ja:
     date: "2026年10月"
-    text: "10月19日、2025〜2026年度を対象とするコロンビア大学の「2026 Statistics Chair’s List of Academic Achievements」の表彰を受けた。"
+    text: "10月19日、2025〜2026年度を対象とするコロンビア大学の「[2026 Statistics Chair’s List of Academic Achievements](/files/2026-statistics-chairs-list.pdf)」の表彰を受けた。"
   zh:
     date: "2026年10月"
-    text: "10月19日，获得哥伦比亚大学面向2025—2026学年的2026年统计学系 Chair’s List of Academic Achievements 表彰。"
+    text: "10月19日，获得哥伦比亚大学面向2025—2026学年的[2026年统计学系 Chair’s List of Academic Achievements](/files/2026-statistics-chairs-list.pdf)表彰。"
 
 - date: "Sep 2026"
   type: project
@@ -63,16 +76,16 @@
 
 - date: "Sep 2026"
   type: research
-  text: "Started an independent time series [research project on volatility-estimation lag and calibration memory in sequential prediction intervals](/research/), developed from STAT GR5221 Time Series Analysis at Columbia; the work is ongoing."
+  text: "Started an independent time series [research project on volatility-estimation lag and calibration memory in sequential prediction intervals](/research/), developed from STAT GR5221 Time Series Analysis at Columbia."
   fr:
     date: "sept. 2026"
-    text: "Début d’un [projet de recherche indépendant en séries temporelles sur le retard d’estimation de la volatilité et la mémoire de calibration dans les intervalles de prédiction séquentiels](/research/), issu du cours STAT GR5221 Time Series Analysis à Columbia ; travail en cours."
+    text: "Début d’un [projet de recherche indépendant en séries temporelles sur le retard d’estimation de la volatilité et la mémoire de calibration dans les intervalles de prédiction séquentiels](/research/), issu du cours STAT GR5221 Time Series Analysis à Columbia."
   ja:
     date: "2026年9月"
-    text: "コロンビア大学のSTAT GR5221「時系列解析」から発展した、[逐次予測区間におけるボラティリティ推定の遅れとキャリブレーションの記憶に関する時系列解析の自主研究プロジェクト](/research/)を開始した。現在も進行中である。"
+    text: "コロンビア大学のSTAT GR5221「時系列解析」から発展した、[逐次予測区間におけるボラティリティ推定の遅れとキャリブレーションの記憶に関する時系列解析の自主研究プロジェクト](/research/)を開始した。"
   zh:
     date: "2026年9月"
-    text: "在哥伦比亚大学 STAT GR5221 时间序列分析课程的基础上，开始独立开展[关于序贯预测区间中波动率估计滞后与校准记忆的时间序列研究项目](/research/)，目前仍在进行。"
+    text: "在哥伦比亚大学 STAT GR5221 时间序列分析课程的基础上，开始独立开展[关于序贯预测区间中波动率估计滞后与校准记忆的时间序列研究项目](/research/)。"
 
 - date: "May 2026"
   type: milestone
@@ -102,29 +115,29 @@
 
 - date: "Spring 2026"
   type: research
-  text: "Started a computational statistics [research project on stochastic trace estimation](/research/) (Hutchinson and Hutch++) in STAT GR6104 Computational Statistics at Columbia; the work is ongoing."
+  text: "Started a computational statistics [research project on stochastic trace estimation](/research/) (Hutchinson and Hutch++) in STAT GR6104 Computational Statistics at Columbia."
   fr:
     date: "printemps 2026"
-    text: "Début d’un [projet de recherche en statistique computationnelle sur l’estimation stochastique de la trace](/research/) (méthodes de Hutchinson et Hutch++) dans le cadre du cours STAT GR6104 Computational Statistics à Columbia ; travail en cours."
+    text: "Début d’un [projet de recherche en statistique computationnelle sur l’estimation stochastique de la trace](/research/) (méthodes de Hutchinson et Hutch++) dans le cadre du cours STAT GR6104 Computational Statistics à Columbia."
   ja:
     date: "2026年春学期"
-    text: "コロンビア大学のSTAT GR6104「計算統計学」で、[確率的トレース推定に関する計算統計学の研究プロジェクト](/research/)（HutchinsonとHutch++）を開始した。現在も進行中である。"
+    text: "コロンビア大学のSTAT GR6104「計算統計学」で、[確率的トレース推定に関する計算統計学の研究プロジェクト](/research/)（HutchinsonとHutch++）を開始した。"
   zh:
     date: "2026年春季学期"
-    text: "在哥伦比亚大学 STAT GR6104 计算统计学课程中，启动了[关于随机迹估计的计算统计研究项目](/research/)（Hutchinson 与 Hutch++），目前仍在进行。"
+    text: "在哥伦比亚大学 STAT GR6104 计算统计学课程中，启动了[关于随机迹估计的计算统计研究项目](/research/)（Hutchinson 与 Hutch++）。"
 
 - date: "Spring 2026"
   type: research
-  text: "Started a stochastic processes [research project on finite-horizon inference for weak Ornstein–Uhlenbeck mean reversion](/research/), developed from STAT GU4264/GR5264 Stochastic Processes–Applications I at Columbia; the work is ongoing."
+  text: "Started a stochastic processes [research project on finite-horizon inference for weak Ornstein–Uhlenbeck mean reversion](/research/), developed from STAT GU4264/GR5264 Stochastic Processes–Applications I at Columbia."
   fr:
     date: "printemps 2026"
-    text: "Début d’un [projet de recherche en processus stochastiques sur l’inférence à horizon fini pour un faible retour à la moyenne dans les processus d’Ornstein–Uhlenbeck](/research/), issu du cours STAT GU4264/GR5264 Stochastic Processes–Applications I à Columbia ; travail en cours."
+    text: "Début d’un [projet de recherche en processus stochastiques sur l’inférence à horizon fini pour un faible retour à la moyenne dans les processus d’Ornstein–Uhlenbeck](/research/), issu du cours STAT GU4264/GR5264 Stochastic Processes–Applications I à Columbia."
   ja:
     date: "2026年春学期"
-    text: "コロンビア大学のSTAT GU4264/GR5264「確率過程とその応用 I」から発展した、[オルンシュタイン＝ウーレンベック過程における弱い平均回帰の有限期間推測に関する確率過程の研究プロジェクト](/research/)を開始した。現在も進行中である。"
+    text: "コロンビア大学のSTAT GU4264/GR5264「確率過程とその応用 I」から発展した、[オルンシュタイン＝ウーレンベック過程における弱い平均回帰の有限期間推測に関する確率過程の研究プロジェクト](/research/)を開始した。"
   zh:
     date: "2026年春季学期"
-    text: "在哥伦比亚大学 STAT GU4264/GR5264 随机过程及其应用 I 课程的基础上，启动了[关于 Ornstein–Uhlenbeck 过程弱均值回归有限时域推断的随机过程研究项目](/research/)，目前仍在进行。"
+    text: "在哥伦比亚大学 STAT GU4264/GR5264 随机过程及其应用 I 课程的基础上，启动了[关于 Ornstein–Uhlenbeck 过程弱均值回归有限时域推断的随机过程研究项目](/research/)。"
 
 - date: "Sep 2025"
   type: milestone
@@ -178,17 +191,17 @@
     date: "2024年10月"
     text: "创建了文化遗产数据与社区平台 [ArtVenn](https://github.com/junguangjia/moya-inscriptions-web)，以中国各地历史碑刻的实地记录为基础。"
 
-- date: "Jul 2024"
+- date: "Jun 2024"
   type: milestone
   text: "Completed the B.S. in Mathematics (Probability and Statistics) at the University of California, San Diego."
   fr:
-    date: "juil. 2024"
+    date: "juin 2024"
     text: "Fin du B.S. de mathématiques (probabilités et statistique) à l’Université de Californie à San Diego."
   ja:
-    date: "2024年7月"
+    date: "2024年6月"
     text: "カリフォルニア大学サンディエゴ校の数学学士（B.S.、確率・統計）課程を修了した。"
   zh:
-    date: "2024年7月"
+    date: "2024年6月"
     text: "完成加州大学圣地亚哥分校数学学士（B.S.，概率与统计方向）学业。"
 
 - date: "Fall 2023"

@@ -13,6 +13,7 @@ description              : &description "Academic website of Junguang Jia, M.A. 
 url                      : https://junguangjia.github.io
 baseurl                  : "" # root-level user site, so this stays empty
 repository               : "junguangjia/junguangjia.github.io"
+content_updated          : "2026-11-11" # Date of the latest published content edit.
 
 # Site Author - controls the left-hand sidebar (see _includes/author-profile.html).
 # Blank fields are not shown. `avatar` is a file in /images/; leave it empty for a

@@ -3,7 +3,7 @@ permalink: /ja/teaching/
 lang: ja
 ref: teaching
 title: "教育"
-description: "UCサンディエゴでの線形代数およびJavaのTAセッションの録画と、賈俊廣による学習資料。"
+description: "賈俊廣がUCサンディエゴで担当した線形代数とJavaのTAセッションの録画。"
 author_profile: true
 ---
 
