@@ -78,7 +78,8 @@ English is the template; every other language mirrors it page for page.
   reading from `name_reading` under it, and "Junguang JIA" in French (the
   French convention of writing the family name in capitals). Page prose uses
   the same forms, except French running text, which keeps "Junguang Jia".
-- **CV:** the PDF is English only; the other languages say so under the link.
+- **CV:** English, French, and Japanese pages show the English PDF. The Chinese
+  page shows the Chinese PDF and also links to the English version.
 
 ### Default language
 
@@ -208,21 +209,20 @@ outside this repository. Setting `avatar` to empty gives a text-only sidebar.
 
 ## CV PDF
 
-The CV page shows a download link and an embedded viewer for
-`files/Junguang_Jia_CV.pdf` (the viewer is hidden on phones, which cannot show
-a PDF inside a page). The public URL
-`https://junguangjia.github.io/files/Junguang_Jia_CV.pdf` must not change.
+Each CV page has a download link and an embedded viewer. The Chinese page
+embeds the Chinese CV and offers a separate English download. On phones the
+viewer is hidden and the download links remain available.
 
-- To use your own PDF, save it at exactly that path. Before committing, check
-  that it contains no phone number, GPA, grades, test scores, or other private
-  details, and update `cv_date` in every language block (`en`, `fr`, `ja`, `zh`) of
-  `_data/i18n.yml`.
-- The current PDF is generated from `_cv/Junguang_Jia_CV.html` (not published
-  by Jekyll): open it in Google Chrome (version 131 or later, for the page
-  numbers), Print, Save as PDF, paper Letter, margins Default, headers and
-  footers off, background graphics on, and save it over
-  `files/Junguang_Jia_CV.pdf`. Headless Chrome's `page.pdf()` with
-  `preferCSSPageSize` produces the same file.
+- Keep the English PDF at <https://junguangjia.github.io/files/Junguang_Jia_CV.pdf>.
+- Keep the Chinese PDF at <https://junguangjia.github.io/files/Junguang_Jia_CV_zh.pdf>.
+- Save reviewed public PDFs at those paths. Before committing, check for phone
+  numbers, GPA, grades, test scores, and other private details in the PDFs.
+  Update `cv_date` in all four language blocks of `_data/i18n.yml` when the
+  English version changes, and update `zh.cv_chinese_date` for the Chinese PDF.
+- The public PDFs were prepared from the owner's supplied files. The
+  English edition uses the supplied LaTeX source, and the Chinese edition
+  preserves the supplied PDF layout. `_cv/Junguang_Jia_CV.html` is the source
+  for the earlier English edition.
 - The embedded viewer loads the PDF with `#navpanes=0&pagemode=none&view=FitH`
   so Chrome, Edge, and Firefox open it without the page-thumbnail sidebar and
   fit it to the frame width.
