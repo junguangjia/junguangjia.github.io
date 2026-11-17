@@ -715,13 +715,47 @@ body {
 
 /* --------------------------------------------------------------------------
    CV pages: preserve download links on phones, where embedded PDF viewers
-   are hidden. Wider screens pair the English and Chinese editions on /zh/cv/.
+   are hidden. Both editions on /zh/cv/ use first-page previews on phones.
    -------------------------------------------------------------------------- */
 .cv-previews--paired {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(0.5rem, 3vw, 1rem);
+
+  .cv-preview {
+    /* Share the download-label row so both previews start at the same height. */
+    display: contents;
+
+    &:first-child > * {
+      grid-column: 1;
+    }
+
+    &:last-child > * {
+      grid-column: 2;
+    }
+  }
+
+  .cv-download {
+    grid-row: 1;
+  }
+
+  .cv-visual {
+    grid-row: 2;
+  }
+}
+
+.cv-thumbnail {
+  display: block;
+
   @include breakpoint($medium) {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1rem;
+    display: none;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--global-border-color);
   }
 }
 

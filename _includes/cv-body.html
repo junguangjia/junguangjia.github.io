@@ -4,6 +4,7 @@
 {% endcomment %}
 {% include base_path %}
 {% include i18n.html %}
+{% assign cv_asset_version = site.time | date: "%s" %}
 {% comment %}
   The fragment asks the browser's PDF viewer to hide its page-thumbnail
   sidebar (navpanes=0 in Chrome and Edge, pagemode=none in Firefox) and to fit
@@ -35,10 +36,24 @@
     {% if cv_pdf %}
       {% capture cv_date_html %}<span class="cv-date">{{ cv_date }}</span>{% endcapture %}
       {% assign cv_label = cv_download_text | replace: "{date}", cv_date_html %}
+      {% assign cv_url = base_path | append: cv_pdf.path | append: "?v=" | append: cv_asset_version %}
       <div class="cv-preview">
-        <p class="cv-download"><a href="{{ base_path }}{{ cv_pdf.path }}" hreflang="{{ cv_lang }}">{{ cv_label }}</a>{% if i18n_lang != "en" and cv_chinese_pdf == nil %} <span class="cv-note">{{ t.cv_english_note }}</span>{% endif %}</p>
-        <div class="cv-embed">
-          <iframe src="{{ base_path }}{{ cv_pdf.path }}#navpanes=0&amp;pagemode=none&amp;view=FitH" title="{{ cv_title }}" loading="lazy"></iframe>
+        <p class="cv-download"><a href="{{ cv_url }}" hreflang="{{ cv_lang }}">{{ cv_label }}</a>{% if i18n_lang != "en" and cv_chinese_pdf == nil %} <span class="cv-note">{{ t.cv_english_note }}</span>{% endif %}</p>
+        <div class="cv-visual">
+          <div class="cv-embed">
+            <iframe src="{{ cv_url }}#navpanes=0&amp;pagemode=none&amp;view=FitH" title="{{ cv_title }}" loading="lazy"></iframe>
+          </div>
+          {% if cv_english_pdf and cv_chinese_pdf %}
+            {% assign cv_thumb_path = "/images/cv-" | append: cv_lang | append: ".webp" %}
+            {% assign cv_thumb = site.static_files | where: "path", cv_thumb_path | first %}
+            {% if cv_thumb %}
+              {% assign cv_thumb_height = 622 %}
+              {% if cv_lang == "zh" %}{% assign cv_thumb_height = 679 %}{% endif %}
+              <a class="cv-thumbnail" href="{{ cv_url }}" hreflang="{{ cv_lang }}">
+                <img src="{{ base_path }}{{ cv_thumb.path }}?v={{ cv_asset_version }}" width="480" height="{{ cv_thumb_height }}" alt="{{ cv_title }}">
+              </a>
+            {% endif %}
+          {% endif %}
         </div>
       </div>
     {% endif %}

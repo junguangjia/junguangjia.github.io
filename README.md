@@ -79,7 +79,7 @@ English is the template; every other language mirrors it page for page.
   French convention of writing the family name in capitals). Page prose uses
   the same forms, except French running text, which keeps "Junguang Jia".
 - **CV:** English, French, and Japanese pages show the English PDF. The Chinese
-  page offers both editions and shows them side by side on wider screens.
+  page shows both editions side by side.
 
 ### Default language
 
@@ -211,7 +211,8 @@ outside this repository. Setting `avatar` to empty gives a text-only sidebar.
 
 Each CV preview has its download link directly above it. On the Chinese page,
 the English preview is on the left and the Chinese preview is on the right.
-On phones the viewers are hidden and the download links remain available.
+On phones the Chinese page shows clickable first-page previews in the same
+order, and every language keeps its download links available.
 
 - Keep the English PDF at <https://junguangjia.github.io/files/Junguang_Jia_CV.pdf>.
 - Keep the Chinese PDF at <https://junguangjia.github.io/files/Junguang_Jia_CV_zh.pdf>.
@@ -219,6 +220,8 @@ On phones the viewers are hidden and the download links remain available.
   numbers, GPA, grades, test scores, and other private details in the PDFs.
   Update `cv_date` in all four language blocks of `_data/i18n.yml` when the
   English version changes, and update `zh.cv_chinese_date` for the Chinese PDF.
+- When replacing the PDFs, refresh `images/cv-en.webp` and `images/cv-zh.webp`
+  with their first pages for the phone previews.
 - The public PDFs were prepared from the owner's supplied files. The
   English edition uses the supplied LaTeX source, and the Chinese edition
   preserves the supplied PDF layout. `_cv/Junguang_Jia_CV.html` is the source
