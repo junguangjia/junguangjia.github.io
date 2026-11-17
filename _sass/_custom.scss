@@ -714,9 +714,17 @@ body {
 }
 
 /* --------------------------------------------------------------------------
-   CV page: download link and embedded PDF viewer. Phones cannot display a PDF
-   inside a page, so the viewer is hidden there and the download link remains.
+   CV pages: preserve download links on phones, where embedded PDF viewers
+   are hidden. Wider screens pair the English and Chinese editions on /zh/cv/.
    -------------------------------------------------------------------------- */
+.cv-previews--paired {
+  @include breakpoint($medium) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}
+
 .cv-embed {
   display: none;
 

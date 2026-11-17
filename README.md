@@ -79,7 +79,7 @@ English is the template; every other language mirrors it page for page.
   French convention of writing the family name in capitals). Page prose uses
   the same forms, except French running text, which keeps "Junguang Jia".
 - **CV:** English, French, and Japanese pages show the English PDF. The Chinese
-  page shows the Chinese PDF and also links to the English version.
+  page offers both editions and shows them side by side on wider screens.
 
 ### Default language
 
@@ -209,9 +209,9 @@ outside this repository. Setting `avatar` to empty gives a text-only sidebar.
 
 ## CV PDF
 
-Each CV page has a download link and an embedded viewer. The Chinese page
-embeds the Chinese CV and offers a separate English download. On phones the
-viewer is hidden and the download links remain available.
+Each CV preview has its download link directly above it. On the Chinese page,
+the English preview is on the left and the Chinese preview is on the right.
+On phones the viewers are hidden and the download links remain available.
 
 - Keep the English PDF at <https://junguangjia.github.io/files/Junguang_Jia_CV.pdf>.
 - Keep the Chinese PDF at <https://junguangjia.github.io/files/Junguang_Jia_CV_zh.pdf>.

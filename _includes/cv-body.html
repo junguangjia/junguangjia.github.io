@@ -1,6 +1,6 @@
 {% comment %}
-  Display one PDF viewer and a download link. On the Chinese page, prefer the
-  Chinese PDF and offer the English PDF as an additional download.
+  Display one PDF viewer per available edition. The Chinese page adds its
+  Chinese edition to the right of the English edition.
 {% endcomment %}
 {% include base_path %}
 {% include i18n.html %}
@@ -10,29 +10,38 @@
   the page to the frame width (view=FitH).
 {% endcomment %}
 {% assign cv_english_pdf = site.static_files | where: "path", "/files/Junguang_Jia_CV.pdf" | first %}
-{% assign cv_pdf = cv_english_pdf %}
-{% assign cv_lang = "en" %}
-{% assign cv_download_text = t.cv_download | default: t_en.cv_download %}
-{% assign cv_date = t.cv_date | default: t_en.cv_date %}
+{% assign cv_languages = "en" | split: "," %}
 {% if i18n_lang == "zh" %}
   {% assign cv_chinese_pdf = site.static_files | where: "path", "/files/Junguang_Jia_CV_zh.pdf" | first %}
   {% if cv_chinese_pdf %}
-    {% assign cv_pdf = cv_chinese_pdf %}
-    {% assign cv_lang = "zh" %}
-    {% assign cv_download_text = t.cv_chinese_download %}
-    {% assign cv_date = t.cv_chinese_date %}
+    {% assign cv_languages = "en,zh" | split: "," %}
   {% endif %}
 {% endif %}
-{% if cv_pdf %}
-{% capture cv_date_html %}<span class="cv-date">{{ cv_date }}</span>{% endcapture %}{% assign cv_label = cv_download_text | replace: "{date}", cv_date_html %}
-<p class="cv-download"><a href="{{ base_path }}{{ cv_pdf.path }}" hreflang="{{ cv_lang }}">{{ cv_label }}</a>{% if cv_lang == "en" and i18n_lang != "en" %} <span class="cv-note">{{ t.cv_english_note }}</span>{% endif %}</p>
-{% if cv_lang == "zh" and cv_english_pdf %}
-{% capture cv_english_date_html %}<span class="cv-date">{{ t.cv_date }}</span>{% endcapture %}
-{% assign cv_english_label = t.cv_english_download | replace: "{date}", cv_english_date_html %}
-<p class="cv-download"><a href="{{ base_path }}{{ cv_english_pdf.path }}" hreflang="en">{{ cv_english_label }}</a></p>
-{% endif %}
-
-<div class="cv-embed">
-  <iframe src="{{ base_path }}{{ cv_pdf.path }}#navpanes=0&amp;pagemode=none&amp;view=FitH" title="{{ t.cv_frame_title | default: t_en.cv_frame_title }}" loading="lazy"></iframe>
+{% if cv_english_pdf or cv_chinese_pdf %}
+<div class="cv-previews{% if cv_english_pdf and cv_chinese_pdf %} cv-previews--paired{% endif %}">
+  {% for cv_lang in cv_languages %}
+    {% assign cv_pdf = cv_english_pdf %}
+    {% assign cv_download_text = t.cv_download | default: t_en.cv_download %}
+    {% assign cv_date = t.cv_date | default: t_en.cv_date %}
+    {% assign cv_title = t.cv_frame_title | default: t_en.cv_frame_title %}
+    {% if cv_lang == "zh" %}
+      {% assign cv_pdf = cv_chinese_pdf %}
+      {% assign cv_download_text = t.cv_chinese_download %}
+      {% assign cv_date = t.cv_chinese_date %}
+      {% assign cv_title = t.cv_chinese_frame_title %}
+    {% elsif cv_chinese_pdf %}
+      {% assign cv_download_text = t.cv_english_download %}
+    {% endif %}
+    {% if cv_pdf %}
+      {% capture cv_date_html %}<span class="cv-date">{{ cv_date }}</span>{% endcapture %}
+      {% assign cv_label = cv_download_text | replace: "{date}", cv_date_html %}
+      <div class="cv-preview">
+        <p class="cv-download"><a href="{{ base_path }}{{ cv_pdf.path }}" hreflang="{{ cv_lang }}">{{ cv_label }}</a>{% if i18n_lang != "en" and cv_chinese_pdf == nil %} <span class="cv-note">{{ t.cv_english_note }}</span>{% endif %}</p>
+        <div class="cv-embed">
+          <iframe src="{{ base_path }}{{ cv_pdf.path }}#navpanes=0&amp;pagemode=none&amp;view=FitH" title="{{ cv_title }}" loading="lazy"></iframe>
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
 </div>
 {% endif %}

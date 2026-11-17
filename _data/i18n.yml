@@ -157,7 +157,8 @@ zh:
   cv_chinese_date: "2026年10月"
   cv_date: "2026年11月"
   cv_english_note: "简历为英文版。"
-  cv_frame_title: "贾俊廣的简历（PDF）"
+  cv_frame_title: "贾俊廣的英文简历（PDF）"
+  cv_chinese_frame_title: "贾俊廣的中文简历（PDF）"
   footer_credit: "本站基于 {jekyll} 与 {academicpages} 构建，后者派生自 {mm}。"
   h:
     education: "教育背景"
