@@ -335,6 +335,7 @@ report in the owner's public research repository:
 
 | Website file (`files/`) | Repository | Source file |
 | --- | --- | --- |
+| `computation-delayed-mdp-proposal.pdf` | `junguangjia/computation-delayed-mdp` | `proposal/output/pdf/Proposal_Computation_Delayed_MDP.pdf` |
 | `ts-calibration-report.pdf` | `junguangjia/ts-calibration` | `latex/ts-calibration-report.pdf` |
 | `bayesian-fvc-trajectories-report.pdf` | `junguangjia/bayesian-fvc-trajectories` | `results/research/report.pdf` |
 | `stochastic-trace-estimation-report.pdf` | `junguangjia/stochastic-trace-estimation` | `latex/trace-estimation-report.pdf` |

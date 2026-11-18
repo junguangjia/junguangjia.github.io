@@ -3,7 +3,7 @@ permalink: /zh/research/
 lang: zh
 ref: research
 title: "研究与项目"
-description: "贾俊廣的研究与独立项目，包括策略执行不完美的马尔可夫决策过程、由课程发展而来的统计项目，以及 ArtVenn 文化遗产编目平台。"
+description: "贾俊廣的研究与独立项目，包括计算延迟马尔可夫决策过程中的计算价值、由课程发展而来的统计项目，以及 ArtVenn 文化遗产编目平台。"
 author_profile: true
 ---
 

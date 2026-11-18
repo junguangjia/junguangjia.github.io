@@ -3,7 +3,7 @@ permalink: /ja/research/
 lang: ja
 ref: research
 title: "研究・プロジェクト"
-description: "賈俊廣の研究とプロジェクト。方策の実行が不完全なマルコフ決定過程、統計学の授業から発展した研究、文化遺産カタログ・プラットフォームArtVennを紹介。"
+description: "賈俊廣の研究とプロジェクト。計算遅延を伴うマルコフ決定過程における計算の価値、統計学の授業から発展した研究、文化遺産カタログ・プラットフォームArtVennを紹介。"
 author_profile: true
 ---
 

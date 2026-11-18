@@ -28,25 +28,29 @@
 # they have none).
 
 academic:
-  - title: "Markov Decision Processes with Imperfect Policy Execution"
+  - title: "Value of Computation in Computation-Delayed Markov Decision Processes"
+    url: "/files/computation-delayed-mdp-proposal.pdf"
     dates: "Nov 2026 – Present"
     meta: "Ongoing research project with [Vineet Goyal](https://ieor.columbia.edu/content/vineet-goyal) at Columbia IEOR"
-    description: "Studies stochastic control problems in which the state can change while an action is being computed. A related application asks how the probability of executing each prescribed action correctly affects an AI agent’s chance of completing a task."
+    description: "Studies when slow high-fidelity simulation verification pays over a fast surrogate as the state evolves under information age or actuation delay. Derived exact cross-age and cross-action covariance conditions for factorized beliefs to over- or under-compute, and models simulator discrepancies with a masked heteroscedastic hierarchical Gaussian model motivated by pilot SUMO traffic-control runs."
+    # The website PDF is an unchanged copy of proposal/output/pdf/Proposal_Computation_Delayed_MDP.pdf in the research repository.
+    report_source_commit: "d2c3b53c95ec1de64c411c432639f778603745df"
+    report_sha256: "84530de8b2f183f84d10d5fa8d6950891203e70b928319d4cc722c8c2002df61"
     fr:
-      title: "Processus de décision markoviens avec exécution imparfaite des politiques"
+      title: "Valeur du calcul dans les processus de décision markoviens à retard de calcul"
       dates: "nov. 2026 – aujourd’hui"
       meta: "Projet de recherche en cours avec [Vineet Goyal](https://ieor.columbia.edu/content/vineet-goyal) au département IEOR de l’Université Columbia"
-      description: "Étude de problèmes de contrôle stochastique où l’état peut évoluer pendant le calcul d’une action. Une application examine comment la probabilité d’exécuter correctement chaque action prescrite influe sur les chances d’un agent d’IA de mener une tâche à bien."
+      description: "Étude des cas où une vérification par simulation haute fidélité l’emporte sur un modèle de substitution rapide lorsque l’état évolue sous l’effet de l’âge de l’information ou d’un délai d’action. Conditions exactes de covariance inter-délais et inter-actions conduisant des croyances factorisées à sur- ou sous-calculer, et modélisation hiérarchique gaussienne hétéroscédastique masquée des écarts de simulation sur des essais pilotes SUMO."
     ja:
-      title: "方策の実行が不完全なマルコフ決定過程"
+      title: "計算遅延を伴うマルコフ決定過程における計算の価値"
       dates: "2026年11月〜現在"
       meta: "コロンビア大学IEORの[Vineet Goyal](https://ieor.columbia.edu/content/vineet-goyal)教授との共同研究。現在進行中。"
-      description: "行動の計算中に状態が変化しうる確率制御問題を研究しています。応用として、指示された各行動を正しく実行できる確率が、AIエージェントのタスク完了確率にどう影響するかを調べています。"
+      description: "情報の古さや実行遅延のもとで状態が変化する際、低速な高精度シミュレーション検証が高速な代理モデルを上回る条件を研究。因子化信念が過剰または過少計算に陥る遅延間・行動間の厳密な共分散条件を導出し、SUMO交通制御の予備実験に基づき、マスク付き不均一分散階層ガウスモデルでシミュレータ誤差をモデル化している。"
     zh:
-      title: "策略执行不完美的马尔可夫决策过程"
+      title: "计算延迟马尔可夫决策过程中的计算价值"
       dates: "2026年11月—至今"
       meta: "与哥伦比亚大学工业工程与运筹学系 [Vineet Goyal](https://ieor.columbia.edu/content/vineet-goyal) 教授合作开展的研究，目前进行中"
-      description: "研究计算动作期间状态可能发生变化的随机控制问题。一个相关应用是考察 AI 智能体正确执行各项指令的概率，如何影响其完成整个任务的概率。"
+      description: "研究在信息陈旧或执行延迟下系统状态不断演化时，较慢的高保真仿真验证何时优于快速的低保真代理模型。推导了因子化信念产生过度或不足计算的跨延迟与跨动作协方差精确条件，并结合 SUMO 交通控制预实验，采用带掩码的异方差分层高斯模型刻画仿真器偏差。"
 
   - title: "Volatility-Estimation Lag and Calibration Memory in Sequential Prediction Intervals"
     url: "/files/ts-calibration-report.pdf"

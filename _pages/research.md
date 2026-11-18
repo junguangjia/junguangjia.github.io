@@ -3,7 +3,7 @@ permalink: /research/
 lang: en
 ref: research
 title: "Research & Projects"
-description: "Research and independent projects by Junguang Jia, including Markov decision processes with imperfect policy execution, statistical course projects, and the ArtVenn cultural heritage catalog platform."
+description: "Research and independent projects by Junguang Jia, including value of computation in computation-delayed Markov decision processes, statistical course projects, and the ArtVenn cultural heritage catalog platform."
 author_profile: true
 ---
 

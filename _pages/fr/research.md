@@ -3,7 +3,7 @@ permalink: /fr/research/
 lang: fr
 ref: research
 title: "Recherche et projets"
-description: "Projets de Junguang Jia sur les processus de décision markoviens avec exécution imparfaite des politiques, travaux de statistique issus de cours et plateforme de catalogage du patrimoine culturel ArtVenn."
+description: "Projets de Junguang Jia sur la valeur du calcul dans les processus de décision markoviens à retard de calcul, travaux de statistique issus de cours et plateforme de catalogage du patrimoine culturel ArtVenn."
 author_profile: true
 ---
 

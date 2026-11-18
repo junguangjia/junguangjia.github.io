@@ -11,16 +11,16 @@
 
 - date: "Nov 2026"
   type: research
-  text: "Started a [research project on Markov decision processes with imperfect policy execution](/research/) with Professor Vineet Goyal in Columbia University’s Department of Industrial Engineering and Operations Research. We study stochastic control when the state changes during action computation or when an action is carried out incorrectly."
+  text: "Started a [research project on value of computation in computation-delayed Markov decision processes](/research/) with Professor Vineet Goyal in Columbia University’s Department of Industrial Engineering and Operations Research, studying multi-fidelity simulation verification when the state evolves during computation."
   fr:
     date: "nov. 2026"
-    text: "Début d’un [projet de recherche sur les processus de décision markoviens avec exécution imparfaite des politiques](/research/) avec le professeur Vineet Goyal, du département de génie industriel et de recherche opérationnelle de l’Université Columbia. Nous étudions la commande stochastique lorsque l’état change pendant le calcul d’une action ou lorsque celle-ci est mal exécutée."
+    text: "Début d’un [projet de recherche sur la valeur du calcul dans les processus de décision markoviens à retard de calcul](/research/) avec le professeur Vineet Goyal, du département de génie industriel et de recherche opérationnelle de l’Université Columbia, portant sur la vérification par simulation multifidélité lorsque l’état évolue pendant le calcul."
   ja:
     date: "2026年11月"
-    text: "コロンビア大学の産業工学・オペレーションズリサーチ学科のVineet Goyal教授と、[方策が不完全に実行されるマルコフ決定過程の研究](/research/)を始めた。行動の計算中に状態が変化する場合や、行動が正しく実行されない場合の確率制御を研究している。"
+    text: "コロンビア大学の産業工学・オペレーションズリサーチ学科のVineet Goyal教授と、[計算遅延を伴うマルコフ決定過程における計算の価値に関する研究](/research/)を始め、計算中に状態が変化する状況での多忠実度シミュレーション検証に取り組んでいる。"
   zh:
     date: "2026年11月"
-    text: "与哥伦比亚大学工业工程与运筹学系的 Vineet Goyal 教授开始研究[策略执行不完美的马尔可夫决策过程](/research/)，探讨动作计算期间状态发生变化或动作未被正确执行时的随机控制问题。"
+    text: "与哥伦比亚大学工业工程与运筹学系的 Vineet Goyal 教授开始研究[计算延迟马尔可夫决策过程中的计算价值](/research/)，探讨计算期间系统状态演化时的多保真度仿真验证问题。"
 
 - date: "Oct 2026"
   type: project
